@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  libSVM 使用指南 - 小土刀的笔记
+  人为什么死不认错 - 小土刀的笔记
   
   </title>
  <meta name="description" content="">
@@ -210,173 +210,31 @@
             <div class="large-9 medium-9 columns">
 
  <div class="markdown-body">
-<h1>libSVM 使用指南</h1>
+<h1>人为什么死不认错</h1>
 
-<p>CMU 15 Fall 10601b 机器学习的期末作业是在 CIFAR-10 数据集上的图像分类，我们小组已经实现了 LR, NN, NB 等比较『朴素』的机器学习算法，对于如何实现 SVM 倒是一直没有什么思路。他山之石，可以攻玉，我打算从 libSVM 入手，看看能不能找到点思路。</p>
+<p>我们的人类是用尽一生来证明自身的存在不是荒谬的一种动物。 —— Albert Camus</p>
 
-<h2 id="toc_0">一：下载编译安装</h2>
+<p>这样做的结果就是：人不会认错，至少不会轻易认错。自我辩护的策略大概可分为三步曲：第一步，死不承认——我没有做错什么。第二步，滥找借口——即使真做错了什么，也不能全怪我。第三步，将后果最小化——即使全是我的错，但现在已经没什么了。</p>
 
-<p>这三个统称『配置环境』，从<a href="http://www.csie.ntu.edu.tw/%7Ecjlin/libsvm/index.html">官网</a>下载，然后自己想办法编译（我是直接找别人编译好的），接着重命名避免和 matlab 自带的 svmtrain 重名。说明一下我用的版本是 3.20</p>
+<p>但吊诡的是，虽然我们自己从不轻易认错，但我们对不认错的别人却是义愤填膺、深恶痛绝，总把他们当坏人。其实只要是人几乎天生擅长此道，易地皆然。</p>
 
-<blockquote>
-<p>在当前目录下会出现svmtrain.mexw64、svmpredict.mexw64（64位系统）或者svmtrain.mexw32、svmpredict.mexw32（32位系统）这两个文件，把文件名svmtrain和svmpredict相应改成libsvmtrain和libsvmpredict。</p>
+<p>金字塔效应有一条重要原则：出发点非常重要。第一步无论多么小，一旦迈出，金字塔进程就开始了，从塔顶一步步往下滑，一般不会中途停止。因此，同样的行为，善意，还是恶意对待，是非常不同的，它指向两个相反的方向。从善意出发，自我辩护会一直把善意维持下去。反之亦然。比如婚姻，幸福的婚姻基本都是从积极想法开始的；不幸婚姻基本都是从消极想法开始的。婚姻中有许多岔口，每一个岔口都要找到正确方向。方向一旦确定，自我辩护会自动带领我们前进，无论你朝哪个方向。关键在于，你准备朝什么方向？</p>
 
-<p>这是因为Matlab中自带有SVM的工具箱，而且其函数名字就是svmtrain和svmpredict，和LIBSVM默认的名字一样，在实际使用的时候有时会产生一定的问题，比如想调用LIBSVM的变成了调用Matlab SVM。</p>
+<p>阅读这篇文章，不能保证你明白什么叫自我辩护。哪怕你明白了，各行各业的专家也总结出了一个法则：了解一件事并不能一定避免它的发生。这是全人类的难题。失调也一样，无论我们多么清楚了解失调的机制原理，并不能保证我们自动免除自我辩护的诱惑。</p>
 
-<p>如果有进行重命名的，以后使用LIBSVM时一律使用libsvmtrain和libsvmpredict这两个名字进行调用。</p>
-</blockquote>
+<p>但了解毕竟是解决问题的第一步。 有了这些了解，我们就知道社会为什么要建立民主制度，个人为什么要反思。由于人死不认错，所以对那些手握重权的政客、领袖，必须设置一些办法在他犯错的时候强制他认错。民主就是这样建立起来的。由于人死不认错，所以每个人都要经常地反思，我们并不总是英明、正确，也许这一次我错了呢？和谐社会也将这样建立起来。</p>
 
-<h2 id="toc_1">二：原理</h2>
+<p>对我们的大脑如何以及为何那样运作的较为深入的理解，是打破自我辩护习惯的第一步。而这一点又要求我们更加留意我们自身行为以及我们决策的理由。这需要时间、自我反省和意愿。</p>
 
-<p>SVM 的原理这里不介绍，关键词：监督学习，二分类，核函数。这里提到是二分类，那么要如何扩展成多分类呢？比方说在我们的这个项目中，图片有十个类别，就要想办法把一个二分类的用到十分类上。比较基本的思路有两种，一对多(one-versus-rest)和一对一(one-versus-one)。</p>
+<p>利用失调理论的正向反馈：一个宽厚的行为会导致慈爱与怜悯的累积，这是一种良性循环（勿以善小而不为，勿以恶小而为之）</p>
 
-<p>举个例子，一对多实际上是训练十个分类器，对于第一个分类器，类别 1 是一类，类别 2-10 是一类；对于第二个分类器，类别 2 是一类，类别 1 + 类别 3-10 是一类，这样就得到了十个分类器。预测的时候，分别用这十个分类器分类，然后将分类结果中出现最多的那个类别作为结果。</p>
+<p>尽管像艾略特这种对认知失调理论很了解的人，也会出现认知失调。认知失调是自动性的，需要我们不断地提醒自我。</p>
 
-<p>继续举例子，一对一的话实际要训练 \(\frac{10\times9}{2}\) 个分类器，然后预测的时候需要跑所有的分类器，选出现最多的那个类别作为最终分类结果。</p>
+<p>既然每个人都会存在思维的盲点，所以在生活中我们需要一些爱唱反调的人，需要一些愿意戳破自我辩护编织的保护泡沫并且能够在我们偏离现实太远时拉回我们的批评者。</p>
 
-<p>libSVM 是使用一对一的方式来实现的</p>
+<p>勇于承认错误，在自己从金字塔顶端滑落很远之前及时采取措施</p>
 
-<h2 id="toc_2">三：使用</h2>
-
-<p>基本来说，因为不需要在意具体的实现，所以使用起来还是简单粗暴的</p>
-
-<h3 id="toc_3">训练</h3>
-
-<p>如果数据准备好了的话，一句话就可以搞定。</p>
-
-<pre><code class="language-matlab">model = libsvmtrain(training_label_vector, training_instance_matrix [, &#39;libsvm_options&#39;]);
-</code></pre>
-
-<p>这个函数有三个参数，其中</p>
-
-<ul>
-<li><code>-training_label_vector</code>:训练样本的类标，如果有m个样本，就是m x 1的矩阵（类型必须为double）。这里可以是二分类和多分类，类标是（-1,1）、（1,2,3）或者其他任意用来表示不同的类别的数字，要转成double类型。</li>
-<li><code>-training_instance_matrix</code>:训练样本的特征，如果有m个样本，每个样本特征是n维，则为m x n的矩阵（类型必须为double）。</li>
-<li><code>-libsvm_options</code>:训练的参数，会专门开一章来介绍。</li>
-</ul>
-
-<h3 id="toc_4">预测</h3>
-
-<p>如果有了训练出来的模型的话，一句话搞定。<code>libpredict</code> 函数用于对测试集的数据进行测试，还能对未知样本进行预测。</p>
-
-<pre><code class="language-matlab">[predicted_label, accuracy, decision_values/prob_estimates] 
-　　　　= libsvmpredict(testing_label_vector, testing_instance_matrix, model [, &#39;libsvm_options&#39;]);
-</code></pre>
-
-<p>这个函数包括四个参数，其中</p>
-
-<ul>
-<li><code>-testing_label_vector</code>:测试样本的类标，如果有m个样本，就是m x 1的矩阵（类型必须为double）。如果类标未知，可以初始化为任意m x 1的double数组。</li>
-<li><code>-testing_instance_matrix</code>:测试样本的特征，如果有m个样本，每个样本特征是n维，则为m x n的矩阵（类型必须为double）。</li>
-<li><code>-model</code>:使用libsvmtrain返回的模型</li>
-<li><code>-libsvm_options</code>:预测的参数，与训练的参数形式一样。</li>
-</ul>
-
-<h2 id="toc_5">四：参数</h2>
-
-<p>参数这一部分比较多，而且需要一定的理论基础，很多参数我都不大明白是干嘛的，所以我就先挑一些我懂的参数，然后剩下的就是文档里的大概翻译。所以下面的列表是有先后顺序的</p>
-
-<ul>
-<li><code>-s</code> svm类型：SVM设置类型（默认0，我就用默认的)
-
-<ul>
-<li>0 — C-SVC； </li>
-<li>1 – v-SVC； </li>
-<li>2 – one-class SVM； </li>
-<li>3 — e-SVR； </li>
-<li>4 — v-SVR</li>
-</ul></li>
-<li><code>-t</code> 核函数类型：核函数设置类型（默认2，据说2的效果也比较好，所以继续用2）
-
-<ul>
-<li>0 – 线性核函数：<code>u’v</code></li>
-<li>1 – 多项式核函数：<code>（r*u’v + coef0)^degree</code></li>
-<li>2 – RBF(径向基)核函数：<code>exp(-r|u-v|^2）</code></li>
-<li>3 – sigmoid核函数：<code>tanh(r*u’v + coef0)</code></li>
-</ul></li>
-<li><code>-h</code> shrinking：是否使用启发式，0或1（默认1）
-
-<ul>
-<li>用 0 的话训练会快一些，</li>
-</ul></li>
-<li><code>-d</code> degree：核函数中的degree设置（针对多项式核函数）（默认3）</li>
-<li><code>-g</code> r(gamma）：核函数中的gamma函数设置（针对多项式/rbf/sigmoid核函数）（默认1/k，k为总类别数)</li>
-<li><code>-r</code> coef0：核函数中的coef0设置（针对多项式/sigmoid核函数）（（默认0)</li>
-<li><code>-c</code> cost：设置C-SVC，e -SVR和v-SVR的参数（损失函数）（默认1）</li>
-<li><code>-n</code> nu：设置v-SVC，一类SVM和v- SVR的参数（默认0.5）</li>
-<li><code>-p</code> p：设置e -SVR 中损失函数p的值（默认0.1）</li>
-<li><code>-m</code> cachesize：设置cache内存大小，以MB为单位（默认40）</li>
-<li><code>-e</code> eps：设置允许的终止判据（默认0.001）</li>
-<li><code>-wi</code> weight：设置第几类的参数C为weight*C (C-SVC中的C) （默认1）</li>
-<li><code>-v</code> n: n-fold交互检验模式，n为fold的个数，必须大于等于2</li>
-</ul>
-
-<p>以上这些参数设置可以按照SVM的类型和核函数所支持的参数进行任意组合，如果设置的参数在函数或SVM类型中没有也不会产生影响，程序不会接受该参数；如果应有的参数设置不正确，参数将采用默认值。</p>
-
-<h2 id="toc_6">五：返回数据模型</h2>
-
-<p>训练会返回一个结构体，预测会返回三个结果，这里分别说明一下</p>
-
-<h3 id="toc_7">训练返回的内容</h3>
-
-<p>libsvmtrain函数返回训练好的SVM分类器模型，可以用来对未知的样本进行预测。这个模型是一个结构体，包含以下成员：</p>
-
-<ul>
-<li><code>-Parameters</code>: 一个5 x 1的矩阵，从上到下依次表示：
-
-<ul>
-<li><code>-s</code> SVM类型（默认0）；</li>
-<li><code>-t</code> 核函数类型（默认2）</li>
-<li><code>-d</code> 核函数中的degree设置(针对多项式核函数)(默认3)；</li>
-<li><code>-g</code> 核函数中的r(gamma）函数设置(针对多项式/rbf/sigmoid核函数) (默认类别数目的倒数)；</li>
-<li><code>-r</code> 核函数中的coef0设置(针对多项式/sigmoid核函数)((默认0)</li>
-</ul></li>
-<li><code>-nr_class</code>: 表示数据集中有多少类别，比如二分类时这个值即为2。</li>
-<li><code>-totalSV</code>: 表示支持向量的总数。</li>
-<li><code>-rho</code>: 决策函数wx+b中的常数项的相反数（-b）。</li>
-<li><code>-Label</code>: 表示数据集中类别的标签，比如二分类常见的1和-1。</li>
-<li><code>-ProbA</code>: 使用-b参数时用于概率估计的数值，否则为空。</li>
-<li><code>-ProbB</code>: 使用-b参数时用于概率估计的数值，否则为空。</li>
-<li><code>-nSV</code>: 表示每类样本的支持向量的数目，和Label的类别标签对应。如Label=[1; -1],nSV=[63; 67]，则标签为1的样本有63个支持向量，标签为-1的有67个。</li>
-<li><code>-sv_coef</code>: 表示每个支持向量在决策函数中的系数。</li>
-<li><code>-SVs</code>: 表示所有的支持向量，如果特征是n维的，支持向量一共有m个，则为m x n的稀疏矩阵。</li>
-</ul>
-
-<p>另外，如果在训练中使用了-v参数进行交叉验证时，返回的不是一个模型，而是交叉验证的分类的正确率或者回归的均方根误差。</p>
-
-<h3 id="toc_8">预测返回的内容</h3>
-
-<p>libsvmtrain函数有三个返回值，不需要的值在Matlab可以用~进行代替。</p>
-
-<ul>
-<li><code>-predicted_label</code>：第一个返回值，表示样本的预测类标号。</li>
-<li><code>-accuracy</code>：第二个返回值，一个3 x 1的数组，表示分类的正确率、回归的均方根误差、回归的平方相关系数。</li>
-<li>-<code>decision_values/prob_estimates</code>：第三个返回值，一个矩阵包含决策的值或者概率估计。对于n个预测样本、k类的问题，如果指定“-b 1”参数，则n x k的矩阵，每一行表示这个样本分别属于每一个类别的概率；如果没有指定“-b 1”参数，则为n x k*(k-1)/2的矩阵，每一行表示k(k-1)/2个二分类SVM的预测结果。</li>
-</ul>
-
-<h2 id="toc_9">六：读取或保存</h2>
-
-<p><strong><code>libsvmread</code>函数可以读取以LIBSVM格式存储的数据文件。</strong></p>
-
-<pre><code class="language-matlab">[label_vector, instance_matrix] = libsvmread(‘data.txt’);
-</code></pre>
-
-<p>这个函数输入的是文件的名字，输出为样本的类标和对应的特征。</p>
-
-<p><strong><code>libsvmwrite</code>函数可以把Matlab的矩阵存储称为LIBSVM格式的文件。</strong></p>
-
-<pre><code class="language-matlab">libsvmwrite(‘data.txt’, label_vector, instance_matrix]
-</code></pre>
-
-<p>这个函数有三个输入，分别为保存的文件名、样本的类标和对应的特征（必须为double类型的稀疏矩阵）。</p>
-
-<h2 id="toc_10">总结</h2>
-
-<p>总体来说训练时间还是很长的（怪电脑），尤其是随着分类的增多所需要的分类器会增长得更快，难以想象要分一百类会怎么样。不过 libSVM 在不同的平台下都有实现，哪怕想要在手机上实现最简单的机器学习，也都可以用这个包，还是非常方便的。</p>
-
-<h2 id="toc_11">参考资料</h2>
-
-<p><a href="http://noalgo.info/363.html">LIBSVM在Matlab下的使用</a></p>
+<p>承认生命的复杂性与个体的差异性，避免自负或自以为是。</p>
 
 
 </div>
@@ -388,15 +246,15 @@
   <div class="large-6 columns">
 	<div class="text-left" style="padding:15px 0px;">
 		
-	        <a href="14520204007499.html"  title="Previous Post: 机器学习和计算机视觉相关的数学">&laquo; 机器学习和计算机视觉相关的数学</a>
+	        <a href="14520321360378.html"  title="Previous Post: 意志力">&laquo; 意志力</a>
 	    
 	</div>
   </div>
   <div class="large-6 columns">
 	<div class="text-right" style="padding:15px 0px;">
 		
-	        <a href="14520204007285.html" 
-	        title="Next Post: HMM 最佳学习范例">HMM 最佳学习范例 &raquo;</a>
+	        <a href="14520321360140.html" 
+	        title="Next Post: 怪诞行为学 2">怪诞行为学 2 &raquo;</a>
 	    
 	</div>
   </div>
@@ -409,7 +267,7 @@
 </div>
 <script type="text/javascript">
 	$(function(){
-		var currentURL = '14520204007389.html';
+		var currentURL = '14520321360258.html';
 		$('#side-nav a').each(function(){
 			if($(this).attr('href') == currentURL){
 				$(this).parent().addClass('active');
