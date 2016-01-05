@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  小土刀的笔记
+  贝叶斯网络 - 小土刀的笔记
   
   </title>
  <meta name="description" content="">
@@ -171,159 +171,156 @@
             </div>
             <div class="large-9 medium-9 columns">
 
- 
+ <div class="markdown-body">
+<h1>贝叶斯网络</h1>
 
+<h2 id="toc_0">一个简单的贝叶斯网络</h2>
 
-	
-		<div class="markdown-body">
-		<h1>统计陷阱</h1>
+<p>abc 的联合概率：p(a,b,c)=p(c|a,b)p(b|a)p(a)</p>
 
-		<ul>
-<li>有 3 种谎言：谎言，糟糕透顶的谎言和统计资料</li>
-<li>对于追求效率的公民而言，统计思维总有一天会和读写能力一样重要</li>
-<li>使我们陷入麻烦的通常并非我们不知道的事情，而是那些我们知道却不正确的事情</li>
-<li>整数总是不完善的</li>
-<li>我需要完成一个很大的课题——统计学，但却感到我的写作功底十分有限，如果不牺牲准确性和完整性，就很难使人理解</li>
-</ul>
+<p><img src="./_resources/by1.jpg" alt="by1"/></p>
 
-<h2 id="toc_0">第一章 内在有偏的数据</h2>
+<p>一个有向无环图，在某些更复杂的情况下，图是可以简化的</p>
 
-<ul>
-<li>单凭某一数据很难反应实情</li>
-<li>一条河永远不可能高于它的源头，同理，对样本研究后得到的结论不会好于样本本身</li>
-<li>一个以抽样为基础的报告如果要有价值，就必须使用具有代表性的样本，这种样本排除了各种误差</li>
-<li>无形的误差与有形的误差一样容易破坏样本的可信度</li>
-</ul>
+<h2 id="toc_1">全连接贝叶斯网络</h2>
 
-<h2 id="toc_1">第二章 精心挑选的平均数</h2>
+<p>每一对结点之间都有边连接</p>
 
-<p>普查工作者一般都具有足够的统计知识、技术以及调查费用以确保抽样的精确度。他们并非居心叵测之徒。但并不是所有能见到的数据都产生于这样良好的环境，也并不是所有的数据都会有附有类似的精确度说明</p>
+<p><img src="./_resources/by2.jpg" alt="by2"/></p>
 
-<h2 id="toc_2">第三章 没有披露的数据</h2>
+<h2 id="toc_2">一个『正常』的贝叶斯网络</h2>
+
+<p><img src="./_resources/by3.jpg" alt="by3"/></p>
 
 <ul>
-<li>如果某条信息提供了显著性程度，你将对它有更深的了解。显著成都通常用概率表示。</li>
-<li>将『正常的』与『期望的』混为一谈导致事情变得更糟</li>
-<li>这些没有透露的数据其欺骗性在于人们经常忽略了它们的不存在，这当然也是使用这些数据的人获取成功的奥秘</li>
-<li>当一个平均数、一张图表或者某种趋势遗漏了这些重要的数据，请对它们保留一些怀疑。</li>
-</ul>
-
-<h2 id="toc_3">第四章 毫无意义的工作</h2>
+<li>有些边缺失</li>
+<li>直观上：(只是一个感觉，后面会证明不对)
 
 <ul>
-<li>你的样本以多大的精度代表总体是可以用数据来衡量的，那就是：可能误差和标准误差</li>
-<li>只有当差别有意义时才能称之为差别</li>
+<li>x1 和 x2 独立</li>
+<li>x6 和 x7 在 x4 给定的条件下独立</li>
+</ul></li>
+<li>x1,x2,...,x7 的联合分布</li>
 </ul>
 
-<h2 id="toc_4">第五章 惊人的统计图形</h2>
+<p><img src="./_resources/by4.jpg" alt="by4"/></p>
 
-<p>注意比例尺和起始标尺，这可能会产生极大的误导性</p>
+<p>联合分布中，父亲会作为条件，写在后面，依次递推来写即可。</p>
 
-<h2 id="toc_5">第六章 平面图形</h2>
+<h2 id="toc_3">对一个实际贝叶斯网络的分析</h2>
 
-<p>利用一维图形的信息不对称，可以营造出非常夸张的视觉效果</p>
+<p><img src="./_resources/by5.jpg" alt="by5"/></p>
 
-<h2 id="toc_6">第七章 不相匹配的资料</h2>
+<p>这里 0 表示 没有，1 表示有，对于 P(D|C,B) 来说，我们实际上只需要四个参数，因为对于每个确定的 C,B 组合来说，D 为两点分布，一个参数即可。</p>
 
-<p>如果你想证明某事，却发现没有能力办到，那么试着解释其他事情并假装它们是同一回事。</p>
+<p>如果没有贝叶斯网络，参数就会很多很多。</p>
 
-<h2 id="toc_7">第八章 相关关系与因果关系</h2>
+<h2 id="toc_4">通过贝叶斯网络判定条件独立</h2>
 
-<p>相关并不等于因果，一定要注意这里的区别</p>
-
-<h2 id="toc_8">第九章 如何进行统计操纵</h2>
+<p><img src="./_resources/by6.jpg" alt="by6"/></p>
 
 <ul>
-<li>扭曲统计数据的最巧妙方法是利用地图</li>
-<li>百分数也给误解提供了肥沃的土壤。和小数一样，它也能为不确切的食物蒙上精确的面纱</li>
-<li>将一些看似能直接相加却不能这样操作的事情加在一起会产生大量的欺骗和隐瞒</li>
+<li>P(a,b,c)=P(c)P(a|c)P(b|c)</li>
+<li>则: P(a,b|c)=P(a,b,c) / P(c)</li>
+<li>把 P(c) 移到等式左边，得到: P(a,b|c) = P(a|c)P(b|c)</li>
+<li>这也就满足条件独立的定义，即在 c 给定的条件下，a 和 b 被阻断，是独立的</li>
+<li>这种 tail-to-tail 的模式中，两个 tail 是条件独立的</li>
 </ul>
 
-<h2 id="toc_9">第十章 对统计资料提出的五个问题</h2>
+<p><img src="./_resources/by7.jpg" alt="by7"/></p>
 
-<ol>
-<li>谁说的？有意识的偏差和无意识的偏差</li>
-<li>他是如何知道的？注意样本的有偏，数值是否足够大</li>
-<li>遗漏了什么？</li>
-<li>是否有人偷换了概念？</li>
-<li>这个资料有意义吗？</li>
-</ol>
+<p>对于上图的这种情况</p>
+
+<ul>
+<li>P(a,b,c)=P(a)P(c|a)P(b|c)</li>
+<li>则:</li>
+<li>P(a,b|c)=P(a,b,c) / P(c)   # 带入上式</li>
+<li>= P(a)P(c|a)P(b|c) / P(c)  # P(a)P(c|a) = P(a,c)</li>
+<li>= P(a,c)P(b|c) / P(c)</li>
+<li>= P(a|c)P(b|c)</li>
+<li>在 c 给定的条件下，a 和 b 被阻断，是独立的</li>
+<li>这种 head-to-tail 的模式中，中间被隔断 head 和 tail 是条件独立的</li>
+</ul>
+
+<p><img src="./_resources/by8.jpg" alt="by8"/></p>
+
+<p>上图的情况比较不一样</p>
+
+<p><img src="./_resources/by9.jpg" alt="by9"/></p>
+
+<p>其中求和的意思就是对 c 做积分，那么积分完成后 c 就为总概率 1，就可以从式子中消去，也由此得到最终的结果。</p>
+
+<p>也就是说，即使 c 是未知的，a 和 b 也是被阻断的，是独立的(head-to-head)，而且是严格独立的(无条件独立)</p>
+
+<h2 id="toc_5">贝叶斯网络的构建</h2>
+
+<p><img src="./_resources/by10.jpg" alt="by10"/></p>
+
+<p>等式最后一步可以看做是一个简化参数的过程</p>
+
+<p><strong>举个例子</strong></p>
+
+<p><img src="./_resources/by11.jpg" alt="by11"/></p>
+
+<p>第一步，如果我们算出 P(J|M) = P(J)，那么说明 J 和 M 互相独立，也就是说在网络中没有连线。如果不相等，就要加上一个箭头</p>
+
+<p><img src="./_resources/by12.jpg" alt="by12"/></p>
+
+<p>一个一个依次计算，如果相等则没有连线，如果不相等则有连线，以这幅图为例，最后所需要的参数为 <code>1+2+4+2+4=13</code></p>
+
+<p>这里选取节点的顺序与最终形成的网络结构也有关系。</p>
+
+<h2 id="toc_6">贝叶斯网络的推导</h2>
+
+<p><img src="./_resources/by13.jpg" alt="by13"/></p>
+
+<p>假如我们发现一个人呼吸困难，那么他有多大的可能会抽烟呢？</p>
+
+<p><img src="./_resources/by14.jpg" alt="by14"/></p>
+
+<p>条件概率可以改写成联合分布除以边缘分布，这里分母一般是固定的所以重点考察联合分布。</p>
+
+<p>下一条式子是 d,b,x,c,s 所有变量的联合分布(求和的右边式子)。我们对 b,x,c 积分，并固定 d=1，就可以得到上面我们要求的联合分布 P(s,d=1)</p>
 
 
-		</div>
-	
+</div>
 
- 
-	
+<br /><br />
+<hr />
 
- 
-	
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="14520204006721.html"  title="Previous Post: 卷积神经网络 CNN 指南">&laquo; 卷积神经网络 CNN 指南</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14520204006634.html" 
+	        title="Next Post: Bag of Words 模型">Bag of Words 模型 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
 
- 
-	
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
 
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
-  
-  
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14520204006681.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
 </div></div>
 
 
