@@ -1,0 +1,427 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  深入浅出数据分析 - 小土刀的笔记
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="小土刀的笔记" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">小土刀的笔记</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; 小土刀的笔记</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>math</label></li>
+
+          
+            <li><a title="统计陷阱" href="14520204009043.html">统计陷阱</a></li>
+          
+            <li><a title="信号与噪声" href="14520204008891.html">信号与噪声</a></li>
+          
+            <li><a title="推荐系统实践" href="14520204008705.html">推荐系统实践</a></li>
+          
+            <li><a title="集体智慧编程 笔记" href="14520204008526.html">集体智慧编程 笔记</a></li>
+          
+            <li><a title="概率统计基础" href="14520204008388.html">概率统计基础</a></li>
+          
+            <li><a title="Freemind 博客机器学习系列文章" href="14520204008264.html">Freemind 博客机器学习系列文章</a></li>
+          
+            <li><a title="机器学习实战" href="14520204008128.html">机器学习实战</a></li>
+          
+            <li><a title="机器学习 学习指引" href="14520204007992.html">机器学习 学习指引</a></li>
+          
+            <li><a title="机器学习基石 学习笔记" href="14520204007861.html">机器学习基石 学习笔记</a></li>
+          
+            <li><a title="机器学习中的重要概念" href="14520204007753.html">机器学习中的重要概念</a></li>
+          
+            <li><a title="数学：确定性的丧失" href="14520204007634.html">数学：确定性的丧失</a></li>
+          
+            <li><a title="机器学习和计算机视觉相关的数学" href="14520204007499.html">机器学习和计算机视觉相关的数学</a></li>
+          
+            <li><a title="libSVM 使用指南" href="14520204007389.html">libSVM 使用指南</a></li>
+          
+            <li><a title="HMM 最佳学习范例" href="14520204007285.html">HMM 最佳学习范例</a></li>
+          
+            <li><a title="神经网络简史" href="14520204007151.html">神经网络简史</a></li>
+          
+            <li><a title="Hidden Markov Model" href="14520204007085.html">Hidden Markov Model</a></li>
+          
+            <li><a title="深入浅出数据分析" href="14520204007006.html">深入浅出数据分析</a></li>
+          
+            <li><a title="Graphic Model 学习笔记" href="14520204006958.html">Graphic Model 学习笔记</a></li>
+          
+            <li><a title="EM, GMM 指南" href="14520204006902.html">EM, GMM 指南</a></li>
+          
+            <li><a title="深度学习相关收集" href="14520204006842.html">深度学习相关收集</a></li>
+          
+            <li><a title="凸优化教程" href="14520204006778.html">凸优化教程</a></li>
+          
+            <li><a title="卷积神经网络 CNN 指南" href="14520204006721.html">卷积神经网络 CNN 指南</a></li>
+          
+            <li><a title="贝叶斯网络" href="14520204006681.html">贝叶斯网络</a></li>
+          
+            <li><a title="Bag of Words 模型" href="14520204006634.html">Bag of Words 模型</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>math</span></li>
+                        
+                          <li><a title="统计陷阱" href="14520204009043.html">统计陷阱</a></li>
+                        
+                          <li><a title="信号与噪声" href="14520204008891.html">信号与噪声</a></li>
+                        
+                          <li><a title="推荐系统实践" href="14520204008705.html">推荐系统实践</a></li>
+                        
+                          <li><a title="集体智慧编程 笔记" href="14520204008526.html">集体智慧编程 笔记</a></li>
+                        
+                          <li><a title="概率统计基础" href="14520204008388.html">概率统计基础</a></li>
+                        
+                          <li><a title="Freemind 博客机器学习系列文章" href="14520204008264.html">Freemind 博客机器学习系列文章</a></li>
+                        
+                          <li><a title="机器学习实战" href="14520204008128.html">机器学习实战</a></li>
+                        
+                          <li><a title="机器学习 学习指引" href="14520204007992.html">机器学习 学习指引</a></li>
+                        
+                          <li><a title="机器学习基石 学习笔记" href="14520204007861.html">机器学习基石 学习笔记</a></li>
+                        
+                          <li><a title="机器学习中的重要概念" href="14520204007753.html">机器学习中的重要概念</a></li>
+                        
+                          <li><a title="数学：确定性的丧失" href="14520204007634.html">数学：确定性的丧失</a></li>
+                        
+                          <li><a title="机器学习和计算机视觉相关的数学" href="14520204007499.html">机器学习和计算机视觉相关的数学</a></li>
+                        
+                          <li><a title="libSVM 使用指南" href="14520204007389.html">libSVM 使用指南</a></li>
+                        
+                          <li><a title="HMM 最佳学习范例" href="14520204007285.html">HMM 最佳学习范例</a></li>
+                        
+                          <li><a title="神经网络简史" href="14520204007151.html">神经网络简史</a></li>
+                        
+                          <li><a title="Hidden Markov Model" href="14520204007085.html">Hidden Markov Model</a></li>
+                        
+                          <li><a title="深入浅出数据分析" href="14520204007006.html">深入浅出数据分析</a></li>
+                        
+                          <li><a title="Graphic Model 学习笔记" href="14520204006958.html">Graphic Model 学习笔记</a></li>
+                        
+                          <li><a title="EM, GMM 指南" href="14520204006902.html">EM, GMM 指南</a></li>
+                        
+                          <li><a title="深度学习相关收集" href="14520204006842.html">深度学习相关收集</a></li>
+                        
+                          <li><a title="凸优化教程" href="14520204006778.html">凸优化教程</a></li>
+                        
+                          <li><a title="卷积神经网络 CNN 指南" href="14520204006721.html">卷积神经网络 CNN 指南</a></li>
+                        
+                          <li><a title="贝叶斯网络" href="14520204006681.html">贝叶斯网络</a></li>
+                        
+                          <li><a title="Bag of Words 模型" href="14520204006634.html">Bag of Words 模型</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>深入浅出数据分析</h1>
+
+<!-- MarkdownTOC -->
+
+<ul>
+<li>分解数据
+
+<ul>
+<li>统计模型取决于心智模型</li>
+</ul></li>
+<li>检验你的理论</li>
+<li>最优化：寻找最大值</li>
+<li>数据图形化：图形让你更精明</li>
+<li>假设检验：假设并非如此</li>
+<li>贝叶斯统计</li>
+<li>主观概率：信念数字化</li>
+<li>启发法：凭人类的天性作分析</li>
+<li>直方图：数字的形状</li>
+<li>回归：预测</li>
+<li>误差：合理误差</li>
+<li>关系数据库</li>
+<li>整理数据：井然有序</li>
+<li>正文未及的十大要诀</li>
+</ul>
+
+<!-- /MarkdownTOC -->
+
+<h2 id="toc_0">分解数据</h2>
+
+<p>数据无所不在，数据分析就是仔细推敲证据。固定基本流程：</p>
+
+<ul>
+<li>确定：了解问题，确定问题</li>
+<li>分解：分解问题和数据，使其成为更小的组成部分</li>
+<li>评估：对前两步了解到的情况作出各种结论</li>
+<li>决策：把这些结论重新组合在一起，作出一个决策</li>
+</ul>
+
+<p><strong>未明确</strong>确定自己的问题或目标就进行数据分析就如同未定下目的地就上路旅行一样。</p>
+
+<p>客户将根据你的分析作决策，你需要尽可能从他那里多了解一些信息，才能<strong>确定问题</strong>。</p>
+
+<p>你对外界的假设和你确信的观点就是你的<strong>心智模型</strong>。心智模型有时助益良多，有时带来麻烦。重中之重是明确心智模型，并且像对待数据一样严肃认真地对待心智模型。</p>
+
+<p><strong>务必尽量明确你的心智模型</strong></p>
+
+<h3 id="toc_1">统计模型取决于心智模型</h3>
+
+<p>心智模型决定你的观察结果，是你观察现实的棱镜。你无法看到一切，因此你的大脑必须做出选择，以便集中注意力，这就是所谓的心智模型<strong>决定观察结果</strong>。你的统计模型<strong>取决于</strong>你的心智模型，如果用了错误的心智模型，分析就会胎死腹中。</p>
+
+<p><strong>最好使用正确的心智模型</strong></p>
+
+<p>心智模型应当包括你不了解的因素，一定要指出<strong>不确定</strong>因素，只要能明确不确定因素，你就会小心防范并想办法填补知识空白，继而提出更好的建议。</p>
+
+<p>所获得的新数据若未经过任何处理，即称为<strong>原始数据</strong>，为了让他人提供的数据在你要进行的数据运算中发挥作用，几乎总是要调节数据。千万要<strong>保存原始数据</strong>，避免进行任何数据处理。即使是最好的数据分析师也会失误，必须能够将自己的工作结果与原始数据进行比较。</p>
+
+<h2 id="toc_2">检验你的理论</h2>
+
+<p>一个好实验往往能让你摆脱对<strong>观察数据</strong>的无限依赖，能帮助你理清因果联系；可靠的<strong>实证数据</strong>将让你的分析判断更具有说服力。</p>
+
+<p><strong>比较越多，分析结果越正确</strong>，对于观察研究尤其如此。</p>
+
+<p>为了<strong>控制</strong>观察研究混杂因素，有时候，将数据拆分为更小的数据块是一个好想法。这些小数据块更具有<strong>同质性</strong>。换句话说，这些小数据块不包含那些有可能扭曲你的分析结果及让你产生错误想法的内部偏差。</p>
+
+<p><strong>控制组(Control Group)</strong> 一组体现现状的处理对象，未经过任何新的处理(也称对照组)</p>
+
+<p>没有控制组就意味着没有比较，没有比较就意味着无法对所发生的情况进行判断。</p>
+
+<h2 id="toc_3">最优化：寻找最大值</h2>
+
+<p><strong>你能控制的变量受到约束条件的限制</strong>，决策变量是你能控制的因素。约束条件不会告诉你的如何实现最大利润，它们只告诉你在实现利润最大化的过程中无法做到的事。</p>
+
+<p>为了解决一个最优化问题，你需要将决策变量、约束条件及希望最大化的目标合并成一个目标函数。你希望最大化或最小化的对象就是目标，目标函数则可以帮助你找出最优化结果。</p>
+
+<p><strong>任何最优化问题都有一些约束条件和一个目标函数</strong></p>
+
+<p><strong>合理的选择都出现在可行区域里</strong></p>
+
+<p><strong>新约束条件改变了可行区域</strong></p>
+
+<p><strong>做好修改模型的准备</strong></p>
+
+<h2 id="toc_4">数据图形化：图形让你更精明</h2>
+
+<p><strong>体现数据</strong>。创建优秀数据图形的第一要务就是促使客户谨慎思考并制定决策，优秀的数据分析由始至终都离不开<strong>用数据思考</strong>。</p>
+
+<p>散点图是<strong>探索性数据分析</strong>的奇妙工具，统计学家用这个术语描述在一组数据中寻找一些假设条件进行测试的活动。</p>
+
+<p>分析师喜欢用散点图发现<strong>因果关系</strong>，即一个变量影响另一个变量的关系。通常用散点图的 X 轴代表自变量(我们假想为原因的变量)，用 Y 轴代表应变量(我们假定为结果的变量)。</p>
+
+<p><strong>优秀的图形设计有助于思考的原因</strong>，当你描述你的数据图形时，需要论述课相互换用的两种因果模型或图解</p>
+
+<h2 id="toc_5">假设检验：假设并非如此</h2>
+
+<p>变量之间可以正相关，也可以负相关。</p>
+
+<p>假设检验的核心是证伪，请勿试图选出最合理的假设，只需<strong>剔除无法证实的假设</strong>。</p>
+
+<p><strong>诊断性</strong>是证据所具有的一种功能，能够帮助你评估所考虑的假设的相对似然。如果证据具有诊断性，就能帮助你对假设排序。</p>
+
+<h2 id="toc_6">贝叶斯统计</h2>
+
+<p><strong>贝叶斯规则</strong>能帮助你利用<strong>基础概率</strong>和波动数据做到明察秋毫。</p>
+
+<p><strong>条件概率</strong>即以一件事的发生为前提的另一件事的发生概率。</p>
+
+<p>我们的大脑生来不擅长处理概率数字，因此，将概率转变为整数，然后进行思考，是避免犯错误的一个有效办法。</p>
+
+<p>新信息会改变的基础概率。</p>
+
+<h2 id="toc_7">主观概率：信念数字化</h2>
+
+<p>如果用一个数字形式的概率来表示自己对某事的确认程度，所用的就是<strong>主观概率</strong>。</p>
+
+<p>贝叶斯规则是修正主观概率的好办法</p>
+
+<p><img src="./_resources/da1.jpg" alt="da1"/></p>
+
+<p>使用贝叶斯规则求主观概率的根本在于找出<strong>在假设成立的条件下，证据出现的概率</strong></p>
+
+<h2 id="toc_8">启发法：凭人类的天性作分析</h2>
+
+<p>启发法是从直觉走向最优化的桥梁。</p>
+
+<p><strong>启发法</strong>1.(心理学定义)用一种更便于理解的属性代替一种难解的，令人困惑的属性。2.(计算机科学定义)一种解决问题的方法，可能会得出正确答案，但不保证得出最优化答案。</p>
+
+<p>固定模式必定具有启发性：处理固定模式不需要大费力气，而且速度超快。</p>
+
+<p>启发法并非百试不爽。快而省的经验可能有助于找出某些问题的答案，而在其他情况下，却先入为主地让你做出不恰当的判断。</p>
+
+<h2 id="toc_9">直方图：数字的形状</h2>
+
+<p><strong>直方图</strong>是一种功能强大的图形，无论数据集多庞大，直方图都能显示出数据点在数值范围内的<strong>分布</strong>情况</p>
+
+<p>直方图不同区间之间的缺口即数据点之间的缺口</p>
+
+<h2 id="toc_10">回归：预测</h2>
+
+<p>回归分析法力无边，只要使用得法，就能帮助你预测某些结果值。若与控制实验同时使用，回归分析还能预测未来。</p>
+
+<p>回归线就是最准确地贯穿平均值图中的各个点的直线</p>
+
+<h2 id="toc_11">误差：合理误差</h2>
+
+<p>指出误差可以让预测和信念更全面。</p>
+
+<p>用回归方程预测数据范围以外的数值称为<strong>外插法</strong>。外插法与<strong>内插法</strong>有所不同，内插法对数据范围内的点进行预测，这这是回归法本来的目的。内插法很准确，但使用外插法就得小心了。</p>
+
+<p><strong>低劣的预测比不作预测更糟糕</strong></p>
+
+<p>千万要对模型假设保持戒心。观察他人的模型时，一定要想一想他们的假设有何道理，以及他们是否忘记了某种假设。不合适的假设会使模型完全失效——这还算是最好的结果；最坏的结果是具有危险的欺骗性。</p>
+
+<p>机会误差 = 实际结果与模型预测结果之间的误差</p>
+
+<h2 id="toc_12">关系数据库</h2>
+
+<p>数据库就是一系列相互有特定关系的数据。一个数据库就是一张表格或一组表格，表格以某种方式对数据进行管理，使数据之间的相互关系显而易见。</p>
+
+<h2 id="toc_13">整理数据：井然有序</h2>
+
+<p>乱糟糟的数据毫无用处。作为数据分析师，你花在数据整理上的时间多过数据分析上的时间。</p>
+
+<p>清理混乱数据的根本在于准备。一旦组织好数据，就能修复数据。</p>
+
+<h2 id="toc_14">正文未及的十大要诀</h2>
+
+<ol>
+<li>统计知识越渊博，分析工作越有可能取得辉煌成就</li>
+<li>娴熟的数据分析师应该是一个电子表格忍者</li>
+<li>体现出比较、对比、差异。体现出因果关系、机制、理由、系统结构。体现出多元数据。将文字、数字、图片、图形全面结合起来。充分描述证据。数据分析报告的成败在于报告内容的质量、相关性和整体性</li>
+<li>数据透视表是电子表格和数据分析软件中极其有效的数据分析工具，是探索性数据分析和相关数据库数据汇总的梦幻之作</li>
+<li>R 社区</li>
+<li>非线性与多元回归</li>
+<li>原假设-备择假设检验</li>
+<li>随机性</li>
+<li>Google Docs</li>
+<li>你的专业技能</li>
+</ol>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="14520204007085.html"  title="Previous Post: Hidden Markov Model">&laquo; Hidden Markov Model</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14520204006958.html" 
+	        title="Next Post: Graphic Model 学习笔记">Graphic Model 学习笔记 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14520204007006.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+
+
+  </body>
+</html>

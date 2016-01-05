@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
     
-  小土刀的笔记
+  Graphic Model 学习笔记 - 小土刀的笔记
   
   </title>
  <meta name="description" content="">
@@ -171,159 +171,157 @@
             </div>
             <div class="large-9 medium-9 columns">
 
- 
-
-
-	
-		<div class="markdown-body">
-		<h1>统计陷阱</h1>
-
-		<ul>
-<li>有 3 种谎言：谎言，糟糕透顶的谎言和统计资料</li>
-<li>对于追求效率的公民而言，统计思维总有一天会和读写能力一样重要</li>
-<li>使我们陷入麻烦的通常并非我们不知道的事情，而是那些我们知道却不正确的事情</li>
-<li>整数总是不完善的</li>
-<li>我需要完成一个很大的课题——统计学，但却感到我的写作功底十分有限，如果不牺牲准确性和完整性，就很难使人理解</li>
-</ul>
-
-<h2 id="toc_0">第一章 内在有偏的数据</h2>
+ <div class="markdown-body">
+<h1>Graphic Model 学习笔记</h1>
 
 <ul>
-<li>单凭某一数据很难反应实情</li>
-<li>一条河永远不可能高于它的源头，同理，对样本研究后得到的结论不会好于样本本身</li>
-<li>一个以抽样为基础的报告如果要有价值，就必须使用具有代表性的样本，这种样本排除了各种误差</li>
-<li>无形的误差与有形的误差一样容易破坏样本的可信度</li>
+<li>A compact wawy to represent joint distributions</li>
+<li>Useful to query various conditional probabilites</li>
+<li>A powerful language to model real-world systems</li>
+<li>Easy to plug in prior knowledge</li>
+<li>Extremely widely used</li>
 </ul>
 
-<h2 id="toc_1">第二章 精心挑选的平均数</h2>
-
-<p>普查工作者一般都具有足够的统计知识、技术以及调查费用以确保抽样的精确度。他们并非居心叵测之徒。但并不是所有能见到的数据都产生于这样良好的环境，也并不是所有的数据都会有附有类似的精确度说明</p>
-
-<h2 id="toc_2">第三章 没有披露的数据</h2>
+<h2 id="toc_0">Graphcial model notation</h2>
 
 <ul>
-<li>如果某条信息提供了显著性程度，你将对它有更深的了解。显著成都通常用概率表示。</li>
-<li>将『正常的』与『期望的』混为一谈导致事情变得更糟</li>
-<li>这些没有透露的数据其欺骗性在于人们经常忽略了它们的不存在，这当然也是使用这些数据的人获取成功的奥秘</li>
-<li>当一个平均数、一张图表或者某种趋势遗漏了这些重要的数据，请对它们保留一些怀疑。</li>
-</ul>
-
-<h2 id="toc_3">第四章 毫无意义的工作</h2>
+<li>Nodes: variables (with domains)
 
 <ul>
-<li>你的样本以多大的精度代表总体是可以用数据来衡量的，那就是：可能误差和标准误差</li>
-<li>只有当差别有意义时才能称之为差别</li>
-</ul>
-
-<h2 id="toc_4">第五章 惊人的统计图形</h2>
-
-<p>注意比例尺和起始标尺，这可能会产生极大的误导性</p>
-
-<h2 id="toc_5">第六章 平面图形</h2>
-
-<p>利用一维图形的信息不对称，可以营造出非常夸张的视觉效果</p>
-
-<h2 id="toc_6">第七章 不相匹配的资料</h2>
-
-<p>如果你想证明某事，却发现没有能力办到，那么试着解释其他事情并假装它们是同一回事。</p>
-
-<h2 id="toc_7">第八章 相关关系与因果关系</h2>
-
-<p>相关并不等于因果，一定要注意这里的区别</p>
-
-<h2 id="toc_8">第九章 如何进行统计操纵</h2>
+<li>Can be assigned (observed) or unassigned (unobserved)</li>
+</ul></li>
+<li>Arcs: iteractions
 
 <ul>
-<li>扭曲统计数据的最巧妙方法是利用地图</li>
-<li>百分数也给误解提供了肥沃的土壤。和小数一样，它也能为不确切的食物蒙上精确的面纱</li>
-<li>将一些看似能直接相加却不能这样操作的事情加在一起会产生大量的欺骗和隐瞒</li>
+<li>Indicate <q>direct influence</q> between variables</li>
+<li>Formally: encode conditional independence</li>
+</ul></li>
 </ul>
 
-<h2 id="toc_9">第十章 对统计资料提出的五个问题</h2>
+<h2 id="toc_1">Probabilities in BNs</h2>
 
-<ol>
-<li>谁说的？有意识的偏差和无意识的偏差</li>
-<li>他是如何知道的？注意样本的有偏，数值是否足够大</li>
-<li>遗漏了什么？</li>
-<li>是否有人偷换了概念？</li>
-<li>这个资料有意义吗？</li>
-</ol>
+<p>Bayes nets implicitly encode joint distributions.</p>
+
+<ul>
+<li>As a product of local conditional distributions</li>
+<li>To see what probability a BN gives to a full assignment, multiply all the relevant conditionals together</li>
+</ul>
+
+<p>\[P(x_1,x_2,...,x_n)=\prod_{i=1}^n P(x_i\;|\;parents(X_i))\]</p>
+
+<h2 id="toc_2">Causal Chains</h2>
+
+<p>\[X \to Y \to Z\]</p>
+
+<p>\[P(x,y,z)=P(x)P(y|x)P(z|y)\]</p>
+
+<p>Is X independent of Z given Y?</p>
+
+<p>\[\because P(z|x,y)=\frac{P(x,y,z)}{P(x,y)}=\frac{P(x)P(y|x)P(z|y)}{P(x)P(y|x)}=P(z|y)\]</p>
+
+<p>Answer is Yes. Evidence along the chain <q>blocks</q> the influence.</p>
+
+<hr/>
+
+<p>Another configuration</p>
+
+<p>\[X \gets Y \to Z\]</p>
+
+<ul>
+<li>Are X and Z independent? No</li>
+<li>Are X and Z independent given Y? Yes</li>
+</ul>
+
+<p>\[\because P(z|x,y)=\frac{P(x,y,z)}{P(x,y)}=\frac{P(y)P(x|y)P(z|y)}{P(y)P(x|y)}=P(z|y)\]</p>
+
+<p>Observing the cause blocks influence between effects</p>
+
+<hr/>
+
+<p>Last configuration: two causes of one effect(v-structures)</p>
+
+<p>\[X \to Y \gets Z\]</p>
+
+<ul>
+<li>Are X and Z independent? Yes</li>
+<li>Are X and Z independent given Y? No</li>
+</ul>
+
+<p>This is backwards from the other cases. Observing an effect activates influence between possible causes.  </p>
+
+<hr/>
+
+<p>The general case</p>
+
+<ul>
+<li>Any complex example can be analyzed using these three canonical cases</li>
+<li>General question: in a given BN, are two variables independent (given evidence)?</li>
+</ul>
+
+<h2 id="toc_3">Probabilistic Inference</h2>
+
+<p>Posterior probabilities: Probabilityof any even given any evidence</p>
+
+<h3 id="toc_4">Bayesian inference</h3>
+
+<ul>
+<li>Bayesian probability treats parameters as random variables</li>
+<li>Learning / parameter estimation is replaced by probabilistic inference \(P(\theta|D)\)</li>
+</ul>
+
+<p>Pros</p>
+
+<ul>
+<li>Elegant - no distinction between parameters and other hidden variables</li>
+<li>Can us priors to learn from small data sets</li>
+</ul>
+
+<p>Cons</p>
+
+<ul>
+<li>Math can get hairy</li>
+<li>Often computatoinally intractable</li>
+</ul>
 
 
-		</div>
-	
+</div>
 
- 
-	
+<br /><br />
+<hr />
 
- 
-	
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="14520204007006.html"  title="Previous Post: 深入浅出数据分析">&laquo; 深入浅出数据分析</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14520204006902.html" 
+	        title="Next Post: EM, GMM 指南">EM, GMM 指南 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
 
- 
-	
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
 
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
- 
-	
-
-  
-  
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14520204006958.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
 </div></div>
 
 
