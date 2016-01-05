@@ -1,88 +1,116 @@
-
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
     
   神经网络简史 - 小土刀的笔记
   
-
   </title>
-  <meta name="author" content="">
-  <meta name="description" content="">
-
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link href="asset/css/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  
   <link href="atom.xml" rel="alternate" title="小土刀的笔记" type="application/atom+xml">
-  <script src="asset/js/modernizr-2.0.js"></script>
-  <script src="asset/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
   <script src="asset/highlightjs/highlight.pack.js"></script>
-  <link href="asset/highlightjs/styles/solarized_light.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script>hljs.initHighlightingOnLoad();</script>
 
-  <style type="text/css">
-  .cat-children-p{ padding: 6px 0px;}
-  .hljs{background: none;}
-  </style>
-  <script type="text/javascript">
-  var isAddSildbar = true;
-  </script>
-  <script src="asset/js/octopress.js" type="text/javascript"></script>
-</head>
-<script type="text/javascript">
-//链接新开窗口
-function addBlankTargetForLinks () {
-  $('a[href^="http"]').each(function(){
-      $(this).attr('target', '_blank');
-  });
-}
-$(document).ready(function(event) {
-  addBlankTargetForLinks();
-});
-</script>
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="index.html">小土刀的笔记</a></h1>
-  
-    <h2></h2>
-  
-</hgroup>
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
 
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+
+  <section class="top-bar-section">
+  <div class="row">
+      <div style="position: relative;width:100%;"><div style="position: absolute; width:100%;">
+        <ul id="main-menu" class="left">
+        <li id="menu_item_index"><a href="index.html">HOME</a></li>
+        <li id="menu_item_archives"><a href="archives.html">Archives</a></li>
+        <li id="menu_item_about"><a href="about.html">ABOUT</a></li>
+        </ul>
+
+        <ul class="right" id="search-wrap">
+          <li>
+<form target="_blank" action="http://google.com/search" method="get">
     <input type="hidden" name="q" value="site:" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
+    <input tabindex="1" type="search" name="q"  placeholder="Search"/>
 </form>
-  
-<ul class="main-navigation">
-  <li><a href="index.html">Home</a></li>
-  <li><a href="archives.html">Archives</a></li>
-</ul>
+</li>
+          </ul>
+      </div></div>
+  </div>
+  </section>
 
 </nav>
-  <div id="main">
-    <div id="content"> 
-<div>
-	<article class="hentry" role="article">
-	<header>
-			  	<h1 class="entry-title">神经网络简史</h1>
-				<p class="meta"><time datetime="2016-01-05T14:00:00-05:00" pubdate data-updated="true">2016/1/5</time></p>
-			 </header>
-		  	<div class="entry-content">
-			  	<p>自图灵提出“机器与智能”，一直就有两派观点，一派认为实现人工智能必须用逻辑和符号系统，这一派看问题是自顶向下的；还有一派认为通过仿造大脑可以达到人工智能，这一派是自底向上的，他们认定如果能造一台机器，模拟大脑中的神经网络，这台机器就有智能了。前一派，我想用“想啥来啥”来形容；后一派就称之为“吃啥补啥”，估计他们的思想来源于中国古代的原始思维，套一句庸俗的哲学词，前者偏唯心，后者偏唯物。这两派一直是人工智能领域里两个阶级、两条路线的斗争，这斗争有时还你死我活。</p>
+
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; 小土刀的笔记</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+       
+       <li><a href="index.html">HOME</a></li>
+    <li><a href="archives.html">Archives</a></li>
+    <li><a href="about.html">ABOUT</a></li>
+
+    <li><label>Categories</label></li>
+
+        
+            <li><a href="math.html">数学</a></li>
+        
+            <li><a href="personal.html">个人</a></li>
+         
+
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+
+        <section id="main-content" role="main" class="scroll-container">
+ <script type="text/javascript">
+  $(function(){
+    $('#menu_item_index').addClass('is_active');
+  });
+</script>
+<div class="row">
+  <div class="large-8 medium-8 columns">
+      <div class="markdown-body article-wrap">
+       <div class="article">
+          
+          <h1>神经网络简史</h1>
+     
+        <div class="read-more clearfix">
+          <span class="date">2016/1/5</span>
+
+          <span>posted in&nbsp;</span> 
+          
+              <span class="posted-in"><a href='math.html'>数学</a></span>
+           
+         
+          <span class="comments">
+            
+
+            
+          </span>
+
+        </div>
+      </div><!-- article -->
+
+      <div class="article-content">
+      <p>自图灵提出“机器与智能”，一直就有两派观点，一派认为实现人工智能必须用逻辑和符号系统，这一派看问题是自顶向下的；还有一派认为通过仿造大脑可以达到人工智能，这一派是自底向上的，他们认定如果能造一台机器，模拟大脑中的神经网络，这台机器就有智能了。前一派，我想用“想啥来啥”来形容；后一派就称之为“吃啥补啥”，估计他们的思想来源于中国古代的原始思维，套一句庸俗的哲学词，前者偏唯心，后者偏唯物。这两派一直是人工智能领域里两个阶级、两条路线的斗争，这斗争有时还你死我活。</p>
 
 <p>模拟神经网络的原创文章发表于1943年，两位作者都是传奇人物，麦卡洛可（McCulloch）和皮茨（Pitts)。话分两头。皮茨打小就喜欢数学和哲学，初中时还读过罗素的《数学原理》，还和罗素通信，罗素爱才，邀请他到英国跟随自己学习逻辑。但皮茨家里是苦出身，连高中都读不起，英国留学自然未果。他十五岁时，他爸强行要他退学上班，就像所有爱读书的穷孩子，皮茨一怒就离家出走了。他打听到偶像罗素那时要到芝加哥大学任教，就只身来到芝加哥，还真见到了罗素，老罗遂把他推荐给那时也在芝加哥任教的卡尔纳普。卡尔纳普想看看这孩子到底有多聪明，就把自己的《语言的逻辑句法》一书送给皮茨，没过一个月，皮茨就看完了，把写满笔记的原书还给卡尔纳普。老卡惊为天人，于是给他在芝加哥大学安排了份打扫卫生的工作。别看不起打扫卫生，电影《心灵捕手》（Good Will Hunting）里马特·达蒙饰演的角色也是在知名大学打扫卫生时，不小心解了道数学难题，引起老师的注意。扫马路至少可避免流浪街头。皮茨后来结识了也在芝加哥的麦卡洛可。沃伦-麦卡洛可比皮茨大一辈，他本科在耶鲁学哲学和心理学，后在哥伦比亚得了心理学硕士和医学博士（MD)，其实医学博士和哲学博士不是一回事，MD不是学术学位，属终极职业学位，和MBA、MFA差不多。MD的那个D是指“医生”，PhD的D才是博士。麦卡洛可毕业后做了几年实习医生，先去了耶鲁研究神经生理学，后又去了伊利诺伊大学芝加哥分校，做精神病学系的教授。麦卡洛可的强项是神经科学，但不懂数学，他和十七岁的流浪汉数学票友皮茨是绝配。他们合作的成果就是神经网络的第一篇文章：“A Logical Calculus of Ideas Immanent in Nervous Activity”, 发表在《数学生物物理期刊》上。这篇文章也成了控制论的思想源泉之一。</p>
 
@@ -128,143 +156,193 @@ $(document).ready(function(event) {
 　　<br/>
 斯坦福大学人工智能实验室的创办人约翰·麦卡锡，是达特茅斯会议的主要组织者，“人工智能”这个词如果不是他最早提出的，至少是他最早使之流行的。也正是他把明斯基拉到他当时任教的麻省理工。说他是人工智能之父是名副其实，约翰大叔是铁杆的符号派。但现任的人工智能实验室主任却是神经网络的大拿Andrew Ng。这个转变也许是个“吃啥补啥”派得志的风向标。斯坦福的这个神经网络的目标是模拟人的大脑。这让我们不禁想起了罗森布拉特，那不正是他的梦想吗？</p>
 
-			</div>
+      </div>
 
-		
-	  
-		<footer>
-		 <p class="meta">
+      <div class="row">
+        <div class="large-6 columns">
+        <p class="text-left" style="padding:15px 0px;">
+      
+          <a href="14520204007285.html" 
+          title="Previous Post: HMM 最佳学习范例">&laquo; HMM 最佳学习范例</a>
+      
+        </p>
+        </div>
+        <div class="large-6 columns">
+      <p class="text-right" style="padding:15px 0px;">
+      
+          <a  href="14520204007085.html" 
+          title="Next Post: Hidden Markov Model">Hidden Markov Model &raquo;</a>
+      
+      </p>
+        </div>
+      </div>
+      <div class="comments-wrap">
+        <div class="share-comments">
+          
 
-			<strong>Categories:</strong>&nbsp; 
-			<span class="categories">
-			
-			    <a class='category' href='math.html'>数学</a>&nbsp;
-			 
-			</span>
-		    </p>
-		    <p class="meta">
+          
+
+          
+        </div>
+      </div>
+    </div><!-- article-wrap -->
+  </div><!-- large 8 -->
+
+
+
+
+ <div class="large-4 medium-4 columns">
+  <div class="hide-for-small">
+    <div id="sidebar" class="sidebar">
+          <div id="site-info" class="site-info">
+            
+                <h1>小土刀的笔记</h1>
+                <div class="site-des"></div>
+                <div class="social">
+
+
+
+
+
+
+
+
+
+
+
+  <a class="rss" href="atom.xml" title="RSS">RSS</a>
+                
+              	 </div>
+          	</div>
+              <div id="site-categories" class="side-item ">
+                <div class="side-header">
+                  <h2>Categories</h2>
+                </div>
+                <div class="side-content">
+
+      	<p class="cat-list">
+        
+            <a href="math.html"><strong>数学</strong></a>
+        
+            <a href="personal.html"><strong>个人</strong></a>
+         
+        </p>
+
+
+                </div>
+              </div>
+
+              <div id="site-categories" class="side-item">
+                <div class="side-header">
+                  <h2>Recent Posts</h2>
+                </div>
+                <div class="side-content">
+                <ul class="posts-list">
+	      
 		      
-		 </p>
-	    
-		<div class="sharing">
-			
-		</div>
+			      <li class="post">
+			        <a href="14520323012993.html">周国平人生哲思录</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14520323012929.html">爱是光着脚的哲学：古代智慧与现代爱情</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14520323012886.html">生活十讲</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14520323012841.html">人与永恒</a>
+			      </li>
+		     
+		  
+		      
+			      <li class="post">
+			        <a href="14520323012786.html">不疯魔，不哲学</a>
+			      </li>
+		     
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		  
+		      
+		   
+		  		</ul>
+                </div>
+              </div>
+        </div><!-- sidebar -->
+      </div><!-- hide for small -->
+</div><!-- large 4 -->
 
-	    <p class="meta">
-	    
-	        <a class="basic-alignment left" href="14520204007285.html" 
-	        title="Previous Post: HMM 最佳学习范例">&laquo; HMM 最佳学习范例</a>
-	    
-	    
-	        <a class="basic-alignment right" href="14520204007085.html" 
-	        title="Next Post: Hidden Markov Model">Hidden Markov Model &raquo;</a>
-	    
-	    </p>
-	  </footer>
-	</article>
+</div><!-- row -->
+
+ <div class="page-bottom clearfix">
+  <div class="row">
+   <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
 </div>
- <aside class="sidebar"> 
 
-	<section>
-	  <h1>Categories</h1>
-	  <ul id="recent_posts">
-	  
-	      <li class="post">
-	        <a href="math.html"><strong>数学&nbsp;(24)</strong></a>
-	        
-	        
-	        
-	      </li>
-	  
-	      <li class="post">
-	        <a href="personal.html"><strong>个人&nbsp;(34)</strong></a>
-	         <p class="cat-children-p"> 
-	        
-	        	<a href="psyco.html">心理&nbsp;(22)</a>&nbsp;&nbsp;
-	        
-	        	<a href="phylo.html">哲学&nbsp;(5)</a>&nbsp;&nbsp;
-	        
-	         </p> 
-	      </li>
-	   
-	  </ul>
-	</section>
-	<section>
-	  <h1>Recent Posts</h1>
-	  <ul id="recent_posts">
-	  
-	      
-		      <li class="post">
-		        <a href="14520323012993.html">周国平人生哲思录</a>
-		      </li>
-	     
-	  
-	      
-		      <li class="post">
-		        <a href="14520323012929.html">爱是光着脚的哲学：古代智慧与现代爱情</a>
-		      </li>
-	     
-	  
-	      
-		      <li class="post">
-		        <a href="14520323012886.html">生活十讲</a>
-		      </li>
-	     
-	  
-	      
-		      <li class="post">
-		        <a href="14520323012841.html">人与永恒</a>
-		      </li>
-	     
-	  
-	      
-		      <li class="post">
-		        <a href="14520323012786.html">不疯魔，不哲学</a>
-		      </li>
-	     
-	  
-	      
-	  
-	      
-	  
-	      
-	  
-	      
-	  
-	      
-	  
-	      
-	  
-	      
-	  
-	      
-	  
-	      
-	  
-	      
-	  
-	      
-	  
-	      
-	  
-	      
-	  
-	      
-	  
-	      
-	   
-	  </ul>
-	</section>
-	
-</aside> </div></div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 -  -
-  <span class="credit">Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a> &nbsp;&nbsp; Theme by <a href="http://octopress.org">Octopress</a></span>
-</p>
+        </section>
+      </div>
+    </div>
 
-</footer>
+  
+    
 
+    <script src="asset/js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+      function fixSidebarHeight(){
+        var w1 = $('.markdown-body').height();
+          var w2 = $('#sidebar').height();
+          if (w1 > w2) { $('#sidebar').height(w1); };
+      }
+      $(function(){
+        fixSidebarHeight();
+      })
+      $(window).load(function(){
+          fixSidebarHeight();
+      });
+     
+    </script>
+
+    
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-</body>
+
+  </body>
 </html>
