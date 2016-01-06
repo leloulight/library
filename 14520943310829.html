@@ -1,0 +1,942 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  fish shell 指南 - 小土刀的笔记
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="小土刀的笔记" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">小土刀的笔记</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; 小土刀的笔记</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>清单</label></li>
+
+          
+            <li><a title="好问题收集" href="14520379720179.html">好问题收集</a></li>
+          
+            <li><a title="书单合集" href="14520379720136.html">书单合集</a></li>
+          
+            <li><a title="日志列表" href="14520379720098.html">日志列表</a></li>
+          
+            <li><a title="玩物列表" href="14520379720223.html">玩物列表</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>计算机学科经典</label></li>
+
+          
+            <li><a title="大教堂与集市" href="14520876353363.html">大教堂与集市</a></li>
+          
+            <li><a title="深入理解计算机系统" href="14520855371865.html">深入理解计算机系统</a></li>
+          
+            <li><a title="程序员的思维修炼" href="14520875018555.html">程序员的思维修炼</a></li>
+          
+            <li><a title="程序员修炼之道" href="14520874386531.html">程序员修炼之道</a></li>
+          
+            <li><a title="高效程序员的45个习惯" href="14520878121031.html">高效程序员的45个习惯</a></li>
+          
+            <li><a title="代码大全" href="14520855371782.html">代码大全</a></li>
+          
+            <li><a title="编写可读代码的艺术" href="14520874726715.html">编写可读代码的艺术</a></li>
+          
+            <li><a title="移动应用UI设计模式" href="14520886280669.html">移动应用UI设计模式</a></li>
+          
+            <li><a title="启示录：打造用户喜爱的产品" href="14520907410466.html">启示录：打造用户喜爱的产品</a></li>
+          
+            <li><a title="亲爱的界面：让用户乐于使用、爱不释手" href="14520885573483.html">亲爱的界面：让用户乐于使用、爱不释手</a></li>
+          
+            <li><a title="简约之美：软件设计之道" href="14520879229686.html">简约之美：软件设计之道</a></li>
+          
+            <li><a title="简单之美：软件开发实践者的思考" href="14520878623936.html">简单之美：软件开发实践者的思考</a></li>
+          
+            <li><a title="构建之法：现代软件工程" href="14520880342127.html">构建之法：现代软件工程</a></li>
+          
+            <li><a title="软件项目成功之道" href="14520883368873.html">软件项目成功之道</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>工具</label></li>
+
+          
+            <li><a title="Mac 指南" href="14520959875185.html">Mac 指南</a></li>
+          
+            <li><a title="Bash 指南" href="14520940884566.html">Bash 指南</a></li>
+          
+            <li><a title="Hexo 指南" href="14520953748408.html">Hexo 指南</a></li>
+          
+            <li><a title="VS Code 指南" href="14520964818956.html">VS Code 指南</a></li>
+          
+            <li><a title="Homebrew 指南" href="14520954251052.html">Homebrew 指南</a></li>
+          
+            <li><a title="Pandoc 指南" href="14520962259349.html">Pandoc 指南</a></li>
+          
+            <li><a title="Vim 指南" href="14520964365928.html">Vim 指南</a></li>
+          
+            <li><a title="Sublime 指南" href="14520965272426.html">Sublime 指南</a></li>
+          
+            <li><a title="Latex 指南" href="14520955052445.html">Latex 指南</a></li>
+          
+            <li><a title="Git 指南" href="14520951022304.html">Git 指南</a></li>
+          
+            <li><a title="Github 生活指南" href="14520951022388.html">Github 生活指南</a></li>
+          
+            <li><a title="iTerm2 指南" href="14520954757815.html">iTerm2 指南</a></li>
+          
+            <li><a title="Ubuntu 指南" href="14520961679182.html">Ubuntu 指南</a></li>
+          
+            <li><a title="谷歌搜索技巧" href="14520951022464.html">谷歌搜索技巧</a></li>
+          
+            <li><a title="Make 指南" href="14520961098604.html">Make 指南</a></li>
+          
+            <li><a title="GCC 简易指南" href="14520948089088.html">GCC 简易指南</a></li>
+          
+            <li><a title="fish shell 指南" href="14520943310829.html">fish shell 指南</a></li>
+          
+            <li><a title="Gradle 指南" href="14520951022555.html">Gradle 指南</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Research</label></li>
+
+          
+            <li><a title="知识图谱沉思录" href="14520583101537.html">知识图谱沉思录</a></li>
+          
+            <li><a title="计算机视觉沉思录" href="14520483585854.html">计算机视觉沉思录</a></li>
+          
+            <li><a title="推荐系统沉思录" href="14520495721664.html">推荐系统沉思录</a></li>
+          
+            <li><a title="数据分析沉思录" href="14520494829635.html">数据分析沉思录</a></li>
+          
+            <li><a title="机器学习沉思录" href="14520493984651.html">机器学习沉思录</a></li>
+          
+            <li><a title="3D 打印沉思录" href="14520902603411.html">3D 打印沉思录</a></li>
+          
+            <li><a title="HMM 指南" href="14520495021796.html">HMM 指南</a></li>
+          
+            <li><a title="EM / GMM 指南" href="14520494287936.html">EM / GMM 指南</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>iOS</label></li>
+
+          
+            <li><a title="iOS 学习路径" href="14520467690026.html">iOS 学习路径</a></li>
+          
+            <li><a title="iOS 面试相关" href="14520467689968.html">iOS 面试相关</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Android</label></li>
+
+          
+            <li><a title="Android Studio 指南" href="14520922857884.html">Android Studio 指南</a></li>
+          
+            <li><a title="Google Map V2 使用指南" href="14520474070782.html">Google Map V2 使用指南</a></li>
+          
+            <li><a title="ActionBar 使用指南" href="14520474070736.html">ActionBar 使用指南</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Web</label></li>
+
+          
+            <li><a title="网络协议指南" href="14520476779491.html">网络协议指南</a></li>
+          
+            <li><a title="Node.js 命令行程序实例" href="14520476779456.html">Node.js 命令行程序实例</a></li>
+          
+            <li><a title="Flask Study Note" href="14520476779406.html">Flask Study Note</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>关于</label></li>
+
+          
+            <li><a title="版权声明" href="14520576386063.html">版权声明</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>清单</span></li>
+                        
+                          <li><a title="好问题收集" href="14520379720179.html">好问题收集</a></li>
+                        
+                          <li><a title="书单合集" href="14520379720136.html">书单合集</a></li>
+                        
+                          <li><a title="日志列表" href="14520379720098.html">日志列表</a></li>
+                        
+                          <li><a title="玩物列表" href="14520379720223.html">玩物列表</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>计算机学科经典</span></li>
+                        
+                          <li><a title="大教堂与集市" href="14520876353363.html">大教堂与集市</a></li>
+                        
+                          <li><a title="深入理解计算机系统" href="14520855371865.html">深入理解计算机系统</a></li>
+                        
+                          <li><a title="程序员的思维修炼" href="14520875018555.html">程序员的思维修炼</a></li>
+                        
+                          <li><a title="程序员修炼之道" href="14520874386531.html">程序员修炼之道</a></li>
+                        
+                          <li><a title="高效程序员的45个习惯" href="14520878121031.html">高效程序员的45个习惯</a></li>
+                        
+                          <li><a title="代码大全" href="14520855371782.html">代码大全</a></li>
+                        
+                          <li><a title="编写可读代码的艺术" href="14520874726715.html">编写可读代码的艺术</a></li>
+                        
+                          <li><a title="移动应用UI设计模式" href="14520886280669.html">移动应用UI设计模式</a></li>
+                        
+                          <li><a title="启示录：打造用户喜爱的产品" href="14520907410466.html">启示录：打造用户喜爱的产品</a></li>
+                        
+                          <li><a title="亲爱的界面：让用户乐于使用、爱不释手" href="14520885573483.html">亲爱的界面：让用户乐于使用、爱不释手</a></li>
+                        
+                          <li><a title="简约之美：软件设计之道" href="14520879229686.html">简约之美：软件设计之道</a></li>
+                        
+                          <li><a title="简单之美：软件开发实践者的思考" href="14520878623936.html">简单之美：软件开发实践者的思考</a></li>
+                        
+                          <li><a title="构建之法：现代软件工程" href="14520880342127.html">构建之法：现代软件工程</a></li>
+                        
+                          <li><a title="软件项目成功之道" href="14520883368873.html">软件项目成功之道</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>工具</span></li>
+                        
+                          <li><a title="Mac 指南" href="14520959875185.html">Mac 指南</a></li>
+                        
+                          <li><a title="Bash 指南" href="14520940884566.html">Bash 指南</a></li>
+                        
+                          <li><a title="Hexo 指南" href="14520953748408.html">Hexo 指南</a></li>
+                        
+                          <li><a title="VS Code 指南" href="14520964818956.html">VS Code 指南</a></li>
+                        
+                          <li><a title="Homebrew 指南" href="14520954251052.html">Homebrew 指南</a></li>
+                        
+                          <li><a title="Pandoc 指南" href="14520962259349.html">Pandoc 指南</a></li>
+                        
+                          <li><a title="Vim 指南" href="14520964365928.html">Vim 指南</a></li>
+                        
+                          <li><a title="Sublime 指南" href="14520965272426.html">Sublime 指南</a></li>
+                        
+                          <li><a title="Latex 指南" href="14520955052445.html">Latex 指南</a></li>
+                        
+                          <li><a title="Git 指南" href="14520951022304.html">Git 指南</a></li>
+                        
+                          <li><a title="Github 生活指南" href="14520951022388.html">Github 生活指南</a></li>
+                        
+                          <li><a title="iTerm2 指南" href="14520954757815.html">iTerm2 指南</a></li>
+                        
+                          <li><a title="Ubuntu 指南" href="14520961679182.html">Ubuntu 指南</a></li>
+                        
+                          <li><a title="谷歌搜索技巧" href="14520951022464.html">谷歌搜索技巧</a></li>
+                        
+                          <li><a title="Make 指南" href="14520961098604.html">Make 指南</a></li>
+                        
+                          <li><a title="GCC 简易指南" href="14520948089088.html">GCC 简易指南</a></li>
+                        
+                          <li><a title="fish shell 指南" href="14520943310829.html">fish shell 指南</a></li>
+                        
+                          <li><a title="Gradle 指南" href="14520951022555.html">Gradle 指南</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Research</span></li>
+                        
+                          <li><a title="知识图谱沉思录" href="14520583101537.html">知识图谱沉思录</a></li>
+                        
+                          <li><a title="计算机视觉沉思录" href="14520483585854.html">计算机视觉沉思录</a></li>
+                        
+                          <li><a title="推荐系统沉思录" href="14520495721664.html">推荐系统沉思录</a></li>
+                        
+                          <li><a title="数据分析沉思录" href="14520494829635.html">数据分析沉思录</a></li>
+                        
+                          <li><a title="机器学习沉思录" href="14520493984651.html">机器学习沉思录</a></li>
+                        
+                          <li><a title="3D 打印沉思录" href="14520902603411.html">3D 打印沉思录</a></li>
+                        
+                          <li><a title="HMM 指南" href="14520495021796.html">HMM 指南</a></li>
+                        
+                          <li><a title="EM / GMM 指南" href="14520494287936.html">EM / GMM 指南</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>iOS</span></li>
+                        
+                          <li><a title="iOS 学习路径" href="14520467690026.html">iOS 学习路径</a></li>
+                        
+                          <li><a title="iOS 面试相关" href="14520467689968.html">iOS 面试相关</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Android</span></li>
+                        
+                          <li><a title="Android Studio 指南" href="14520922857884.html">Android Studio 指南</a></li>
+                        
+                          <li><a title="Google Map V2 使用指南" href="14520474070782.html">Google Map V2 使用指南</a></li>
+                        
+                          <li><a title="ActionBar 使用指南" href="14520474070736.html">ActionBar 使用指南</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Web</span></li>
+                        
+                          <li><a title="网络协议指南" href="14520476779491.html">网络协议指南</a></li>
+                        
+                          <li><a title="Node.js 命令行程序实例" href="14520476779456.html">Node.js 命令行程序实例</a></li>
+                        
+                          <li><a title="Flask Study Note" href="14520476779406.html">Flask Study Note</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>关于</span></li>
+                        
+                          <li><a title="版权声明" href="14520576386063.html">版权声明</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>fish shell 指南</h1>
+
+<!-- MarkdownTOC -->
+
+<ul>
+<li>Why fish?</li>
+<li>Learning fish</li>
+<li>Running Commands</li>
+<li>Getting Help</li>
+<li>Syntax Highlighting</li>
+<li>Wildcards</li>
+<li>Pipes and Redirections</li>
+<li>Autosuggestions</li>
+<li>Tab Completions</li>
+<li>Variables</li>
+<li>Exit Status</li>
+<li>Exports (Environment Variables)</li>
+<li>Lists</li>
+<li>Command Substitutions</li>
+<li>Combiners (And, Or, Not)</li>
+<li>Conditionals (If, Else, Switch)</li>
+<li>Functions</li>
+<li>Loops</li>
+<li>Prompt</li>
+<li>$PATH</li>
+<li>Startup (Where&#39;s .bashrc?)
+
+<ul>
+<li>Autoloading Functions</li>
+<li>Universal Variables</li>
+</ul></li>
+</ul>
+
+<!-- /MarkdownTOC -->
+
+<h2 id="toc_0">Why fish?</h2>
+
+<p>fish is a fully-equipped command line shell (like bash or zsh) that is smart and user-friendly. fish supports powerful features like syntax highlighting, autosuggestions, and tab completions that just work, with nothing to learn or configure.</p>
+
+<p>If you want to make your command line more productive, more useful, and more fun, without learning a bunch of arcane syntax and configuration options, then fish might be just what you&#39;re looking for!</p>
+
+<h2 id="toc_1">Learning fish</h2>
+
+<p>This tutorial assumes a basic understanding of command line shells and Unix commands, and that you have a working copy of fish.</p>
+
+<p>If you have a strong understanding of other shells, and want to know what fish does differently, search for the magic phrase unlike other shells, which is used to call out important differences.</p>
+
+<p>When you start fish, you should see this:</p>
+
+<pre><code>Welcome to fish, the friendly interactive shell
+Type help for instructions on how to use fish
+you@hostname ~&gt;
+</code></pre>
+
+<p>fish comes with a default prompt that shows your username, hostname, and working directory. You&#39;ll see how to change your prompt further down. From now on, we&#39;ll pretend your prompt is just a &#39;&gt;&#39; to save space.</p>
+
+<h2 id="toc_2">Running Commands</h2>
+
+<p>fish runs commands like other shells: you type a command, followed by its arguments. Spaces are separators:</p>
+
+<pre><code>&gt; echo hello world
+hello world
+</code></pre>
+
+<p>You can include a literal space in an argument with a backslash, or by using single or double quotes:</p>
+
+<pre><code>&gt; mkdir My\ Files
+&gt; cp ~/Some\ File &#39;My Files&#39;
+&gt; ls &quot;My Files&quot;
+Some File
+</code></pre>
+
+<p>Commands can be chained with semicolons.</p>
+
+<h2 id="toc_3">Getting Help</h2>
+
+<p>fish has excellent help and man pages. Run help to open help in a web browser, and man to open it in a man page. You can also ask for help with a specific command, for example, help set to open in a web browser, or man set to see it in the terminal.</p>
+
+<pre><code>&gt; man set
+set - handle environment variables
+    Synopsis...
+</code></pre>
+
+<h2 id="toc_4">Syntax Highlighting</h2>
+
+<p>You&#39;ll quickly notice that fish performs syntax highlighting as you type. Invalid commands are colored red by default:</p>
+
+<pre><code>&gt; /bin/mkd
+</code></pre>
+
+<p>A command may be invalid because it does not exist, or refers to a file that you cannot execute. When the command becomes valid, it is shown in a different color:</p>
+
+<pre><code>&gt; /bin/mkdir
+</code></pre>
+
+<p>fish will underline valid file paths as you type them:</p>
+
+<pre><code>&gt; cat ~/somefi
+</code></pre>
+
+<p>This tells you that there exists a file that starts with &#39;somefi&#39;, which is useful feedback as you type.</p>
+
+<p>These colors, and many more, can be changed by running fish_config, or by modifying variables directly.</p>
+
+<h2 id="toc_5">Wildcards</h2>
+
+<p>fish supports the familiar wildcard *. To list all JPEG files:</p>
+
+<pre><code>&gt; ls *.jpg
+lena.jpg
+meena.jpg
+santa maria.jpg
+</code></pre>
+
+<p>You can include multiple wildcards:</p>
+
+<pre><code>&gt; ls l*.p*
+lena.png
+lesson.pdf
+</code></pre>
+
+<p>Especially powerful is the recursive wildcard ** which searches directories recursively:</p>
+
+<pre><code>&gt; ls /var/**.log
+/var/log/system.log
+/var/run/sntp.log
+</code></pre>
+
+<p>If that directory traversal is taking a long time, you can control-C out of it.</p>
+
+<h2 id="toc_6">Pipes and Redirections</h2>
+
+<p>You can pipe between commands with the usual vertical bar:</p>
+
+<pre><code>&gt; echo hello world | wc
+           1       2      12
+</code></pre>
+
+<p>stdin and stdout can be redirected via the familiar &lt; and &gt;. Unlike other shells, stderr is redirected with a caret ^</p>
+
+<pre><code>&gt; grep fish &lt; /etc/shells &gt; ~/output.txt ^ ~/errors.txt
+</code></pre>
+
+<h2 id="toc_7">Autosuggestions</h2>
+
+<p>fish suggests commands as you type, and shows the suggestion to the right of the cursor, in gray. For example:</p>
+
+<pre><code>&gt; /bin/hostname
+</code></pre>
+
+<p>It knows about paths and options:</p>
+
+<pre><code>&gt; grep --ignore-case
+</code></pre>
+
+<p>And history too. Type a command once, and you can re-summon it by just typing a few letters:</p>
+
+<pre><code>&gt; rsync -avze ssh .
+myname@somelonghost.com:/some/long/path/doo/dee/doo/dee/doo
+</code></pre>
+
+<p>To accept the autosuggestion, hit right arrow or Control-F. If the autosuggestion is not what you want, just ignore it.</p>
+
+<h2 id="toc_8">Tab Completions</h2>
+
+<p>fish comes with a rich set of tab completions, that work <q>out of the box.</q></p>
+
+<p>Press tab, and fish will attempt to complete the command, argument, or path:</p>
+
+<pre><code>&gt; /pri&lt;tab&gt; → /private/
+</code></pre>
+
+<p>If there&#39;s more than one possibility, it will list them:</p>
+
+<pre><code>&gt; ~/stuff/s&lt;tab&gt;
+~/stuff/script.sh  (Executable, 4.8kB)  ~/stuff/sources/  (Directory)
+</code></pre>
+
+<p>Hit tab again to cycle through the possibilities.</p>
+
+<p>fish can also complete many commands, like git branches:</p>
+
+<pre><code>&gt; git merge pr&lt;tab&gt; → git merge prompt_designer
+&gt; git checkout b&lt;tab&gt;
+builtin_list_io_merge  (Branch)  builtin_set_color  (Branch)  busted_events  (Tag)
+</code></pre>
+
+<p>Try hitting tab and see what fish can do!</p>
+
+<h2 id="toc_9">Variables</h2>
+
+<p>Like other shells, a dollar sign performs variable substitution:</p>
+
+<pre><code>&gt; echo My home directory is $HOME
+My home directory is /home/tutorial
+</code></pre>
+
+<p>Variable substitution also occurs in double quotes, but not single quotes:</p>
+
+<pre><code>&gt; echo &quot;My current directory is $PWD&quot;
+My current directory is /home/tutorial
+&gt; echo &#39;My current directory is $PWD&#39;
+My current directory is $PWD
+</code></pre>
+
+<p>Unlike other shells, fish has no dedicated syntax for setting variables. Instead it has an ordinary command: set, which takes a variable name, and then its value.</p>
+
+<pre><code>&gt; set name &#39;Mister Noodle&#39;
+&gt; echo $name
+Mister Noodle
+</code></pre>
+
+<p>(Notice the quotes: without them, Mister and Noodle would have been separate arguments, and $name would have been made into a list of two elements.)</p>
+
+<p>Unlike other shells, variables are not further split after substitution:</p>
+
+<pre><code>&gt; mkdir $name
+&gt; ls
+Mister Noodle
+</code></pre>
+
+<p>In bash, this would have created two directories <q>Mister</q> and <q>Noodle</q>. In fish, it created only one: the variable had the value <q>Mister Noodle</q>, so that is the argument that was passed to mkdir, spaces and all.</p>
+
+<h2 id="toc_10">Exit Status</h2>
+
+<p>Unlike other shells, fish stores the exit status of the last command in \(status instead of \)?.</p>
+
+<pre><code>&gt; false
+&gt; echo $status
+1
+</code></pre>
+
+<p>Zero is considered success, and non-zero is failure.</p>
+
+<h2 id="toc_11">Exports (Environment Variables)</h2>
+
+<p>Unlike other shells, fish does not have an export command. Instead, a variable is exported via an option to set, either --export or just -x.</p>
+
+<pre><code>&gt; set -x MyVariable SomeValue
+&gt; env | grep MyVariable
+MyVariable=SomeValue
+</code></pre>
+
+<p>You can erase a variable with -e or --erase</p>
+
+<pre><code>&gt; set -e MyVariable
+&gt; env | grep MyVariable
+(no output)
+</code></pre>
+
+<h2 id="toc_12">Lists</h2>
+
+<p>The set command above used quotes to ensure that Mister Noodle was one argument. If it had been two arguments, then name would have been a list of length 2. In fact, all variables in fish are really lists, that can contain any number of values, or none at all.</p>
+
+<p>Some variables, like $PWD, only have one value. By convention, we talk about that variable&#39;s value, but we really mean its first (and only) value.</p>
+
+<p>Other variables, like $PATH, really do have multiple values. During variable expansion, the variable expands to become multiple arguments:</p>
+
+<pre><code>&gt; echo $PATH
+/usr/bin /bin /usr/sbin /sbin /usr/local/bin
+</code></pre>
+
+<p>Lists cannot contain other lists: there is no recursion. A variable is a list of strings, full stop.</p>
+
+<p>Get the length of a list with count:</p>
+
+<pre><code>&gt; count $PATH
+5
+</code></pre>
+
+<p>You can append (or prepend) to a list by setting the list to itself, with some additional arguments. Here we append /usr/local/bin to $PATH:</p>
+
+<pre><code>&gt; set PATH $PATH /usr/local/bin
+</code></pre>
+
+<p>You can access individual elements with square brackets. Indexing starts at 1 from the beginning, and -1 from the end:</p>
+
+<pre><code>&gt; echo $PATH
+/usr/bin /bin /usr/sbin /sbin /usr/local/bin
+&gt; echo $PATH[1]
+/usr/bin
+&gt; echo $PATH[-1]
+/usr/local/bin
+</code></pre>
+
+<p>You can also access ranges of elements, known as <q>slices:</q></p>
+
+<pre><code>&gt; echo $PATH[1..2]
+/usr/bin /bin
+&gt; echo $PATH[-1..2]
+/usr/local/bin /sbin /usr/sbin /bin
+</code></pre>
+
+<p>You can iterate over a list (or a slice) with a for loop:</p>
+
+<pre><code>&gt; for val in $PATH
+      echo &quot;entry: $val&quot;
+  end
+entry: usr/bin/
+entry: /bin
+entry: /usr/sbin
+entry: /sbin
+entry: /usr/local/bin
+</code></pre>
+
+<h2 id="toc_13">Command Substitutions</h2>
+
+<p>Command substitutions use the output of one command as an argument to another. Unlike other shells, fish does not use backticks ` for command substitutions. Instead, it uses parentheses:</p>
+
+<pre><code>&gt; echo In (pwd), running (uname)
+In /home/tutorial, running FreeBSD
+</code></pre>
+
+<p>A common idiom is to capture the output of a command in a variable:</p>
+
+<pre><code>&gt; set os (uname)
+&gt; echo $os
+Linux
+</code></pre>
+
+<p>Command substitutions are not expanded within quotes. Instead, you can temporarily close the quotes, add the command substitution, and reopen them, all in the same argument:</p>
+
+<pre><code>&gt; touch &quot;testing_&quot;(date +%s)&quot;.txt&quot;
+&gt; ls *.txt
+testing_1360099791.txt
+</code></pre>
+
+<h2 id="toc_14">Combiners (And, Or, Not)</h2>
+
+<p>Unlike other shells, fish does not have special syntax like &amp;&amp; or || to combine commands. Instead it has commands and, or, and not.</p>
+
+<pre><code>&gt; cp file1.txt file1_bak.txt; and echo &quot;Backup successful&quot;; or echo &quot;Backup failed&quot;
+Backup failed
+</code></pre>
+
+<h2 id="toc_15">Conditionals (If, Else, Switch)</h2>
+
+<p>Use if, else if, and else to conditionally execute code, based on the exit status of a command.</p>
+
+<pre><code>if grep fish /etc/shells
+        echo Found fish
+else if grep bash /etc/shells
+        echo Found bash
+else
+        echo Got nothing
+end
+</code></pre>
+
+<p>There is also a switch command:</p>
+
+<pre><code>switch (uname)
+        case Linux
+                echo Hi Tux!
+        case Darwin
+                echo Hi Hexley!
+        case FreeBSD NetBSD DragonFly
+                echo Hi Beastie!
+        case &#39;*&#39;
+                echo Hi, stranger!
+end
+</code></pre>
+
+<p>Note that case does not fall through, and can accept multiple arguments or (quoted) wildcards.</p>
+
+<h2 id="toc_16">Functions</h2>
+
+<p>A fish function is a list of commands, which may optionally take arguments. Unlike other shells, arguments are not passed in <q>numbered variables</q> like \(1, but instead in a single list \)argv. To create a function, use the function builtin:</p>
+
+<pre><code>&gt; function say_hello
+         echo Hello $argv
+  end
+&gt; say_hello
+Hello
+&gt; say_hello everybody!
+Hello everybody!
+</code></pre>
+
+<p>Unlike other shells, fish does not have aliases or special prompt syntax. Functions take their place.</p>
+
+<p>You can list the names of all functions with the functions keyword (note the plural!). fish starts out with a number of functions:</p>
+
+<pre><code>&gt; functions
+alias, cd, delete-or-exit, dirh, dirs, down-or-search, eval, export, fish_command_not_found_setup, fish_config, fish_default_key_bindings, fish_prompt, fish_right_prompt, fish_sigtrap_handler, fish_update_completions, funced, funcsave, grep, help, history, isatty, ls, man, math, nextd, nextd-or-forward-word, open, popd, prevd, prevd-or-backward-word, prompt_pwd, psub, pushd, seq, setenv, sgrep, trap, type, umask, up-or-search, vared
+</code></pre>
+
+<p>You can see the source for any function by passing its name to functions:</p>
+
+<pre><code>&gt; functions ls
+function ls --description &#39;List contents of directory&#39;
+        command ls -G $argv
+end
+</code></pre>
+
+<h2 id="toc_17">Loops</h2>
+
+<p>While loops:</p>
+
+<pre><code>&gt; while true
+        echo &quot;Loop forever&quot;
+end
+Loop forever
+Loop forever
+Loop forever
+...
+</code></pre>
+
+<p>For loops can be used to iterate over a list. For example, a list of files:</p>
+
+<pre><code>&gt; for file in *.txt
+        cp $file $file.bak
+end
+</code></pre>
+
+<p>Iterating over a list of numbers can be done with <code>seq</code>:</p>
+
+<pre><code>&gt; for x in (seq 5)
+        touch file_$x.txt
+end
+</code></pre>
+
+<h2 id="toc_18">Prompt</h2>
+
+<p>Unlike other shells, there is no prompt variable like PS1. To display your prompt, fish executes a function with the name fish_prompt, and its output is used as the prompt. You can define your own prompt:</p>
+
+<pre><code>&gt; function fish_prompt
+        echo &quot;New Prompt % &quot;
+  end
+New Prompt %
+</code></pre>
+
+<p>Multiple lines are OK. Colors can be set via set_color, passing it named ANSI colors, or hex RGB values:</p>
+
+<pre><code>&gt; function fish_prompt
+        set_color purple
+        date &quot;+%m/%d/%y&quot;
+        set_color FF0
+        echo (pwd) &#39;&gt;&#39;
+        set_color normal
+  end
+02/06/13
+/home/tutorial &gt;
+</code></pre>
+
+<p>You can choose among some sample prompts by running <code>fish_config prompt</code>. fish also supports RPROMPT through <code>fish_right_prompt</code>.</p>
+
+<h2 id="toc_19">$PATH</h2>
+
+<p>\(PATH is an environment variable containing the directories in which fish searches for commands. Instead of separating entries with a colon, \)PATH is a list. You can modify $PATH in a few ways:</p>
+
+<p>1.By modifying the <code>$fish_user_paths</code> variable, which is automatically appended to \(PATH. For example, to permanently add /usr/local/bin to your \)PATH, you could write:</p>
+
+<pre><code>&gt; set -U fish_user_paths $fish_user_paths /usr/local/bin
+</code></pre>
+
+<p>2.Directly in config.fish (see below).</p>
+
+<h2 id="toc_20">Startup (Where&#39;s .bashrc?)</h2>
+
+<p>fish starts by executing commands in <code>~/.config/fish/config.fish</code>. You can create it if it does not exist.</p>
+
+<p>It is possible to directly create functions and variables in config.fish file, using the commands shown above. For example:</p>
+
+<pre><code>&gt; cat ~/.config/fish/config.fish
+
+set -x PATH $PATH /sbin/
+
+function ll
+    ls -lh $argv
+end
+</code></pre>
+
+<p>However, it is more common and efficient to use autoloading functions and universal variables.</p>
+
+<h3 id="toc_21">Autoloading Functions</h3>
+
+<p>When fish encounters a command, it attempts to autoload a function for that command, by looking for a file with the name of that command in <code>~/.config/fish/functions/</code>.</p>
+
+<p>For example, if you wanted to have a function ll, you would add a text file ll.fish to <code>~/.config/fish/functions</code>:</p>
+
+<pre><code>&gt; cat ~/.config/fish/functions/ll.fish
+function ll
+        ls -lh $argv
+end
+</code></pre>
+
+<p>This is the preferred way to define your prompt as well:</p>
+
+<pre><code>&gt; cat ~/.config/fish/functions/fish_prompt.fish
+function fish_prompt
+        echo (pwd) &#39;&gt; &#39;
+end
+</code></pre>
+
+<p>See the documentation for funced and funcsave for ways to create these files automatically.</p>
+
+<h3 id="toc_22">Universal Variables</h3>
+
+<p>A universal variable is a variable whose value is shared across all instances of fish, now and in the future - even after a reboot. You can make a variable universal with set -U:</p>
+
+<pre><code>&gt; set -U EDITOR vim
+</code></pre>
+
+<p>Now in another shell:</p>
+
+<pre><code>&gt; echo $EDITOR
+vim
+</code></pre>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="14520948089088.html"  title="Previous Post: GCC 简易指南">&laquo; GCC 简易指南</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14520951022555.html" 
+	        title="Next Post: Gradle 指南">Gradle 指南 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14520943310829.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>

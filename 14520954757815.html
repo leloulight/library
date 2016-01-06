@@ -1,0 +1,558 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  iTerm2 指南 - 小土刀的笔记
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="小土刀的笔记" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">小土刀的笔记</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; 小土刀的笔记</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>清单</label></li>
+
+          
+            <li><a title="好问题收集" href="14520379720179.html">好问题收集</a></li>
+          
+            <li><a title="书单合集" href="14520379720136.html">书单合集</a></li>
+          
+            <li><a title="日志列表" href="14520379720098.html">日志列表</a></li>
+          
+            <li><a title="玩物列表" href="14520379720223.html">玩物列表</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>计算机学科经典</label></li>
+
+          
+            <li><a title="大教堂与集市" href="14520876353363.html">大教堂与集市</a></li>
+          
+            <li><a title="深入理解计算机系统" href="14520855371865.html">深入理解计算机系统</a></li>
+          
+            <li><a title="程序员的思维修炼" href="14520875018555.html">程序员的思维修炼</a></li>
+          
+            <li><a title="程序员修炼之道" href="14520874386531.html">程序员修炼之道</a></li>
+          
+            <li><a title="高效程序员的45个习惯" href="14520878121031.html">高效程序员的45个习惯</a></li>
+          
+            <li><a title="代码大全" href="14520855371782.html">代码大全</a></li>
+          
+            <li><a title="编写可读代码的艺术" href="14520874726715.html">编写可读代码的艺术</a></li>
+          
+            <li><a title="移动应用UI设计模式" href="14520886280669.html">移动应用UI设计模式</a></li>
+          
+            <li><a title="启示录：打造用户喜爱的产品" href="14520907410466.html">启示录：打造用户喜爱的产品</a></li>
+          
+            <li><a title="亲爱的界面：让用户乐于使用、爱不释手" href="14520885573483.html">亲爱的界面：让用户乐于使用、爱不释手</a></li>
+          
+            <li><a title="简约之美：软件设计之道" href="14520879229686.html">简约之美：软件设计之道</a></li>
+          
+            <li><a title="简单之美：软件开发实践者的思考" href="14520878623936.html">简单之美：软件开发实践者的思考</a></li>
+          
+            <li><a title="构建之法：现代软件工程" href="14520880342127.html">构建之法：现代软件工程</a></li>
+          
+            <li><a title="软件项目成功之道" href="14520883368873.html">软件项目成功之道</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>工具</label></li>
+
+          
+            <li><a title="Mac 指南" href="14520959875185.html">Mac 指南</a></li>
+          
+            <li><a title="Bash 指南" href="14520940884566.html">Bash 指南</a></li>
+          
+            <li><a title="Hexo 指南" href="14520953748408.html">Hexo 指南</a></li>
+          
+            <li><a title="VS Code 指南" href="14520964818956.html">VS Code 指南</a></li>
+          
+            <li><a title="Homebrew 指南" href="14520954251052.html">Homebrew 指南</a></li>
+          
+            <li><a title="Pandoc 指南" href="14520962259349.html">Pandoc 指南</a></li>
+          
+            <li><a title="Vim 指南" href="14520964365928.html">Vim 指南</a></li>
+          
+            <li><a title="Sublime 指南" href="14520965272426.html">Sublime 指南</a></li>
+          
+            <li><a title="Latex 指南" href="14520955052445.html">Latex 指南</a></li>
+          
+            <li><a title="Git 指南" href="14520951022304.html">Git 指南</a></li>
+          
+            <li><a title="Github 生活指南" href="14520951022388.html">Github 生活指南</a></li>
+          
+            <li><a title="iTerm2 指南" href="14520954757815.html">iTerm2 指南</a></li>
+          
+            <li><a title="Ubuntu 指南" href="14520961679182.html">Ubuntu 指南</a></li>
+          
+            <li><a title="谷歌搜索技巧" href="14520951022464.html">谷歌搜索技巧</a></li>
+          
+            <li><a title="Make 指南" href="14520961098604.html">Make 指南</a></li>
+          
+            <li><a title="GCC 简易指南" href="14520948089088.html">GCC 简易指南</a></li>
+          
+            <li><a title="fish shell 指南" href="14520943310829.html">fish shell 指南</a></li>
+          
+            <li><a title="Gradle 指南" href="14520951022555.html">Gradle 指南</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Research</label></li>
+
+          
+            <li><a title="知识图谱沉思录" href="14520583101537.html">知识图谱沉思录</a></li>
+          
+            <li><a title="计算机视觉沉思录" href="14520483585854.html">计算机视觉沉思录</a></li>
+          
+            <li><a title="推荐系统沉思录" href="14520495721664.html">推荐系统沉思录</a></li>
+          
+            <li><a title="数据分析沉思录" href="14520494829635.html">数据分析沉思录</a></li>
+          
+            <li><a title="机器学习沉思录" href="14520493984651.html">机器学习沉思录</a></li>
+          
+            <li><a title="3D 打印沉思录" href="14520902603411.html">3D 打印沉思录</a></li>
+          
+            <li><a title="HMM 指南" href="14520495021796.html">HMM 指南</a></li>
+          
+            <li><a title="EM / GMM 指南" href="14520494287936.html">EM / GMM 指南</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>iOS</label></li>
+
+          
+            <li><a title="iOS 学习路径" href="14520467690026.html">iOS 学习路径</a></li>
+          
+            <li><a title="iOS 面试相关" href="14520467689968.html">iOS 面试相关</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Android</label></li>
+
+          
+            <li><a title="Android Studio 指南" href="14520922857884.html">Android Studio 指南</a></li>
+          
+            <li><a title="Google Map V2 使用指南" href="14520474070782.html">Google Map V2 使用指南</a></li>
+          
+            <li><a title="ActionBar 使用指南" href="14520474070736.html">ActionBar 使用指南</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Web</label></li>
+
+          
+            <li><a title="网络协议指南" href="14520476779491.html">网络协议指南</a></li>
+          
+            <li><a title="Node.js 命令行程序实例" href="14520476779456.html">Node.js 命令行程序实例</a></li>
+          
+            <li><a title="Flask Study Note" href="14520476779406.html">Flask Study Note</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>关于</label></li>
+
+          
+            <li><a title="版权声明" href="14520576386063.html">版权声明</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>清单</span></li>
+                        
+                          <li><a title="好问题收集" href="14520379720179.html">好问题收集</a></li>
+                        
+                          <li><a title="书单合集" href="14520379720136.html">书单合集</a></li>
+                        
+                          <li><a title="日志列表" href="14520379720098.html">日志列表</a></li>
+                        
+                          <li><a title="玩物列表" href="14520379720223.html">玩物列表</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>计算机学科经典</span></li>
+                        
+                          <li><a title="大教堂与集市" href="14520876353363.html">大教堂与集市</a></li>
+                        
+                          <li><a title="深入理解计算机系统" href="14520855371865.html">深入理解计算机系统</a></li>
+                        
+                          <li><a title="程序员的思维修炼" href="14520875018555.html">程序员的思维修炼</a></li>
+                        
+                          <li><a title="程序员修炼之道" href="14520874386531.html">程序员修炼之道</a></li>
+                        
+                          <li><a title="高效程序员的45个习惯" href="14520878121031.html">高效程序员的45个习惯</a></li>
+                        
+                          <li><a title="代码大全" href="14520855371782.html">代码大全</a></li>
+                        
+                          <li><a title="编写可读代码的艺术" href="14520874726715.html">编写可读代码的艺术</a></li>
+                        
+                          <li><a title="移动应用UI设计模式" href="14520886280669.html">移动应用UI设计模式</a></li>
+                        
+                          <li><a title="启示录：打造用户喜爱的产品" href="14520907410466.html">启示录：打造用户喜爱的产品</a></li>
+                        
+                          <li><a title="亲爱的界面：让用户乐于使用、爱不释手" href="14520885573483.html">亲爱的界面：让用户乐于使用、爱不释手</a></li>
+                        
+                          <li><a title="简约之美：软件设计之道" href="14520879229686.html">简约之美：软件设计之道</a></li>
+                        
+                          <li><a title="简单之美：软件开发实践者的思考" href="14520878623936.html">简单之美：软件开发实践者的思考</a></li>
+                        
+                          <li><a title="构建之法：现代软件工程" href="14520880342127.html">构建之法：现代软件工程</a></li>
+                        
+                          <li><a title="软件项目成功之道" href="14520883368873.html">软件项目成功之道</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>工具</span></li>
+                        
+                          <li><a title="Mac 指南" href="14520959875185.html">Mac 指南</a></li>
+                        
+                          <li><a title="Bash 指南" href="14520940884566.html">Bash 指南</a></li>
+                        
+                          <li><a title="Hexo 指南" href="14520953748408.html">Hexo 指南</a></li>
+                        
+                          <li><a title="VS Code 指南" href="14520964818956.html">VS Code 指南</a></li>
+                        
+                          <li><a title="Homebrew 指南" href="14520954251052.html">Homebrew 指南</a></li>
+                        
+                          <li><a title="Pandoc 指南" href="14520962259349.html">Pandoc 指南</a></li>
+                        
+                          <li><a title="Vim 指南" href="14520964365928.html">Vim 指南</a></li>
+                        
+                          <li><a title="Sublime 指南" href="14520965272426.html">Sublime 指南</a></li>
+                        
+                          <li><a title="Latex 指南" href="14520955052445.html">Latex 指南</a></li>
+                        
+                          <li><a title="Git 指南" href="14520951022304.html">Git 指南</a></li>
+                        
+                          <li><a title="Github 生活指南" href="14520951022388.html">Github 生活指南</a></li>
+                        
+                          <li><a title="iTerm2 指南" href="14520954757815.html">iTerm2 指南</a></li>
+                        
+                          <li><a title="Ubuntu 指南" href="14520961679182.html">Ubuntu 指南</a></li>
+                        
+                          <li><a title="谷歌搜索技巧" href="14520951022464.html">谷歌搜索技巧</a></li>
+                        
+                          <li><a title="Make 指南" href="14520961098604.html">Make 指南</a></li>
+                        
+                          <li><a title="GCC 简易指南" href="14520948089088.html">GCC 简易指南</a></li>
+                        
+                          <li><a title="fish shell 指南" href="14520943310829.html">fish shell 指南</a></li>
+                        
+                          <li><a title="Gradle 指南" href="14520951022555.html">Gradle 指南</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Research</span></li>
+                        
+                          <li><a title="知识图谱沉思录" href="14520583101537.html">知识图谱沉思录</a></li>
+                        
+                          <li><a title="计算机视觉沉思录" href="14520483585854.html">计算机视觉沉思录</a></li>
+                        
+                          <li><a title="推荐系统沉思录" href="14520495721664.html">推荐系统沉思录</a></li>
+                        
+                          <li><a title="数据分析沉思录" href="14520494829635.html">数据分析沉思录</a></li>
+                        
+                          <li><a title="机器学习沉思录" href="14520493984651.html">机器学习沉思录</a></li>
+                        
+                          <li><a title="3D 打印沉思录" href="14520902603411.html">3D 打印沉思录</a></li>
+                        
+                          <li><a title="HMM 指南" href="14520495021796.html">HMM 指南</a></li>
+                        
+                          <li><a title="EM / GMM 指南" href="14520494287936.html">EM / GMM 指南</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>iOS</span></li>
+                        
+                          <li><a title="iOS 学习路径" href="14520467690026.html">iOS 学习路径</a></li>
+                        
+                          <li><a title="iOS 面试相关" href="14520467689968.html">iOS 面试相关</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Android</span></li>
+                        
+                          <li><a title="Android Studio 指南" href="14520922857884.html">Android Studio 指南</a></li>
+                        
+                          <li><a title="Google Map V2 使用指南" href="14520474070782.html">Google Map V2 使用指南</a></li>
+                        
+                          <li><a title="ActionBar 使用指南" href="14520474070736.html">ActionBar 使用指南</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Web</span></li>
+                        
+                          <li><a title="网络协议指南" href="14520476779491.html">网络协议指南</a></li>
+                        
+                          <li><a title="Node.js 命令行程序实例" href="14520476779456.html">Node.js 命令行程序实例</a></li>
+                        
+                          <li><a title="Flask Study Note" href="14520476779406.html">Flask Study Note</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>关于</span></li>
+                        
+                          <li><a title="版权声明" href="14520576386063.html">版权声明</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>iTerm2 指南</h1>
+
+<!-- MarkdownTOC -->
+
+<ul>
+<li>光标控制</li>
+<li>窗口操作</li>
+<li>标签页操作</li>
+<li>面板操作</li>
+<li>其他功能</li>
+<li>文本选取</li>
+<li>位置书签</li>
+<li>粘贴历史</li>
+<li>即时回放</li>
+<li>窗口状态</li>
+<li>特色功能</li>
+</ul>
+
+<!-- /MarkdownTOC -->
+
+<h2 id="toc_0">光标控制</h2>
+
+<ul>
+<li>ctrl + a: 到行首</li>
+<li>ctrl + e: 行末</li>
+<li>ctrl + f/b: 前进后退，相当于左右方向键，但是显然比移开手按方向键更快</li>
+<li>ctrl + p: 上一条命令，相当于方向键上</li>
+<li>ctrl + r: 搜索命令历史，这个大家都应该很熟悉了</li>
+<li>ctrl + d: 删除当前字符</li>
+<li>ctrl + h: 删除之前的字符</li>
+<li>ctrl + w: 删除光标前的单词</li>
+<li>ctrl + k: 删除到文本末尾</li>
+<li>ctrl + t: 交换光标处文本</li>
+<li>⌘ + —/+/0: 调整字体大小</li>
+<li>⌘ + r:清屏，其实是滚到新的一屏，并没有清空。ctrl + l 也可以做到。</li>
+</ul>
+
+<h2 id="toc_1">窗口操作</h2>
+
+<ul>
+<li>新建窗口：shift + command + d（横向）command + d（竖向）</li>
+<li>关闭窗口：shift + command + w</li>
+<li>前一个窗口：command + `</li>
+<li>后一个窗口：command + ~</li>
+<li>进入窗口 1,2,3：option + command + 编号</li>
+</ul>
+
+<h2 id="toc_2">标签页操作</h2>
+
+<ul>
+<li>新建标签页: Command + T</li>
+<li>关闭标签页: Command + W</li>
+<li>前一个标签页: Command + 左方向键，Shift + Command + [</li>
+<li>后一个标签页: Command + 右方向键，Shitf + Command + ]</li>
+<li>进入标签页1，2，3…: Command + 标签页编号</li>
+<li>Expose 标签页: Option + Command + E（将标签页打撒到全屏，并可以全局搜索所有的标签页）</li>
+</ul>
+
+<h2 id="toc_3">面板操作</h2>
+
+<ul>
+<li>垂直分割: Command + D</li>
+<li>水平分割: Shift + Command + D</li>
+<li>前一个面板: Command + [</li>
+<li>后一个面板: Command + ]</li>
+<li>切换到上/下/左/右面板: Option + Command + 上下左右方向键</li>
+</ul>
+
+<h2 id="toc_4">其他功能</h2>
+
+<ul>
+<li>支持自定义全局快捷键用于显示和隐藏iTerm2 Preference -&gt; Keys －&gt; Show/hide iTerm2 with a system-wide hotkey 打上勾之后</li>
+<li>进入和退出全屏: Command + Enter</li>
+<li>查看当前终端中光标的位置: Command + /</li>
+<li>命令自动补全: Command + ;（很少用这个，还是感觉Zsh的补全更好用）</li>
+<li>开启和关闭背景半透明: Command + u</li>
+<li>清屏（重置当前终端）: Command + r</li>
+</ul>
+
+<h2 id="toc_5">文本选取</h2>
+
+<p>文本选取有使用鼠标和不使用鼠标两种方式。</p>
+
+<p>使用鼠标</p>
+
+<p>默认情况下，选取的文字会自动复制到剪切板，可以使用以下方式进行文本选取：</p>
+
+<ul>
+<li>常见的点击并拖拽方式</li>
+<li>双击选取整个单词</li>
+<li>三击选取整行</li>
+<li>选取某一部分，按住Shift，再点击某处，可以选取整个矩形内的文本（类似Windows下按住Shift可以批量选取图标）</li>
+<li>按住Command + Option，可以用鼠标画出一个矩形，用类似截图的方式选取文本 另外，还可以使用鼠标完成以下操作： 按住Command然后点击某个URL，会在浏览器中打开这个URL，点击某个文件夹，会在Finder里打开这个文件夹（再也不用open . 啦），点击某个文件名，会打开这个文件（文本文件支持MacVim，TextMate和BBEdit，如果后面跟随一个冒号和行号，文件会在行号处打开，其它格式的文件似乎不能调用默认程序打开） 选取文本之后，按住Command 同时拖动文本，可以将文本粘贴到目标位置（Drag and Drop） 鼠标中键粘贴（这个太感人了，一下子找回Linux的感觉了）</li>
+</ul>
+
+<p>不使用鼠标</p>
+
+<p>(这种方式最多只能选取一行文本) 使用 Command + f，会呼出一个搜索框，可以在当前面板中进行搜索，输入想要选取的部分内容，输入过程中，按Tab可以将选取部分向右扩展，按Shift + Tab向左扩展，按回车转到下一个匹配位置。使用Tab或Shift+Tab扩展得到想要的内容之后，选取内容会自动复制到剪切板，再次按Command + f隐藏搜索框。</p>
+
+<h2 id="toc_6">位置书签</h2>
+
+<p>在当前会话中按Command + Shift + m可以保存当前位置，之后可以按Command + Shift + j跳回这个位置。</p>
+
+<h2 id="toc_7">粘贴历史</h2>
+
+<p>使用Command + Shift + h 可以呼出粘贴历史，支持模糊检索。还可以设置将粘贴历史保存在磁盘上（Preferences -&gt; General）</p>
+
+<h2 id="toc_8">即时回放</h2>
+
+<p>使用Command + Opt + b 打开即时回放，按Esc退出。即时回放可以记录终端输出的状态，让你“穿越时间”查看终端内容。默认每个会话最多储存4MB的内容，可以在设置中更改（Preferences -&gt; Genernal -&gt; Instant Replay）。</p>
+
+<h2 id="toc_9">窗口状态</h2>
+
+<p>通过 Window -&gt; Save Window Arrangement 可以保存当前窗口状态的快照，包括打开的窗口，标签页和面板。通过 Window -&gt; Restore Window Arrangement 还原。还可以在 Preferences -&gt; General -&gt; Open saved window arrangement 中设置在启动iTerm2时自动恢复窗口状态</p>
+
+<h2 id="toc_10">特色功能</h2>
+
+<ul>
+<li>command+; 根据上下文呼出自动完成窗口，上下键选择</li>
+<li>全屏 command+enter</li>
+<li>光标去哪了？command+/</li>
+<li>用鼠标选中某个路径或者某个词汇就自动复制</li>
+</ul>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="14520951022388.html"  title="Previous Post: Github 生活指南">&laquo; Github 生活指南</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14520961679182.html" 
+	        title="Next Post: Ubuntu 指南">Ubuntu 指南 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14520954757815.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>
