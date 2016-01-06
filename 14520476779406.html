@@ -1,0 +1,1864 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  Flask Study Note - 小土刀的笔记
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="小土刀的笔记" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">小土刀的笔记</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; 小土刀的笔记</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>清单</label></li>
+
+          
+            <li><a title="玩物列表" href="14520379720223.html">玩物列表</a></li>
+          
+            <li><a title="好问题收集" href="14520379720179.html">好问题收集</a></li>
+          
+            <li><a title="书单合集" href="14520379720136.html">书单合集</a></li>
+          
+            <li><a title="日志列表" href="14520379720098.html">日志列表</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>iOS</label></li>
+
+          
+            <li><a title="iOS 学习路径" href="14520467690026.html">iOS 学习路径</a></li>
+          
+            <li><a title="iOS 面试相关" href="14520467689968.html">iOS 面试相关</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Android</label></li>
+
+          
+            <li><a title="Google Map V2 使用指南" href="14520474070782.html">Google Map V2 使用指南</a></li>
+          
+            <li><a title="ActionBar 使用指南" href="14520474070736.html">ActionBar 使用指南</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Web</label></li>
+
+          
+            <li><a title="网络协议指南" href="14520476779491.html">网络协议指南</a></li>
+          
+            <li><a title="Node.js 命令行程序实例教程" href="14520476779456.html">Node.js 命令行程序实例教程</a></li>
+          
+            <li><a title="Flask Study Note" href="14520476779406.html">Flask Study Note</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>清单</span></li>
+                        
+                          <li><a title="玩物列表" href="14520379720223.html">玩物列表</a></li>
+                        
+                          <li><a title="好问题收集" href="14520379720179.html">好问题收集</a></li>
+                        
+                          <li><a title="书单合集" href="14520379720136.html">书单合集</a></li>
+                        
+                          <li><a title="日志列表" href="14520379720098.html">日志列表</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>iOS</span></li>
+                        
+                          <li><a title="iOS 学习路径" href="14520467690026.html">iOS 学习路径</a></li>
+                        
+                          <li><a title="iOS 面试相关" href="14520467689968.html">iOS 面试相关</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Android</span></li>
+                        
+                          <li><a title="Google Map V2 使用指南" href="14520474070782.html">Google Map V2 使用指南</a></li>
+                        
+                          <li><a title="ActionBar 使用指南" href="14520474070736.html">ActionBar 使用指南</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Web</span></li>
+                        
+                          <li><a title="网络协议指南" href="14520476779491.html">网络协议指南</a></li>
+                        
+                          <li><a title="Node.js 命令行程序实例教程" href="14520476779456.html">Node.js 命令行程序实例教程</a></li>
+                        
+                          <li><a title="Flask Study Note" href="14520476779406.html">Flask Study Note</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>Flask Study Note</h1>
+
+<h2 id="toc_0">基本介绍</h2>
+
+<ul>
+<li>保持核心简单且易扩展</li>
+<li>简单的任务应该保持简单，它们的实现不应是大量代码的堆叠</li>
+<li>web 开发是危险的，注意数据安全</li>
+<li>依赖两个外部库
+
+<ul>
+<li>Werkzeug 一个WSGI(在 web 应用和多种服务器之间开发和部署的标准 Python 接口)</li>
+<li>Jinja2 渲染模板</li>
+</ul></li>
+</ul>
+
+<h2 id="toc_1">基本知识与技巧</h2>
+
+<pre><code>app = Flask(__name__)
+</code></pre>
+
+<p>The <code>name</code> argument that is passed to the Flask application constructor is used to determine the root path of the application so that later flask can find resource files to the location of the application.</p>
+
+<hr/>
+
+<p>Decorators are a standard feature of the Python language; they can modify the behavior of a function in different ways. A common pattern is to used decorators to register functions as handlers for an event.</p>
+
+<hr/>
+
+<p>Response strings embedded in Python code lead to code that is difficult to maintain, and it is done here only to introduce the concept of responses.</p>
+
+<hr/>
+
+<p>A thread is the smallest sequence of instruction that can be managed independently. It is common for a process to have multiple active threads, sometimes sharing resources auch as memory or file handles. Multithreaded web servers tart a pool of threads and select a thread from the pool to handle each incoming request.</p>
+
+<hr/>
+
+<p>By default, user sessions are stored in client-side cookies that are cryptographically signed using the configured SECRET_KEY. Any tampering with the cookie content would render the signature invalid, thus invalidating the session.</p>
+
+<h3 id="toc_2">The request-Response Cycle</h3>
+
+<p>To avoid cluttering view function with lots of arguments that amy or may not be needed, Flask uses <code>contexts</code> to  temporarily make certain objects globally accessible. Contexts enable Flask to make certain variables globally accessible to a thread without interfering with the other threads.</p>
+
+<p>Table: Flask context globals</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">Variable name</th>
+<th style="text-align: center">Context</th>
+<th style="text-align: center">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">current_app</td>
+<td style="text-align: center">Application context</td>
+<td style="text-align: center">The application instance for the acitve application</td>
+</tr>
+<tr>
+<td style="text-align: center">g</td>
+<td style="text-align: center">Application context</td>
+<td style="text-align: center">An object that the application can use for temporary storage during the handling of a request. This variable is reset with each request</td>
+</tr>
+<tr>
+<td style="text-align: center">request</td>
+<td style="text-align: center">Request context</td>
+<td style="text-align: center">The request object, which encapsulates the contents of a HTTP request sent by the client</td>
+</tr>
+<tr>
+<td style="text-align: center">session</td>
+<td style="text-align: center">Request context</td>
+<td style="text-align: center">The user session, a dictionary that the application can use to store values that are <q>remembered</q> between requests.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Flask activates the application and request contexts before dipatching a request and then removes them when the request is handled.</p>
+
+<h4 id="toc_3">Request Dispatching</h4>
+
+<p>Flask looks up the URL given in the request in the applications&#39;s URL map. Flask builds this map using the <code>app.route</code> decorators or the equivalent nondecorator version <code>app.add_url_rule()</code></p>
+
+<p>可以通过以下命令来查看具体 map 长啥样</p>
+
+<pre><code>from hello import app
+app.url_map
+</code></pre>
+
+<h4 id="toc_4">Request Hooks</h4>
+
+<p>Sometimes it is useful to execute code before or after each request is processed. Instead of duplicating the code in every view function, Flask gives you the option to register common functions to be invoked before or after a request is dispatched to a view function.</p>
+
+<p>There are four hooks supported by Flask:</p>
+
+<ul>
+<li><code>before_first_request</code>: Register a function to run before the first request is handled.</li>
+<li><code>before_request</code>: Register a function to run before each request.</li>
+<li><code>after_request</code>: Register a function to run after each request, if no unhandled exceptions occurred.</li>
+<li><code>teardown_request</code>: Register a function to run after each request, even  if unhandled exceptions occurred.</li>
+</ul>
+
+<h4 id="toc_5">Responses</h4>
+
+<p>When Flask invokes a view function , it expects its return value to be the response to the request. In most cases the response is a simple string that is sent back to the client as HTML page.</p>
+
+<p>When a function needs to responde with a different status code, it can add numeric code as a second return value after the response text.</p>
+
+<pre><code>@app.rout(&#39;/&#39;)
+def index():
+    return &#39;Bad Request&#39;, 400
+</code></pre>
+
+<p>但是一个更好的方式是使用 <code>make_response()</code> 来做这个事情，因为可以有更多额外操作</p>
+
+<pre><code class="language-python">@app.rout(&#39;/&#39;)
+def index():
+    response = make_response(This document carres a cookie!)
+    response.set_cookie(&#39;answer&#39;, &#39;42&#39;)
+    return response
+</code></pre>
+
+<p>还有另一种 return 方式，叫做 <code>redirect</code>. A redirect is typically indicated with a 302 response status code and the URL to redirect to given in a Location header. A redirect response can be generated using a three-value return , or also with a <code>Response</code> object, but iven its frequent use, Flask provides a <code>redirect()</code> helper function that creates this response:</p>
+
+<pre><code class="language-python">from flask import redirect
+    
+@app.route(&#39;/&#39;)
+def index():
+    return redirect(&#39;http://www.wdxtub.com&#39;)
+</code></pre>
+
+<p>Another special response is issued with the abort function, which is used for error handling. </p>
+
+<pre><code class="language-python">from flask import abort
+
+@app.route(&#39;/user/&lt;id&gt;&#39;)
+def get_user(id):
+    user = load_user(id)
+    if not user:
+        abort(404)
+    return &#39;Hello, %s&#39; % user.name
+</code></pre>
+
+<p>Note that <code>abort</code> does not return control back to the function that calls it but gives control back to the web server by raising an exception.</p>
+
+<h2 id="toc_6">Template</h2>
+
+<p>Jinja2 的感觉跟 jsp 页面还是很像的，就是通过占位符来控制动态元素</p>
+
+<p>例如 <code>templates/user.html</code></p>
+
+<pre><code class="language-html">&lt;h1&gt;Hello, {{ name }}!&lt;/h1&gt;
+</code></pre>
+
+<p>使用时，可以直接传值进去</p>
+
+<pre><code class="language-python">from flask import Flask, render_template
+
+@app.route(&#39;/user/&lt;name&gt;&#39;)
+def user(name):
+    return render_template(&#39;user.html&#39;, name=name)
+</code></pre>
+
+<h3 id="toc_7">Variables</h3>
+
+<p>Jinja2 recognizes variables of any type, even complex types such as lists, dictionaires and objects:</p>
+
+<pre><code>{{ mydict[&#39;key&#39;] }}
+{{ mylist[2] }}
+{{ myobj.somemethod() }}
+</code></pre>
+
+<p>Variables can be modified with <code>filters</code>, which are added after the variable name with a pip character as separator. For example, the following template show the <code>name</code> variable capitalized:</p>
+
+<pre><code>Hello, {{ name|capitalize }}
+</code></pre>
+
+<p>下面是 Jinja2 variable filters</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">Filter name</th>
+<th style="text-align: center">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">safe</td>
+<td style="text-align: center">Renders the value without applying escaping</td>
+</tr>
+<tr>
+<td style="text-align: center">capitalize</td>
+<td style="text-align: center">Converst the first character of the value to uppercase and the rest to lowercase</td>
+</tr>
+<tr>
+<td style="text-align: center">lower</td>
+<td style="text-align: center">Converts the value to lowercase characters</td>
+</tr>
+<tr>
+<td style="text-align: center">upper</td>
+<td style="text-align: center">Converts the value to uppercase characters</td>
+</tr>
+<tr>
+<td style="text-align: center">title</td>
+<td style="text-align: center">Capitalizes each word in the value</td>
+</tr>
+<tr>
+<td style="text-align: center">trim</td>
+<td style="text-align: center">Removes leading and trailing whitespace from the value</td>
+</tr>
+<tr>
+<td style="text-align: center">striptags</td>
+<td style="text-align: center">Removes any HTML tags from the value before rendering</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_8">Control Structures</h3>
+
+<p>同样提供控制流程来根据变量显示不同的内容</p>
+
+<pre><code>{% if user %}
+    Hello, {{ user }}!
+{% else %}
+    Hello, Stranger!
+{% endif %}
+</code></pre>
+
+<p>也支持 for 循环，可以用来渲染列表</p>
+
+<pre><code>&lt;ul&gt;
+    {% for comment in comments %}
+        &lt;li&gt;{{ comment }}&lt;/li&gt;
+    {% endfor %}
+&lt;/ul&gt;
+</code></pre>
+
+<p>Jinja2 也支持 <code>marcos</code>，例如</p>
+
+<pre><code>{% macro render_comment(comment) %}
+    &lt;li&gt;{{ comment }}&lt;/li&gt;
+{% endmacro %}
+
+&lt;ul&gt;
+    {% for comment in comments %}
+        {{ render_comment(comment) }}
+    {% endfor %}
+&lt;/ul&gt;
+</code></pre>
+
+<p>也可以把 macros 存到文件中，直接进行引用即可</p>
+
+<pre><code>{% import &#39;macros.html&#39; as macros %}
+
+&lt;ul&gt;
+    {% for comment in comments %}
+        {{ macros.render_comment(comment) }}
+    {% endfor %}
+&lt;/ul&gt;
+</code></pre>
+
+<p>所以根据这种方式，我们可以把所有的常用 macros 放到一个统一的文件中，方便管理。</p>
+
+<p>另一个重用的方式是模板继承，首先我们先要有一个 base template: base.html</p>
+
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+    {% block head %}
+    &lt;title&gt;{% block title %}{% endblock %} - My Application&lt;/title&gt;
+    {% endblock %}
+&lt;/head&gt;
+&lt;body&gt;
+    {% block body %}
+    {% endblock %}
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Here the <code>block</code> tags define elements that a derived template can change.  下面就是一个继承的例子</p>
+
+<pre><code>{% extends &quot;base.html&quot; %}
+{% block title %}
+    Index
+{% endblock %}
+{% block head %}
+    {{ super() }}
+    &lt;style&gt;
+    &lt;/style&gt;
+{% endblock %}
+{% block body %}
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+{% endblock %}
+</code></pre>
+
+<h3 id="toc_9">Use Twitter Bootstrap Integration with Flask-Bootstrap</h3>
+
+<p>先安装 <code>pip install flask-bootstrap</code></p>
+
+<p>然后引入</p>
+
+<pre><code>from flask.ext.bootstrap import Bootstrap
+
+app = Flask(__name__)
+bootstrap = Bootstrap(app)
+</code></pre>
+
+<p>具体的用法参见下面的例子：</p>
+
+<pre><code class="language-html">{% extends &quot;bootstrap/base.html&quot; %}
+
+{% block title %}Flasky{% endblock %}
+
+{% block navbar %}
+&lt;div class=&quot;navbar navbar-inverse&quot; role=&quot;navigation&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;navbar-header&quot;&gt;
+            &lt;button type=&quot;button&quot; class=&quot;navbar-toggle&quot; data-toggle=&quot;collapse&quot; data-target=&quot;.navbar-collapse&quot;&gt;
+                &lt;span class=&quot;sr-only&quot;&gt;Toggle navigation&lt;/span&gt;
+                &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;icon-bar&quot;&gt;&lt;/span&gt;
+            &lt;/button&gt;
+            &lt;a class=&quot;navbar-brand&quot; href=&quot;/&quot;&gt;Flasky&lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;navbar-collapse collapse&quot;&gt;
+            &lt;ul class=&quot;nav navbar-nav&quot;&gt;
+                &lt;li&gt;&lt;a href=&quot;/&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+{% endblock %}
+
+{% block content %}
+&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;page-header&quot;&gt;
+        &lt;h1&gt;Hello, {{ name }}!&lt;/h1&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+{% endblock %}
+</code></pre>
+
+<h3 id="toc_10">Custom Error Pages</h3>
+
+<p>主要就是处理 404 和 500 页面，可以用以下的语句</p>
+
+<pre><code class="language-python">@app.errorhandler(404)
+def page_not_found(e):
+    return render_template(&#39;404.html&#39;), 404
+
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    return render_template(&#39;500.html&#39;), 500
+</code></pre>
+
+<h3 id="toc_11">Localization of Dates and Times with Flask-Moment</h3>
+
+<p>首先安装 extension <code>pip install flask-moment</code></p>
+
+<p>同样需要在 app 中引入和启动</p>
+
+<pre><code class="language-python">from flask.ext.moment import Moment
+moment = Moment(app)
+</code></pre>
+
+<p>然后在 base.html 引入 moment.js 库</p>
+
+<pre><code class="language-html">{% block scripts %}
+{{ super() }}
+{{ moment.include_moment() }}
+{% endblock %}
+</code></pre>
+
+<p>然后更新调用的代码</p>
+
+<pre><code class="language-python">from datetime import datetime
+
+@app.route(&#39;/&#39;)
+def hello_world():
+    return render_template(&#39;index.html&#39;,
+                           current_time=datetime.utcnow())
+</code></pre>
+
+<p>对应在 index.html 加上两句</p>
+
+<pre><code class="language-html">&lt;p&gt;The local date and time is {{ moment(current_time).format(&#39;LLL&#39;) }}.&lt;/p&gt;
+&lt;p&gt;That was {{ moment(current_time).fromNow(refresh=True) }}.&lt;/p&gt;
+</code></pre>
+
+<h2 id="toc_12">Web Forms</h2>
+
+<p>通常使用 Flask-WTF 来处理 web form</p>
+
+<p>安装 <code>pip install flask-wtf</code></p>
+
+<p>配置一个 key 来防止 CSRF(Cross-Site Request Forgery)</p>
+
+<pre><code class="language-python">app = Flask(__name__)
+app.config[&#39;SECRET_KEY&#39;] = &#39;GODUCKYOURSELF&#39;
+</code></pre>
+
+<h3 id="toc_13">Form Classes</h3>
+
+<p>When using Flask-WTF, each web form is represented by a class that inherits from class <code>Form</code>. The class defines the list of fields in the form, each represented by an object. Each field object can have on or more <code>validators</code> attached; validators are fucntions that check wheterh the input submitted by the user is valid.</p>
+
+<pre><code class="language-python">from flask.ext.wtf import Form
+from wtforms import StringField, SubmitField
+from wtforms.validators import Required
+
+class NameForm(Form):
+    name = StringField(&#39;What is your name?&#39;, validators=[Required()])
+    submit = SubmitField(&#39;Submit&#39;)
+</code></pre>
+
+<p>WTForm 支持的 HTML fields</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">Field Type</th>
+<th style="text-align: center">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">StringField</td>
+<td style="text-align: center">Text field</td>
+</tr>
+<tr>
+<td style="text-align: center">TextAreaField</td>
+<td style="text-align: center">Multiple-line text field</td>
+</tr>
+<tr>
+<td style="text-align: center">PasswordField</td>
+<td style="text-align: center">Password text field</td>
+</tr>
+<tr>
+<td style="text-align: center">HiddenField</td>
+<td style="text-align: center">Hidden text field</td>
+</tr>
+<tr>
+<td style="text-align: center">DateField</td>
+<td style="text-align: center">Text field that accepts a <code>datetime.date</code> value in a given format</td>
+</tr>
+<tr>
+<td style="text-align: center">DateTimeField</td>
+<td style="text-align: center">Text field that accepts a <code>datetime.datetime</code> value in a given format</td>
+</tr>
+<tr>
+<td style="text-align: center">IntegerField</td>
+<td style="text-align: center">Text field that accepts an integer value</td>
+</tr>
+<tr>
+<td style="text-align: center">DecimalField</td>
+<td style="text-align: center">Text field that accepts a <code>decimal.Decimal</code> value</td>
+</tr>
+<tr>
+<td style="text-align: center">FloatField</td>
+<td style="text-align: center">Text field that accepts a floating-point value</td>
+</tr>
+<tr>
+<td style="text-align: center">BooleanField</td>
+<td style="text-align: center">Checkbox with <code>True</code> and <code>False</code> values</td>
+</tr>
+<tr>
+<td style="text-align: center">RadioField</td>
+<td style="text-align: center">List of radio buttons</td>
+</tr>
+<tr>
+<td style="text-align: center">SelectField</td>
+<td style="text-align: center">Drop-down list of choices</td>
+</tr>
+<tr>
+<td style="text-align: center">SelectMultipleField</td>
+<td style="text-align: center">Drop-down list of choices with multiple selectoin</td>
+</tr>
+<tr>
+<td style="text-align: center">FileField</td>
+<td style="text-align: center">File upload field</td>
+</tr>
+<tr>
+<td style="text-align: center">SubmitField</td>
+<td style="text-align: center">Form submission button</td>
+</tr>
+<tr>
+<td style="text-align: center">FormField</td>
+<td style="text-align: center">Embed a form as a field in a container form</td>
+</tr>
+<tr>
+<td style="text-align: center">FieldList</td>
+<td style="text-align: center">List of fields of a given type</td>
+</tr>
+</tbody>
+</table>
+
+<p>WTForms validators</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">Validator</th>
+<th style="text-align: center">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">Email</td>
+<td style="text-align: center">Validates an email address</td>
+</tr>
+<tr>
+<td style="text-align: center">EqualTo</td>
+<td style="text-align: center">Compares the values of two fields; useful when requesting a password to be entered twice for confirmation</td>
+</tr>
+<tr>
+<td style="text-align: center">IPAddress</td>
+<td style="text-align: center">Validates an IPv4 network address</td>
+</tr>
+<tr>
+<td style="text-align: center">Length</td>
+<td style="text-align: center">Validates the lenth of the string entered</td>
+</tr>
+<tr>
+<td style="text-align: center">NumberRange</td>
+<td style="text-align: center">validates that the value entered is within a numeric range</td>
+</tr>
+<tr>
+<td style="text-align: center">Optional</td>
+<td style="text-align: center">Allows empty input on the field, skipping additional validators</td>
+</tr>
+<tr>
+<td style="text-align: center">Required</td>
+<td style="text-align: center">Validates that the field contains data</td>
+</tr>
+<tr>
+<td style="text-align: center">Regexp</td>
+<td style="text-align: center">Validates the input against a regular expression</td>
+</tr>
+<tr>
+<td style="text-align: center">URL</td>
+<td style="text-align: center">Validates a URL</td>
+</tr>
+<tr>
+<td style="text-align: center">AnyOf</td>
+<td style="text-align: center">Validates that the input is one of  a list of possible values</td>
+</tr>
+<tr>
+<td style="text-align: center">NoneOf</td>
+<td style="text-align: center">Validates that the input is none of a list of possible values</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="toc_14">HTML Rendering of Forms</h3>
+
+<p>利用 bootstrap 可以快速创建表格，而摆脱繁琐的设置，同时顺带更新以下 h1 中的内容，加入了一个判断语句来显示内容</p>
+
+<pre><code>index.html
+{% import &quot;bootstrap/wtf.html&quot; as wtf %}
+
+&lt;h1&gt;Hello, {% if name %}{{ name }}{% else %}Stranger{% endif %}!&lt;/h1&gt;
+
+{{ wtf.quick_form(form) }}
+</code></pre>
+
+<h3 id="toc_15">Form Handling in View Functions</h3>
+
+<p>现在需要对应修改一下 hello.py 中的内容以配合 form 的实现</p>
+
+<p>加入了 POST 的支持，以及在提交表格的时候会根据 validator 来进行验证判断，也就是 <code>from.validate_on_submit()</code> 这里</p>
+
+<pre><code class="language-python">@app.route(&#39;/&#39;, methods=[&#39;GET&#39;, &#39;POST&#39;])
+def index():
+    name = None
+    form = NameForm()
+    if form.validate_on_submit():
+        name = form.name.data
+        form.name.data = &#39;&#39;
+    return render_template(&#39;index.html&#39;, form=form, name=name,current_time=datetime.utcnow())
+</code></pre>
+
+<p>就可以看到有更新了</p>
+
+<h3 id="toc_16">Redirects and User Sessions</h3>
+
+<p>The last version of <code>hello.py</code> has a usability problem. If you enter your name and submit it and then clikc the refresh button on your browser, you will likely get an obscure warning that asks for confirmation before submitting the form again. This happens because browsers repeat the las request they have sent when they are asked to refresh the page. When the last request sent is a POST request with form data, a refresh would cause a duplicate form submission, whcih in almost all cases is not the desired action.</p>
+
+<p>解决方案一，通过一个重定向，把原来 POST 的内容转为 GET，这样用户再怎么刷新，也就是一个 GET. This trick is known as the Post/Redirect/Get pattern.</p>
+
+<p>但是这个做法却带来了另一个问题，post 的内容在 redirect 的时候就丢失了，为此，我们可以把内容存在 session 里。</p>
+
+<p>于是我们的 index()函数可以改成这样</p>
+
+<pre><code class="language-python">from flask import Flask, render_template, session, redirect, url_for
+
+@app.route(&#39;/&#39;, methods=[&#39;GET&#39;, &#39;POST&#39;])
+def index():
+    form = NameForm()
+    if form.validate_on_submit():
+        session[&#39;name&#39;] = form.name.data
+        return redirect(url_for(&#39;index&#39;))
+    return render_template(&#39;index.html&#39;, form=form, name=session.get(&#39;name&#39;),current_time=datetime.utcnow())
+</code></pre>
+
+<h3 id="toc_17">Message Flashing</h3>
+
+<p>可以利用 flash 实现类似于 Toast 的提示。具体可以把代码改成</p>
+
+<pre><code class="language-python">from flask import Flask, render_template, session, redirect, url_for, flash
+
+@app.route(&#39;/&#39;, methods=[&#39;GET&#39;, &#39;POST&#39;])
+def index():
+    form = NameForm()
+    if form.validate_on_submit():
+        old_name = session.get(&#39;name&#39;)
+        if old_name is not None and old_name != form.name.data:
+            flash(&#39;Looks like you have changed your name!&#39;)
+        session[&#39;name&#39;] = form.name.data
+        return redirect(url_for(&#39;index&#39;))
+    return render_template(&#39;index.html&#39;, form=form, name=session.get(&#39;name&#39;),current_time=datetime.utcnow())
+</code></pre>
+
+<p>In this example, each time a name is submitted it is compared against the name stored in the user session, which would have been put there during a previous submission of the same form.</p>
+
+<p>当然还需要对应更新我们的 template 来显示 flash 的内容。为了让每个页面都能享受 flash 的功能，我们把代码加在 base.html 里，使用 <code>get_flashed_messages()</code> 来完成这个工作</p>
+
+<pre><code class="language-html">{% block content %}
+&lt;div class=&quot;container&quot;&gt;
+    {% for message in get_flashed_messages() %}
+    &lt;div class=&quot;alert alert-warning&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;close&quot; data-dismiss=&quot;alert&quot;&gt;&amp;times;&lt;/button&gt;
+        {{ message }}
+    &lt;/div&gt;
+    {% endfor %}
+
+    {% block page_content %}{% endblock %}
+&lt;/div&gt;
+{% endblock %}
+</code></pre>
+
+<p>基本上这样就过了一遍大概的功能，剩下的等实际做项目的时候再仔细研究</p>
+
+<h2 id="toc_18">如何开始一个项目</h2>
+
+<h3 id="toc_19">步骤 0 ：创建文件夹</h3>
+
+<p>在开始之前需要为应用创建下列文件夹:</p>
+
+<pre><code>/flaskr
+    /static
+    /templates
+</code></pre>
+
+<p>flaskr 文件夹不是一个 Python 包，只是一个用来存放我们文件的地方。我们将把以后 要用到的数据库模式和主模块放在这个文件夹中。 static 文件夹中的文件是用于供 应用用户通过 HTTP 访问的文件，主要是 CSS 和 javascript 文件。 Flask 将会在 templates 文件夹中搜索 Jinja2 模板，所有在教程中的模板都放在 templates 文件夹中。</p>
+
+<h3 id="toc_20">步骤 1 ：数据库模式</h3>
+
+<p>首先我们要创建数据库模式。本应用只需要使用一张表，并且由于我们使用 SQLite ， 所以这一步非常简单。把以下内容保存为 schema.sql 文件并放在我们上一步创建的 flaskr 文件夹中就行了：</p>
+
+<pre><code>drop table if exists entries;
+create table entries (
+  id integer primary key autoincrement,
+  title text not null,
+  text text not null
+);
+</code></pre>
+
+<p>这个模式只有一张名为 entries 的表，表中的字段为 id 、 title 和 text 。 id 是主键，是自增整数型字段，另外两个字段是非空的字符串型字段。</p>
+
+<h3 id="toc_21">步骤 2 ：应用构建代码</h3>
+
+<p>现在我们已经准备好了数据库模式了，下面来创建应用模块。我们把模块命名为 flaskr.py ，并放在 flaskr 文件夹中。为了方便初学者学习，我们把库的导入与 相关配置放在了一起。对于小型应用来说，可以把配置直接放在模块中。但是更加清晰的 方案是把配置放在一个独立的 .ini 或 .py 文件中，并在模块中导入配置的值。</p>
+
+<p>在 flaskr.py 文件中:</p>
+
+<pre><code># all the imports
+import sqlite3
+from flask import Flask, request, session, g, redirect, url_for, \
+     abort, render_template, flash
+
+# configuration
+DATABASE = &#39;/tmp/flaskr.db&#39;
+DEBUG = True
+SECRET_KEY = &#39;development key&#39;
+USERNAME = &#39;admin&#39;
+PASSWORD = &#39;default&#39;
+</code></pre>
+
+<p>接着创建真正的应用，并用同一文件中的配置来初始化，在 flaskr.py 文件中:</p>
+
+<pre><code># create our little application :)
+app = Flask(__name__)
+app.config.from_object(__name__)
+</code></pre>
+
+<p>from_object() 会查看给定的对象（如果该对象是一个字符串就会 直接导入它），搜索对象中所有变量名均为大字字母的变量。在我们的应用中，已经将配 置写在前面了。你可以把这些配置放到一个独立的文件中。</p>
+
+<p>通常，从一个配置文件中导入配置是比较好的做法，我们使用 from<u>envvar() 来完成这个工作，把上面的 from</u>object() 一行替换为:</p>
+
+<pre><code>app.config.from_envvar(&#39;FLASKR_SETTINGS&#39;, silent=True)
+</code></pre>
+
+<p>这样做就可以设置一个 FLASKR_SETTINGS 的环境变量来指定一个配置文件，并 根据该文件来重载缺省的配置。 silent 开关的作用是告诉 Flask 如果没有这个环境变量 不要报错。</p>
+
+<p>secret_key （密钥）用于保持客户端会话安全，请谨慎地选择密钥，并尽可能的使它 复杂而且不容易被猜到。 DEBUG 标志用于开关交互调试器。因为调试模式允许用户执行 服务器上的代码，所以 永远不要在生产环境中打开调试模式 ！</p>
+
+<p>我们还添加了一个方便连接指定数据库的方法。这个方法可以用于在请求时打开连接，也 可以用于 Python 交互终端或代码中。以后会派上用场。</p>
+
+<pre><code>def connect_db():
+    return sqlite3.connect(app.config[&#39;DATABASE&#39;])
+</code></pre>
+
+<p>最后，在文件末尾添加以单机方式启动服务器的代码:</p>
+
+<pre><code>if __name__ == &#39;__main__&#39;:
+    app.run()
+</code></pre>
+
+<p>到此为止，我们可以顺利运行应用了。输入以下命令开始运行:</p>
+
+<pre><code>python flaskr.py
+</code></pre>
+
+<p>你会看到服务器已经运行的信息，其中包含应用访问地址。</p>
+
+<p>因为我们还没创建视图，所以当你在浏览器中访问这个地址时，会得到一个 404 页面未 找到错误。很快我们就会谈到视图，但我们先要弄好数据库。</p>
+
+<h3 id="toc_22">步骤 3 ：创建数据库</h3>
+
+<p>如前所述 Flaskr 是一个数据库驱动的应用，更准确地说是一个关系型数据库驱动的 应用。关系型数据库需要一个数据库模式来定义如何储存信息，因此必须在第一次运行 服务器前创建数据库模式。</p>
+
+<p>使用 sqlite3 命令通过管道导入 schema.sql 创建模式:</p>
+
+<pre><code>sqlite3 /tmp/flaskr.db &lt; schema.sql
+</code></pre>
+
+<p>上述方法的不足之处是需要额外的 sqlite3 命令，但这个命令不是每个系统都有的。而且还必须提供数据库的路径，容易出错。因此更好的方法是在应用中添加一个数据库初始化 函数。</p>
+
+<p>添加的方法是：首先从 contextlib 库中导入 contextlib.closing() 函数，即在 flaskr.py 文件的导入部分添加如下内容:</p>
+
+<p>from contextlib import closing</p>
+
+<p>接下来，可以创建一个用来初始化数据库的 init<u>db 函数，其中我们使用了先前创建的 connect</u>db 函数。把这个初始化函数放在 flaskr.py 文件中的<code>connect_db</code> 函数 下面:</p>
+
+<pre><code class="language-python">def init_db():
+    with closing(connect_db()) as db:
+        with app.open_resource(&#39;schema.sql&#39;, mode=&#39;r&#39;) as f:
+            db.cursor().executescript(f.read())
+        db.commit()
+</code></pre>
+
+<p>closing() 帮助函数允许我们在 with 代码块保持数据库连接 打开。应用对象的 open_resource() 方法支持也支持这个功能， 可以在 with 代码块中直接使用。这个函数打开一个位于来源位置（你的 flaskr 文件夹）的文件并允许你读取文件的内容。这里我们用于在数据库连接上执行 代码。</p>
+
+<p>当我们连接到数据库时，我们得到一个提供指针的连接对象（本例中的 db ）。这个 指针有一个方法可以执行完整的代码。最后我们提供要做的修改。 SQLite 3 和其他 事务型数据库只有在显式提交时才会真正提交。</p>
+
+<p>现在可以创建数据库了。打开 Python shell ，导入，调用函数:</p>
+
+<pre><code>&gt;&gt;&gt; from flaskr import init_db
+&gt;&gt;&gt; init_db()
+</code></pre>
+
+<h3 id="toc_23">步骤 4 ：请求数据库连接</h3>
+
+<p>现在我们已经学会如何打开并在代码中使用数据库连接，但是如何优雅地在请求时使用它 呢？我们会在每一个函数中用到数据库连接，因此有必要在请求之前初始化连接，并在 请求之后关闭连接。</p>
+
+<p>Flask 中可以使用 before<u>request() 、 after</u>request() 和 teardown_request() 装饰器达到这个目的:</p>
+
+<pre><code class="language-python">@app.before_request
+def before_request():
+    g.db = connect_db()
+
+@app.teardown_request
+def teardown_request(exception):
+    db = getattr(g, &#39;db&#39;, None)
+    if db is not None:
+        db.close()
+    g.db.close()
+</code></pre>
+
+<p>使用 before<u>request() 装饰的函数会在请求之前调用，且不传递 参数。使用 after</u>request() 装饰的函数会在请求之后调用，且 传递发送给客户端响应对象。它们必须传递响应对象，所以在出错的情况下就不会执行。 因此我们就要用到 teardown_request() 装饰器了。这个装饰器下 的函数在响应对象构建后被调用。它们不允许修改请求，并且它们的返回值被忽略。如果 请求过程中出错，那么这个错误会传递给每个函数；否则传递 None 。</p>
+
+<p>我们把数据库连接保存在 Flask 提供的特殊的 g 对象中。这个对象与 每一个请求是一一对应的，并且只在函数内部有效。不要在其它对象中储存类似信息， 因为在多线程环境下无效。这个特殊的 g 对象会在后台神奇的工作，保 证系统正常运行。</p>
+
+<p>若想更好地处理这种资源，请参阅 在 Flask 中使用 SQLite 3 。</p>
+
+<p>下面请阅读 步骤 5 ：视图函数.</p>
+
+<p>Hint</p>
+
+<p>我该把这些代码放在哪里？</p>
+
+<p>如果你按教程一步一步读下来，那么可能会疑惑应该把这个步骤和以后的代码放在哪里？比较有条理的做法是把这些模块级别的函数放在一起，并把新的 before<u>request 和 teardown</u>request 函数放在前文的 init_db 函数 下面（即按照教程的顺序放置）。</p>
+
+<h3 id="toc_24">步骤 5 ：视图函数</h3>
+
+<p>现在数据库连接弄好了，接着开始写视图函数。我们共需要四个视图函数：</p>
+
+<h4 id="toc_25">显示条目</h4>
+
+<p>这个视图显示所有数据库中的条目。它绑定应用的根地址，并从数据库中读取 title 和 text 字段。 id 最大的记录（最新的条目）在最上面。从指针返回的记录集是一个包含 select 语句查询结果的元组。对于教程应用这样的小应用，做到这样就已经够好了。但是 你可能想要把结果转换为字典，具体做法参见 简化查询 中的例子。</p>
+
+<p>这个视图会把条目作为字典传递给 show_entries.html 模板，并返回渲染结果:</p>
+
+<pre><code class="language-python">@app.route(&#39;/&#39;)
+def show_entries():
+    cur = g.db.execute(&#39;select title, text from entries order by id desc&#39;)
+    entries = [dict(title=row[0], text=row[1]) for row in cur.fetchall()]
+    return render_template(&#39;show_entries.html&#39;, entries=entries)
+</code></pre>
+
+<h4 id="toc_26">添加一个新条目</h4>
+
+<p>这个视图可以让一个登录后的用户添加一个新条目。本视图只响应 POST 请求，真正的 表单显示在 show<u>entries 页面中。如果一切顺利，我们会 flash() 一个消息给下一个请求并重定向回到 show</u>entries 页面:</p>
+
+<pre><code class="language-python">@app.route(&#39;/add&#39;, methods=[&#39;POST&#39;])
+def add_entry():
+    if not session.get(&#39;logged_in&#39;):
+        abort(401)
+    g.db.execute(&#39;insert into entries (title, text) values (?, ?)&#39;,
+                 [request.form[&#39;title&#39;], request.form[&#39;text&#39;]])
+    g.db.commit()
+    flash(&#39;New entry was successfully posted&#39;)
+    return redirect(url_for(&#39;show_entries&#39;))
+</code></pre>
+
+<p>注意，我们在本视图中检查了用户是否已经登录（即检查会话中是否有 logged_in 键，且 对应的值是否为 True ）。</p>
+
+<p>安全性建议</p>
+
+<p>请像示例代码一样确保在构建 SQL 语句时使用问号。否则当你使用字符串构建 SQL 时 容易遭到 SQL 注入攻击。更多内容参见 在 Flask 中使用 SQLite 3 。</p>
+
+<h4 id="toc_27">登录和注销</h4>
+
+<p>这些函数用于用户登录和注销。登录视图根据配置中的用户名和密码验证用户并在会话中 设置 logged<u>in 键值。如果用户通过验证，键值设为 True ，那么用户会被重定向到 show</u>entries 页面。另外闪现一个信息，告诉用户已登录成功。如果出现错误，模板会 提示错误信息，并让用户重新登录:</p>
+
+<pre><code class="language-python">@app.route(&#39;/login&#39;, methods=[&#39;GET&#39;, &#39;POST&#39;])
+def login():
+    error = None
+    if request.method == &#39;POST&#39;:
+        if request.form[&#39;username&#39;] != app.config[&#39;USERNAME&#39;]:
+            error = &#39;Invalid username&#39;
+        elif request.form[&#39;password&#39;] != app.config[&#39;PASSWORD&#39;]:
+            error = &#39;Invalid password&#39;
+        else:
+            session[&#39;logged_in&#39;] = True
+            flash(&#39;You were logged in&#39;)
+            return redirect(url_for(&#39;show_entries&#39;))
+    return render_template(&#39;login.html&#39;, error=error)
+</code></pre>
+
+<p>登出视图则正好相反，把键值从会话中删除。在这里我们使用了一个小技巧：如果你使用 字典的 pop() 方法并且传递了第二个参数（键的缺省值），那么当字典中有 这个键时就会删除这个键，否则什么也不做。这样做的好处是我们不用检查用户是否已经 登录了。</p>
+
+<pre><code class="language-python">@app.route(&#39;/logout&#39;)
+def logout():
+    session.pop(&#39;logged_in&#39;, None)
+    flash(&#39;You were logged out&#39;)
+    return redirect(url_for(&#39;show_entries&#39;))
+</code></pre>
+
+<h3 id="toc_28">步骤 6 ：模板</h3>
+
+<p>现在开始写模板。如果我们现在访问 URL ，那么会得到一个 Flask 无法找到模板文件的 异常。 Flask 使用 Jinja2 模板语法并默认开启自动转义。也就是说除非用 Markup 标记一个值或在模板中使用 |safe 过滤器，否则 Jinja2 会把如 &lt; 或 &gt; 之类的特殊字符转义为与其 XML 等价字符。</p>
+
+<p>我们还使用了模板继承以保存所有页面的布局统一。</p>
+
+<p>请把以下模板放在 templates 文件夹中：</p>
+
+<h4 id="toc_29">layout.html</h4>
+
+<p>这个模板包含 HTML 骨架、头部和一个登录链接（如果用户已登录则变为一个注销链接 ）。如果有闪现信息，那么还会显示闪现信息。 {% block body %} 块会被子模板中 同名（ body ）的块替换。</p>
+
+<p>session 字典在模板中也可以使用。你可以使用它来检验用户是否已经 登录。注意，在 Jinja 中可以访问对象或字典的不存在的属性和成员。如例子中的 &#39;logged_in&#39; 键不存在时代码仍然能正常运行：</p>
+
+<pre><code class="language-html">&lt;!doctype html&gt;
+&lt;title&gt;Flaskr&lt;/title&gt;
+&lt;link rel=stylesheet type=text/css href=&quot;{{ url_for(&#39;static&#39;, filename=&#39;style.css&#39;) }}&quot;&gt;
+&lt;div class=page&gt;
+  &lt;h1&gt;Flaskr&lt;/h1&gt;
+  &lt;div class=metanav&gt;
+  {% if not session.logged_in %}
+    &lt;a href=&quot;{{ url_for(&#39;login&#39;) }}&quot;&gt;log in&lt;/a&gt;
+  {% else %}
+    &lt;a href=&quot;{{ url_for(&#39;logout&#39;) }}&quot;&gt;log out&lt;/a&gt;
+  {% endif %}
+  &lt;/div&gt;
+  {% for message in get_flashed_messages() %}
+    &lt;div class=flash&gt;{{ message }}&lt;/div&gt;
+  {% endfor %}
+  {% block body %}{% endblock %}
+&lt;/div&gt;
+</code></pre>
+
+<h4 id="toc_30">show_entries.html</h4>
+
+<p>这个模板扩展了上述的 layout.html 模板，用于显示信息。注意， for 遍历了我们 通过 render<u>template() 函数传递的所有信息。模板还告诉表单使用 POST 作为 HTTP 方法向 add</u>entry 函数提交数据：</p>
+
+<pre><code class="language-html">{% extends &quot;layout.html&quot; %}
+{% block body %}
+  {% if session.logged_in %}
+    &lt;form action=&quot;{{ url_for(&#39;add_entry&#39;) }}&quot; method=post class=add-entry&gt;
+      &lt;dl&gt;
+        &lt;dt&gt;Title:
+        &lt;dd&gt;&lt;input type=text size=30 name=title&gt;
+        &lt;dt&gt;Text:
+        &lt;dd&gt;&lt;textarea name=text rows=5 cols=40&gt;&lt;/textarea&gt;
+        &lt;dd&gt;&lt;input type=submit value=Share&gt;
+      &lt;/dl&gt;
+    &lt;/form&gt;
+  {% endif %}
+  &lt;ul class=entries&gt;
+  {% for entry in entries %}
+    &lt;li&gt;&lt;h2&gt;{{ entry.title }}&lt;/h2&gt;{{ entry.text|safe }}
+  {% else %}
+    &lt;li&gt;&lt;em&gt;Unbelievable.  No entries here so far&lt;/em&gt;
+  {% endfor %}
+  &lt;/ul&gt;
+{% endblock %}
+</code></pre>
+
+<h4 id="toc_31">login.html</h4>
+
+<p>最后是简单显示用户登录表单的登录模板：</p>
+
+<pre><code class="language-html">{% extends &quot;layout.html&quot; %}
+{% block body %}
+  &lt;h2&gt;Login&lt;/h2&gt;
+  {% if error %}&lt;p class=error&gt;&lt;strong&gt;Error:&lt;/strong&gt; {{ error }}{% endif %}
+  &lt;form action=&quot;{{ url_for(&#39;login&#39;) }}&quot; method=post&gt;
+    &lt;dl&gt;
+      &lt;dt&gt;Username:
+      &lt;dd&gt;&lt;input type=text name=username&gt;
+      &lt;dt&gt;Password:
+      &lt;dd&gt;&lt;input type=password name=password&gt;
+      &lt;dd&gt;&lt;input type=submit value=Login&gt;
+    &lt;/dl&gt;
+  &lt;/form&gt;
+{% endblock %}
+</code></pre>
+
+<h3 id="toc_32">步骤 7 ：添加样式</h3>
+
+<p>现在万事俱备，只剩给应用添加一些样式了。只要把以下内容保存为 static 文件夹中 的 style.css 文件就行了：</p>
+
+<pre><code class="language-css">body            { font-family: sans-serif; background: #eee; }
+a, h1, h2       { color: #377ba8; }
+h1, h2          { font-family: &#39;Georgia&#39;, serif; margin: 0; }
+h1              { border-bottom: 2px solid #eee; }
+h2              { font-size: 1.2em; }
+
+.page           { margin: 2em auto; width: 35em; border: 5px solid #ccc;
+                  padding: 0.8em; background: white; }
+.entries        { list-style: none; margin: 0; padding: 0; }
+.entries li     { margin: 0.8em 1.2em; }
+.entries li h2  { margin-left: -1em; }
+.add-entry      { font-size: 0.9em; border-bottom: 1px solid #ccc; }
+.add-entry dl   { font-weight: bold; }
+.metanav        { text-align: right; font-size: 0.8em; padding: 0.3em;
+                  margin-bottom: 1em; background: #fafafa; }
+.flash          { background: #cee5F5; padding: 0.5em;
+                  border: 1px solid #aacbe2; }
+.error          { background: #f0d6d6; padding: 0.5em; }
+</code></pre>
+
+<h3 id="toc_33">测试 Flask 引用</h3>
+
+<p>未经测试的小猫，肯定不是一只好猫。</p>
+
+<p>这句话的出处不详（译者注：这句是译者献给小猫的），也不一定完全正确，但是基本上 是正确的。未经测试的应用难于改进现有的代码，因此其开发者会越改进越抓狂。反之， 经过自动测试的代码可以安全的改进，并且如果可以测试过程中立即发现错误。</p>
+
+<p>Flask 提供的测试渠道是公开 Werkzeug 的 Client ，为你 处理本地环境。你可以结合这个渠道使用你喜欢的测试工具。本文使用的测试工具是随着 Python 一起安装好的 unittest 包。</p>
+
+<h3 id="toc_34">测试骨架</h3>
+
+<p>为了测试应用，我们添加了一个新的模块 (flaskr_tests.py) 并创建了如下测试骨架:</p>
+
+<pre><code class="language-python">import os
+import flaskr
+import unittest
+import tempfile
+
+class FlaskrTestCase(unittest.TestCase):
+
+    def setUp(self):
+        self.db_fd, flaskr.app.config[&#39;DATABASE&#39;] = tempfile.mkstemp()
+        flaskr.app.config[&#39;TESTING&#39;] = True
+        self.app = flaskr.app.test_client()
+        flaskr.init_db()
+
+    def tearDown(self):
+        os.close(self.db_fd)
+        os.unlink(flaskr.app.config[&#39;DATABASE&#39;])
+
+if __name__ == &#39;__main__&#39;:
+    unittest.main()
+</code></pre>
+
+<p>setUp() 方法中会创建一个新的测试客户端并初始化一个新的 数据库。在每个独立的测试函数运行前都会调用这个方法。 tearDown() 方法的功能是在测试结束后关闭文件，并在文件 系统中删除数据库文件。另外在设置中 TESTING 标志开启的，这意味着在请求时关闭 错误捕捉，以便于在执行测试请求时得到更好的错误报告。</p>
+
+<p>测试客户端会给我们提供一个简单的应用接口。我们可以通过这个接口向应用发送测试 请求。客户端还可以追踪 cookies 。</p>
+
+<p>因为 SQLite3 是基于文件系统的，所以我们可以方便地使用临时文件模块来创建一个临时 数据库并初始化它。 mkstemp() 函数返回两个东西：一个低级别的文件 句柄和一个随机文件名。这个文件名后面将作为我们的数据库名称。我们必须把句柄保存 到 db_fd 中，以便于以后用 os.close() 函数来关闭文件。</p>
+
+<p>如果现在进行测试，那么会输出以下内容:</p>
+
+<pre><code>$ python flaskr_tests.py
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+</code></pre>
+
+<h3 id="toc_35">第一个测试</h3>
+
+<p>现在开始测试应用的功能。当我们访问应用的根 URL （ / ）时应该显示 “ No entries here so far ”。我们新增了一个新的测试方法来测试这个功能:</p>
+
+<pre><code class="language-python">class FlaskrTestCase(unittest.TestCase):
+
+    def setUp(self):
+        self.db_fd, flaskr.app.config[&#39;DATABASE&#39;] = tempfile.mkstemp()
+        self.app = flaskr.app.test_client()
+        flaskr.init_db()
+
+    def tearDown(self):
+        os.close(self.db_fd)
+        os.unlink(flaskr.app.config[&#39;DATABASE&#39;])
+
+    def test_empty_db(self):
+        rv = self.app.get(&#39;/&#39;)
+        assert &#39;No entries here so far&#39; in rv.data
+</code></pre>
+
+<p>注意，我们的调试函数都是以 test 开头的。这样 unittest 就会自动识别这些 是用于测试的函数并运行它们。</p>
+
+<p>通过使用 self.app.get ，可以向应用的指定 URL 发送 HTTP GET 请求，其返回的是 一个 ~flask.Flask.response_class 对象。我们可以使用 data 属性来检查应用的返回值（字符串 类型）。在本例中，我们检查输出是否包含 &#39;No entries here so far&#39; 。</p>
+
+<p>再次运行测试，会看到通过了一个测试:</p>
+
+<pre><code>$ python flaskr_tests.py
+.
+----------------------------------------------------------------------
+Ran 1 test in 0.034s
+
+OK
+</code></pre>
+
+<h3 id="toc_36">登录和注销</h3>
+
+<p>我们应用的主要功能必须登录以后才能使用，因此必须测试应用的登录和注销。测试的 方法是使用规定的数据（用户名和密码）向应用发出登录和注销的请求。因为登录和注销 后会重定向到别的页面，因此必须告诉客户端使用 follow_redirects 追踪重定向。</p>
+
+<p>在 FlaskrTestCase 类中添加以下两个方法:</p>
+
+<pre><code class="language-python">def login(self, username, password):
+    return self.app.post(&#39;/login&#39;, data=dict(
+        username=username,
+        password=password
+    ), follow_redirects=True)
+
+def logout(self):
+    return self.app.get(&#39;/logout&#39;, follow_redirects=True)
+</code></pre>
+
+<p>现在可以方便地测试登录成功、登录失败和注销功能了。下面为新增的测试代码:</p>
+
+<pre><code class="language-python">def test_login_logout(self):
+    rv = self.login(&#39;admin&#39;, &#39;default&#39;)
+    assert &#39;You were logged in&#39; in rv.data
+    rv = self.logout()
+    assert &#39;You were logged out&#39; in rv.data
+    rv = self.login(&#39;adminx&#39;, &#39;default&#39;)
+    assert &#39;Invalid username&#39; in rv.data
+    rv = self.login(&#39;admin&#39;, &#39;defaultx&#39;)
+    assert &#39;Invalid password&#39; in rv.data
+</code></pre>
+
+<h3 id="toc_37">测试增加条目功能</h3>
+
+<p>我们还要测试增加条目功能。添加以下测试代码:</p>
+
+<pre><code class="language-python">def test_messages(self):
+    self.login(&#39;admin&#39;, &#39;default&#39;)
+    rv = self.app.post(&#39;/add&#39;, data=dict(
+        title=&#39;&lt;Hello&gt;&#39;,
+        text=&#39;&lt;strong&gt;HTML&lt;/strong&gt; allowed here&#39;
+    ), follow_redirects=True)
+    assert &#39;No entries here so far&#39; not in rv.data
+    assert &#39;&amp;lt;Hello&amp;gt;&#39; in rv.data
+    assert &#39;&lt;strong&gt;HTML&lt;/strong&gt; allowed here&#39; in rv.data
+</code></pre>
+
+<p>这里我们检查了博客内容中允许使用 HTML ，但标题不可以。应用设计思路就是这样的。</p>
+
+<p>运行测试，现在通过了三个测试:</p>
+
+<pre><code>$ python flaskr_tests.py
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.332s
+
+OK
+</code></pre>
+
+<p>关于更复杂的 HTTP 头部和状态码测试参见 MiniTwit 示例 。这个示例的源代码中 包含了更大的测试套件。</p>
+
+<h3 id="toc_38">其他测试技巧</h3>
+
+<p>除了使用上述测试客户端外，还可以在 with 语句中使用 test<u>request</u>context() 方法来临时激活一个请求环境。在这个 环境中可以像以视图函数中一样操作 request 、g 和 session 对象。示例:</p>
+
+<pre><code class="language-python">app = flask.Flask(__name__)
+
+with app.test_request_context(&#39;/?name=Peter&#39;):
+    assert flask.request.path == &#39;/&#39;
+    assert flask.request.args[&#39;name&#39;] == &#39;Peter&#39;
+</code></pre>
+
+<p>其他与环境绑定的对象也可以这样使用。</p>
+
+<p>如果你必须使用不同的配置来测试应用，而且没有什么好的测试方法，那么可以考虑使用 应用工厂（参见 应用工厂 ）。</p>
+
+<p>注意，在测试请求环境中 before<u>request() 函数和 after</u>request() 函数不会被自动调用。但是当调试请求环境离开 with 块时会执行 teardown<u>request() 函数。如果需要 before</u>request() 函数和正常情况下一样被调用，那么你必须调用 preprocess_request()</p>
+
+<pre><code class="language-python">app = flask.Flask(__name__)
+
+with app.test_request_context(&#39;/?name=Peter&#39;):
+    app.preprocess_request()
+    ...
+</code></pre>
+
+<p>在这函数中可以打开数据库连接或者根据应用需要打开其他类似东西。</p>
+
+<p>如果想调用 after<u>request() 函数，那么必须调用 process</u>response() ，并把响应对象传递给它:</p>
+
+<pre><code class="language-python">app = flask.Flask(__name__)
+
+with app.test_request_context(&#39;/?name=Peter&#39;):
+    resp = Response(&#39;...&#39;)
+    resp = app.process_response(resp)
+    ...
+</code></pre>
+
+<p>这个例子中的情况基本没有用处，因为在这种情况下可以直接开始使用测试客户端。</p>
+
+<h3 id="toc_39">伪造资源和环境</h3>
+
+<p>通常情况下，我们会把用户认证信息和数据库连接储存到应用环境或者 flask.g 对象中，并在第一次使用前准备好，然后在断开时删除。假设应用中 得到当前用户的代码如下:</p>
+
+<pre><code class="language-python">def get_user():
+    user = getattr(g, &#39;user&#39;, None)
+    if user is None:
+        user = fetch_current_user_from_database()
+        g.user = user
+    return user
+</code></pre>
+
+<p>在测试时可以很很方便地重载用户而不用改动代码。可以先象下面这样钩接 flask.appcontext_pushed 信号:</p>
+
+<pre><code class="language-python">from contextlib import contextmanager
+from flask import appcontext_pushed
+
+@contextmanager
+def user_set(app, user):
+    def handler(sender, **kwargs):
+        g.user = user
+    with appcontext_pushed.connected_to(handler, app):
+        yield
+然后使用:
+
+from flask import json, jsonify
+
+@app.route(&#39;/users/me&#39;)
+def users_me():
+    return jsonify(username=g.user.username)
+
+with user_set(app, my_user):
+    with app.test_client() as c:
+        resp = c.get(&#39;/users/me&#39;)
+        data = json.loads(resp.data)
+        self.assert_equal(data[&#39;username&#39;], my_user.username)
+</code></pre>
+
+<h3 id="toc_40">保持环境</h3>
+
+<p>有时候这种情形是有用的：触发一个常规请求，但是保持环境以便于做一点额外 的事情。 在 Flask 0.4 之后可以在 with 语句中使用 test_client() 来 实现:</p>
+
+<pre><code class="language-python">app = flask.Flask(__name__)
+
+with app.test_client() as c:
+    rv = c.get(&#39;/?tequila=42&#39;)
+    assert request.args[&#39;tequila&#39;] == &#39;42&#39;
+</code></pre>
+
+<p>如果你在没有 with 的情况下使用 test_client() ，那么 assert 会出错失败。因为无法在请求之外访问 request 。</p>
+
+<h3 id="toc_41">访问和修改会话</h3>
+
+<p>有时候在测试客户端中访问和修改会话是非常有用的。通常有两方法。如果你想测试会话中 的键和值是否正确，你可以使用 flask.session:</p>
+
+<pre><code class="language-python">with app.test_client() as c:
+    rv = c.get(&#39;/&#39;)
+    assert flask.session[&#39;foo&#39;] == 42
+</code></pre>
+
+<p>但是这个方法无法修改会话或在请求发出前访问会话。自 Flask 0.8 开始，我们提供了 “会话处理”，用打开测试环境中会话和修改会话，最后保存会话。处理后的会话独立于 后端实际使用的会话:</p>
+
+<pre><code class="language-python">with app.test_client() as c:
+    with c.session_transaction() as sess:
+        sess[&#39;a_key&#39;] = &#39;a value&#39;
+
+    # 运行到这里时，会话已被保存
+</code></pre>
+
+<p>注意在这种情况下必须使用 sess 对象来代替 flask.session 代理。 sess 对象本身可以提供相同的接口。</p>
+
+<hr/>
+
+<h2 id="toc_42">安装</h2>
+
+<ul>
+<li>使用 <code>virutalenv</code> 可以有效保证环境的互不影响</li>
+<li><code>sudo pip install virualenv</code></li>
+<li>利用 <code>activate-wkk.sh</code> 激活环境</li>
+<li><code>pip install Flask</code></li>
+</ul>
+
+<h2 id="toc_43">快速入门</h2>
+
+<p>一个最小的 Flask 应用如下:</p>
+
+<pre><code class="language-python">from flask import Flask
+app = Flask(__name__)
+
+@app.route(&#39;/&#39;)
+def hello_world():
+    return &#39;Hello World!&#39;
+
+if __name__ == &#39;__main__&#39;:
+    app.run()
+</code></pre>
+
+<p>把它保存为 hello.py 或其他类似名称并用你的 Python 解释器运行这个文件。请不要 使用 flask.py 作为应用名称，这会与 Flask 本身发生冲突。</p>
+
+<pre><code>$ python hello.py
+ * Running on http://127.0.0.1:5000/
+</code></pre>
+
+<p>现在，在浏览器中打开 <a href="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a> ，就 可以看到问候页面了</p>
+
+<p>那么，这些代码是什么意思呢？</p>
+
+<ol>
+<li>首先我们导入了 Flask 类。这个类的实例将会成为我们的 WSGI 应用。</li>
+<li>接着我们创建了这个类的实例。第一个参数是应用模块或者包的名称。如果你使用一个 单一模块（就像本例），那么应当使用 <code>__name__</code>，因为名称会根据这个模块是按 应用方式使用还是作为一个模块导入而发生变化（可能是 <code>__main__</code> ，也可能是 实际导入的名称）。这个参数是必需的，这样 Flask 就可以知道在哪里找到模板和 静态文件等东西。更多内容详见 Flask 文档。</li>
+<li>然后我们使用 route() 装饰器来告诉 Flask 触发函数的 URL 。</li>
+<li>函数名称可用于生成相关联的 URL ，并返回需要在用户浏览器中显示的信息。</li>
+<li>最后，使用 run() 函数来运行本地服务器和我们的应用。 <code>if __name__ == &#39;__main__&#39;:</code> 确保服务器只会在使用 Python 解释器运行代码的情况下运行，而不会在作为模块导入时运行。</li>
+</ol>
+
+<p>按 control-C 可以停止服务器。</p>
+
+<ul>
+<li>如果要同网络的可以访问 <code>app.run(host=&#39;0.0.0.0</code>)</li>
+<li>上面方法每次修改代码都需要手动重启开发服务器，在调试模式下 Flask 可以自动重新载入</li>
+</ul>
+
+<p>方法一：</p>
+
+<pre><code>app.debug = True
+app.run()
+</code></pre>
+
+<p>方法二：</p>
+
+<pre><code>app.run(debug = True)
+</code></pre>
+
+<h3 id="toc_44">路由</h3>
+
+<p><code>route()</code> 装饰器把一个函数绑定到对应的 URL 上，如果想要添加变量部分，需要标记为 <code>&lt;variable_name&gt;</code> 或者可以用 <code>&lt;converter:variable_name&gt;</code> 来指定一个转换器：</p>
+
+<pre><code>@app.route(&#39;/user/&lt;username&gt;&#39;)
+def show_user_profile(username):
+    return &#39;User %s&#39; % username
+
+@app.route(&#39;/post/&lt;int:post_id&gt;&#39;)
+def show_post(post_id):
+    return &#39;Post %d&#39; % post_id
+</code></pre>
+
+<p>现有的转换器</p>
+
+<ul>
+<li>默认为 string</li>
+<li>int 接受整数</li>
+<li>float 接受整数或浮点数</li>
+<li>path 接受斜线</li>
+</ul>
+
+<h3 id="toc_45">唯一的 URL / 重定向行为</h3>
+
+<p>Flask 的 URL 规则都是基于 Werkzeug 的路由模块的。其背后的理念是保证漂亮的 外观和唯一的 URL 。这个理念来自于 Apache 和更早期的服务器。</p>
+
+<p>假设有如下两条规则:</p>
+
+<pre><code class="language-python">@app.route(&#39;/projects/&#39;)
+def projects():
+    return &#39;The project page&#39;
+
+@app.route(&#39;/about&#39;)
+def about():
+    return &#39;The about page&#39;
+</code></pre>
+
+<p>它们看上去很相近，不同之处在于 URL 定义 中尾部的斜杠。第一个例子中 prjects 的 URL 是中规中举的，尾部有一个斜杠，看起来就如同一个文件夹。访问 一个没有斜杠结尾的 URL 时 Flask 会自动进行重定向，帮你在尾部加上一个斜杠。</p>
+
+<p>但是在第二个例子中， URL 没有尾部斜杠，因此其行为表现与一个文件类似。如果 访问这个 URL 时添加了尾部斜杠就会得到一个 404 错误。</p>
+
+<p>为什么这样做？因为这样可以在省略末尾斜杠时仍能继续相关的 URL 。这种重定向 行为与 Apache 和其他服务器一致。同时， URL 仍保持唯一，帮助搜索引擎不重复 索引同一页面。</p>
+
+<h3 id="toc_46">URL 构建</h3>
+
+<p>如果可以匹配 URL ，那么 Flask 也可以生成 URL 吗？当然可以。 url_for() 函数就是用于构建指定函数的 URL 的。它把函数名称作为 第一个参数，其余参数对应 URL 中的变量。未知变量将添加到 URL 中作为查询参数。 例如：</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; from flask import Flask, url_for
+&gt;&gt;&gt; app = Flask(__name__)
+&gt;&gt;&gt; @app.route(&#39;/&#39;)
+... def index(): pass
+...
+&gt;&gt;&gt; @app.route(&#39;/login&#39;)
+... def login(): pass
+...
+&gt;&gt;&gt; @app.route(&#39;/user/&lt;username&gt;&#39;)
+... def profile(username): pass
+...
+&gt;&gt;&gt; with app.test_request_context():
+...  print url_for(&#39;index&#39;)
+...  print url_for(&#39;login&#39;)
+...  print url_for(&#39;login&#39;, next=&#39;/&#39;)
+...  print url_for(&#39;profile&#39;, username=&#39;John Doe&#39;)
+...
+/
+/login
+/login?next=/
+/user/John%20Doe
+</code></pre>
+
+<p>（例子中还使用下文要讲到的 test<u>request</u>context() 方法。这个 方法的作用是告诉 Flask 我们正在处理一个请求，而实际上也许我们正处在交互 Python shell 之中，并没有真正的请求。详见下面的 本地环境 ）。</p>
+
+<p>为什么不在把 URL 写死在模板中，反而要动态构建？有三个很好的理由：</p>
+
+<p>反向解析通常比硬编码 URL 更直观。同时，更重要的是你可以只在一个地方改变 URL ，而不用到处乱找。<br/>
+URL 创建会为你处理特殊字符的转义和 Unicode 数据，不用你操心。<br/>
+如果你的应用是放在 URL 根路径之外的地方（如在 /myapplication 中，不在 / 中）， url_for() 会为你妥善处理。</p>
+
+<h3 id="toc_47">HTTP 方法</h3>
+
+<p>HTTP （ web 应用使用的协议）) 协议中有访问 URL 的不同方法。缺省情况下，一个路由 只回应 GET 请求，但是可以通过 methods 参数使用不同方法。例如:</p>
+
+<pre><code class="language-python">@app.route(&#39;/login&#39;, methods=[&#39;GET&#39;,&#39;POST&#39;])
+def login():
+   if request.method == &#39;POST&#39;:
+       do_the_login()
+   else:
+       show_the_login_form()
+</code></pre>
+
+<h3 id="toc_48">静态文件</h3>
+
+<p>动态的 web 应用也需要静态文件，一般是 CSS 和 JavaScript 文件。理想情况下你的 服务器已经配置好了为你的提供静态文件的服务。在开发过程中， Flask 也能做好这个 工作。只要在你的包或模块旁边创建一个名为 static 的文件夹就行了。静态文件位于 应用的 /static 中。</p>
+
+<p>使用选定的 &#39;static&#39; 端点就可以生成相应的 URL :</p>
+
+<pre><code>url_for(&#39;static&#39;, filename=&#39;style.css&#39;)
+</code></pre>
+
+<p>这个静态文件在文件系统中的位置应该是 static/style.css 。</p>
+
+<h3 id="toc_49">模板渲染</h3>
+
+<p>在 Python 内部生成 HTML 不好玩，且相当笨拙。因为你必须自己负责 HTML 转义，以 确保应用的安全。因此， Flask 自动为你配置的 Jinja2 模板引擎。</p>
+
+<p>使用 render_template() 方法可以渲染模板，你只要提供模板名称和需要 作为参数传递给模板的变量就行了。下面是一个简单的模板渲染例子:</p>
+
+<pre><code class="language-python">from flask import render_template
+
+@app.route(&#39;/hello/&#39;)
+@app.route(&#39;/hello/&lt;name&gt;&#39;)
+def hello(name=None):
+    return render_template(&#39;hello.html&#39;, name=name)
+</code></pre>
+
+<p>Flask 会在 templates 文件夹内寻找模板。因此，如果你的应用是一个模块，那么模板 文件夹应该在模块旁边；如果是一个包，那么就应该在包里面：</p>
+
+<p>情形 1: 一个模块:</p>
+
+<pre><code>/application.py
+/templates
+    /hello.html
+</code></pre>
+
+<p>情形 2: 一个包:</p>
+
+<pre><code>/application
+    /__init__.py
+    /templates
+        /hello.html
+</code></pre>
+
+<p>你可以充分使用 Jinja2 模板引擎的威力。更多内容，详见官方 Jinja2 模板文档 。</p>
+
+<p>模板举例：</p>
+
+<pre><code>&lt;!doctype html&gt;
+&lt;title&gt;Hello from Flask&lt;/title&gt;
+{% if name %}
+  &lt;h1&gt;Hello {{ name }}!&lt;/h1&gt;
+{% else %}
+  &lt;h1&gt;Hello World!&lt;/h1&gt;
+{% endif %}
+</code></pre>
+
+<p>在模板内部你也可以访问 request 、session 和 g [1] 对象，以及 get<u>flashed</u>messages() 函数。</p>
+
+<p>模板在继承使用的情况下尤其有用，其工作原理 模板继承 方案 文档。简单的说，模板继承可以使每个页面的特定元素（如页头，导航，页尾）保持 一致。</p>
+
+<h3 id="toc_50">请求对象</h3>
+
+<p>请求对象在 API 一节中有详细说明这里不细谈（参见 request ）。 这里简略地谈一下最常见的操作。首先，你必须从 flask 模块导入请求对象:</p>
+
+<pre><code>from flask import request
+</code></pre>
+
+<p>通过使用 method 属性可以操作当前请求方法，通过使用 form 属性处理表单数据。以下是使用两个属性的例子:</p>
+
+<pre><code class="language-python">@app.route(&#39;/login&#39;, methods=[&#39;POST&#39;, &#39;GET&#39;])
+def login():
+    error = None
+    if request.method == &#39;POST&#39;:
+        if valid_login(request.form[&#39;username&#39;],
+                       request.form[&#39;password&#39;]):
+            return log_the_user_in(request.form[&#39;username&#39;])
+        else:
+            error = &#39;Invalid username/password&#39;
+    # 如果请求访求是 GET 或验证未通过就会执行下面的代码
+    return render_template(&#39;login.html&#39;, error=error)
+</code></pre>
+
+<p>当 form 属性中不存在这个键时会发生什么？会引发一个 KeyError 。如果你不 像捕捉一个标准错误一样捕捉 KeyError ，那么会显示一个 HTTP 400 Bad Request 错误页面。因此，多数情况下你不必处理这个问题。</p>
+
+<p>要操作 URL （如 ?key=value ）中提交的参数可以使用 args 属性:</p>
+
+<pre><code>searchword = request.args.get(&#39;key&#39;, &#39;&#39;)
+</code></pre>
+
+<p>用户可能会改变 URL 导致出现一个 400 请求出错页面，这样降低了用户友好度。因此， 我们推荐使用 get 或通过捕捉 KeyError 来访问 URL 参数。</p>
+
+<p>完整的请求对象方法和属性参见 request 文档。</p>
+
+<h3 id="toc_51">文件上传</h3>
+
+<p>用 Flask 处理文件上传很容易，只要确保不要忘记在你的 HTML 表单中设置 enctype=<q>multipart/form-data</q> 属性就可以了。否则浏览器将不会传送你的文件。</p>
+
+<p>已上传的文件被储存在内存或文件系统的临时位置。你可以通过请求对象 files 属性来访问上传的文件。每个上传的文件都储存在这个 字典型属性中。这个属性基本和标准 Python file 对象一样，另外多出一个 用于把上传文件保存到服务器的文件系统中的 save() 方法。下例展示其如何运作:</p>
+
+<pre><code class="language-python">from flask import request
+
+@app.route(&#39;/upload&#39;, methods=[&#39;GET&#39;, &#39;POST&#39;])
+def upload_file():
+    if request.method == &#39;POST&#39;:
+        f = request.files[&#39;the_file&#39;]
+        f.save(&#39;/var/www/uploads/uploaded_file.txt&#39;)
+    ...
+</code></pre>
+
+<p>如果想要知道文件上传之前其在客户端系统中的名称，可以使用 filename 属性。但是请牢记这个值是 可以伪造的，永远不要信任这个值。如果想要把客户端的文件名作为服务器上的文件名， 可以通过 Werkzeug 提供的 secure_filename() 函数:</p>
+
+<pre><code class="language-python">from flask import request
+from werkzeug import secure_filename
+
+@app.route(&#39;/upload&#39;, methods=[&#39;GET&#39;, &#39;POST&#39;])
+def upload_file():
+    if request.method == &#39;POST&#39;:
+        f = request.files[&#39;the_file&#39;]
+        f.save(&#39;/var/www/uploads/&#39; + secure_filename(f.filename))
+    ...
+</code></pre>
+
+<p>更好的例子参见 上传文件 方案。</p>
+
+<h3 id="toc_52">Cookies</h3>
+
+<p>要访问 cookies ，可以使用 cookies 属性。可以使用请求对象 的 set_cookie 方法来设置 cookies 。请求对象的 cookies 属性是一个包含了客户端传输的所有 cookies 的字典。 在 Flask 中，如果能够使用 会话 ，那么就不要直接使用 cookies ，因为 会话比较安全一些。</p>
+
+<p>读取 cookies:</p>
+
+<pre><code class="language-python">from flask import request
+
+@app.route(&#39;/&#39;)
+def index():
+    username = request.cookies.get(&#39;username&#39;)
+    # 使用 cookies.get(key) 来代替 cookies[key] ，
+    # 以避免当 cookie 不存在时引发 KeyError 。
+</code></pre>
+
+<p>储存 cookies:</p>
+
+<pre><code class="language-python">from flask import make_response
+
+@app.route(&#39;/&#39;)
+def index():
+    resp = make_response(render_template(...))
+    resp.set_cookie(&#39;username&#39;, &#39;the username&#39;)
+    return resp
+</code></pre>
+
+<p>注意， cookies 设置在响应对象上。通常只是从视图函数返回字符串， Flask 会把它们 转换为响应对象。如果你想显式地转换，那么可以使用 make_response() 函数，然后再修改它。</p>
+
+<p>使用 延迟的请求回调 方案可以在没有响应对象的情况下设置一个 cookie 。</p>
+
+<p>同时可以参见 关于响应 。</p>
+
+<h3 id="toc_53">重定向和错误</h3>
+
+<p>使用 redirect() 函数可以重定向。使用 abort() 可以更早 退出请求，并返回错误代码:</p>
+
+<pre><code class="language-python">from flask import abort, redirect, url_for
+
+@app.route(&#39;/&#39;)
+def index():
+    return redirect(url_for(&#39;login&#39;))
+
+@app.route(&#39;/login&#39;)
+def login():
+    abort(401)
+    this_is_never_executed()
+</code></pre>
+
+<p>上例实际上是没有意义的，它让一个用户从索引页重定向到一个无法访问的页面（401 表示禁止访问）。但是上例可以说明重定向和出错跳出是如何工作的。</p>
+
+<p>缺省情况下每种出错代码都会对应显示一个黑白的出错页面。使用 errorhandler() 装饰器可以定制出错页面:</p>
+
+<pre><code class="language-python">from flask import render_template
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template(&#39;page_not_found.html&#39;), 404
+</code></pre>
+
+<p>注意 render_template() 后面的 404 ，这表示页面对就的出错代码是 404 ，即页面不存在。缺省情况下 200 表示一切正常。</p>
+
+<h3 id="toc_54">关于响应</h3>
+
+<p>视图函数的返回值会自动转换为一个响应对象。如果返回值是一个字符串，那么会被转换 为一个包含作为响应体的字符串、一个 200 OK 出错代码 和一个 text/html MIME 类型的响应对象。以下是转换的规则：</p>
+
+<ol>
+<li>如果视图要返回的是一个响应对象，那么就直接返回它。</li>
+<li>如果要返回的是一个字符串，那么根据这个字符串和缺省参数生成一个用于返回的 响应对象。</li>
+<li>如果要返回的是一个元组，那么元组中的项目可以提供额外的信息。元组中必须至少 包含一个项目，且项目应当由 (response, status, headers) 组成。 status 的值会重载状态代码， headers 是一个由额外头部值组成的列表或字典。</li>
+<li>如果以上都不是，那么 Flask 会假定返回值是一个有效的 WSGI 应用并把它转换为 一个响应对象。</li>
+</ol>
+
+<p>如果想要在视图内部掌控响应对象的结果，那么可以使用 make_response() 函数。</p>
+
+<p>设想有如下视图：</p>
+
+<pre><code class="language-python">@app.errorhandler(404)
+def not_found(error):
+    return render_template(&#39;error.html&#39;), 404
+</code></pre>
+
+<p>可以使用 make_response() 包裹返回表达式，获得响应对象，并对该对象 进行修改，然后再返回：</p>
+
+<pre><code class="language-python">@app.errorhandler(404)
+def not_found(error):
+    resp = make_response(render_template(&#39;error.html&#39;), 404)
+    resp.headers[&#39;X-Something&#39;] = &#39;A value&#39;
+    return resp
+</code></pre>
+
+<h3 id="toc_55">会话</h3>
+
+<p>除了请求对象之外还有一种称为 session 的对象，允许你在不同请求 之间储存信息。这个对象相当于用密钥签名加密的 cookie ，即用户可以查看你的 cookie ，但是如果没有密钥就无法修改它。</p>
+
+<p>使用会话之前你必须设置一个密钥。举例说明:</p>
+
+<pre><code class="language-python">from flask import Flask, session, redirect, url_for, escape, request
+
+app = Flask(__name__)
+
+@app.route(&#39;/&#39;)
+def index():
+    if &#39;username&#39; in session:
+        return &#39;Logged in as %s&#39; % escape(session[&#39;username&#39;])
+    return &#39;You are not logged in&#39;
+
+@app.route(&#39;/login&#39;, methods=[&#39;GET&#39;, &#39;POST&#39;])
+def login():
+    if request.method == &#39;POST&#39;:
+        session[&#39;username&#39;] = request.form[&#39;username&#39;]
+        return redirect(url_for(&#39;index&#39;))
+    return &#39;&#39;&#39;
+        &lt;form action=&quot;&quot; method=&quot;post&quot;&gt;
+            &lt;p&gt;&lt;input type=text name=username&gt;
+            &lt;p&gt;&lt;input type=submit value=Login&gt;
+        &lt;/form&gt;
+    &#39;&#39;&#39;
+
+@app.route(&#39;/logout&#39;)
+def logout():
+    # 如果会话中有用户名就删除它。
+    session.pop(&#39;username&#39;, None)
+    return redirect(url_for(&#39;index&#39;))
+
+# 设置密钥，复杂一点：
+app.secret_key = &#39;A0Zr98j/3yX R~XHH!jmN]LWX/,?RT&#39;
+</code></pre>
+
+<p>这里用到的 escape() 是用来转义的。如果不使用模板引擎就可以像上例 一样使用这个函数来转义。</p>
+
+<h3 id="toc_56">日志</h3>
+
+<p>有时候可能会遇到数据出错需要纠正的情况。例如因为用户篡改了数据或客户端代码出错 而导致一个客户端代码向服务器发送了明显错误的 HTTP 请求。多数时候在类似情况下 返回 400 Bad Request 就没事了，但也有不会返回的时候，而代码还得继续运行 下去。</p>
+
+<p>这时候就需要使用日志来记录这些不正常的东西了。自从 Flask 0.3 后就已经为你配置好 了一个日志工具。</p>
+
+<p>以下是一些日志调用示例:</p>
+
+<pre><code>app.logger.debug(&#39;A value for debugging&#39;)
+app.logger.warning(&#39;A warning occurred (%d apples)&#39;, 42)
+app.logger.error(&#39;An error occurred&#39;)
+</code></pre>
+
+<p>logger 是一个标准的 Python Logger 类， 更多信息详见官方的 logging 文档 。</p>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="14520476779456.html"  title="Previous Post: Node.js 命令行程序实例教程">&laquo; Node.js 命令行程序实例教程</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14520474070782.html" 
+	        title="Next Post: Google Map V2 使用指南">Google Map V2 使用指南 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14520476779406.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>
