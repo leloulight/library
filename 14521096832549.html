@@ -1,0 +1,4780 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  Python 编程思想 - 小土刀的笔记
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="小土刀的笔记" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">小土刀的笔记</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; 小土刀的笔记</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>清单</label></li>
+
+          
+            <li><a title="好问题收集" href="14520379720179.html">好问题收集</a></li>
+          
+            <li><a title="书单合集" href="14520379720136.html">书单合集</a></li>
+          
+            <li><a title="日志列表" href="14520379720098.html">日志列表</a></li>
+          
+            <li><a title="玩物列表" href="14520379720223.html">玩物列表</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>计算机学科经典</label></li>
+
+          
+            <li><a title="大教堂与集市" href="14520876353363.html">大教堂与集市</a></li>
+          
+            <li><a title="深入理解计算机系统" href="14520855371865.html">深入理解计算机系统</a></li>
+          
+            <li><a title="Python Algorithm" href="14521091296885.html">Python Algorithm</a></li>
+          
+            <li><a title="程序员的思维修炼" href="14520875018555.html">程序员的思维修炼</a></li>
+          
+            <li><a title="程序员修炼之道" href="14520874386531.html">程序员修炼之道</a></li>
+          
+            <li><a title="高效程序员的45个习惯" href="14520878121031.html">高效程序员的45个习惯</a></li>
+          
+            <li><a title="代码大全" href="14520855371782.html">代码大全</a></li>
+          
+            <li><a title="编写可读代码的艺术" href="14520874726715.html">编写可读代码的艺术</a></li>
+          
+            <li><a title="移动应用UI设计模式" href="14520886280669.html">移动应用UI设计模式</a></li>
+          
+            <li><a title="启示录：打造用户喜爱的产品" href="14520907410466.html">启示录：打造用户喜爱的产品</a></li>
+          
+            <li><a title="亲爱的界面：让用户乐于使用、爱不释手" href="14520885573483.html">亲爱的界面：让用户乐于使用、爱不释手</a></li>
+          
+            <li><a title="简约之美：软件设计之道" href="14520879229686.html">简约之美：软件设计之道</a></li>
+          
+            <li><a title="简单之美：软件开发实践者的思考" href="14520878623936.html">简单之美：软件开发实践者的思考</a></li>
+          
+            <li><a title="构建之法：现代软件工程" href="14520880342127.html">构建之法：现代软件工程</a></li>
+          
+            <li><a title="软件项目成功之道" href="14520883368873.html">软件项目成功之道</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>工具平台</label></li>
+
+          
+            <li><a title="Mac 指南" href="14520959875185.html">Mac 指南</a></li>
+          
+            <li><a title="Bash 指南" href="14520940884566.html">Bash 指南</a></li>
+          
+            <li><a title="Hexo 指南" href="14520953748408.html">Hexo 指南</a></li>
+          
+            <li><a title="VS Code 指南" href="14520964818956.html">VS Code 指南</a></li>
+          
+            <li><a title="Homebrew 指南" href="14520954251052.html">Homebrew 指南</a></li>
+          
+            <li><a title="Hadoop 指南" href="14521186972719.html">Hadoop 指南</a></li>
+          
+            <li><a title="Pandoc 指南" href="14520962259349.html">Pandoc 指南</a></li>
+          
+            <li><a title="Vim 指南" href="14520964365928.html">Vim 指南</a></li>
+          
+            <li><a title="Sublime 指南" href="14520965272426.html">Sublime 指南</a></li>
+          
+            <li><a title="GFW 原理指南" href="14521185605970.html">GFW 原理指南</a></li>
+          
+            <li><a title="Linux 的概念与体系" href="14521103801032.html">Linux 的概念与体系</a></li>
+          
+            <li><a title="Appstore 生存指南" href="14521185605800.html">Appstore 生存指南</a></li>
+          
+            <li><a title="Latex 指南" href="14520955052445.html">Latex 指南</a></li>
+          
+            <li><a title="Git 指南" href="14520951022304.html">Git 指南</a></li>
+          
+            <li><a title="Github 生活指南" href="14520951022388.html">Github 生活指南</a></li>
+          
+            <li><a title="iTerm2 指南" href="14520954757815.html">iTerm2 指南</a></li>
+          
+            <li><a title="Ubuntu 指南" href="14520961679182.html">Ubuntu 指南</a></li>
+          
+            <li><a title="谷歌搜索技巧" href="14520951022464.html">谷歌搜索技巧</a></li>
+          
+            <li><a title="Make 指南" href="14520961098604.html">Make 指南</a></li>
+          
+            <li><a title="GCC 简易指南" href="14520948089088.html">GCC 简易指南</a></li>
+          
+            <li><a title="Kinect 开发指南" href="14521185098750.html">Kinect 开发指南</a></li>
+          
+            <li><a title="fish shell 指南" href="14520943310829.html">fish shell 指南</a></li>
+          
+            <li><a title="Gradle 指南" href="14520951022555.html">Gradle 指南</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>编程语言</label></li>
+
+          
+            <li><a title="如何选择编程语言" href="14521020035250.html">如何选择编程语言</a></li>
+          
+            <li><a title="Python 学习指南" href="14521095530236.html">Python 学习指南</a></li>
+          
+            <li><a title="Python 编程思想" href="14521096832549.html">Python 编程思想</a></li>
+          
+            <li><a title="Java 精要" href="14521089938127.html">Java 精要</a></li>
+          
+            <li><a title="Matlab 指南" href="14521020962952.html">Matlab 指南</a></li>
+          
+            <li><a title="OpenMP 入门指南" href="14521021178707.html">OpenMP 入门指南</a></li>
+          
+            <li><a title="Javascript 学习指南" href="14521020732534.html">Javascript 学习指南</a></li>
+          
+            <li><a title="C++ 学习笔记" href="14520969294593.html">C++ 学习笔记</a></li>
+          
+            <li><a title="SQL 入门指南" href="14521021831775.html">SQL 入门指南</a></li>
+          
+            <li><a title="CUDA架构" href="14521020248399.html">CUDA架构</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Research</label></li>
+
+          
+            <li><a title="知识图谱沉思录" href="14520583101537.html">知识图谱沉思录</a></li>
+          
+            <li><a title="计算机视觉沉思录" href="14520483585854.html">计算机视觉沉思录</a></li>
+          
+            <li><a title="推荐系统沉思录" href="14520495721664.html">推荐系统沉思录</a></li>
+          
+            <li><a title="数据分析沉思录" href="14520494829635.html">数据分析沉思录</a></li>
+          
+            <li><a title="机器学习沉思录" href="14520493984651.html">机器学习沉思录</a></li>
+          
+            <li><a title="3D 打印沉思录" href="14520902603411.html">3D 打印沉思录</a></li>
+          
+            <li><a title="HMM 指南" href="14520495021796.html">HMM 指南</a></li>
+          
+            <li><a title="EM / GMM 指南" href="14520494287936.html">EM / GMM 指南</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>iOS</label></li>
+
+          
+            <li><a title="iOS 学习路径" href="14520467690026.html">iOS 学习路径</a></li>
+          
+            <li><a title="iOS 面试相关" href="14520467689968.html">iOS 面试相关</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Android</label></li>
+
+          
+            <li><a title="Android Studio 指南" href="14520922857884.html">Android Studio 指南</a></li>
+          
+            <li><a title="Google Map V2 使用指南" href="14520474070782.html">Google Map V2 使用指南</a></li>
+          
+            <li><a title="ActionBar 使用指南" href="14520474070736.html">ActionBar 使用指南</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Web</label></li>
+
+          
+            <li><a title="网络协议指南" href="14520476779491.html">网络协议指南</a></li>
+          
+            <li><a title="Node.js 命令行程序实例" href="14520476779456.html">Node.js 命令行程序实例</a></li>
+          
+            <li><a title="Flask Study Note" href="14520476779406.html">Flask Study Note</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>关于</label></li>
+
+          
+            <li><a title="版权声明" href="14520576386063.html">版权声明</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>清单</span></li>
+                        
+                          <li><a title="好问题收集" href="14520379720179.html">好问题收集</a></li>
+                        
+                          <li><a title="书单合集" href="14520379720136.html">书单合集</a></li>
+                        
+                          <li><a title="日志列表" href="14520379720098.html">日志列表</a></li>
+                        
+                          <li><a title="玩物列表" href="14520379720223.html">玩物列表</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>计算机学科经典</span></li>
+                        
+                          <li><a title="大教堂与集市" href="14520876353363.html">大教堂与集市</a></li>
+                        
+                          <li><a title="深入理解计算机系统" href="14520855371865.html">深入理解计算机系统</a></li>
+                        
+                          <li><a title="Python Algorithm" href="14521091296885.html">Python Algorithm</a></li>
+                        
+                          <li><a title="程序员的思维修炼" href="14520875018555.html">程序员的思维修炼</a></li>
+                        
+                          <li><a title="程序员修炼之道" href="14520874386531.html">程序员修炼之道</a></li>
+                        
+                          <li><a title="高效程序员的45个习惯" href="14520878121031.html">高效程序员的45个习惯</a></li>
+                        
+                          <li><a title="代码大全" href="14520855371782.html">代码大全</a></li>
+                        
+                          <li><a title="编写可读代码的艺术" href="14520874726715.html">编写可读代码的艺术</a></li>
+                        
+                          <li><a title="移动应用UI设计模式" href="14520886280669.html">移动应用UI设计模式</a></li>
+                        
+                          <li><a title="启示录：打造用户喜爱的产品" href="14520907410466.html">启示录：打造用户喜爱的产品</a></li>
+                        
+                          <li><a title="亲爱的界面：让用户乐于使用、爱不释手" href="14520885573483.html">亲爱的界面：让用户乐于使用、爱不释手</a></li>
+                        
+                          <li><a title="简约之美：软件设计之道" href="14520879229686.html">简约之美：软件设计之道</a></li>
+                        
+                          <li><a title="简单之美：软件开发实践者的思考" href="14520878623936.html">简单之美：软件开发实践者的思考</a></li>
+                        
+                          <li><a title="构建之法：现代软件工程" href="14520880342127.html">构建之法：现代软件工程</a></li>
+                        
+                          <li><a title="软件项目成功之道" href="14520883368873.html">软件项目成功之道</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>工具平台</span></li>
+                        
+                          <li><a title="Mac 指南" href="14520959875185.html">Mac 指南</a></li>
+                        
+                          <li><a title="Bash 指南" href="14520940884566.html">Bash 指南</a></li>
+                        
+                          <li><a title="Hexo 指南" href="14520953748408.html">Hexo 指南</a></li>
+                        
+                          <li><a title="VS Code 指南" href="14520964818956.html">VS Code 指南</a></li>
+                        
+                          <li><a title="Homebrew 指南" href="14520954251052.html">Homebrew 指南</a></li>
+                        
+                          <li><a title="Hadoop 指南" href="14521186972719.html">Hadoop 指南</a></li>
+                        
+                          <li><a title="Pandoc 指南" href="14520962259349.html">Pandoc 指南</a></li>
+                        
+                          <li><a title="Vim 指南" href="14520964365928.html">Vim 指南</a></li>
+                        
+                          <li><a title="Sublime 指南" href="14520965272426.html">Sublime 指南</a></li>
+                        
+                          <li><a title="GFW 原理指南" href="14521185605970.html">GFW 原理指南</a></li>
+                        
+                          <li><a title="Linux 的概念与体系" href="14521103801032.html">Linux 的概念与体系</a></li>
+                        
+                          <li><a title="Appstore 生存指南" href="14521185605800.html">Appstore 生存指南</a></li>
+                        
+                          <li><a title="Latex 指南" href="14520955052445.html">Latex 指南</a></li>
+                        
+                          <li><a title="Git 指南" href="14520951022304.html">Git 指南</a></li>
+                        
+                          <li><a title="Github 生活指南" href="14520951022388.html">Github 生活指南</a></li>
+                        
+                          <li><a title="iTerm2 指南" href="14520954757815.html">iTerm2 指南</a></li>
+                        
+                          <li><a title="Ubuntu 指南" href="14520961679182.html">Ubuntu 指南</a></li>
+                        
+                          <li><a title="谷歌搜索技巧" href="14520951022464.html">谷歌搜索技巧</a></li>
+                        
+                          <li><a title="Make 指南" href="14520961098604.html">Make 指南</a></li>
+                        
+                          <li><a title="GCC 简易指南" href="14520948089088.html">GCC 简易指南</a></li>
+                        
+                          <li><a title="Kinect 开发指南" href="14521185098750.html">Kinect 开发指南</a></li>
+                        
+                          <li><a title="fish shell 指南" href="14520943310829.html">fish shell 指南</a></li>
+                        
+                          <li><a title="Gradle 指南" href="14520951022555.html">Gradle 指南</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>编程语言</span></li>
+                        
+                          <li><a title="如何选择编程语言" href="14521020035250.html">如何选择编程语言</a></li>
+                        
+                          <li><a title="Python 学习指南" href="14521095530236.html">Python 学习指南</a></li>
+                        
+                          <li><a title="Python 编程思想" href="14521096832549.html">Python 编程思想</a></li>
+                        
+                          <li><a title="Java 精要" href="14521089938127.html">Java 精要</a></li>
+                        
+                          <li><a title="Matlab 指南" href="14521020962952.html">Matlab 指南</a></li>
+                        
+                          <li><a title="OpenMP 入门指南" href="14521021178707.html">OpenMP 入门指南</a></li>
+                        
+                          <li><a title="Javascript 学习指南" href="14521020732534.html">Javascript 学习指南</a></li>
+                        
+                          <li><a title="C++ 学习笔记" href="14520969294593.html">C++ 学习笔记</a></li>
+                        
+                          <li><a title="SQL 入门指南" href="14521021831775.html">SQL 入门指南</a></li>
+                        
+                          <li><a title="CUDA架构" href="14521020248399.html">CUDA架构</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Research</span></li>
+                        
+                          <li><a title="知识图谱沉思录" href="14520583101537.html">知识图谱沉思录</a></li>
+                        
+                          <li><a title="计算机视觉沉思录" href="14520483585854.html">计算机视觉沉思录</a></li>
+                        
+                          <li><a title="推荐系统沉思录" href="14520495721664.html">推荐系统沉思录</a></li>
+                        
+                          <li><a title="数据分析沉思录" href="14520494829635.html">数据分析沉思录</a></li>
+                        
+                          <li><a title="机器学习沉思录" href="14520493984651.html">机器学习沉思录</a></li>
+                        
+                          <li><a title="3D 打印沉思录" href="14520902603411.html">3D 打印沉思录</a></li>
+                        
+                          <li><a title="HMM 指南" href="14520495021796.html">HMM 指南</a></li>
+                        
+                          <li><a title="EM / GMM 指南" href="14520494287936.html">EM / GMM 指南</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>iOS</span></li>
+                        
+                          <li><a title="iOS 学习路径" href="14520467690026.html">iOS 学习路径</a></li>
+                        
+                          <li><a title="iOS 面试相关" href="14520467689968.html">iOS 面试相关</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Android</span></li>
+                        
+                          <li><a title="Android Studio 指南" href="14520922857884.html">Android Studio 指南</a></li>
+                        
+                          <li><a title="Google Map V2 使用指南" href="14520474070782.html">Google Map V2 使用指南</a></li>
+                        
+                          <li><a title="ActionBar 使用指南" href="14520474070736.html">ActionBar 使用指南</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Web</span></li>
+                        
+                          <li><a title="网络协议指南" href="14520476779491.html">网络协议指南</a></li>
+                        
+                          <li><a title="Node.js 命令行程序实例" href="14520476779456.html">Node.js 命令行程序实例</a></li>
+                        
+                          <li><a title="Flask Study Note" href="14520476779406.html">Flask Study Note</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>关于</span></li>
+                        
+                          <li><a title="版权声明" href="14520576386063.html">版权声明</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>Python 编程思想</h1>
+
+<p>这里主要是比较深入 python 机制的内容</p>
+
+<h2 id="toc_0">浅谈 Python 的 with 语句</h2>
+
+<p>with 语句是从 Python 2.5 开始引入的一种与异常处理相关的功能（2.5 版本中要通过 <code>from __future__ import with_statement</code> 导入后才可以使用），从 2.6 版本开始缺省可用（参考 What&#39;s new in Python 2.6? 中 with 语句相关部分介绍）。with 语句适用于对资源进行访问的场合，确保不管使用过程中是否发生异常都会执行必要的“清理”操作，释放资源，比如文件使用后自动关闭、线程中锁的自动获取和释放等。</p>
+
+<h3 id="toc_1">术语</h3>
+
+<p>要使用 with 语句，首先要明白上下文管理器这一概念。有了上下文管理器，with 语句才能工作。</p>
+
+<p>下面是一组与上下文管理器和with 语句有关的概念。</p>
+
+<p>上下文管理协议（Context Management Protocol）：包含方法 <code>__enter__()</code> 和 <code>__exit__()</code>，支持该协议的对象要实现这两个方法。</p>
+
+<p>上下文管理器（Context Manager）：支持上下文管理协议的对象，这种对象实现了<br/>
+<code>__enter__()</code> 和 <code>__exit__()</code> 方法。上下文管理器定义执行 with 语句时要建立的运行时上下文，负责执行 with 语句块上下文中的进入与退出操作。通常使用 with 语句调用上下文管理器，也可以通过直接调用其方法来使用。</p>
+
+<p>运行时上下文（runtime context）：由上下文管理器创建，通过上下文管理器的 <code>__enter__()</code> 和 <code>__exit__()</code> 方法实现，<code>__enter__()</code> 方法在语句体执行之前进入运行时上下文，<code>__exit__()</code> 在语句体执行完后从运行时上下文退出。with 语句支持运行时上下文这一概念。</p>
+
+<p>上下文表达式（Context Expression）：with 语句中跟在关键字 with 之后的表达式，该表达式要返回一个上下文管理器对象。</p>
+
+<p>语句体（with-body）：with 语句包裹起来的代码块，在执行语句体之前会调用上下文管<br/>
+理器的 <code>__enter__()</code> 方法，执行完语句体之后会执行 <code>__exit__()</code> 方法。</p>
+
+<h3 id="toc_2">基本语法和工作原理</h3>
+
+<p>with 语句的语法格式如下：</p>
+
+<pre><code class="language-python">with context_expression [as target(s)]:
+    with-body
+</code></pre>
+
+<p>这里 context_expression 要返回一个上下文管理器对象，该对象并不赋值给 as 子句中的 target(s) ，如果指定了 as 子句的话，会将上下文管理器的 <code>__enter__()</code> 方法的返回值赋值给 target(s)。target(s) 可以是单个变量，或者由“()”括起来的元组（不能是仅仅由“,”分隔的变量列表，必须加“()”）。</p>
+
+<p>Python 对一些内建对象进行改进，加入了对上下文管理器的支持，可以用于 with 语句中，比如可以自动关闭文件、线程锁的自动获取和释放等。假设要对一个文件进行操作，使用 with 语句可以有如下代码：</p>
+
+<pre><code class="language-python">with open(r&#39;somefileName&#39;) as somefile:
+    for line in somefile:
+        print line
+        # ...more code
+</code></pre>
+
+<p>这里使用了 with 语句，不管在处理文件过程中是否发生异常，都能保证 with 语句执行完毕后已经关闭了打开的文件句柄。如果使用传统的 try/finally 范式，则要使用类似如下代码：</p>
+
+<pre><code class="language-python">somefile = open(r&#39;somefileName&#39;)
+try:
+    for line in somefile:
+        print line
+        # ...more code
+finally:
+    somefile.close()
+</code></pre>
+
+<p>比较起来，使用 with 语句可以减少编码量。已经加入对上下文管理协议支持的还有模块 threading、decimal 等。</p>
+
+<p>PEP 0343 对 with 语句的实现进行了描述。with 语句的执行过程类似如下代码块：</p>
+
+<pre><code class="language-python">context_manager = context_expression
+exit = type(context_manager).__exit__  
+value = type(context_manager).__enter__(context_manager)
+exc = True   # True 表示正常执行，即便有异常也忽略；False 表示重新抛出异常，需要对异常进行处理
+try:
+    try:
+        target = value  # 如果使用了 as 子句
+        with-body     # 执行 with-body
+    except:
+        # 执行过程中有异常发生
+        exc = False
+        # 如果 __exit__ 返回 True，则异常被忽略；如果返回 False，则重新抛出异常
+        # 由外层代码对异常进行处理
+        if not exit(context_manager, *sys.exc_info()):
+            raise
+finally:
+    # 正常退出，或者通过 statement-body 中的 break/continue/return 语句退出
+    # 或者忽略异常退出
+    if exc:
+        exit(context_manager, None, None, None)
+    # 缺省返回 None，None 在布尔上下文中看做是 False
+</code></pre>
+
+<ol>
+<li>执行 context<u>expression，生成上下文管理器 context</u>manager</li>
+<li>调用上下文管理器的 <code>__enter__()</code> 方法；如果使用了 as 子句，则将 <code>__enter__()</code> 方法的返回值赋值给 as 子句中的 target(s)</li>
+<li>执行语句体 with-body</li>
+<li>不管是否执行过程中是否发生了异常，执行上下文管理器的 <code>__exit__()</code> 方法，<code>__exit__()</code> 方法负责执行“清理”工作，如释放资源等。如果执行过程中没有出现异常，或者语句体中执行了语句 break/continue/return，则以 None 作为参数调用 <code>__exit__(None, None, None)</code> ；如果执行过程中出现异常，则使用 sys.exc_info 得到的异常信息为参数调用 <code>__exit__(exc_type, exc_value, exc_traceback)</code></li>
+<li>出现异常时，如果 <code>__exit__(type, value, traceback)</code> 返回 False，则会重新抛出异常，让with 之外的语句逻辑来处理异常，这也是通用做法；如果返回 True，则忽略异常，不再对异常进行处理</li>
+</ol>
+
+<h3 id="toc_3">自定义上下文管理器</h3>
+
+<p>开发人员可以自定义支持上下文管理协议的类。自定义的上下文管理器要实现上下文管理协议所需要的 <code>__enter__()</code> 和 <code>__exit__()</code> 两个方法：</p>
+
+<ul>
+<li><code>context_manager.__enter__()</code> ：进入上下文管理器的运行时上下文，在语句体执行前调用。with 语句将该方法的返回值赋值给 as 子句中的 target，如果指定了 as 子句的话</li>
+<li><code>context_manager.__exit__(exc_type, exc_value, exc_traceback)</code> ：退出与上下文管理器相关的运行时上下文，返回一个布尔值表示是否对发生的异常进行处理。参数表示引起退出操作的异常，如果退出时没有发生异常，则3个参数都为None。如果发生异常，返回 True 表示不处理异常，否则会在退出该方法后重新抛出异常以由 with 语句之外的代码逻辑进行处理。如果该方法内部产生异常，则会取代由 statement-body 中语句产生的异常。要处理异常时，不要显示重新抛出异常，即不能重新抛出通过参数传递进来的异常，只需要将返回值设置为 False 就可以了。之后，上下文管理代码会检测是否 <code>__exit__()</code> 失败来处理异常</li>
+</ul>
+
+<p>下面通过一个简单的示例来演示如何构建自定义的上下文管理器。注意，上下文管理器必须同时提供 <code>__enter__()</code> 和 <code>__exit__()</code> 方法的定义，缺少任何一个都会导致 AttributeError；with 语句会先检查是否提供了 <code>__exit__()</code> 方法，然后检查是否定义了 <code>__enter__()</code> 方法。</p>
+
+<p>假设有一个资源 DummyResource，这种资源需要在访问前先分配，使用完后再释放掉；分配操作可以放到 <code>__enter__()</code>方法中，释放操作可以放到 <code>__exit__()</code> 方法中。简单起见，这里只通过打印语句来表明当前的操作，并没有实际的资源分配与释放。</p>
+
+<pre><code class="language-python">class DummyResource:
+def __init__(self, tag):
+        self.tag = tag
+        print &#39;Resource [%s]&#39; % tag
+    def __enter__(self):
+        print &#39;[Enter %s]: Allocate resource.&#39; % self.tag
+        return self   # 可以返回不同的对象
+    def __exit__(self, exc_type, exc_value, exc_tb):
+        print &#39;[Exit %s]: Free resource.&#39; % self.tag
+        if exc_tb is None:
+            print &#39;[Exit %s]: Exited without exception.&#39; % self.tag
+        else:
+            print &#39;[Exit %s]: Exited with exception raised.&#39; % self.tag
+            return False   # 可以省略，缺省的None也是被看做是False
+</code></pre>
+
+<p>DummyResource 中的 <code>__enter__()</code> 返回的是自身的引用，这个引用可以赋值给 as 子句中的 target 变量；返回值的类型可以根据实际需要设置为不同的类型，不必是上下文管理器对象本身。</p>
+
+<p><code>__exit__()</code> 方法中对变量 exc_tb 进行检测，如果不为 None，表示发生了异常，返回 False 表示需要由外部代码逻辑对异常进行处理；注意到如果没有发生异常，缺省的返回值为 None，在布尔环境中也是被看做 False，但是由于没有异常发生，<code>__exit__()</code> 的三个参数都为 None，上下文管理代码可以检测这种情况，做正常处理。</p>
+
+<p>下面在 with 语句中访问 DummyResource ：</p>
+
+<pre><code class="language-python">with DummyResource(&#39;Normal&#39;):
+    print &#39;[with-body] Run without exceptions.&#39;
+
+with DummyResource(&#39;With-Exception&#39;):
+    print &#39;[with-body] Run with exception.&#39;
+    raise Exception
+    print &#39;[with-body] Run with exception. Failed to finish statement-body!&#39;
+</code></pre>
+
+<p>第1个 with 语句的执行结果如下：</p>
+
+<pre><code class="language-python">Resource [Normal]
+[Enter Normal]: Allocate resource.
+[with-body] Run without exceptions.
+[Exit Normal]: Free resource.
+[Exit Normal]: Exited without exception.
+</code></pre>
+
+<p>可以看到，正常执行时会先执行完语句体 with-body，然后执行 <code>__exit__()</code> 方法释放资源。</p>
+
+<p>第2个 with 语句的执行结果如下：</p>
+
+<pre><code class="language-python">Resource [With-Exception]
+[Enter With-Exception]: Allocate resource.
+[with-body] Run with exception.
+[Exit With-Exception]: Free resource.
+[Exit With-Exception]: Exited with exception raised.
+
+Traceback (most recent call last):
+  File &quot;G:/demo&quot;, line 20, in &lt;module&gt;
+   raise Exception
+Exception
+</code></pre>
+
+<p>可以看到，with-body 中发生异常时with-body 并没有执行完，但资源会保证被释放掉，同时产生的异常由 with 语句之外的代码逻辑来捕获处理。</p>
+
+<p>可以自定义上下文管理器来对软件系统中的资源进行管理，比如数据库连接、共享资源的访问控制等。Python 在线文档 Writing Context Managers 提供了一个针对数据库连接进行管理的上下文管理器的简单范例。</p>
+
+<h3 id="toc_4">contextlib 模块</h3>
+
+<p>contextlib 模块提供了3个对象：装饰器 contextmanager、函数 nested 和上下文管理器 closing。使用这些对象，可以对已有的生成器函数或者对象进行包装，加入对上下文管理协议的支持，避免了专门编写上下文管理器来支持 with 语句。</p>
+
+<h4 id="toc_5">装饰器 contextmanager</h4>
+
+<p>contextmanager 用于对生成器函数进行装饰，生成器函数被装饰以后，返回的是一个上下文管理器，其 <code>__enter__()</code> 和 <code>__exit__()</code> 方法由 contextmanager 负责提供，而不再是之前的迭代子。被装饰的生成器函数只能产生一个值，否则会导致异常 RuntimeError；产生的值会赋值给 as 子句中的 target，如果使用了 as 子句的话。下面看一个简单的例子。</p>
+
+<pre><code class="language-python">from contextlib import contextmanager
+
+@contextmanager
+def demo():
+    print &#39;[Allocate resources]&#39;
+    print &#39;Code before yield-statement executes in __enter__&#39;
+    yield &#39;*** contextmanager demo ***&#39;
+    print &#39;Code after yield-statement executes in __exit__&#39;
+    print &#39;[Free resources]&#39;
+
+with demo() as value:
+    print &#39;Assigned Value: %s&#39; % value
+</code></pre>
+
+<p>结果输出如下：</p>
+
+<pre><code class="language-python">[Allocate resources]
+Code before yield-statement executes in __enter__
+Assigned Value: *** contextmanager demo ***
+Code after yield-statement executes in __exit__
+[Free resources]
+</code></pre>
+
+<p>可以看到，生成器函数中 yield 之前的语句在 <code>__enter__()</code> 方法中执行，yield 之后的语句在 <code>__exit__()</code> 中执行，而 yield 产生的值赋给了 as 子句中的 value 变量。</p>
+
+<p>需要注意的是，contextmanager 只是省略了 <code>__enter__()</code> / <code>__exit__()</code> 的编写，但并不负责实现资源的“获取”和“清理”工作；“获取”操作需要定义在 yield 语句之前，“清理”操作需要定义 yield 语句之后，这样 with 语句在执行 <code>__enter__()</code> / <code>__exit__()</code> 方法时会执行这些语句以获取/释放资源，即生成器函数中需要实现必要的逻辑控制，包括资源访问出现错误时抛出适当的异常。</p>
+
+<h4 id="toc_6">函数 nested</h4>
+
+<p>nested 可以将多个上下文管理器组织在一起，避免使用嵌套 with 语句。</p>
+
+<pre><code class="language-python">with nested(A(), B(), C()) as (X, Y, Z):
+     # with-body code here
+</code></pre>
+
+<p>类似于：</p>
+
+<pre><code class="language-python">with A() as X:
+    with B() as Y:
+        with C() as Z:
+             # with-body code here
+</code></pre>
+
+<p>需要注意的是，发生异常后，如果某个上下文管理器的 <code>__exit__()</code> 方法对异常处理返回 False，则更外层的上下文管理器不会监测到异常。</p>
+
+<h4 id="toc_7">上下文管理器 closing</h4>
+
+<p>closing 的实现如下：</p>
+
+<pre><code class="language-python">class closing(object):
+    # help doc here
+    def __init__(self, thing):
+        self.thing = thing
+    def __enter__(self):
+        return self.thing
+    def __exit__(self, *exc_info):
+        self.thing.close()
+</code></pre>
+
+<p>上下文管理器会将包装的对象赋值给 as 子句的 target 变量，同时保证打开的对象在 with-body 执行完后会关闭掉。closing 上下文管理器包装起来的对象必须提供 close() 方法的定义，否则执行时会报 AttributeError 错误。</p>
+
+<pre><code class="language-python">class ClosingDemo(object):
+    def __init__(self):
+        self.acquire()
+    def acquire(self):
+        print &#39;Acquire resources.&#39;
+    def free(self):
+        print &#39;Clean up any resources acquired.&#39;
+    def close(self):
+        self.free()
+
+with closing(ClosingDemo()):
+    print &#39;Using resources&#39;
+</code></pre>
+
+<p>结果输出如下：</p>
+
+<pre><code class="language-python">Acquire resources.
+Using resources
+Clean up any resources acquired.
+</code></pre>
+
+<p>closing 适用于提供了 close() 实现的对象，比如网络连接、数据库连接等，也可以在自定义类时通过接口 close() 来执行所需要的资源“清理”工作。</p>
+
+<h2 id="toc_8">Python程序的执行原理</h2>
+
+<h3 id="toc_9">过程概述</h3>
+
+<p>Python先把代码(.py文件)编译成字节码，交给字节码虚拟机，然后虚拟机一条一条执行字节码指令，从而完成程序的执行。</p>
+
+<h3 id="toc_10">字节码</h3>
+
+<p>字节码在Python虚拟机程序里对应的是PyCodeObject对象。</p>
+
+<p>.pyc文件是字节码在磁盘上的表现形式。</p>
+
+<h3 id="toc_11">pyc文件</h3>
+
+<p>PyCodeObject对象的创建时机是模块加载的时候，即import。</p>
+
+<p>Python test.py会对test.py进行编译成字节码并解释执行，但是不会生成test.pyc。</p>
+
+<p>如果test.py加载了其他模块，如import util，Python会对util.py进行编译成字节码，生成util.pyc，然后对字节码解释执行。</p>
+
+<p>如果想生成test.pyc，我们可以使用Python内置模块py_compile来编译。</p>
+
+<p>加载模块时，如果同时存在.py和.pyc，Python会尝试使用.pyc，如果.pyc的编译时间早于.py的修改时间，则重新编译.py并更新.pyc。</p>
+
+<h3 id="toc_12">PyCodeObject</h3>
+
+<p>Python代码的编译结果就是PyCodeObject对象。</p>
+
+<pre><code class="language-python">typedef struct {
+    PyObject_HEAD
+    int co_argcount;        /* 位置参数个数 */
+    int co_nlocals;         /* 局部变量个数 */
+    int co_stacksize;       /* 栈大小 */
+    int co_flags;   
+    PyObject *co_code;      /* 字节码指令序列 */
+    PyObject *co_consts;    /* 所有常量集合 */
+    PyObject *co_names;     /* 所有符号名称集合 */
+    PyObject *co_varnames;  /* 局部变量名称集合 */
+    PyObject *co_freevars;  /* 闭包用的的变量名集合 */
+    PyObject *co_cellvars;  /* 内部嵌套函数引用的变量名集合 */
+    /* The rest doesn’t count for hash/cmp */
+    PyObject *co_filename;  /* 代码所在文件名 */
+    PyObject *co_name;      /* 模块名|函数名|类名 */
+    int co_firstlineno;     /* 代码块在文件中的起始行号 */
+    PyObject *co_lnotab;    /* 字节码指令和行号的对应关系 */
+    void *co_zombieframe;   /* for optimization only (see frameobject.c) */
+} PyCodeObject;
+</code></pre>
+
+<h3 id="toc_13">pyc文件格式</h3>
+
+<p>加载模块时，模块对应的PyCodeObject对象被写入.pyc文件，格式如下：</p>
+
+<p><img src="media/14521096832549/tip8.png" alt="tip8"/></p>
+
+<h3 id="toc_14">分析字节码</h3>
+
+<h4 id="toc_15">解析PyCodeObject</h4>
+
+<p>Python提供了内置函数compile可以编译Python代码和查看PyCodeObject对象，如下：</p>
+
+<pre><code class="language-python">s = ”hello”
+
+def func():
+    print s
+
+func()
+</code></pre>
+
+<p>在Python交互式shell里编译代码得到PyCodeObject对象:</p>
+
+<p><img src="media/14521096832549/tip9.png" alt="tip9"/></p>
+
+<p>dir(co)已经列出co的各个域，想查看某个域直接在终端输出即可：</p>
+
+<p><img src="media/14521096832549/tip10.png" alt="tip10"/></p>
+
+<p>test.py的PyCodeObject</p>
+
+<pre><code>co.co_argcount    0
+co.co_nlocals     0
+co.co_names       (‘s’, ’func’)
+co.co_varnames    (‘s’, ’func’)
+co.co_consts      (‘hello’, &lt;code object func at 0x2aaeeec57110, file ”test.py”, line 3&gt;, None)
+co.co_code        ’d\x00\x00Z\x00\x00d\x01\x00\x84\x00\x00Z\x01\x00e\x01\x00\x83\x00\x00\x01d\x02\x00S’
+</code></pre>
+
+<p>Python解释器会为函数也生成的字节码PyCodeObject对象，见上面的co_consts[1]</p>
+
+<p>func的PyCodeObject</p>
+
+<pre><code>func.co_argcount   0
+func.co_nlocals    0
+func.co_names      (‘s’,)
+func.co_varnames   ()
+func.co_consts     (None,)
+func.co_code       ‘t\x00\x00GHd\x00\x00S’
+</code></pre>
+
+<p>co_code是指令序列，是一串二进制流，它的格式和解析方法见6.2。</p>
+
+<h4 id="toc_16">解析指令序列</h4>
+
+<p>指令序列co_code的格式</p>
+
+<pre><code>opcode  oparg   opcode  opcode  oparg   …
+1 byte  2 bytes 1 byte  1 byte  2 bytes
+</code></pre>
+
+<p>Python内置的dis模块可以解析co_code，如下图：</p>
+
+<p>test.py的指令序列</p>
+
+<p><img src="media/14521096832549/tip11.png" alt="tip11"/></p>
+
+<p>func函数的指令序列</p>
+
+<p><img src="media/14521096832549/tip12.png" alt="tip12"/></p>
+
+<p>第一列表示以下几个指令在py文件中的行号;</p>
+
+<p>第二列是该指令在指令序列co_code里的偏移量;</p>
+
+<p>第三列是指令opcode的名称，分为有操作数和无操作数两种，opcode在指令序列中是一个字节的整数;</p>
+
+<p>第四列是操作数oparg，在指令序列中占两个字节，基本都是co<u>consts或者co</u>names的下标;</p>
+
+<p>第五列带括号的是操作数说明。</p>
+
+<h3 id="toc_17">执行字节码</h3>
+
+<p>Python虚拟机的原理就是模拟可执行程序再X86机器上的运行，X86的运行时栈帧如下图：</p>
+
+<p><img src="media/14521096832549/tip13.png" alt="tip13"/></p>
+
+<p>假如test.py用C语言来实现，会是下面这个样子：</p>
+
+<pre><code class="language-c">const char *s = “hello”;
+
+void func() {
+    printf(“%s\n”, s);
+}
+
+int main() {
+    func();
+    return 0;
+}
+</code></pre>
+
+<p>Python虚拟机的原理就是模拟上述行为。当发生函数调用时，创建新的栈帧，对应Python的实现就是PyFrameObject对象。</p>
+
+<h4 id="toc_18">PyFrameObject</h4>
+
+<pre><code class="language-python">typedef struct _frame {
+    PyObject_VAR_HEAD
+    struct _frame *f_back;    /* 调用者的帧 */
+    PyCodeObject *f_code;     /* 帧对应的字节码对象 */
+    PyObject *f_builtins;     /* 内置名字空间 */
+    PyObject *f_globals;      /* 全局名字空间 */
+    PyObject *f_locals;       /* 本地名字空间 */
+    PyObject **f_valuestack;  /* 运行时栈底 */
+    PyObject **f_stacktop;    /* 运行时栈顶 */
+    …….
+}
+</code></pre>
+
+<p>那么对应Python的运行时栈就是这样子：</p>
+
+<p><img src="media/14521096832549/tip14.png" alt="tip14"/></p>
+
+<h4 id="toc_19">执行指令</h4>
+
+<p>执行test.py的字节码时，会先创建一个栈帧，以下用f表示当前栈帧，执行过程注释如下：</p>
+
+<p>test.py的符号名集合和常量集合</p>
+
+<pre><code>co.co_names   (‘s’, ’func’)
+co.co_consts  (‘hello’, &lt;code object func at 0x2aaeeec57110, file ”test.py”, line 3&gt;, None)
+</code></pre>
+
+<p>test.py的指令序列</p>
+
+<p><img src="media/14521096832549/tip15.png" alt="tip15"/></p>
+
+<p>上面的CALL_FUNCTION指令执行时，会创建新的栈帧，并执行func的字节码指令，以下用f表示当前栈帧，func的字节码执行过程如下：</p>
+
+<p>func函数的符号名集合和常量集合</p>
+
+<pre><code>func.co_names       (‘s’,)
+func.co_consts      (None,)
+</code></pre>
+
+<p>func函数的指令序列</p>
+
+<p><img src="media/14521096832549/tip16.png" alt="tip16"/></p>
+
+<h4 id="toc_20">查看栈帧</h4>
+
+<p>如果你想查看当前栈帧，Python提供了<code>sys._getframe()</code>方法可以获取当前栈帧，你只需要在代码里加入代码如下：</p>
+
+<pre><code class="language-python">def func():
+    import sys
+    frame = sys._getframe()
+    print frame.f_locals
+    print frame.f_globals
+    print frame.f_back.f_locals
+    #你可以打印frame的各个域
+    print s
+</code></pre>
+
+<h2 id="toc_21">Python 黑魔法</h2>
+
+<h3 id="toc_22">Python 多继承</h3>
+
+<pre><code class="language-python">In [1]: class A(object):
+   ...:         def foo(self):
+   ...:                 print(&quot;class A&quot;)
+   ...:
+
+In [2]: class B(object):
+   ...:         def foo(self):
+   ...:                 print(&quot;class B&quot;)
+   ...:
+
+In [3]: class C(A, B):
+   ...:         pass
+   ...:
+
+In [4]: C().foo()
+class A # 例子很好懂, C继承了A和B，从左到右,发现A有foo方法,返回了
+</code></pre>
+
+<p>看起来都是很简单, 有次序的从底向上,从前向后找,找到就返回. 再看例子:</p>
+
+<pre><code class="language-python">In [5]: class A(object):
+   ...:        def foo(self):
+   ...:               print(&quot;class A&quot;)
+   ...:
+
+In [6]: class B(A):
+   ...:        pass
+   ...:
+
+In [7]: class C(A):
+   ...:        def foo(self):
+   ...:               print(&quot;class C&quot;)
+   ...:
+
+In [8]: class D(B,C):
+   ...:        pass
+   ...:
+
+In [9]: D().foo()
+class C # ? 按道理, 顺序是 D-&gt;B-&gt;A,为什么找到了C哪去了
+</code></pre>
+
+<p>这也就涉及了MRO(Method Resolution Order):</p>
+
+<pre><code class="language-python">In [10]: D.__mro__
+Out[10]: (__main__.D, __main__.B, __main__.C, __main__.A, object)
+</code></pre>
+
+<p>简单的理解其实就是新式类是广度优先了， D-&gt;B, 但是发现C也是继承A，就先找C，最后再去找A</p>
+
+<h3 id="toc_23">列表的+和+=, append和extend</h3>
+
+<pre><code class="language-python">In [17]: print(&#39;ID:&#39;, id(a_list))
+(&#39;ID:&#39;, 4481323592)
+
+In [18]: a_list += [1]
+
+In [19]: print(&#39;ID (+=):&#39;, id(a_list))
+(&#39;ID (+=):&#39;, 4481323592) # 使用+= 还是在原来的列表上操作
+
+In [20]: a_list = a_list + [2]
+
+In [21]: print(&#39;ID (list = list + ...):&#39;, id(a_list))
+(&#39;ID (list = list + ...):&#39;, 4481293056) # 简单的+其实已经改变了原有列表
+In [28]: a_list = []
+
+In [29]: id(a_list)
+Out[29]: 4481326976
+
+In [30]: a_list.append(1)
+
+In [31]: id(a_list)
+Out[31]: 4481326976 # append 是在原有列表添加
+
+In [32]: a_list.extend([2])
+
+In [33]: id(a_list)
+Out[33]: 4481326976 # extend 也是在原有列表上添加
+</code></pre>
+
+<h3 id="toc_24">datetime也有布尔值</h3>
+
+<pre><code class="language-python">In [34]: import datetime
+
+In [35]: print(&#39;&quot;datetime.time(0,0,0)&quot; (Midnight) -&gt;&#39;, bool(datetime.time(0,0,0)))
+(&#39;&quot;datetime.time(0,0,0)&quot; (Midnight) -&gt;&#39;, False)
+
+In [36]: print(&#39;&quot;datetime.time(1,0,0)&quot; (1 am) -&gt;&#39;, bool(datetime.time(1,0,0)))
+(&#39;&quot;datetime.time(1,0,0)&quot; (1 am) -&gt;&#39;, True)
+</code></pre>
+
+<h3 id="toc_25">’==’ 和 is 的区别</h3>
+
+<p>我的理解是”is”是判断2个对象的身份, ==是判断2个对象的值</p>
+
+<pre><code class="language-python">In [37]: a = 1
+
+In [38]: b = 1
+
+In [39]: print(&#39;a is b&#39;, bool(a is b))
+(&#39;a is b&#39;, True)
+
+In [40]: c = 999
+
+In [41]: d = 999
+
+In [42]: print(&#39;c is d&#39;, bool(c is d))
+(&#39;c is d&#39;, False) # 原因是python的内存管理,缓存了-5 - 256的对象
+
+In [43]: print(&#39;256 is 257-1&#39;, 256 is 257-1)
+(&#39;256 is 257-1&#39;, True)
+
+In [44]: print(&#39;257 is 258-1&#39;, 257 is 258 - 1)
+(&#39;257 is 258-1&#39;, False)
+
+In [45]: print(&#39;-5 is -6+1&#39;, -5 is -6+1)
+(&#39;-5 is -6+1&#39;, True)
+
+In [46]: print(&#39;-7 is -6-1&#39;, -7 is -6-1)
+(&#39;-7 is -6-1&#39;, False)
+In [47]: a = &#39;hello world!&#39;
+
+In [48]: b = &#39;hello world!&#39;
+
+In [49]: print(&#39;a is b,&#39;, a is b)
+(&#39;a is b,&#39;, False) # 很明显 他们没有被缓存,这是2个字段串的对象
+
+In [50]: print(&#39;a == b,&#39;, a == b)
+(&#39;a == b,&#39;, True) # 但他们的值相同
+# But, 有个特例
+In [51]: a = float(&#39;nan&#39;)
+
+In [52]: print(&#39;a is a,&#39;, a is a)
+(&#39;a is a,&#39;, True)
+
+In [53]: print(&#39;a == a,&#39;, a == a)
+(&#39;a == a,&#39;, False) # 亮瞎我眼睛了~
+</code></pre>
+
+<h3 id="toc_26">bool其实是int的子类</h3>
+
+<pre><code class="language-python">In [97]: isinstance(True, int)
+Out[97]: True
+
+In [98]: True + True
+Out[98]: 2
+
+In [99]: 3 * True + True
+Out[99]: 4
+
+In [100]: 3 * True - False
+Out[100]: 3
+
+In [104]: True &lt;&lt; 10
+Out[104]: 1024
+</code></pre>
+
+<h3 id="toc_27">元组是不是真的不可变?</h3>
+
+<pre><code class="language-python">In [111]: tup = ([],)
+
+In [112]: tup[0] += [1]
+---------------------------------------------------------------------------
+TypeError                                 Traceback (most recent call last)
+&lt;ipython-input-112-d4f292cf35de&gt; in &lt;module&gt;()
+----&gt; 1 tup[0] += [1]
+
+TypeError: &#39;tuple&#39; object does not support item assignment
+
+In [113]: tup
+Out[113]: ([1],) # 我靠 又是亮瞎我眼睛,明明抛了异常 还能修改?
+
+In [114]: tup = ([],)
+
+In [115]: tup[0].extend([1])
+
+In [116]: tup[0]
+Out[116]: [1] # 好吧,我有点看明白了, 虽然我不能直接操作元组，但是不能阻止我操作元组中可变的子对象(list)
+</code></pre>
+
+<p>+= 是一个特例</p>
+
+<pre><code class="language-python">In [117]: my_tup = (1,)
+
+In [118]: my_tup += (4,)
+
+In [119]: my_tup = my_tup + (5,)
+
+In [120]: my_tup
+Out[120]: (1, 4, 5) # ? 嗯 不是不能操作元组嘛?
+
+In [121]: my_tup = (1,)
+
+In [122]: print(id(my_tup))
+4481317904
+
+In [123]: my_tup += (4,)
+
+In [124]: print(id(my_tup))
+4480606864 # 操作的不是原来的元组 所以可以
+
+In [125]: my_tup = my_tup + (5,)
+
+In [126]: print(id(my_tup))
+4474234912
+</code></pre>
+
+<h3 id="toc_28">异常处理加 else</h3>
+
+<pre><code class="language-python">In [150]: try:
+   .....:     print(&#39;third element:&#39;, a_list[2])
+   .....: except IndexError:
+   .....:     print(&#39;raised IndexError&#39;)
+   .....: else:
+   .....:     print(&#39;no error in try-block&#39;) # 只有在try里面没有异常的时候才会执行else里面的表达式
+   .....:
+raised IndexError # 抛异常了 没完全完成
+In [153]: i = 0
+
+In [154]: while i &lt; 2:
+   .....:     print(i)
+   .....:     i += 1
+   .....: else:
+   .....:     print(&#39;in else&#39;)
+   .....:
+0
+1
+in else # while也支持哦~
+In [155]: i = 0
+
+In [156]: while i &lt; 2:
+   .....:         print(i)
+   .....:         i += 1
+   .....:         break
+   .....: else:
+   .....:         print(&#39;completed while-loop&#39;)
+   .....:
+0 # 被break了 没有完全执行完 就不执行else里面的了
+In [158]: for i in range(2):
+   .....:         print(i)
+   .....: else:
+   .....:         print(&#39;completed for-loop&#39;)
+   .....:
+0
+1
+completed for-loop
+
+In [159]: for i in range(2):
+   .....:         print(i)
+   .....:         break
+   .....: else:
+   .....:         print(&#39;completed for-loop&#39;)
+   .....:
+0 # 也是因为break了
+</code></pre>
+
+<h2 id="toc_29">深拷贝与浅拷贝</h2>
+
+<h3 id="toc_30">对象赋值</h3>
+
+<p>Python中，对象的赋值，拷贝（深/浅拷贝）之间是有差异的，如果使用的时候不注意，就可能产生意外的结果。</p>
+
+<p>直接看一段代码</p>
+
+<pre><code class="language-python">will = [&quot;Will&quot;, 28, [&quot;Python&quot;, &quot;C#&quot;, &quot;JavaScript&quot;]]
+wilber = will
+print id(will)
+print will
+print [id(ele) for ele in will]
+print id(wilber)
+print wilber
+print [id(ele) for ele in wilber]
+
+will[0] = &quot;Wilber&quot;
+will[2].append(&quot;CSS&quot;)
+print id(will)
+print will
+print [id(ele) for ele in will]
+print id(wilber)
+print wilber
+print [id(ele) for ele in wilber]
+</code></pre>
+
+<p><img src="media/14521096832549/tip1.png" alt="tip1"/></p>
+
+<p>下面来分析一下这段代码：</p>
+
+<ul>
+<li>首先，创建了一个名为will的变量，这个变量指向一个list对象，从第一张图中可以看到所有对象的地址（每次运行，结果可能不同）</li>
+<li>然后，通过will变量对wilber变量进行赋值，那么wilber变量将指向will变量对应的对象（内存地址），也就是说<q>wilber is will</q>，<q>wilber[i] is will[i]</q></li>
+<li>可以理解为，Python中，对象的赋值都是进行对象引用（内存地址）传递</li>
+</ul>
+
+<p>第三张图中，由于will和wilber指向同一个对象，所以对will的任何修改都会体现在wilber上<br/>
+这里需要注意的一点是，str是不可变类型，所以当修改的时候会替换旧的对象，产生一个新的地址39758496</p>
+
+<p><img src="media/14521096832549/tip2.png" alt="tip2"/></p>
+
+<h3 id="toc_31">浅拷贝</h3>
+
+<p>下面就来看看浅拷贝的结果：</p>
+
+<pre><code class="language-python">import copy
+
+will = [&quot;Will&quot;, 28, [&quot;Python&quot;, &quot;C#&quot;, &quot;JavaScript&quot;]]
+wilber = copy.copy(will)
+
+print id(will)
+print will
+print [id(ele) for ele in will]
+print id(wilber)
+print wilber
+print [id(ele) for ele in wilber]
+
+will[0] = &quot;Wilber&quot;
+will[2].append(&quot;CSS&quot;)
+print id(will)
+print will
+print [id(ele) for ele in will]
+print id(wilber)
+print wilber
+print [id(ele) for ele in wilber]
+</code></pre>
+
+<p>代码结果为：</p>
+
+<p><img src="media/14521096832549/tip3.png" alt="tip3"/></p>
+
+<p>分析一下这段代码：</p>
+
+<ul>
+<li>首先，依然使用一个will变量，指向一个list类型的对象</li>
+<li>然后，通过copy模块里面的浅拷贝函数copy()，对will指向的对象进行浅拷贝，然后浅拷贝生成的新对象赋值给wilber变量
+
+<ul>
+<li>浅拷贝会创建一个新的对象，这个例子中<q>wilber is not will</q></li>
+<li>但是，对于对象中的元素，浅拷贝就只会使用原始元素的引用（内存地址），也就是说<q>wilber[i] is will[i]</q></li>
+</ul></li>
+<li>当对will进行修改的时候
+
+<ul>
+<li>由于list的第一个元素是不可变类型，所以will对应的list的第一个元素会使用一个新的对象39758496</li>
+<li>但是list的第三个元素是一个可变类型，修改操作不会产生新的对象，所以will的修改结果会相应的反应到wilber上</li>
+</ul></li>
+</ul>
+
+<p><img src="media/14521096832549/tip4.png" alt="tip4"/></p>
+
+<p>总结一下，当我们使用下面的操作的时候，会产生浅拷贝的效果：</p>
+
+<ul>
+<li>使用切片[:]操作</li>
+<li>使用工厂函数（如list/dir/set）</li>
+<li>使用copy模块中的copy()函数</li>
+</ul>
+
+<h3 id="toc_32">深拷贝</h3>
+
+<p>最后来看看深拷贝：</p>
+
+<pre><code class="language-python">import copy
+
+will = [&quot;Will&quot;, 28, [&quot;Python&quot;, &quot;C#&quot;, &quot;JavaScript&quot;]]
+wilber = copy.deepcopy(will)
+
+print id(will)
+print will
+print [id(ele) for ele in will]
+print id(wilber)
+print wilber
+print [id(ele) for ele in wilber]
+
+will[0] = &quot;Wilber&quot;
+will[2].append(&quot;CSS&quot;)
+print id(will)
+print will
+print [id(ele) for ele in will]
+print id(wilber)
+print wilber
+print [id(ele) for ele in wilber]
+</code></pre>
+
+<p>代码的结果为：</p>
+
+<p><img src="media/14521096832549/tip5.png" alt="tip5"/></p>
+
+<p>分析一下这段代码：</p>
+
+<ul>
+<li>首先，同样使用一个will变量，指向一个list类型的对象</li>
+<li>然后，通过copy模块里面的深拷贝函数deepcopy()，对will指向的对象进行深拷贝，然后深拷贝生成的新对象赋值给wilber变量
+
+<ul>
+<li>跟浅拷贝类似，深拷贝也会创建一个新的对象，这个例子中<q>wilber is not will</q></li>
+<li>但是，对于对象中的元素，深拷贝都会重新生成一份（有特殊情况，下面会说明），而不是简单的使用原始元素的引用（内存地址）</li>
+<li>例子中will的第三个元素指向39737304，而wilber的第三个元素是一个全新的对象39773088，也就是说，<q>wilber[2] is not will[2]</q></li>
+</ul></li>
+<li>当对will进行修改的时候
+
+<ul>
+<li>由于list的第一个元素是不可变类型，所以will对应的list的第一个元素会使用一个新的对象39758496</li>
+<li>但是list的第三个元素是一个可变类型，修改操作不会产生新的对象，但是由于<q>wilber[2] is not will[2]</q>，所以will的修改不会影响wilber</li>
+</ul></li>
+</ul>
+
+<p><img src="media/14521096832549/tip6.png" alt="tip6"/></p>
+
+<h3 id="toc_33">拷贝的特殊情况</h3>
+
+<p>其实，对于拷贝有一些特殊情况：</p>
+
+<ul>
+<li>对于非容器类型（如数字、字符串、和其他&#39;原子&#39;类型的对象）没有拷贝这一说
+
+<ul>
+<li>也就是说，对于这些类型，<q>obj is copy.copy(obj)</q> 、<q>obj is copy.deepcopy(obj)</q></li>
+</ul></li>
+<li>如果元组变量只包含原子类型对象，则不能深拷贝，看下面的例子</li>
+</ul>
+
+<p><img src="media/14521096832549/tip7.png" alt="tip7"/></p>
+
+<p>总结</p>
+
+<p>本文介绍了对象的赋值和拷贝，以及它们之间的差异：</p>
+
+<ul>
+<li>Python中对象的赋值都是进行对象引用（内存地址）传递</li>
+<li>使用copy.copy()，可以进行对象的浅拷贝，它复制了对象，但对于对象中的元素，依然使用原始的引用.</li>
+<li>如果需要复制一个容器对象，以及它里面的所有元素（包含元素的子元素），可以使用copy.deepcopy()进行深拷贝</li>
+<li>对于非容器类型（如数字、字符串、和其他&#39;原子&#39;类型的对象）没有被拷贝一说</li>
+<li>如果元组变量只包含原子类型对象，则不能深拷贝，看下面的例子</li>
+</ul>
+
+<h2 id="toc_34">Python 中 self 的含义</h2>
+
+<p>刚开始学习Python的类写法的时候觉得很是麻烦，为什么定义时需要而调用时又不需要，为什么不能内部简化从而减少我们敲击键盘的次数？</p>
+
+<h3 id="toc_35">self代表类的实例，而非类。</h3>
+
+<p>实例来说明</p>
+
+<pre><code class="language-python">class Test:
+    def prt(self):
+        print(self)
+        print(self.__class__)
+
+t = Test()
+t.prt()
+</code></pre>
+
+<p>执行结果如下</p>
+
+<pre><code class="language-python">&lt;__main__.Test object at 0x000000000284E080&gt;
+&lt;class &#39;__main__.Test&#39;&gt;
+</code></pre>
+
+<p>从上面的例子中可以很明显的看出，self代表的是类的实例。而self.class则指向类。</p>
+
+<h3 id="toc_36">self不必非写成self</h3>
+
+<p>有很多童鞋是先学习别的语言然后学习Python的，所以总觉得self怪怪的，想写成this，可以吗？</p>
+
+<p>当然可以，还是把上面的代码改写一下。</p>
+
+<pre><code class="language-python">class Test:
+    def prt(this):
+        print(this)
+        print(this.__class__)
+
+t = Test()
+t.prt()
+</code></pre>
+
+<p>改成this后，运行结果完全一样。</p>
+
+<p>当然，最好还是尊重约定俗成的习惯，使用self。</p>
+
+<h3 id="toc_37">self可以不写吗</h3>
+
+<p>在Python的解释器内部，当我们调用t.prt()时，实际上Python解释成Test.prt(t)，也就是说把self替换成类的实例。</p>
+
+<p>有兴趣的童鞋可以把上面的t.prt()一行改写一下，运行后的实际结果完全相同。</p>
+
+<p>实际上已经部分说明了self在定义时不可以省略，如果非要试一下，那么请看下面：</p>
+
+<pre><code class="language-python">class Test:
+    def prt():
+        print(self)
+
+t = Test()
+t.prt()
+</code></pre>
+
+<p>运行时提醒错误如下：prt在定义时没有参数，但是我们运行时强行传了一个参数。<br/>
+由于上面解释过了t.prt()等同于Test.prt(t)，所以程序提醒我们多传了一个参数t。</p>
+
+<pre><code>Traceback (most recent call last):
+  File &quot;h.py&quot;, line 6, in &lt;module&gt;
+    t.prt()
+TypeError: prt() takes 0 positional arguments but 1 was given
+</code></pre>
+
+<p>当然，如果我们的定义和调用时均不传类实例是可以的，这就是类方法。</p>
+
+<pre><code class="language-python">class Test:
+    def prt():
+        print(__class__)
+Test.prt()
+</code></pre>
+
+<p>运行结果如下</p>
+
+<pre><code>&lt;class &#39;__main__.Test&#39;&gt;
+</code></pre>
+
+<p>在继承时，传入的是哪个实例，就是那个传入的实例，而不是指定义了self的类的实例。<br/>
+先看代码</p>
+
+<pre><code class="language-python">class Parent:
+    def pprt(self):
+        print(self)
+
+class Child(Parent):
+    def cprt(self):
+        print(self)
+c = Child()
+c.cprt()
+c.pprt()
+p = Parent()
+p.pprt()
+</code></pre>
+
+<p>运行结果如下</p>
+
+<pre><code>&lt;__main__.Child object at 0x0000000002A47080&gt;
+&lt;__main__.Child object at 0x0000000002A47080&gt;
+&lt;__main__.Parent object at 0x0000000002A47240&gt;
+</code></pre>
+
+<p>解释：</p>
+
+<p>运行c.cprt()时应该没有理解问题，指的是Child类的实例。</p>
+
+<p>但是在运行c.pprt()时，等同于Child.pprt(c)，所以self指的依然是Child类的实例，由于self中没有定义pprt()方法，所以沿着继承树往上找，发现在父类Parent中定义了pprt()方法，所以就会成功调用。</p>
+
+<p>在描述符类中，self指的是描述符类的实例</p>
+
+<p>不太容易理解，先看实例：</p>
+
+<pre><code class="language-python">class Desc:
+    def __get__(self, ins, cls):
+        print(&#39;self in Desc: %s &#39; % self )
+        print(self, ins, cls)
+class Test:
+    x = Desc()
+    def prt(self):
+        print(&#39;self in Test: %s&#39; % self)
+t = Test()
+t.prt()
+t.x
+</code></pre>
+
+<p>运行结果如下：</p>
+
+<pre><code>self in Test: &lt;__main__.Test object at 0x0000000002A570B8&gt;
+self in Desc: &lt;__main__.Desc object at 0x000000000283E208&gt;
+&lt;__main__.Desc object at 0x000000000283E208&gt; &lt;__main__.Test object at 0x0000000002A570B8&gt; &lt;class &#39;__main__.Test&#39;&gt;
+</code></pre>
+
+<p>大部分童鞋开始有疑问了，为什么在Desc类中定义的self不是应该是调用它的实例t吗？怎么变成了Desc类的实例了呢？</p>
+
+<p>注意：此处需要睁大眼睛看清楚了，这里调用的是t.x，也就是说是Test类的实例t的属性x，由于实例t中并没有定义属性x，所以找到了类属性x，而该属性是描述符属性，为Desc类的实例而已，所以此处并没有顶用Test的任何方法。</p>
+
+<p>那么我们如果直接通过类来调用属性x也可以得到相同的结果。</p>
+
+<p>下面是把t.x改为Test.x运行的结果。</p>
+
+<pre><code>self in Test: &lt;__main__.Test object at 0x00000000022570B8&gt;
+self in Desc: &lt;__main__.Desc object at 0x000000000223E208&gt;
+&lt;__main__.Desc object at 0x000000000223E208&gt; None &lt;class &#39;__main__.Test&#39;&gt;
+</code></pre>
+
+<p>题外话：由于在很多时候描述符类中仍然需要知道调用该描述符的实例是谁，所以在描述符类中存在第二个参数ins，用来表示调用它的类实例，所以t.x时可以看到第三行中的运行结果中第二项为<main.Test object at 0x0000000002A570B8>。而采用Test.x进行调用时，由于没有实例，所以返回None。</p>
+
+<h3 id="toc_38">总结</h3>
+
+<ul>
+<li>self在定义时需要定义，但是在调用时会自动传入。</li>
+<li>self的名字并不是规定死的，但是最好还是按照约定是用self</li>
+<li>self总是指调用时的类的实例。</li>
+</ul>
+
+<h2 id="toc_39">Python 类库引入机制</h2>
+
+<p>首先，看一个简单的例子：</p>
+
+<pre><code class="language-python">&quot;&quot;&quot;
+目录结构如下：
+├── __init__.py
+├── main.py
+└── string.py
+&quot;&quot;&quot;
+# main.py 内容如下
+import string
+print string.a
+# string.py 内容如下
+a = 2
+</code></pre>
+
+<p>现在，考虑一下：</p>
+
+<ol>
+<li>当我们执行main.py的时候，会发生什么事情？</li>
+<li>在main.py文件执行到<code>import string</code>的时候，解释器导入的string类库是当前文件夹下的string.py还是系统标准库的string.py呢？</li>
+<li>如果明确的指明⾃己要引⼊的类库？</li>
+</ol>
+
+<p>为了搞清楚上面的问题，我们需要了解关于Python类库引入的机制。</p>
+
+<p>Python 提供了二种引入机制：</p>
+
+<ol>
+<li>relative import</li>
+<li>absolute import</li>
+</ol>
+
+<h3 id="toc_40">relative import</h3>
+
+<p>relative import 也叫作相对引入，在Python2.5及之前是默认的引入方法。它的使用方法如下：</p>
+
+<pre><code class="language-python">from .string import a
+from ..string import a
+from ...string import a
+</code></pre>
+
+<p>这种引入方式使用一个点号来标识引入类库的精确位置。与linux的相对路径表示相似，一个点表示当前目录，每多一个点号则代表向上一层目录。</p>
+
+<pre><code class="language-python">&quot;&quot;&quot;
+├── __init__.py
+├── foo.py
+└── main.py
+&quot;&quot;&quot;
+# foo.py
+a = 2
+# main.py
+print __name__
+from .foo import a
+print a
+</code></pre>
+
+<p>相对引入，那么我们需要知道相对什么来引入。相对引入使用被引入文件的<code>__name__</code>属性来决定该文件在整个包结构的位置。那么如果文件的<code>__name__</code>没有包含任何包的信息，例如<code>__name__</code>被设置为了<code>__main__</code>，则认为其为‘top level script&#39;，而不管该文件的位置，这个时候相对引入就没有引入的参考物。如上面的程序所示，当我们执行<code>python main.py</code>时，Python解释器会抛出 ValueError: Attempted relative import in non-package的异常。</p>
+
+<p>为了解决这个问题，<a href="https://www.python.org/dev/peps/pep-0366/">PEP 0366 -- Main module explicit relative imports</a>提出了一个解决方案。允许用户使用<code>python -m ex2.main</code>的方式,来执行该文件。在这个方案下，引入了一个新的属性<code>__package__</code>。</p>
+
+<pre><code class="language-bash">
+╭─liuchang@localhost  ~/Codes/pycon
+╰─$ cat ex2/main.py
+print __name__
+print __package__
+from .foo import a
+print a
+╭─liuchang@localhost  ~/Codes/pycon
+╰─$ python -m ex2.main
+__main__
+ex2
+2
+</code></pre>
+
+<h3 id="toc_41">absolute import</h3>
+
+<p>absolute import 也叫作完全引入，非常类似于Java的引入进制，在Python2.5被完全实现，但是是需要通过<code>from __future__ import absolute_import</code>来打开该引入进制。在Python2.6之后以及Python3，完全引用成为Python的默认的引入机制。它的使用方法如下：</p>
+
+<pre><code>from pkg import foo
+from pkg.moduleA import foo
+</code></pre>
+
+<p>要注意的是，需要从包目录最顶层目录依次写下，而不能从中间开始。</p>
+
+<p>在使用该引入方式时，我们碰到比较多的问题就是因为位置原因，Python找不到相应的库文件，抛出ImportError的异常。让我们看一个完全引用的例子:</p>
+
+<pre><code class="language-python">&quot;&quot;&quot;
+ex3
+├── __init__.py
+├── foo.py
+└── main.py
+&quot;&quot;&quot;
+# foo.py
+a = 2
+
+# main.py
+print __name__
+print __package__
+from ex2.foo import a
+print a
+</code></pre>
+
+<p>我们尝试着去运行main.py文件，Python解释器会抛出ImportError。那么我们如何解决这个问题呢？</p>
+
+<pre><code class="language-python">╰─$ python ex3/main.py
+__main__
+None
+Traceback (most recent call last):
+  File &quot;ex3/main.py&quot;, line 3, in &lt;module&gt;
+    from ex2.foo import a
+ImportError: No module named ex2.foo
+</code></pre>
+
+<p>首先，我们也可以使用前文所述的module的方式去运行程序，通过-m参数来告诉解释器<code>__package__</code>属性。如下：</p>
+
+<pre><code class="language-python">╭─liuchang@liuchangdeMacBook-Pro  ~/Codes/pycon
+╰─$ python -m ex3.main                                                                             
+__main__
+ex3
+2
+</code></pre>
+
+<p>另外，我们还有一个办法可以解决该问题，在描述之前，我们介绍一个关于Python的非常有用的小知识：<strong>Python解释器会自动将当前工作目录添加到PYTHONPATH</strong>。如下所示，可以看到我们打印出的<code>sys.path</code>已经包含了当前工作目录。</p>
+
+<pre><code class="language-python">╭─liuchang@liuchangdeMacBook-Pro  ~/Codes/pycon/ex4
+╰─$ cat main.py
+import sys
+print sys.path
+╭─liuchang@liuchangdeMacBook-Pro  ~/Codes/pycon/ex4
+╰─$ python main.py
+[&#39;/Users/liuchang/Codes/pycon/ex4&#39;, &#39;/Library/Python/2.7/site-packages/pip-7.1.0-py2.7.egg&#39;, &#39;/Library/Python/2.7/site-packages/mesos-_PACKAGE_VERSION_-py2.7.egg&#39;, &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python27.zip&#39;, &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7&#39;, &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-darwin&#39;, &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-mac&#39;, &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/plat-mac/lib-scriptpackages&#39;, &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python&#39;, &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-tk&#39;, &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-old&#39;, &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-dynload&#39;, &#39;/Users/liuchang/Library/Python/2.7/lib/python/site-packages&#39;, &#39;/usr/local/lib/python2.7/site-packages&#39;, &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/PyObjC&#39;, &#39;/Library/Python/2.7/site-packages&#39;]
+</code></pre>
+
+<p>了解了Python解释器的这个特性后，我们就可以解决完全引用的找不到类库的问题：执行的时候，让解释器自动的将类库的目录添加到PYTHONPATH中。</p>
+
+<p>我们可以在顶层目录中添加一个run_ex3.py的文件，文件内容和运行结果如下，可以看到Python解释器正确的执行了ex3.main文件。</p>
+
+<pre><code class="language-python">╭─liuchang@liuchangdeMacBook-Pro  ~/Codes/pycon
+╰─$ cat run_ex3.py
+from ex3 import main
+╭─liuchang@liuchangdeMacBook-Pro  ~/Codes/pycon
+╰─$ python run_ex3.py
+ex3.main
+None
+2
+</code></pre>
+
+<h3 id="toc_42">相对引用还是绝对引用？</h3>
+
+<p>上面介绍了Python的两种引用方式，都可以解决引入歧义的问题。那我们应该使用哪一种呢？</p>
+
+<p>先说明一下Python的默认引用方式，在Python2.4及之前，Python只有相对引用这一种方式，在Python2.5中实现了绝对引用，但默认没有打开，需要用户自己指定使用该引用方式。在之后的版本和Python3版本，绝对引用已经成为默认的引用方式。</p>
+
+<p>其次，二种引用方式各有利弊。绝对引用代码更加清晰明了，可以清楚的看到引入的包名和层次，但是，当包名修改的时候，我们需要手动修改所有的引用代码。相对引用则比较精简，不会被包名修改所影响，但是可读性较差，不如完全引用清晰。</p>
+
+<p>最后，对于两种引用的方式选择，还是有争论的。在PEP8中，Python官方推荐的是绝对引用,详细理由可以参考<a href="https://www.python.org/dev/peps/pep-0008/#imports">这儿</a>。</p>
+
+<blockquote>
+<p>Absolute imports are recommended, as they are usually more readable and tend to be better behaved (or at least give better error messages) if the import system is incorrectly configured (such as when a directory inside a package ends up on sys.path ):<br/>
+<code>python<br/>
+import mypkg.sibling<br/>
+from mypkg import sibling<br/>
+from mypkg.sibling import example<br/>
+</code></p>
+
+<p>However, explicit relative imports are an acceptable alternative to absolute imports, especially when dealing with complex package layouts where using absolute imports would be unnecessarily verbose:<br/>
+<code>python<br/>
+from . import sibling<br/>
+from .sibling import example<br/>
+</code></p>
+
+<p>Standard library code should avoid complex package layouts and always use absolute imports.<br/>
+Implicit relative imports should never be used and have been removed in Python 3.</p>
+</blockquote>
+
+<h3 id="toc_43">规范打包发布</h3>
+
+<p>为了别人使用自己代码的方便，应该尽量使用规范的包分发机制。为自己的Python包编写正确的setup.py文件，添加相应的README.md文件。对于提供一些可执行命令的包，则可以使用 console_entrypoint 的机制来提供。因为打包和分发不是本文重点，不再详细叙述，大家可以查看官方文档。</p>
+
+<h3 id="toc_44">使用virtualenv管理包依赖</h3>
+
+<p>在使用Python的时候，尽量使用virtualenv来管理项目，所有的项目从编写到运行都在特定的virtualenv中。并且为自己的项目生成正确的依赖描述文件。</p>
+
+<pre><code class="language-bash">pip freeze &gt; requirements.txt
+</code></pre>
+
+<p>关于virtualenv的用法，可以参考我之前的一篇文章<a href="http://lcblog-wordpress.stor.sinaapp.com/uploads/2015/10/virtualenv%E6%95%99%E7%A8%8B.pdf">virtualenv教程</a>。</p>
+
+<h3 id="toc_45">Python import实现</h3>
+
+<p>Python 提供了 import 语句来实现类库的引用，下面我们详细介绍当执行了 import 语句的时候，内部究竟做了些什么事情。</p>
+
+<p>当我们执行一行 <code>from package import module as mymodule</code>命令时，Python解释器会查找package这个包的module模块，并将该模块作为mymodule引入到当前的工作空间。所以import语句主要是做了二件事：</p>
+
+<ol>
+<li>查找相应的module</li>
+<li>加载module到local namespace</li>
+</ol>
+
+<p>下面我们详细了解python是如何查找模块的。</p>
+
+<h4 id="toc_46">查找module的过程</h4>
+
+<p>在import的第一个阶段，主要是完成了查找要引入模块的功能，这个查找的过程如下：</p>
+
+<ol>
+<li>检查 sys.modules (保存了之前import的类库的缓存），如果module被找到，则⾛到第二步。</li>
+<li>检查 sys.meta_path。meta_path 是一个 list，⾥面保存着一些 finder 对象，如果找到该module的话，就会返回一个finder对象。</li>
+<li>检查⼀些隐式的finder对象，不同的python实现有不同的隐式finder，但是都会有 sys.path_hooks, sys.path_importer_cache 以及sys.path。</li>
+<li>抛出 ImportError。</li>
+</ol>
+
+<h4 id="toc_47">sys.modules</h4>
+
+<p>对于第一步中sys.modules，我们可以打开Python来实际的查看一下其内容：</p>
+
+<blockquote>
+<pre><code class="language-python">Python 2.7.10 (default, Aug 22 2015, 20:33:39)
+[GCC 4.2.1 Compatible Apple LLVM 7.0.0 (clang-700.0.59.1)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt; import sys
+&gt;&gt; sys.modules
+{&#39;copy_reg&#39;: &lt;module &#39;copy_reg&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/copy_reg.pyc&#39;&gt;, &#39;sre_compile&#39;: &lt;module &#39;sre_compile&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sre_compile.pyc&#39;&gt;, &#39;_sre&#39;: &lt;module &#39;_sre&#39; (built-in)&gt;, &#39;encodings&#39;: &lt;module &#39;encodings&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/encodings/__init__.pyc&#39;&gt;, &#39;site&#39;: &lt;module &#39;site&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site.pyc&#39;&gt;, &#39;__builtin__&#39;: &lt;module &#39;__builtin__&#39; (built-in)&gt;, &#39;sysconfig&#39;: &lt;module &#39;sysconfig&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sysconfig.pyc&#39;&gt;, &#39;encodings.encodings&#39;: None, &#39;__main__&#39;: &lt;module &#39;__main__&#39; (built-in)&gt;, &#39;supervisor&#39;: &lt;module &#39;supervisor&#39; (built-in)&gt;, &#39;abc&#39;: &lt;module &#39;abc&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/abc.pyc&#39;&gt;, &#39;posixpath&#39;: &lt;module &#39;posixpath&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/posixpath.pyc&#39;&gt;, &#39;_weakrefset&#39;: &lt;module &#39;_weakrefset&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/_weakrefset.pyc&#39;&gt;, &#39;errno&#39;: &lt;module &#39;errno&#39; (built-in)&gt;, &#39;encodings.codecs&#39;: None, &#39;sre_constants&#39;: &lt;module &#39;sre_constants&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sre_constants.pyc&#39;&gt;, &#39;re&#39;: &lt;module &#39;re&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/re.pyc&#39;&gt;, &#39;_abcoll&#39;: &lt;module &#39;_abcoll&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/_abcoll.pyc&#39;&gt;, &#39;types&#39;: &lt;module &#39;types&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/types.pyc&#39;&gt;, &#39;_codecs&#39;: &lt;module &#39;_codecs&#39; (built-in)&gt;, &#39;encodings.__builtin__&#39;: None, &#39;_warnings&#39;: &lt;module &#39;_warnings&#39; (built-in)&gt;, &#39;genericpath&#39;: &lt;module &#39;genericpath&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/genericpath.pyc&#39;&gt;, &#39;stat&#39;: &lt;module &#39;stat&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/stat.pyc&#39;&gt;, &#39;zipimport&#39;: &lt;module &#39;zipimport&#39; (built-in)&gt;, &#39;_sysconfigdata&#39;: &lt;module &#39;_sysconfigdata&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/_sysconfigdata.pyc&#39;&gt;, &#39;mpl_toolkits&#39;: &lt;module &#39;mpl_toolkits&#39; (built-in)&gt;, &#39;warnings&#39;: &lt;module &#39;warnings&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/warnings.pyc&#39;&gt;, &#39;UserDict&#39;: &lt;module &#39;UserDict&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/UserDict.pyc&#39;&gt;, &#39;encodings.utf_8&#39;: &lt;module &#39;encodings.utf_8&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/encodings/utf_8.pyc&#39;&gt;, &#39;sys&#39;: &lt;module &#39;sys&#39; (built-in)&gt;, &#39;_osx_support&#39;: &lt;module &#39;_osx_support&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/_osx_support.pyc&#39;&gt;, &#39;codecs&#39;: &lt;module &#39;codecs&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/codecs.pyc&#39;&gt;, &#39;readline&#39;: &lt;module &#39;readline&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-dynload/readline.so&#39;&gt;, &#39;os.path&#39;: &lt;module &#39;posixpath&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/posixpath.pyc&#39;&gt;, &#39;_locale&#39;: &lt;module &#39;_locale&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-dynload/_locale.so&#39;&gt;, &#39;signal&#39;: &lt;module &#39;signal&#39; (built-in)&gt;, &#39;traceback&#39;: &lt;module &#39;traceback&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/traceback.pyc&#39;&gt;, &#39;linecache&#39;: &lt;module &#39;linecache&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/linecache.pyc&#39;&gt;, &#39;posix&#39;: &lt;module &#39;posix&#39; (built-in)&gt;, &#39;encodings.aliases&#39;: &lt;module &#39;encodings.aliases&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/encodings/aliases.pyc&#39;&gt;, &#39;exceptions&#39;: &lt;module &#39;exceptions&#39; (built-in)&gt;, &#39;sre_parse&#39;: &lt;module &#39;sre_parse&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/sre_parse.pyc&#39;&gt;, &#39;os&#39;: &lt;module &#39;os&#39; from &#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.pyc&#39;&gt;, &#39;_weakref&#39;: &lt;module &#39;_weakref&#39; (built-in)&gt;}
+&gt;&gt; sys.modules[&#39;zlib&#39;].__file__
+&#39;/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/lib-dynload/zlib.so&#39;
+</code></pre>
+</blockquote>
+
+<p>可以看到sys.modules已经保存了一些包的信息，由这些信息，我们就可以直接知道要查找的包的位置等信息。</p>
+
+<h4 id="toc_48">finder、loader和importer</h4>
+
+<p>在上文中，我们提到了sys.meta_path中保证了一些finder对象。在python中，不仅定义了finder的概念，还定义了loader和importor的概念。</p>
+
+<ul>
+<li>finder的任务是决定自己是否根据名字找到相应的模块，在py2中，finder对象必须实现find_module()方法，在py3中必须要实现find_module()或者find_loader（)方法。如果finder可以查找到模块，则会返回一个loader对象(在py3.4中，修改为返回一个module specs)。</li>
+<li>loader则是负责加载模块，它必须实现一个load_module()的方法。</li>
+<li>importer 则指一个对象，实现了finder和loader的方法。因为Python是duck type，只要实现了方法，就可以认为是该类。</li>
+</ul>
+
+<h3 id="toc_49">sys.meta_path</h3>
+
+<p>在Python查找的时候，如果在sys.modules没有查找到，就会依次调用sys.meta_path中的finder对象。默认的情况下，sys.meta_path是一个空列表，并没有任何finder对象。</p>
+
+<pre><code class="language-bash">In [6]: sys.meta_path
+Out[6]: []
+</code></pre>
+
+<p>我们可以向sys.meta_path中添加一些定义的finder，来实现对Python加载模块的修改。比如下例，我们实现了一个会将每次加载包的信息打印出来的finder。</p>
+
+<pre><code class="language-python">from __future__ import print_function
+import sys
+
+class Watcher(object):
+    @classmethod
+    def find_module(cls, name, path, target=None):
+        print(&quot;Importing&quot;, name, path, target)
+        return None
+
+sys.meta_path.insert(0, Watcher)
+
+import socket
+</code></pre>
+
+<p>当我们执行的时候，就可以看到系统加载socket包时所发生的事情。</p>
+
+<blockquote>
+<pre><code class="language-python"> ╭─liuchang@localhost  ~/Codes/pycon/ex5_meta_path
+ ╰─$ python finder1.py
+ Importing socket None None
+ Importing _socket None None
+ Importing functools None None
+ Importing _functools None None
+ Importing _ssl None None
+ Importing cStringIO None None
+</code></pre>
+</blockquote>
+
+<h4 id="toc_50">sys.path hook</h4>
+
+<p>Python import的hook分为二类，一类是上一章节已经描述的meta hook，另一类是 path hook。</p>
+
+<p>当处理sys.path（或者package.<strong>path</strong>)时，就会调用对应的一部分的 Pack hook。Path Hook是通过向sys.path_hooks 中添加一个importer生成器来注册的。</p>
+
+<p>sys.path_hooks 是由可被调用的对象组成，它会顺序的检查以决定他们是否可以处理给定的sys.path的一项。每个对象会使用sys.path项的路径来作为参数被调用。如果它不能处理该路径，就必须抛出ImportError，如果可以，则会返回一个importer对象。之后，不会再尝试其它的sys.path_hooks对象，即使前一个importer出错了。</p>
+
+<p>详细可以参考<a href="https://www.python.org/dev/peps/pep-0302/#specification-part-2-registering-hooks">registering-hooks</a>。</p>
+
+<h3 id="toc_51">python import hooks</h3>
+
+<p>在介绍完Python的引用机制与一些实现方法后，接下来我们介绍一些关于如何根据自己的需求来扩展Python的引用机制。</p>
+
+<p>在开始详细介绍前，给大家展示一个实用性不高，但是很有意思的例子：<strong>让Python在执行代码的时候自动安装缺失的类库</strong>。我们会实现一个autoinstall的模块，只要import了该模块，就可以打开该功能。如下所示，我们尝试引入tornado库的时候，iPython会提示我们没有安装。然后，我们引入了autoinstall，再尝试引入tornado，iPython就会自动的安装tornado库。</p>
+
+<pre><code class="language-bash">In [1]: import tornado
+---------------------------------------------------------------------------
+ImportError                               Traceback (most recent call last)
+&lt;ipython-input-1-3eac10687b7e&gt; in &lt;module&gt;()
+----&gt; 1 import tornado
+
+ImportError: No module named tornado
+
+In [2]: import autoinstall
+
+In [3]: import tornado
+Installing tornado
+
+Collecting tornado
+  Downloading tornado-4.2.1.tar.gz (434kB)
+Collecting backports.ssl-match-hostname (from tornado)
+  Downloading http://182.92.2.186:7002/packages/backports.ssl_match_hostname-3.4.0.2-py2-none-any.whl
+Collecting certifi (from tornado)
+  Downloading certifi-2015.9.6.2-py2.py3-none-any.whl (371kB)
+Installing collected packages: backports.ssl-match-hostname, certifi, tornado
+  Running setup.py install for tornado
+Successfully installed backports.ssl-match-hostname-3.4.0.2 certifi-2015.9.6.2 tornado-4.2.1
+</code></pre>
+
+<p>这个功能的实现其实很简单，利用了sys.meta_path。autoinstall的全部代码如下：<br/>
+```python<br/>
+from <strong>future</strong> import print_function<br/>
+import sys<br/>
+import subprocess</p>
+
+<p>class AutoInstall(object):<br/>
+    _loaded = set()</p>
+
+<pre><code>@classmethod
+def find_module(cls, name, path, target=None):
+    if path is None and name not in cls._loaded:
+        cls._loaded.add(name)
+        print(&quot;Installing&quot;, name)
+        try:
+            out = subprocess.check_output([&#39;sudo&#39;, sys.executable, &#39;-m&#39;, &#39;pip&#39;, &#39;install&#39;, name])
+            print(out)
+        except Exception as e:
+            print(&quot;Failed&quot; + e.message)
+    return None
+</code></pre>
+
+<p>sys.meta_path.append(AutoInstall)<br/>
+```</p>
+
+<h3 id="toc_52">import hook的重要性</h3>
+
+<p>我们为什么需要Python import的hook呢？使用import的hook可以让我们做到很多事情，比如说当我们的Python包存储在一个非标准的文件中，或者Python程序存储在网络数据库中，或者像py2exe一样将Python程序打包成了一个文件，我们需要一种方法来正确的解析它们。</p>
+
+<p>其次，我们希望在Python加载类库的时候，可以额外的做一些事情，比如上传审计信息，比如延迟加载，比如自动解决上例的依赖未安装的问题。</p>
+
+<p>所以，import系统的Hook技术是值的花时间学习的。</p>
+
+<h3 id="toc_53">如何实现import hooks</h3>
+
+<p>Python提供了一些方法，让我们可以在代码中动态的调用import。主要有如下几种：</p>
+
+<ol>
+<li>__import__ : Python的内置函数</li>
+<li>imputil        : Python的import工具库，在py2.6被声明废弃，py3中彻底移除。</li>
+<li>imp            : Python2 的一个import库，py3中移除</li>
+<li>importlib      : Python3 中最新添加，backport到py2.7，但只有很小的子集（只有一个函数）。</li>
+</ol>
+
+<p>Python2 所有关于import的库的列表参见<a href="https://docs.python.org/2/library/modules.html">Importing Modules</a>。Python3 的可以参考<a href="https://docs.python.org/3/library/modules.html">Importing Modules</a><br/>
+<a href="https://www.python.org/dev/peps/pep-0302">PEP 0302 -- New Import Hooks</a> 提案详细的描述了importlib的目的、用法。</p>
+
+<h3 id="toc_54">一些Hook示例</h3>
+
+<h4 id="toc_55">Lazy化库引入</h4>
+
+<p>使用Import Hook，我们可以达到Lazy Import的效果，当我们执行import的时候，实际上并没引入该库，只有真正的使用这个库的时候，才会将其引入到当前工作空间。</p>
+
+<p>具体的代码可以参考<a href="https://github.com/noahmorrison/limp">github</a>。</p>
+
+<p>实现的效果如下：</p>
+
+<pre><code class="language-python">#!/usr/bin/python
+
+import limp  # Lazy imports begin now
+
+import json
+import sys
+
+print(&#39;json&#39; in sys.modules)  # False
+print(&#39;, &#39;.join(json.loads(&#39;[&quot;Hello&quot;, &quot;World!&quot;]&#39;)))
+print(&#39;json&#39; in sys.modules)  # True
+</code></pre>
+
+<p>它的实现也很简单：</p>
+
+<pre><code class="language-python">import sys
+import imp
+
+_lazy_modules = {}
+
+class LazyModule():
+    def __init__(self, name):
+        self.name = name
+
+    def __getattr__(self, attr):
+        path = _lazy_modules[self.name]
+        f, pathname, desc = imp.find_module(self.name, path)
+
+        lf = sys.meta_path.pop()
+        imp.load_module(self.name, f, pathname, desc)
+        sys.meta_path.append(lf)
+
+
+        self.__dict__ = sys.modules[self.name].__dict__
+        return self.__dict__[attr]
+
+class LazyFinder(object):
+
+    def find_module(self, name, path):
+        _lazy_modules[name] = path
+        return self
+
+    def load_module(self, name):
+        return LazyModule(name)
+
+sys.meta_path.append(LazyFinder())
+</code></pre>
+
+<h4 id="toc_56">Flask 插件库统一入口</h4>
+
+<p>使用过Flask的同学都知道，Flask的对于插件提供了统一的入口。比如说我们安装了Flask_API这个库，然后我们可以直接<code>import flask_api</code>来使用这个库，同时Flask还允许我们采用<code>import flask.ext.api</code>的方式来引用该库。</p>
+
+<p>这里Flask就是使用了import 的hook，当引入flask.ext的包时，就自动的引用相应的库。Flask实现了一个叫ExtensionImporter的类，这个类实现了find_module和load_module代码实现如下<a href="https://github.com/mitsuhiko/flask/blob/master/flask/exthook.py#L27">github</a>：</p>
+
+<pre><code class="language-python">class ExtensionImporter(object):
+    &quot;&quot;&quot;This importer redirects imports from this submodule to other locations.
+    This makes it possible to transition from the old flaskext.name to the
+    newer flask_name without people having a hard time.
+    &quot;&quot;&quot;
+
+    def __init__(self, module_choices, wrapper_module):
+        self.module_choices = module_choices
+        self.wrapper_module = wrapper_module
+        self.prefix = wrapper_module + &#39;.&#39;
+        self.prefix_cutoff = wrapper_module.count(&#39;.&#39;) + 1
+
+    def __eq__(self, other):
+        return self.__class__.__module__ == other.__class__.__module__ and \
+               self.__class__.__name__ == other.__class__.__name__ and \
+               self.wrapper_module == other.wrapper_module and \
+               self.module_choices == other.module_choices
+
+    def __ne__(self, other):
+        return not self.__eq__(other)
+
+    def install(self):
+        sys.meta_path[:] = [x for x in sys.meta_path if self != x] + [self]
+
+    def find_module(self, fullname, path=None):
+        if fullname.startswith(self.prefix):
+            return self
+
+    def load_module(self, fullname):
+        if fullname in sys.modules:
+            return sys.modules[fullname]
+        modname = fullname.split(&#39;.&#39;, self.prefix_cutoff)[self.prefix_cutoff]
+        for path in self.module_choices:
+            realname = path % modname
+            try:
+                __import__(realname)
+            except ImportError:
+                exc_type, exc_value, tb = sys.exc_info()
+                # since we only establish the entry in sys.modules at the
+                # very this seems to be redundant, but if recursive imports
+                # happen we will call into the move import a second time.
+                # On the second invocation we still don&#39;t have an entry for
+                # fullname in sys.modules, but we will end up with the same
+                # fake module name and that import will succeed since this
+                # one already has a temporary entry in the modules dict.
+                # Since this one &quot;succeeded&quot; temporarily that second
+                # invocation now will have created a fullname entry in
+                # sys.modules which we have to kill.
+                sys.modules.pop(fullname, None)
+
+                # If it&#39;s an important traceback we reraise it, otherwise
+                # we swallow it and try the next choice.  The skipped frame
+                # is the one from __import__ above which we don&#39;t care about
+                if self.is_important_traceback(realname, tb):
+                    reraise(exc_type, exc_value, tb.tb_next)
+                continue
+            module = sys.modules[fullname] = sys.modules[realname]
+            if &#39;.&#39; not in modname:
+                setattr(sys.modules[self.wrapper_module], modname, module)
+            return module
+        raise ImportError(&#39;No module named %s&#39; % fullname)
+</code></pre>
+
+<p>然后在Flask的ext目录下的__init__.py文件中，初始化了该Importer。</p>
+
+<pre><code class="language-python">def setup():
+    from ..exthook import ExtensionImporter
+    importer = ExtensionImporter([&#39;flask_%s&#39;, &#39;flaskext.%s&#39;], __name__)
+    importer.install()  
+</code></pre>
+
+<h2 id="toc_57">Python的内存管理</h2>
+
+<p>以Python语言为例子，说明一门动态类型的、面向对象的语言的内存管理方式。</p>
+
+<h3 id="toc_58">对象的内存使用</h3>
+
+<p>赋值语句是语言最常见的功能了。但即使是最简单的赋值语句，也可以很有内涵。Python的赋值语句就很值得研究。</p>
+
+<pre><code>a = 1
+</code></pre>
+
+<p>整数1为一个对象。而a是一个引用。利用赋值语句，引用a指向对象1。Python是动态类型的语言(参考动态类型)，对象与引用分离。Python像使用“筷子”那样，通过引用来接触和翻动真正的食物——对象。</p>
+
+<h4 id="toc_59">引用和对象</h4>
+
+<p>为了探索对象在内存的存储，我们可以求助于Python的内置函数id()。它用于返回对象的身份(identity)。其实，这里所谓的身份，就是该对象的内存地址。</p>
+
+<pre><code>a = 1
+print(id(a))
+print(hex(id(a)))
+</code></pre>
+
+<p>在我的计算机上，它们返回的是:</p>
+
+<pre><code>11246696
+’0xab9c68′
+</code></pre>
+
+<p>分别为内存地址的十进制和十六进制表示。</p>
+
+<p>在Python中，整数和短小的字符，Python都会缓存这些对象，以便重复使用。当我们创建多个等于1的引用时，实际上是让所有这些引用指向同一个对象。</p>
+
+<pre><code>a = 1
+b = 1
+print(id(a))
+print(id(b))
+</code></pre>
+
+<p>上面程序返回</p>
+
+<pre><code>11246696
+11246696
+</code></pre>
+
+<p>可见a和b实际上是指向同一个对象的两个引用。</p>
+
+<p>为了检验两个引用指向同一个对象，我们可以用is关键字。is用于判断两个引用所指的对象是否相同。</p>
+
+<pre><code># True
+a = 1
+b = 1
+print(a is b)
+
+# True
+a = &quot;good&quot;
+b = &quot;good&quot;
+print(a is b)
+
+# False
+a = &quot;very good morning&quot;
+b = &quot;very good morning&quot;
+print(a is b)
+
+# False
+a = []
+b = []
+print(a is b)
+</code></pre>
+
+<p>上面的注释为相应的运行结果。可以看到，由于Python缓存了整数和短字符串，因此每个对象只存有一份。比如，所有整数1的引用都指向同一对象。即使使用赋值语句，也只是创造了新的引用，而不是对象本身。长的字符串和其它对象可以有多个相同的对象，可以使用赋值语句创建出新的对象。</p>
+
+<p>在Python中，每个对象都有存有指向该对象的引用总数，即引用计数(reference count)。</p>
+
+<p>我们可以使用sys包中的getrefcount()，来查看某个对象的引用计数。需要注意的是，当使用某个引用作为参数，传递给getrefcount()时，参数实际上创建了一个临时的引用。因此，getrefcount()所得到的结果，会比期望的多1。</p>
+
+<pre><code class="language-python">from sys import getrefcount
+
+a = [1, 2, 3]
+print(getrefcount(a))
+
+b = a
+print(getrefcount(b))
+</code></pre>
+
+<p>由于上述原因，两个getrefcount将返回2和3，而不是期望的1和2。</p>
+
+<h4 id="toc_60">对象引用对象</h4>
+
+<p>Python的一个容器对象(container)，比如表、词典等，可以包含多个对象。实际上，容器对象中包含的并不是元素对象本身，是指向各个元素对象的引用。</p>
+
+<p>我们也可以自定义一个对象，并引用其它对象:</p>
+
+<pre><code class="language-python">class from_obj(object):
+    def __init__(self, to_obj):
+        self.to_obj = to_obj
+
+b = [1,2,3]
+a = from_obj(b)
+print(id(a.to_obj))
+print(id(b))
+</code></pre>
+
+<p>可以看到，a引用了对象b。</p>
+
+<p>对象引用对象，是Python最基本的构成方式。即使是a = 1这一赋值方式，实际上是让词典的一个键值”a”的元素引用整数对象1。该词典对象用于记录所有的全局引用。该词典引用了整数对象1。我们可以通过内置函数globals()来查看该词典。</p>
+
+<p>当一个对象A被另一个对象B引用时，A的引用计数将增加1。</p>
+
+<pre><code class="language-python">from sys import getrefcount
+
+a = [1, 2, 3]
+print(getrefcount(a))
+
+b = [a, a]
+print(getrefcount(a))
+</code></pre>
+
+<p>由于对象b引用了两次a，a的引用计数增加了2。</p>
+
+<p>容器对象的引用可能构成很复杂的拓扑结构。我们可以用objgraph包来绘制其引用关系，比如</p>
+
+<pre><code class="language-python">x = [1, 2, 3]
+y = [x, dict(key1=x)]
+z = [y, (x, y)]
+
+import objgraph
+objgraph.show_refs([z], filename=&#39;ref_topo.png&#39;)
+</code></pre>
+
+<p>objgraph是Python的一个第三方包。安装之前需要安装xdot。</p>
+
+<pre><code>sudo apt-get install xdot
+sudo pip install objgraph
+</code></pre>
+
+<p>两个对象可能相互引用，从而构成所谓的引用环(reference cycle)。</p>
+
+<pre><code class="language-python">a = []
+b = [a]
+a.append(b)
+</code></pre>
+
+<p>即使是一个对象，只需要自己引用自己，也能构成引用环。</p>
+
+<pre><code class="language-python">a = []
+a.append(a)
+print(getrefcount(a))
+</code></pre>
+
+<p>引用环会给垃圾回收机制带来很大的麻烦，我将在后面详细叙述这一点。</p>
+
+<h4 id="toc_61">引用减少</h4>
+
+<p>某个对象的引用计数可能减少。比如，可以使用del关键字删除某个引用:</p>
+
+<pre><code class="language-python">from sys import getrefcount
+
+a = [1, 2, 3]
+b = a
+print(getrefcount(b))
+
+del a
+print(getrefcount(b))
+</code></pre>
+
+<p>del也可以用于删除容器元素中的元素，比如:</p>
+
+<pre><code class="language-python">a = [1,2,3]
+del a[0]
+print(a)
+</code></pre>
+
+<p>如果某个引用指向对象A，当这个引用被重新定向到某个其他对象B时，对象A的引用计数减少:</p>
+
+<pre><code class="language-python">from sys import getrefcount
+
+a = [1, 2, 3]
+b = a
+print(getrefcount(b))
+
+a = 1
+print(getrefcount(b))
+</code></pre>
+
+<h3 id="toc_62">垃圾回收</h3>
+
+<p>吃太多，总会变胖，Python也是这样。当Python中的对象越来越多，它们将占据越来越大的内存。不过你不用太担心Python的体形，它会乖巧的在适当的时候“减肥”，启动垃圾回收(garbage collection)，将没用的对象清除。在许多语言中都有垃圾回收机制，比如Java和Ruby。尽管最终目的都是塑造苗条的提醒，但不同语言的减肥方案有很大的差异。</p>
+
+<p>从基本原理上，当Python的某个对象的引用计数降为0时，说明没有任何引用指向该对象，该对象就成为要被回收的垃圾了。比如某个新建对象，它被分配给某个引用，对象的引用计数变为1。如果引用被删除，对象的引用计数为0，那么该对象就可以被垃圾回收。比如下面的表:</p>
+
+<pre><code class="language-python">a = [1, 2, 3]
+del a
+</code></pre>
+
+<p>del a后，已经没有任何引用指向之前建立的[1, 2, 3]这个表。用户不可能通过任何方式接触或者动用这个对象。这个对象如果继续待在内存里，就成了不健康的脂肪。当垃圾回收启动时，Python扫描到这个引用计数为0的对象，就将它所占据的内存清空。</p>
+
+<p>然而，减肥是个昂贵而费力的事情。垃圾回收时，Python不能进行其它的任务。频繁的垃圾回收将大大降低Python的工作效率。如果内存中的对象不多，就没有必要总启动垃圾回收。所以，Python只会在特定条件下，自动启动垃圾回收。当Python运行时，会记录其中分配对象(object allocation)和取消分配对象(object deallocation)的次数。当两者的差值高于某个阈值时，垃圾回收才会启动。</p>
+
+<p>我们可以通过gc模块的get_threshold()方法，查看该阈值:</p>
+
+<pre><code class="language-python">import gc
+print(gc.get_threshold())
+</code></pre>
+
+<p>返回(700, 10, 10)，后面的两个10是与分代回收相关的阈值，后面可以看到。700即是垃圾回收启动的阈值。可以通过gc中的set_threshold()方法重新设置。</p>
+
+<p>我们也可以手动启动垃圾回收，即使用gc.collect()。</p>
+
+<h4 id="toc_63">分代回收</h4>
+
+<p>Python同时采用了分代(generation)回收的策略。这一策略的基本假设是，存活时间越久的对象，越不可能在后面的程序中变成垃圾。我们的程序往往会产生大量的对象，许多对象很快产生和消失，但也有一些对象长期被使用。出于信任和效率，对于这样一些“长寿”对象，我们相信它们的用处，所以减少在垃圾回收中扫描它们的频率。</p>
+
+<p>小家伙要多检查</p>
+
+<p>Python将所有的对象分为0，1，2三代。所有的新建对象都是0代对象。当某一代对象经历过垃圾回收，依然存活，那么它就被归入下一代对象。垃圾回收启动时，一定会扫描所有的0代对象。如果0代经过一定次数垃圾回收，那么就启动对0代和1代的扫描清理。当1代也经历了一定次数的垃圾回收后，那么会启动对0，1，2，即对所有对象进行扫描。</p>
+
+<p>这两个次数即上面get_threshold()返回的(700, 10, 10)返回的两个10。也就是说，每10次0代垃圾回收，会配合1次1代的垃圾回收；而每10次1代的垃圾回收，才会有1次的2代垃圾回收。</p>
+
+<p>同样可以用set_threshold()来调整，比如对2代对象进行更频繁的扫描。</p>
+
+<pre><code class="language-python">import gc
+gc.set_threshold(700, 10, 5)
+</code></pre>
+
+<h4 id="toc_64">孤立的引用环</h4>
+
+<p>引用环的存在会给上面的垃圾回收机制带来很大的困难。这些引用环可能构成无法使用，但引用计数不为0的一些对象。</p>
+
+<pre><code class="language-python">a = []
+b = [a]
+a.append(b)
+
+del a
+del b
+</code></pre>
+
+<p>上面我们先创建了两个表对象，并引用对方，构成一个引用环。删除了a，b引用之后，这两个对象不可能再从程序中调用，就没有什么用处了。但是由于引用环的存在，这两个对象的引用计数都没有降到0，不会被垃圾回收。</p>
+
+<p>为了回收这样的引用环，Python复制每个对象的引用计数，可以记为gc<u>ref。假设，每个对象i，该计数为gc</u>ref<u>i。Python会遍历所有的对象i。对于每个对象i引用的对象j，将相应的gc</u>ref_j减1。</p>
+
+<p>在结束遍历后，gc_ref不为0的对象，和这些对象引用的对象，以及继续更下游引用的对象，需要被保留。而其它的对象则被垃圾回收。</p>
+
+<h3 id="toc_65">总结</h3>
+
+<p>Python作为一种动态类型的语言，其对象和引用分离。这与曾经的面向过程语言有很大的区别。为了有效的释放内存，Python内置了垃圾回收的支持。Python采取了一种相对简单的垃圾回收机制，即引用计数，并因此需要解决孤立引用环的问题。Python与其它语言既有共通性，又有特别的地方。对该内存管理机制的理解，是提高Python性能的重要一步。</p>
+
+<h2 id="toc_66">字典推导(Dictionary comprehensions)和集合推导(Set comprehensions)</h2>
+
+<p>大多数的Python程序员都知道且使用过列表推导(list comprehensions)。如果你对list comprehensions概念不是很熟悉——一个list comprehension就是一个更简短、简洁的创建一个list的方法。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; some_list = [1, 2, 3, 4, 5]
+
+&gt;&gt;&gt; another_list = [ x + 1 for x in some_list ]
+
+&gt;&gt;&gt; another_list
+[2, 3, 4, 5, 6]
+</code></pre>
+
+<p>自从python 3.1 (甚至是Python 2.7)起，我们可以用同样的语法来创建集合和字典表：</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; # Set Comprehensions
+&gt;&gt;&gt; some_list = [1, 2, 3, 4, 5, 2, 5, 1, 4, 8]
+
+&gt;&gt;&gt; even_set = { x for x in some_list if x % 2 == 0 }
+
+&gt;&gt;&gt; even_set
+set([8, 2, 4])
+
+&gt;&gt;&gt; # Dict Comprehensions
+
+&gt;&gt;&gt; d = { x: x % 2 == 0 for x in range(1, 11) }
+
+&gt;&gt;&gt; d
+{1: False, 2: True, 3: False, 4: True, 5: False, 6: True, 7: False, 8: True, 9: False, 10: True}
+</code></pre>
+
+<p>在第一个例子里，我们以some_list为基础，创建了一个具有不重复元素的集合，而且集合里只包含偶数。而在字典表的例子里，我们创建了一个key是不重复的1到10之间的整数，value是布尔型，用来指示key是否是偶数。</p>
+
+<p>这里另外一个值得注意的事情是集合的字面量表示法。我们可以简单的用这种方法创建一个集合：</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; my_set = {1, 2, 1, 2, 3, 4}
+
+&gt;&gt;&gt; my_set
+set([1, 2, 3, 4])
+</code></pre>
+
+<p>而不需要使用内置函数set()。</p>
+
+<h2 id="toc_67">计数时使用Counter计数对象。</h2>
+
+<p>这听起来显而易见，但经常被人忘记。对于大多数程序员来说，数一个东西是一项很常见的任务，而且在大多数情况下并不是很有挑战性的事情——这里有几种方法能更简单的完成这种任务。</p>
+
+<p>Python的collections类库里有个内置的dict类的子类，是专门来干这种事情的：</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; from collections import Counter
+&gt;&gt;&gt; c = Counter(&#39;hello world&#39;)
+
+&gt;&gt;&gt; c
+Counter({&#39;l&#39;: 3, &#39;o&#39;: 2, &#39; &#39;: 1, &#39;e&#39;: 1, &#39;d&#39;: 1, &#39;h&#39;: 1, &#39;r&#39;: 1, &#39;w&#39;: 1})
+
+&gt;&gt;&gt; c.most_common(2)
+[(&#39;l&#39;, 3), (&#39;o&#39;, 2)]
+</code></pre>
+
+<h2 id="toc_68">漂亮的打印出JSON</h2>
+
+<p>JSON是一种非常好的数据序列化的形式，被如今的各种API和web service大量的使用。使用python内置的json处理，可以使JSON串具有一定的可读性，但当遇到大型数据时，它表现成一个很长的、连续的一行时，人的肉眼就很难观看了。</p>
+
+<p>为了能让JSON数据表现的更友好，我们可以使用indent参数来输出漂亮的JSON。当在控制台交互式编程或做日志时，这尤其有用：</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; import json
+
+&gt;&gt;&gt; print(json.dumps(data))  # No indention
+{&quot;status&quot;: &quot;OK&quot;, &quot;count&quot;: 2, &quot;results&quot;: [{&quot;age&quot;: 27, &quot;name&quot;: &quot;Oz&quot;, &quot;lactose_intolerant&quot;: true}, {&quot;age&quot;: 29, &quot;name&quot;: &quot;Joe&quot;, &quot;lactose_intolerant&quot;: false}]}
+
+&gt;&gt;&gt; print(json.dumps(data, indent=2))  # With indention
+
+{
+  &quot;status&quot;: &quot;OK&quot;,
+  &quot;count&quot;: 2,
+  &quot;results&quot;: [
+
+    {
+      &quot;age&quot;: 27,
+      &quot;name&quot;: &quot;Oz&quot;,
+
+      &quot;lactose_intolerant&quot;: true
+    },
+    {
+      &quot;age&quot;: 29,
+
+      &quot;name&quot;: &quot;Joe&quot;,
+      &quot;lactose_intolerant&quot;: false
+    }
+  ]
+
+}
+</code></pre>
+
+<p>同样，使用内置的pprint模块，也可以让其它任何东西打印输出的更漂亮</p>
+
+<h2 id="toc_69">拆箱</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; a, b, c = 1, 2, 3
+&gt;&gt;&gt; a, b, c
+(1, 2, 3)
+&gt;&gt;&gt; a, b, c = [1, 2, 3]
+&gt;&gt;&gt; a, b, c
+(1, 2, 3)
+&gt;&gt;&gt; a, b, c = (2 * i + 1 for i in range(3))
+&gt;&gt;&gt; a, b, c
+(1, 3, 5)
+&gt;&gt;&gt; a, (b, c), d = [1, (2, 3), 4]
+&gt;&gt;&gt; a
+1
+&gt;&gt;&gt; b
+2
+&gt;&gt;&gt; c
+3
+&gt;&gt;&gt; d
+4
+</code></pre>
+
+<h2 id="toc_70">拆箱变量交换</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; a, b = 1, 2
+&gt;&gt;&gt; a, b = b, a
+&gt;&gt;&gt; a, b
+(2, 1)
+</code></pre>
+
+<h2 id="toc_71">扩展拆箱（只兼容python3）</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; a, *b, c = [1, 2, 3, 4, 5]
+&gt;&gt;&gt; a
+1
+&gt;&gt;&gt; b
+[2, 3, 4]
+&gt;&gt;&gt; c
+5
+</code></pre>
+
+<h2 id="toc_72">负数索引</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+&gt;&gt;&gt; a[-1]
+10
+&gt;&gt;&gt; a[-3]
+8
+</code></pre>
+
+<h2 id="toc_73">切割列表</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+&gt;&gt;&gt; a[2:8]
+[2, 3, 4, 5, 6, 7]
+</code></pre>
+
+<h2 id="toc_74">负数索引切割列表</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+&gt;&gt;&gt; a[-4:-2]
+[7, 8]
+</code></pre>
+
+<h2 id="toc_75">指定步长切割列表</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+&gt;&gt;&gt; a[::2]
+[0, 2, 4, 6, 8, 10]
+&gt;&gt;&gt; a[::3]
+[0, 3, 6, 9]
+&gt;&gt;&gt; a[2:8:2]
+[2, 4, 6]
+</code></pre>
+
+<h2 id="toc_76">负数步长切割列表</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; a = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+&gt;&gt;&gt; a[::-1]
+[10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+&gt;&gt;&gt; a[::-2]
+[10, 8, 6, 4, 2, 0]
+</code></pre>
+
+<h2 id="toc_77">列表切割赋值</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; a = [1, 2, 3, 4, 5]
+&gt;&gt;&gt; a[2:3] = [0, 0]
+&gt;&gt;&gt; a
+[1, 2, 0, 0, 4, 5]
+&gt;&gt;&gt; a[1:1] = [8, 9]
+&gt;&gt;&gt; a
+[1, 8, 9, 2, 0, 0, 4, 5]
+&gt;&gt;&gt; a[1:-1] = []
+&gt;&gt;&gt; a
+[1, 5]
+</code></pre>
+
+<h2 id="toc_78">命名列表切割方式</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; a = [0, 1, 2, 3, 4, 5]
+&gt;&gt;&gt; LASTTHREE = slice(-3, None)
+&gt;&gt;&gt; LASTTHREE
+slice(-3, None, None)
+&gt;&gt;&gt; a[LASTTHREE]
+[3, 4, 5]
+</code></pre>
+
+<h2 id="toc_79">列表以及迭代器的压缩和解压缩</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; a = [1, 2, 3]
+&gt;&gt;&gt; b = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]
+&gt;&gt;&gt; z = zip(a, b)
+&gt;&gt;&gt; z
+[(1, &#39;a&#39;), (2, &#39;b&#39;), (3, &#39;c&#39;)]
+&gt;&gt;&gt; zip(*z)
+[(1, 2, 3), (&#39;a&#39;, &#39;b&#39;, &#39;c&#39;)]
+</code></pre>
+
+<h2 id="toc_80">列表相邻元素压缩器</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; a = [1, 2, 3, 4, 5, 6]
+&gt;&gt;&gt; zip(*([iter(a)] * 2))
+[(1, 2), (3, 4), (5, 6)]
+
+&gt;&gt;&gt; group_adjacent = lambda a, k: zip(*([iter(a)] * k))
+&gt;&gt;&gt; group_adjacent(a, 3)
+[(1, 2, 3), (4, 5, 6)]
+&gt;&gt;&gt; group_adjacent(a, 2)
+[(1, 2), (3, 4), (5, 6)]
+&gt;&gt;&gt; group_adjacent(a, 1)
+[(1,), (2,), (3,), (4,), (5,), (6,)]
+
+&gt;&gt;&gt; zip(a[::2], a[1::2])
+[(1, 2), (3, 4), (5, 6)]
+
+&gt;&gt;&gt; zip(a[::3], a[1::3], a[2::3])
+[(1, 2, 3), (4, 5, 6)]
+
+&gt;&gt;&gt; group_adjacent = lambda a, k: zip(*(a[i::k] for i in range(k)))
+&gt;&gt;&gt; group_adjacent(a, 3)
+[(1, 2, 3), (4, 5, 6)]
+&gt;&gt;&gt; group_adjacent(a, 2)
+[(1, 2), (3, 4), (5, 6)]
+&gt;&gt;&gt; group_adjacent(a, 1)
+[(1,), (2,), (3,), (4,), (5,), (6,)]
+</code></pre>
+
+<h2 id="toc_81">在列表中用压缩器和迭代器滑动取值窗口</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; def n_grams(a, n):
+...     z = [iter(a[i:]) for i in range(n)]
+...     return zip(*z)
+...
+&gt;&gt;&gt; a = [1, 2, 3, 4, 5, 6]
+&gt;&gt;&gt; n_grams(a, 3)
+[(1, 2, 3), (2, 3, 4), (3, 4, 5), (4, 5, 6)]
+&gt;&gt;&gt; n_grams(a, 2)
+[(1, 2), (2, 3), (3, 4), (4, 5), (5, 6)]
+&gt;&gt;&gt; n_grams(a, 4)
+[(1, 2, 3, 4), (2, 3, 4, 5), (3, 4, 5, 6)]
+</code></pre>
+
+<h2 id="toc_82">用压缩器反转字典</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; m = {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3, &#39;d&#39;: 4}
+&gt;&gt;&gt; m.items()
+[(&#39;a&#39;, 1), (&#39;c&#39;, 3), (&#39;b&#39;, 2), (&#39;d&#39;, 4)]
+&gt;&gt;&gt; zip(m.values(), m.keys())
+[(1, &#39;a&#39;), (3, &#39;c&#39;), (2, &#39;b&#39;), (4, &#39;d&#39;)]
+&gt;&gt;&gt; mi = dict(zip(m.values(), m.keys()))
+&gt;&gt;&gt; mi
+{1: &#39;a&#39;, 2: &#39;b&#39;, 3: &#39;c&#39;, 4: &#39;d&#39;}
+</code></pre>
+
+<h2 id="toc_83">列表展开</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; a = [[1, 2], [3, 4], [5, 6]]
+&gt;&gt;&gt; list(itertools.chain.from_iterable(a))
+[1, 2, 3, 4, 5, 6]
+
+&gt;&gt;&gt; sum(a, [])
+[1, 2, 3, 4, 5, 6]
+
+&gt;&gt;&gt; [x for l in a for x in l]
+[1, 2, 3, 4, 5, 6]
+
+&gt;&gt;&gt; a = [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]
+&gt;&gt;&gt; [x for l1 in a for l2 in l1 for x in l2]
+[1, 2, 3, 4, 5, 6, 7, 8]
+
+&gt;&gt;&gt; a = [1, 2, [3, 4], [[5, 6], [7, 8]]]
+&gt;&gt;&gt; flatten = lambda x: [y for l in x for y in flatten(l)] if type(x) is list else [x]
+&gt;&gt;&gt; flatten(a)
+[1, 2, 3, 4, 5, 6, 7, 8]
+</code></pre>
+
+<h2 id="toc_84">生成器表达式</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; g = (x ** 2 for x in xrange(10))
+&gt;&gt;&gt; next(g)
+0
+&gt;&gt;&gt; next(g)
+1
+&gt;&gt;&gt; next(g)
+4
+&gt;&gt;&gt; next(g)
+9
+&gt;&gt;&gt; sum(x ** 3 for x in xrange(10))
+2025
+&gt;&gt;&gt; sum(x ** 3 for x in xrange(10) if x % 3 == 1)
+408
+</code></pre>
+
+<h2 id="toc_85">字典推导</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; m = {x: x ** 2 for x in range(5)}
+&gt;&gt;&gt; m
+{0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+
+&gt;&gt;&gt; m = {x: &#39;A&#39; + str(x) for x in range(10)}
+&gt;&gt;&gt; m
+{0: &#39;A0&#39;, 1: &#39;A1&#39;, 2: &#39;A2&#39;, 3: &#39;A3&#39;, 4: &#39;A4&#39;, 5: &#39;A5&#39;, 6: &#39;A6&#39;, 7: &#39;A7&#39;, 8: &#39;A8&#39;, 9: &#39;A9&#39;}
+</code></pre>
+
+<h2 id="toc_86">用字典推导反转字典</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; m = {&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3, &#39;d&#39;: 4}
+&gt;&gt;&gt; m
+{&#39;d&#39;: 4, &#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3}
+&gt;&gt;&gt; {v: k for k, v in m.items()}
+{1: &#39;a&#39;, 2: &#39;b&#39;, 3: &#39;c&#39;, 4: &#39;d&#39;}
+</code></pre>
+
+<h2 id="toc_87">命名元组</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; Point = collections.namedtuple(&#39;Point&#39;, [&#39;x&#39;, &#39;y&#39;])
+&gt;&gt;&gt; p = Point(x=1.0, y=2.0)
+&gt;&gt;&gt; p
+Point(x=1.0, y=2.0)
+&gt;&gt;&gt; p.x
+1.0
+&gt;&gt;&gt; p.y
+2.0
+</code></pre>
+
+<h2 id="toc_88">继承命名元组</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; class Point(collections.namedtuple(&#39;PointBase&#39;, [&#39;x&#39;, &#39;y&#39;])):
+...     __slots__ = ()
+...     def __add__(self, other):
+...             return Point(x=self.x + other.x, y=self.y + other.y)
+...
+&gt;&gt;&gt; p = Point(x=1.0, y=2.0)
+&gt;&gt;&gt; q = Point(x=2.0, y=3.0)
+&gt;&gt;&gt; p + q
+Point(x=3.0, y=5.0)
+</code></pre>
+
+<h2 id="toc_89">操作集合</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; A = {1, 2, 3, 3}
+&gt;&gt;&gt; A
+set([1, 2, 3])
+&gt;&gt;&gt; B = {3, 4, 5, 6, 7}
+&gt;&gt;&gt; B
+set([3, 4, 5, 6, 7])
+&gt;&gt;&gt; A | B
+set([1, 2, 3, 4, 5, 6, 7])
+&gt;&gt;&gt; A &amp; B
+set([3])
+&gt;&gt;&gt; A - B
+set([1, 2])
+&gt;&gt;&gt; B - A
+set([4, 5, 6, 7])
+&gt;&gt;&gt; A ^ B
+set([1, 2, 4, 5, 6, 7])
+&gt;&gt;&gt; (A ^ B) == ((A - B) | (B - A))
+True
+</code></pre>
+
+<h2 id="toc_90">操作多重集合</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; A = collections.Counter([1, 2, 2])
+&gt;&gt;&gt; B = collections.Counter([2, 2, 3])
+&gt;&gt;&gt; A
+Counter({2: 2, 1: 1})
+&gt;&gt;&gt; B
+Counter({2: 2, 3: 1})
+&gt;&gt;&gt; A | B
+Counter({2: 2, 1: 1, 3: 1})
+&gt;&gt;&gt; A &amp; B
+Counter({2: 2})
+&gt;&gt;&gt; A + B
+Counter({2: 4, 1: 1, 3: 1})
+&gt;&gt;&gt; A - B
+Counter({1: 1})
+&gt;&gt;&gt; B - A
+Counter({3: 1})
+</code></pre>
+
+<h2 id="toc_91">统计在可迭代器中最常出现的元素</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; A = collections.Counter([1, 1, 2, 2, 3, 3, 3, 3, 4, 5, 6, 7])
+&gt;&gt;&gt; A
+Counter({3: 4, 1: 2, 2: 2, 4: 1, 5: 1, 6: 1, 7: 1})
+&gt;&gt;&gt; A.most_common(1)
+[(3, 4)]
+&gt;&gt;&gt; A.most_common(3)
+[(3, 4), (1, 2), (2, 2)]
+</code></pre>
+
+<h2 id="toc_92">两端都可操作的队列</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; Q = collections.deque()
+&gt;&gt;&gt; Q.append(1)
+&gt;&gt;&gt; Q.appendleft(2)
+&gt;&gt;&gt; Q.extend([3, 4])
+&gt;&gt;&gt; Q.extendleft([5, 6])
+&gt;&gt;&gt; Q
+deque([6, 5, 2, 1, 3, 4])
+&gt;&gt;&gt; Q.pop()
+4
+&gt;&gt;&gt; Q.popleft()
+6
+&gt;&gt;&gt; Q
+deque([5, 2, 1, 3])
+&gt;&gt;&gt; Q.rotate(3)
+&gt;&gt;&gt; Q
+deque([2, 1, 3, 5])
+&gt;&gt;&gt; Q.rotate(-3)
+&gt;&gt;&gt; Q
+deque([5, 2, 1, 3])
+</code></pre>
+
+<h2 id="toc_93">有最大长度的双端队列</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; last_three = collections.deque(maxlen=3)
+&gt;&gt;&gt; for i in xrange(10):
+...     last_three.append(i)
+...     print &#39;, &#39;.join(str(x) for x in last_three)
+...
+0
+0, 1
+0, 1, 2
+1, 2, 3
+2, 3, 4
+3, 4, 5
+4, 5, 6
+5, 6, 7
+6, 7, 8
+7, 8, 9
+</code></pre>
+
+<h2 id="toc_94">可排序词典</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; m = dict((str(x), x) for x in range(10))
+&gt;&gt;&gt; print &#39;, &#39;.join(m.keys())
+1, 0, 3, 2, 5, 4, 7, 6, 9, 8
+&gt;&gt;&gt; m = collections.OrderedDict((str(x), x) for x in range(10))
+&gt;&gt;&gt; print &#39;, &#39;.join(m.keys())
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+&gt;&gt;&gt; m = collections.OrderedDict((str(x), x) for x in range(10, 0, -1))
+&gt;&gt;&gt; print &#39;, &#39;.join(m.keys())
+10, 9, 8, 7, 6, 5, 4, 3, 2, 1
+</code></pre>
+
+<h2 id="toc_95">默认词典</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; m = dict()
+&gt;&gt;&gt; m[&#39;a&#39;]
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+KeyError: &#39;a&#39;
+&gt;&gt;&gt;
+&gt;&gt;&gt; m = collections.defaultdict(int)
+&gt;&gt;&gt; m[&#39;a&#39;]
+0
+&gt;&gt;&gt; m[&#39;b&#39;]
+0
+&gt;&gt;&gt; m = collections.defaultdict(str)
+&gt;&gt;&gt; m[&#39;a&#39;]
+&#39;&#39;
+&gt;&gt;&gt; m[&#39;b&#39;] += &#39;a&#39;
+&gt;&gt;&gt; m[&#39;b&#39;]
+&#39;a&#39;
+&gt;&gt;&gt; m = collections.defaultdict(lambda: &#39;[default value]&#39;)
+&gt;&gt;&gt; m[&#39;a&#39;]
+&#39;[default value]&#39;
+&gt;&gt;&gt; m[&#39;b&#39;]
+&#39;[default value]&#39;
+</code></pre>
+
+<h2 id="toc_96">默认字典的简单树状表达</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; import json
+&gt;&gt;&gt; tree = lambda: collections.defaultdict(tree)
+&gt;&gt;&gt; root = tree()
+&gt;&gt;&gt; root[&#39;menu&#39;][&#39;id&#39;] = &#39;file&#39;
+&gt;&gt;&gt; root[&#39;menu&#39;][&#39;value&#39;] = &#39;File&#39;
+&gt;&gt;&gt; root[&#39;menu&#39;][&#39;menuitems&#39;][&#39;new&#39;][&#39;value&#39;] = &#39;New&#39;
+&gt;&gt;&gt; root[&#39;menu&#39;][&#39;menuitems&#39;][&#39;new&#39;][&#39;onclick&#39;] = &#39;new();&#39;
+&gt;&gt;&gt; root[&#39;menu&#39;][&#39;menuitems&#39;][&#39;open&#39;][&#39;value&#39;] = &#39;Open&#39;
+&gt;&gt;&gt; root[&#39;menu&#39;][&#39;menuitems&#39;][&#39;open&#39;][&#39;onclick&#39;] = &#39;open();&#39;
+&gt;&gt;&gt; root[&#39;menu&#39;][&#39;menuitems&#39;][&#39;close&#39;][&#39;value&#39;] = &#39;Close&#39;
+&gt;&gt;&gt; root[&#39;menu&#39;][&#39;menuitems&#39;][&#39;close&#39;][&#39;onclick&#39;] = &#39;close();&#39;
+&gt;&gt;&gt; print json.dumps(root, sort_keys=True, indent=4, separators=(&#39;,&#39;, &#39;: &#39;))
+{
+    &quot;menu&quot;: {
+        &quot;id&quot;: &quot;file&quot;,
+        &quot;menuitems&quot;: {
+            &quot;close&quot;: {
+                &quot;onclick&quot;: &quot;close();&quot;,
+                &quot;value&quot;: &quot;Close&quot;
+            },
+            &quot;new&quot;: {
+                &quot;onclick&quot;: &quot;new();&quot;,
+                &quot;value&quot;: &quot;New&quot;
+            },
+            &quot;open&quot;: {
+                &quot;onclick&quot;: &quot;open();&quot;,
+                &quot;value&quot;: &quot;Open&quot;
+            }
+        },
+        &quot;value&quot;: &quot;File&quot;
+    }
+}
+</code></pre>
+
+<h2 id="toc_97">对象到唯一计数的映射</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; import itertools, collections
+&gt;&gt;&gt; value_to_numeric_map = collections.defaultdict(itertools.count().next)
+&gt;&gt;&gt; value_to_numeric_map[&#39;a&#39;]
+0
+&gt;&gt;&gt; value_to_numeric_map[&#39;b&#39;]
+1
+&gt;&gt;&gt; value_to_numeric_map[&#39;c&#39;]
+2
+&gt;&gt;&gt; value_to_numeric_map[&#39;a&#39;]
+0
+&gt;&gt;&gt; value_to_numeric_map[&#39;b&#39;]
+1
+</code></pre>
+
+<h2 id="toc_98">最大和最小的几个列表元素</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; a = [random.randint(0, 100) for __ in xrange(100)]
+&gt;&gt;&gt; heapq.nsmallest(5, a)
+[3, 3, 5, 6, 8]
+&gt;&gt;&gt; heapq.nlargest(5, a)
+[100, 100, 99, 98, 98]
+</code></pre>
+
+<h2 id="toc_99">两个列表的笛卡尔积</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; for p in itertools.product([1, 2, 3], [4, 5]):
+(1, 4)
+(1, 5)
+(2, 4)
+(2, 5)
+(3, 4)
+(3, 5)
+&gt;&gt;&gt; for p in itertools.product([0, 1], repeat=4):
+...     print &#39;&#39;.join(str(x) for x in p)
+...
+0000
+0001
+0010
+0011
+0100
+0101
+0110
+0111
+1000
+1001
+1010
+1011
+1100
+1101
+1110
+1111
+</code></pre>
+
+<h2 id="toc_100">列表组合和列表元素替代组合</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; for c in itertools.combinations([1, 2, 3, 4, 5], 3):
+...     print &#39;&#39;.join(str(x) for x in c)
+...
+123
+124
+125
+134
+135
+145
+234
+235
+245
+345
+&gt;&gt;&gt; for c in itertools.combinations_with_replacement([1, 2, 3], 2):
+...     print &#39;&#39;.join(str(x) for x in c)
+...
+11
+12
+13
+22
+23
+33
+</code></pre>
+
+<h2 id="toc_101">列表元素排列组合</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; for p in itertools.permutations([1, 2, 3, 4]):
+...     print &#39;&#39;.join(str(x) for x in p)
+...
+1234
+1243
+1324
+1342
+1423
+1432
+2134
+2143
+2314
+2341
+2413
+2431
+3124
+3142
+3214
+3241
+3412
+3421
+4123
+4132
+4213
+4231
+4312
+4321
+</code></pre>
+
+<h2 id="toc_102">可链接迭代器</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; a = [1, 2, 3, 4]
+&gt;&gt;&gt; for p in itertools.chain(itertools.combinations(a, 2), itertools.combinations(a, 3)):
+...     print p
+...
+(1, 2)
+(1, 3)
+(1, 4)
+(2, 3)
+(2, 4)
+(3, 4)
+(1, 2, 3)
+(1, 2, 4)
+(1, 3, 4)
+(2, 3, 4)
+&gt;&gt;&gt; for subset in itertools.chain.from_iterable(itertools.combinations(a, n) for n in range(len(a) + 1))
+...     print subset
+...
+()
+(1,)
+(2,)
+(3,)
+(4,)
+(1, 2)
+(1, 3)
+(1, 4)
+(2, 3)
+(2, 4)
+(3, 4)
+(1, 2, 3)
+(1, 2, 4)
+(1, 3, 4)
+(2, 3, 4)
+(1, 2, 3, 4)
+</code></pre>
+
+<h2 id="toc_103">根据文件指定列类聚</h2>
+
+<pre><code class="language-python">&gt;&gt;&gt; import itertools
+&gt;&gt;&gt; with open(&#39;contactlenses.csv&#39;, &#39;r&#39;) as infile:
+...     data = [line.strip().split(&#39;,&#39;) for line in infile]
+...
+&gt;&gt;&gt; data = data[1:]
+&gt;&gt;&gt; def print_data(rows):
+...     print &#39;\n&#39;.join(&#39;\t&#39;.join(&#39;{: &lt;16}&#39;.format(s) for s in row) for row in rows)
+...
+
+&gt;&gt;&gt; print_data(data)
+young               myope                   no                      reduced                 none
+young               myope                   no                      normal                  soft
+young               myope                   yes                     reduced                 none
+young               myope                   yes                     normal                  hard
+young               hypermetrope            no                      reduced                 none
+young               hypermetrope            no                      normal                  soft
+young               hypermetrope            yes                     reduced                 none
+young               hypermetrope            yes                     normal                  hard
+pre-presbyopic      myope                   no                      reduced                 none
+pre-presbyopic      myope                   no                      normal                  soft
+pre-presbyopic      myope                   yes                     reduced                 none
+pre-presbyopic      myope                   yes                     normal                  hard
+pre-presbyopic      hypermetrope            no                      reduced                 none
+pre-presbyopic      hypermetrope            no                      normal                  soft
+pre-presbyopic      hypermetrope            yes                     reduced                 none
+pre-presbyopic      hypermetrope            yes                     normal                  none
+presbyopic          myope                   no                      reduced                 none
+presbyopic          myope                   no                      normal                  none
+presbyopic          myope                   yes                     reduced                 none
+presbyopic          myope                   yes                     normal                  hard
+presbyopic          hypermetrope            no                      reduced                 none
+presbyopic          hypermetrope            no                      normal                  soft
+presbyopic          hypermetrope            yes                     reduced                 none
+presbyopic          hypermetrope            yes                     normal                  none
+
+&gt;&gt;&gt; data.sort(key=lambda r: r[-1])
+&gt;&gt;&gt; for value, group in itertools.groupby(data, lambda r: r[-1]):
+...     print &#39;-----------&#39;
+...     print &#39;Group: &#39; + value
+...     print_data(group)
+...
+-----------
+Group: hard
+young               myope                   yes                     normal                  hard
+young               hypermetrope            yes                     normal                  hard
+pre-presbyopic      myope                   yes                     normal                  hard
+presbyopic          myope                   yes                     normal                  hard
+-----------
+Group: none
+young               myope                   no                      reduced                 none
+young               myope                   yes                     reduced                 none
+young               hypermetrope            no                      reduced                 none
+young               hypermetrope            yes                     reduced                 none
+pre-presbyopic      myope                   no                      reduced                 none
+pre-presbyopic      myope                   yes                     reduced                 none
+pre-presbyopic      hypermetrope            no                      reduced                 none
+pre-presbyopic      hypermetrope            yes                     reduced                 none
+pre-presbyopic      hypermetrope            yes                     normal                  none
+presbyopic          myope                   no                      reduced                 none
+presbyopic          myope                   no                      normal                  none
+presbyopic          myope                   yes                     reduced                 none
+presbyopic          hypermetrope            no                      reduced                 none
+presbyopic          hypermetrope            yes                     reduced                 none
+presbyopic          hypermetrope            yes                     normal                  none
+-----------
+Group: soft
+young               myope                   no                      normal                  soft
+young               hypermetrope            no                      normal                  soft
+pre-presbyopic      myope                   no                      normal                  soft
+pre-presbyopic      hypermetrope            no                      normal                  soft
+presbyopic          hypermetrope            no                      normal   
+</code></pre>
+
+<h2 id="toc_104">正则表达式替换</h2>
+
+<p>目标: 将字符串line中的 overview.gif 替换成其他字符串</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; line = &#39;&lt;IMG ALIGN=&quot;middle&quot; SRC=\&#39;#\&#39;&quot; /span&gt;
+&gt;&gt;&gt; mo=re.compile(r&#39;(?&lt;=SRC=)&quot;([\w+\.]+)&quot;&#39;,re.I)  
+
+&gt;&gt;&gt; mo.sub(r&#39;&quot;\1****&quot;&#39;,line)  
+&#39;&lt;IMG ALIGN=&quot;middle&quot; SRC=\&#39;#\&#39;&quot; /span&gt;
+
+&gt;&gt;&gt; mo.sub(r&#39;replace_str_\1&#39;,line)  
+&#39;&lt;IMG ALIGN=&quot;middle&quot; replace_str_overview.gif BORDER=&quot;0&quot; ALT=&quot;&quot;&gt;&#39;&lt; /span&gt;
+
+&gt;&gt;&gt; mo.sub(r&#39;&quot;testetstset&quot;&#39;,line)  
+&#39;&lt;IMG ALIGN=&quot;middle&quot; SRC=\&#39;#\&#39;&quot; /span&gt;
+</code></pre>
+
+<p>注意: 其中 \1 是匹配到的数据，可以通过这样的方式直接引用</p>
+
+<h2 id="toc_105">遍历目录方法</h2>
+
+<p>在某些时候，我们需要遍历某个目录找出特定的文件列表，可以通过os.walk方法来遍历，非常方便</p>
+
+<pre><code class="language-python">import os
+fileList = []
+rootdir = &quot;/data&quot;
+for root, subFolders, files in os.walk(rootdir):
+if &#39;.svn&#39; in subFolders: subFolders.remove(&#39;.svn&#39;)  
+# 排除特定目录
+for file in files:
+  if file.find(&quot;.t2t&quot;) != -1:
+# 查找特定扩展名的文件
+      file_dir_path = os.path.join(root,file)
+      fileList.append(file_dir_path)  
+
+print fileList
+</code></pre>
+
+<h2 id="toc_106">列表按列排序(list sort)</h2>
+
+<p>如果列表的每个元素都是一个元组(tuple),我们要根据元组的某列来排序的化，可参考如下方法</p>
+
+<p>下面例子我们是根据元组的第2列和第3列数据来排序的,而且是倒序(reverse=True)</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; a = [(&#39;2011-03-17&#39;, &#39;2.26&#39;, 6429600, &#39;0.0&#39;), (&#39;2011-03-16&#39;, &#39;2.26&#39;, 12036900, &#39;-3.0&#39;),
+ (&#39;2011-03-15&#39;, &#39;2.33&#39;, 15615500,&#39;-19.1&#39;)]
+&gt;&gt;&gt; print a[0][0]
+2011-03-17
+&gt;&gt;&gt; b = sorted(a, key=lambda result: result[1],reverse=True)
+&gt;&gt;&gt; print b
+[(&#39;2011-03-15&#39;, &#39;2.33&#39;, 15615500, &#39;-19.1&#39;), (&#39;2011-03-17&#39;, &#39;2.26&#39;, 6429600, &#39;0.0&#39;),
+(&#39;2011-03-16&#39;, &#39;2.26&#39;, 12036900, &#39;-3.0&#39;)]
+&gt;&gt;&gt; c = sorted(a, key=lambda result: result[2],reverse=True)
+&gt;&gt;&gt; print c
+[(&#39;2011-03-15&#39;, &#39;2.33&#39;, 15615500, &#39;-19.1&#39;), (&#39;2011-03-16&#39;, &#39;2.26&#39;, 12036900, &#39;-3.0&#39;),
+(&#39;2011-03-17&#39;, &#39;2.26&#39;, 6429600, &#39;0.0&#39;)]
+</code></pre>
+
+<h2 id="toc_107">列表去重(list uniq)</h2>
+
+<p>有时候需要将list中重复的元素删除，就要使用如下方法</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; lst= [(1,&#39;sss&#39;),(2,&#39;fsdf&#39;),(1,&#39;sss&#39;),(3,&#39;fd&#39;)]
+&gt;&gt;&gt; set(lst)
+set([(2, &#39;fsdf&#39;), (3, &#39;fd&#39;), (1, &#39;sss&#39;)])
+&gt;&gt;&gt;
+&gt;&gt;&gt; lst = [1, 1, 3, 4, 4, 5, 6, 7, 6]
+&gt;&gt;&gt; set(lst)
+set([1, 3, 4, 5, 6, 7])
+</code></pre>
+
+<h2 id="toc_108">字典排序(dict sort)</h2>
+
+<p>一般来说，我们都是根据字典的key来进行排序，但是我们如果想根据字典的value值来排序，就使用如下方法</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; from operator import itemgetter
+&gt;&gt;&gt; aa = {&quot;a&quot;:&quot;1&quot;,&quot;sss&quot;:&quot;2&quot;,&quot;ffdf&quot;:&#39;5&#39;,&quot;ffff2&quot;:&#39;3&#39;}
+&gt;&gt;&gt; sort_aa = sorted(aa.items(),key=itemgetter(1))
+&gt;&gt;&gt; sort_aa
+[(&#39;a&#39;, &#39;1&#39;), (&#39;sss&#39;, &#39;2&#39;), (&#39;ffff2&#39;, &#39;3&#39;), (&#39;ffdf&#39;, &#39;5&#39;)]
+</code></pre>
+
+<p>从上面的运行结果看到，按照字典的value值进行排序的</p>
+
+<h2 id="toc_109">字典,列表,字符串互转</h2>
+
+<p>以下是生成数据库连接字符串,从字典转换到字符串</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; params = {&quot;server&quot;:&quot;mpilgrim&quot;, &quot;database&quot;:&quot;master&quot;, &quot;uid&quot;:&quot;sa&quot;, &quot;pwd&quot;:&quot;secret&quot;}
+&gt;&gt;&gt; [&quot;%s=%s&quot; % (k, v) for k, v in params.items()]
+[&#39;server=mpilgrim&#39;, &#39;uid=sa&#39;, &#39;database=master&#39;, &#39;pwd=secret&#39;]
+&gt;&gt;&gt; &quot;;&quot;.join([&quot;%s=%s&quot; % (k, v) for k, v in params.items()])
+&#39;server=mpilgrim;uid=sa;database=master;pwd=secret&#39;
+</code></pre>
+
+<p>下面的例子 是将字符串转化为字典</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; a = &#39;server=mpilgrim;uid=sa;database=master;pwd=secret&#39;
+&gt;&gt;&gt; aa = {}
+&gt;&gt;&gt; for i in a.split(&#39;;&#39;):aa[i.split(&#39;=&#39;,1)[0]] = i.split(&#39;=&#39;,1)[1]
+...
+&gt;&gt;&gt; aa
+{&#39;pwd&#39;: &#39;secret&#39;, &#39;database&#39;: &#39;master&#39;, &#39;uid&#39;: &#39;sa&#39;, &#39;server&#39;: &#39;mpilgrim&#39;}
+</code></pre>
+
+<h2 id="toc_110">时间对象操作</h2>
+
+<p>将时间对象转换成字符串</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; import datetime
+&gt;&gt;&gt; datetime.datetime.now().strftime(&quot;%Y-%m-%d %H:%M&quot;)
+  &#39;2011-01-20 14:05&#39;
+</code></pre>
+
+<p>时间大小比较</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; import time
+&gt;&gt;&gt; t1 = time.strptime(&#39;2011-01-20 14:05&#39;,&quot;%Y-%m-%d %H:%M&quot;)
+&gt;&gt;&gt; t2 = time.strptime(&#39;2011-01-20 16:05&#39;,&quot;%Y-%m-%d %H:%M&quot;)
+&gt;&gt;&gt; t1 &gt; t2
+  False
+&gt;&gt;&gt; t1 &lt; t2
+  True
+</code></pre>
+
+<p>时间差值计算,计算8小时前的时间</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; datetime.datetime.now().strftime(&quot;%Y-%m-%d %H:%M&quot;)
+  &#39;2011-01-20 15:02&#39;
+&gt;&gt;&gt; (datetime.datetime.now() - datetime.timedelta(hours=8)).strftime(&quot;%Y-%m-%d %H:%M&quot;)
+  &#39;2011-01-20 07:03&#39;
+</code></pre>
+
+<p>将字符串转换成时间对象</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; endtime=datetime.datetime.strptime(&#39;20100701&#39;,&quot;%Y%m%d&quot;)
+&gt;&gt;&gt; type(endtime)
+  &lt;type &#39;datetime.datetime&#39;&gt;
+&gt;&gt;&gt; print endtime
+  2010-07-01 00:00:00
+</code></pre>
+
+<p>将从 1970-01-01 00:00:00 UTC 到现在的秒数，格式化输出   </p>
+
+<pre><code class="language-python">&gt;&gt;&gt; import time
+&gt;&gt;&gt; a = 1302153828
+&gt;&gt;&gt; time.strftime(&quot;%Y-%m-%d %H:%M:%S&quot;,time.localtime(a))
+  &#39;2011-04-07 13:23:48&#39;
+</code></pre>
+
+<h2 id="toc_111">命令行参数解析(getopt)</h2>
+
+<p>通常在编写一些日运维脚本时，需要根据不同的条件，输入不同的命令行选项来实现不同的功能 在Python中提供了getopt模块很好的实现了命令行参数的解析。请看如下程序:</p>
+
+<pre><code class="language-python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import sys,os,getopt
+def usage():
+print
+&#39;&#39;&#39;&#39;&#39;
+Usage: analyse_stock.py [options...]
+Options:
+-e : Exchange Name
+-c : User-Defined Category Name
+-f : Read stock info from file and save to db
+-d : delete from db by stock code
+-n : stock name
+-s : stock code
+-h : this help info
+test.py -s haha -n &quot;HA Ha&quot;
+&#39;&#39;&#39;
+
+try:
+opts, args = getopt.getopt(sys.argv[1:],&#39;he:c:f:d:n:s:&#39;)
+except getopt.GetoptError:
+usage()
+sys.exit()
+if len(opts) == 0:
+usage()
+sys.exit()  
+
+for opt, arg in opts:
+if opt in (&#39;-h&#39;, &#39;--help&#39;):
+  usage()
+  sys.exit()
+elif opt == &#39;-d&#39;:
+  print &quot;del stock %s&quot; % arg
+elif opt == &#39;-f&#39;:
+  print &quot;read file %s&quot; % arg
+elif opt == &#39;-c&#39;:
+  print &quot;user-defined %s &quot; % arg
+elif opt == &#39;-e&#39;:
+  print &quot;Exchange Name %s&quot; % arg
+elif opt == &#39;-s&#39;:
+  print &quot;Stock code %s&quot; % arg
+elif opt == &#39;-n&#39;:
+  print &quot;Stock name %s&quot; % arg  
+
+sys.exit()
+</code></pre>
+
+<h2 id="toc_112">print 格式化输出</h2>
+
+<h3 id="toc_113">格式化输出字符串</h3>
+
+<p>截取字符串输出,下面例子将只输出字符串的前3个字母</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; str=&quot;abcdefg&quot;
+&gt;&gt;&gt; print &quot;%.3s&quot; % str
+  abc
+</code></pre>
+
+<p>按固定宽度输出，不足使用空格补全,下面例子输出宽度为10</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; str=&quot;abcdefg&quot;
+&gt;&gt;&gt; print &quot;%10s&quot; % str
+     abcdefg
+</code></pre>
+
+<p>截取字符串，按照固定宽度输出</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; str=&quot;abcdefg&quot;
+&gt;&gt;&gt; print &quot;%10.3s&quot; % str
+         abc
+</code></pre>
+
+<p>浮点类型数据位数保留</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; import fpformat
+&gt;&gt;&gt; a= 0.0030000000005
+&gt;&gt;&gt; b=fpformat.fix(a,6)
+&gt;&gt;&gt; print b
+  0.003000
+</code></pre>
+
+<p>对浮点数四舍五入,主要使用到round函数</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; from decimal import *
+&gt;&gt;&gt; a =&quot;2.26&quot;
+&gt;&gt;&gt; b =&quot;2.29&quot;
+&gt;&gt;&gt; c = Decimal(a) - Decimal(b)
+&gt;&gt;&gt; print c
+  -0.03
+&gt;&gt;&gt; c / Decimal(a) * 100
+  Decimal(&#39;-1.327433628318584070796460177&#39;)
+&gt;&gt;&gt; Decimal(str(round(c / Decimal(a) * 100, 2)))
+  Decimal(&#39;-1.33&#39;)
+</code></pre>
+
+<h2 id="toc_114">进制转换</h2>
+
+<p>有些时候需要作不同进制转换，可以参考下面的例子(%x 十六进制,%d 十进制,%o 八进制)</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; num = 10
+&gt;&gt;&gt; print &quot;Hex = %x,Dec = %d,Oct = %o&quot; %(num,num,num)
+  Hex = a,Dec = 10,Oct = 12
+</code></pre>
+
+<h2 id="toc_115">Python调用系统命令或者脚本</h2>
+
+<p>使用 os.system() 调用系统命令 , 程序中无法获得到输出和返回值</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; import os
+&gt;&gt;&gt; os.system(&#39;ls -l /proc/cpuinfo&#39;)
+&gt;&gt;&gt; os.system(&quot;ls -l /proc/cpuinfo&quot;)
+  -r--r--r-- 1 root root 0  3月 29 16:53 /proc/cpuinfo
+  0
+</code></pre>
+
+<p>使用 os.popen() 调用系统命令, 程序中可以获得命令输出，但是不能得到执行的返回值</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; out = os.popen(&quot;ls -l /proc/cpuinfo&quot;)
+&gt;&gt;&gt; print out.read()
+  -r--r--r-- 1 root root 0  3月 29 16:59 /proc/cpuinfo  
+</code></pre>
+
+<p>使用 commands.getstatusoutput() 调用系统命令, 程序中可以获得命令输出和执行的返回值</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; import commands
+&gt;&gt;&gt; commands.getstatusoutput(&#39;ls /bin/ls&#39;)
+  (0, &#39;/bin/ls&#39;)
+</code></pre>
+
+<h2 id="toc_116">Python 捕获用户 Ctrl+C ,Ctrl+D 事件</h2>
+
+<p>有些时候，需要在程序中捕获用户键盘事件，比如ctrl+c退出，这样可以更好的安全退出程序</p>
+
+<pre><code class="language-python">try:
+    do_some_func()
+except KeyboardInterrupt:
+    print &quot;User Press Ctrl+C,Exit&quot;
+except EOFError:
+    print &quot;User Press Ctrl+D,Exit&quot;
+</code></pre>
+
+<h2 id="toc_117">Python 读写文件</h2>
+
+<p>一次性读入文件到列表，速度较快，适用文件比较小的情况下</p>
+
+<pre><code class="language-python">track_file = &quot;track_stock.conf&quot;
+fd = open(track_file)
+content_list = fd.readlines()
+fd.close()
+for line in content_list:
+    print line  
+</code></pre>
+
+<p>逐行读入，速度较慢,适用没有足够内存读取整个文件(文件太大)</p>
+
+<pre><code class="language-python">fd = open(file_path)
+fd.seek(0)
+title = fd.readline()
+keyword = fd.readline()
+uuid = fd.readline()
+fd.close()  
+</code></pre>
+
+<p>写文件 write 与 writelines 的区别   </p>
+
+<ul>
+<li>Fd.write(str) : 把str写到文件中，write()并不会在str后加上一个换行符</li>
+<li>Fd.writelines(content) : 把content的内容全部写到文件中,原样写入，不会在每行后面加上任何东西</li>
+</ul>
+
+<h2 id="toc_118">链式比较操作</h2>
+
+<pre><code>&gt;&gt;&gt; x = 5
+&gt;&gt;&gt; 1 &lt; x &lt; 10
+True
+&gt;&gt;&gt; 10 &lt; x &lt; 20
+False
+&gt;&gt;&gt; x &lt; 10 &lt; x*10 &lt; 100
+True
+&gt;&gt;&gt; 10 &gt; x &lt;= 9
+True
+&gt;&gt;&gt; 5 == x &gt; 4
+True
+</code></pre>
+
+<p>你可能认为它执行的过程先是：<code>1 &lt; x</code>，返回<code>True</code>，然后再比较<code>True &lt; 10</code>,当然这么做也是返回<code>True</code>,比较表达式<code>True &lt; 10</code>,因为解释器会把<code>True</code>转换成<code>1</code>，<code>False</code>转换成<code>0</code>。但这里的链式比较解释器在内部并不是这样干的，它会把这种链式的比较操作转换成：<code>1 &lt; x and x &lt; 10</code>，不信你可以看看最后一个例子。</p>
+
+<h2 id="toc_119">枚举</h2>
+
+<pre><code>&gt;&gt;&gt; a = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;]
+&gt;&gt;&gt; for index, item in enumerate(a): print index, item
+...
+0 a
+1 b
+2 c
+3 d
+4 e
+&gt;&gt;&gt;
+</code></pre>
+
+<p>用enumerate包装一个可迭代对象,可以同时使用迭代项和索引，如果你不这么干的话，下面有一种比较麻烦的方法：  </p>
+
+<pre><code>for i in range(len(a)):
+    print i, a[i]
+</code></pre>
+
+<p>enumerate 还可以接收一个可选参数start，默认start等于0。<code>enumerate(list, start=1)</code>，这样index的起始值就是1  </p>
+
+<h2 id="toc_120">生成器对象</h2>
+
+<pre><code>x=(n for n in foo if bar(n))  #foo是可迭代对象
+&gt;&gt;&gt; type(x)
+&lt;type &#39;generator&#39;&gt;
+</code></pre>
+
+<p>你可以把生成器对象赋值给x，意味着可以对x进行迭代操作：  </p>
+
+<pre><code>for n in x:
+    pass
+</code></pre>
+
+<p>它的好处就是不需要存储中间结果，也许你会使用（列表推倒式）：  </p>
+
+<pre><code>x = [n for n in foo if bar(n)]
+&gt;&gt;&gt; type(x)
+&lt;type &#39;list&#39;&gt;
+</code></pre>
+
+<p>它比生成器对象能带来更快的速度。相对地，生成器更能节省内存开销，它的值是按需生成，不需要像列表推倒式一样把整个结果保存在内存中，同时它不能重新迭代，列表推倒式则不然。  </p>
+
+<h2 id="toc_121">iter()可接收callable参数</h2>
+
+<p>iter()内建函数接收的参数分为两种，第一种是：  </p>
+
+<pre><code>iter(collection)---&gt; iterator
+</code></pre>
+
+<p>参数collection必须是可迭代对象或者是序列 ，第二种是：  </p>
+
+<pre><code>iter（callable， sentinel) --&gt; iterator
+</code></pre>
+
+<p>callable函数会一直被调用，直到它的返回结果等于sentinel，例如：  </p>
+
+<pre><code>def seek_next_line(f):
+    #每次读一个字符，直到出现换行符就返回
+    for c in iter(lambda: f.read(1),&#39;\n&#39;):  
+        pass
+</code></pre>
+
+<h2 id="toc_122">小心可变的默认参数</h2>
+
+<pre><code>&gt;&gt;&gt; def foo(x=[]):
+...     x.append(1)
+...     print x
+...
+&gt;&gt;&gt; foo()
+[1]
+&gt;&gt;&gt; foo()
+[1, 1]
+&gt;&gt;&gt; foo()
+[1, 1, 1]
+</code></pre>
+
+<p>取而代之的是你应该使用一个标记值表示“没有指定”来替换可变值,如：  </p>
+
+<pre><code>&gt;&gt;&gt; def foo(x=None):
+...     if x is None:
+...         x = []
+...     x.append(1)
+...     print x
+&gt;&gt;&gt; foo()
+[1]
+&gt;&gt;&gt; foo()
+[1]
+</code></pre>
+
+<h2 id="toc_123">发送值到生成器函数</h2>
+
+<pre><code>def mygen():
+    &quot;&quot;&quot;Yield 5 until something else is passed back via send()&quot;&quot;&quot;
+    a = 5
+    while True:
+        f = (yield a) #yield a and possibly get f in return
+        if f is not None:
+            a = f  #store the new value
+</code></pre>
+
+<p>你可以：  </p>
+
+<pre><code>&gt;&gt;&gt; g = mygen()
+&gt;&gt;&gt; g.next()
+5
+&gt;&gt;&gt; g.next()
+5
+&gt;&gt;&gt; g.send(7)  #we send this back to the generator
+7
+&gt;&gt;&gt; g.next() #now it will yield 7 until we send something else
+7
+</code></pre>
+
+<h2 id="toc_124">如果你不喜欢使用空格缩进，那么可以使用C语言花括号{}定义函数：</h2>
+
+<pre><code>&gt;&gt;&gt; from __future__ import braces   #这里的braces 指的是：curly braces（花括号）
+  File &quot;&lt;stdin&gt;&quot;, line 1
+SyntaxError: not a chance
+</code></pre>
+
+<p>当然这仅仅是一个玩笑，想用花括号定义函数？没门。感兴趣的还可以了解下：  </p>
+
+<pre><code>from __future__ import barry_as_FLUFL
+</code></pre>
+
+<p>不过这是python3里面的特性，<a href="http://www.python.org/dev/peps/pep-0401/">http://www.python.org/dev/peps/pep-0401/</a>  </p>
+
+<h2 id="toc_125">切片操作中的步长参数</h2>
+
+<pre><code>a = [1,2,3,4,5]
+&gt;&gt;&gt; a[::2]  # iterate over the whole list in 2-increments
+[1,3,5]
+</code></pre>
+
+<p>还有一个特例：<code>x[::-1]</code>，反转列表：  </p>
+
+<pre><code>&gt;&gt;&gt; a[::-1]
+[5,4,3,2,1]
+</code></pre>
+
+<p>有关反转，还有两个函数reverse、reversed，reverse是list对象的方法，没有返回值，而reversed是内建方法，可接收的参数包括tuple、string、list、unicode，以及用户自定义的类型，返回一个迭代器。  </p>
+
+<pre><code>&gt;&gt;&gt; l = range(5)
+&gt;&gt;&gt; l
+[0, 1, 2, 3, 4]
+&gt;&gt;&gt; l.reverse()
+&gt;&gt;&gt; l
+[4, 3, 2, 1, 0]
+&gt;&gt;&gt; l2 = reversed(l)
+&gt;&gt;&gt; l2
+&lt;listreverseiterator object at 0x99faeec&gt;
+</code></pre>
+
+<h2 id="toc_126">装饰器</h2>
+
+<p>装饰器使一个函数或方法包装在另一个函数里头，可以在被包装的函数添加一些额外的功能，比如日志，还可以对参数、返回结果进行修改。装饰器有点类似Java中的AOP。下面这个例子是打印被装饰的函数里面的参数的装饰器，  </p>
+
+<pre><code>&gt;&gt;&gt; def print_args(function):
+&gt;&gt;&gt;     def wrapper(*args, **kwargs):
+&gt;&gt;&gt;         print &#39;Arguments:&#39;, args, kwargs
+&gt;&gt;&gt;         return function(*args, **kwargs)
+&gt;&gt;&gt;     return wrapper
+
+&gt;&gt;&gt; @print_args
+&gt;&gt;&gt; def write(text):
+&gt;&gt;&gt;     print text
+
+&gt;&gt;&gt; write(&#39;foo&#39;)
+Arguments: (&#39;foo&#39;,) {}
+foo
+</code></pre>
+
+<p>@是语法糖，它等价于：  </p>
+
+<pre><code>&gt;&gt;&gt; write = print_args(write)
+&gt;&gt;&gt; write(&#39;foo&#39;)
+arguments: (&#39;foo&#39;,) {}
+foo
+</code></pre>
+
+<h2 id="toc_127">for ... else语法</h2>
+
+<pre><code>for i in foo:
+    if i == 0:
+        break
+else:
+    print(&quot;i was never 0&quot;)
+</code></pre>
+
+<p>else代码块只有在for循环正常结束后执行如果遇到break语句那么不会执行else语句块，等价于下面：  </p>
+
+<pre><code>found = False
+for i in foo:
+    if i == 0:
+        found = True
+        break
+if not found:
+    print(&quot;i was never 0&quot;)
+</code></pre>
+
+<p>不过这种语法看起来怪怪地，让人感觉是else块是在for语句块没有执行的时候执行的，很容易让人去类比 if else 的语法，如果是把else换成finally或许更容易理解    </p>
+
+<h2 id="toc_128">变量值交换</h2>
+
+<pre><code>&gt;&gt;&gt; a = 10
+&gt;&gt;&gt; b = 5
+&gt;&gt;&gt; a, b
+(10, 5)
+
+&gt;&gt;&gt; a, b = b, a
+&gt;&gt;&gt; a, b
+(5, 10)
+</code></pre>
+
+<p>等号右边是一个创建元组的表达式，等号左边解压（没有引用的）元组分别赋给名称（变量）a和b。赋完值后因为没有被其他名字引用，因此被标记之后被垃圾收集器回收，而绑定到a和b的值已经被交换了。  </p>
+
+<p>注意：多值赋值其实仅仅就是元组打包和序列解包的组合的过程  </p>
+
+<h2 id="toc_129">可读的正则表达式</h2>
+
+<p>在Python中你可以把正则表达式分割成多行写，还可以写注释  </p>
+
+<pre><code>&gt;&gt;&gt; pattern = &quot;&quot;&quot;
+... ^                   # beginning of string
+... M{0,4}              # thousands - 0 to 4 M&#39;s
+... (CM|CD|D?C{0,3})    # hundreds - 900 (CM), 400 (CD), 0-300 (0 to 3 C&#39;s),
+...                     #            or 500-800 (D, followed by 0 to 3 C&#39;s)
+... (XC|XL|L?X{0,3})    # tens - 90 (XC), 40 (XL), 0-30 (0 to 3 X&#39;s),
+...                     #        or 50-80 (L, followed by 0 to 3 X&#39;s)
+... (IX|IV|V?I{0,3})    # ones - 9 (IX), 4 (IV), 0-3 (0 to 3 I&#39;s),
+...                     #        or 5-8 (V, followed by 0 to 3 I&#39;s)
+... $                   # end of string
+... &quot;&quot;&quot;
+&gt;&gt;&gt; re.search(pattern, &#39;M&#39;, re.VERBOSE)
+</code></pre>
+
+<h2 id="toc_130">函数参数解包(unpacking)</h2>
+
+<p>分别使用<code>*</code>和<code>**</code>解包列表和字典,这是一种非常实用的快捷方式,因为list,tuple,dict作为容器被广泛使用    </p>
+
+<pre><code>def draw_point(x, y):
+    # do some magic
+
+point_foo = (3, 4)
+point_bar = {&#39;y&#39;: 3, &#39;x&#39;: 2}
+
+draw_point(*point_foo)
+draw_point(**point_bar)
+</code></pre>
+
+<h2 id="toc_131">动态地创建新类型</h2>
+
+<p>动态创建新类型虽不是实用功能,但了解一下也是有好处的  </p>
+
+<pre><code>&gt;&gt;&gt; NewType = type(&quot;NewType&quot;, (object,), {&quot;x&quot;: &quot;hello&quot;})
+&gt;&gt;&gt; n = NewType()
+&gt;&gt;&gt; n.x
+&quot;hello&quot;
+</code></pre>
+
+<p>type的第一个参数就是类名,第二个参数是继承的父类,第三个参数是类的属性.它完全等同于:  </p>
+
+<pre><code>&gt;&gt;&gt; class NewType(object):
+&gt;&gt;&gt;     x = &quot;hello&quot;
+&gt;&gt;&gt; n = NewType()
+&gt;&gt;&gt; n.x
+&quot;hello&quot;
+</code></pre>
+
+<h2 id="toc_132">上下文管理器与with语句</h2>
+
+<p>上下文管理器(context manager)用于规定某个对象的使用范围,进入或退出该范围时,特殊的操作会被执行(比如关闭连接,释放内存等等),语法是:<code>with... as ...</code>,该特性在python2.5引入的.</p>
+
+<p>上下文管理器协议有两个方法组成<code>contextmanager.__enter__()</code>和<code>contextmanager.__exit__()</code>,任何实现了这两个方法的对象都称之为上下文管理器对象,比如文件对象就默认实现了该协议.</p>
+
+<pre><code>with open(&#39;foo.txt&#39;, &#39;w&#39;) as f:
+    f.write(&#39;hello!&#39;)
+</code></pre>
+
+<h2 id="toc_133">字典的get()方法</h2>
+
+<p>字典的get()方法用来替换d[&#39;key&#39;],后者如果是遇到key不存在会有异常,如果使用的d.get(&#39;key&#39;),key不存在时它返回的是None,你可以指定两个参数如:d.get(&#39;key&#39;,0)来用0取代返回的None  </p>
+
+<pre><code>sum[value] = sum.get(value, 0) + 1
+</code></pre>
+
+<p>还有一个类似的方法<code>setdefault(key, value)</code>,如果字典中存在key,那么就直接返回d[key],否则设置d[key]=value,并返回该值.  </p>
+
+<pre><code>&gt;&gt;&gt; d = {&#39;key&#39;:123}
+&gt;&gt;&gt; d.setdefault(&#39;key&#39;,456)
+123
+&gt;&gt;&gt; d[&#39;key&#39;]
+123
+&gt;&gt;&gt; d.setdefault(&#39;key2&#39;,456)
+456
+&gt;&gt;&gt; d[&#39;key2&#39;]
+456
+</code></pre>
+
+<p>collections.Counter是dict的子类,用来统计可哈稀对象,</p>
+
+<pre><code>&gt;&gt;&gt; cnt = Counter(&#39;helloworld&#39;)
+&gt;&gt;&gt; cnt
+Counter({&#39;l&#39;: 3, &#39;o&#39;: 2, &#39;e&#39;: 1, &#39;d&#39;: 1, &#39;h&#39;: 1, &#39;r&#39;: 1, &#39;w&#39;: 1})
+&gt;&gt;&gt; cnt[&#39;l&#39;]
+3
+&gt;&gt;&gt; cnt[&#39;x&#39;] = 10
+&gt;&gt;&gt; cnt.get(&#39;y&#39;)
+</code></pre>
+
+<h2 id="toc_134">描述符(Descriptors)</h2>
+
+<p>描述符是python的核心特新之一,当你使用<code>.</code>访问成员时,(如:x.y),python首先在实例字典中查找该成员,如果没有发现再从类字典中查找,如果这个对象实现了描述符(实现了<code>__get__,__set__,__delete__</code>),那么优先返回<code>__get__</code>方法的返回值.  </p>
+
+<h2 id="toc_135">条件赋值</h2>
+
+<p>为什么python中没有类c语言的三目运算符,Guido van Rossum说过了,条件赋值更容易理解  </p>
+
+<pre><code>x = 3 if (y == 1) else 2
+</code></pre>
+
+<p>这个表达式的意思就是:如果y等于那么就把3赋值给x,否则把2赋值给x, 条件中的括号是可选的,为了可读性可以考虑加上去.if else中的表达式可以是任何类型的,既可以函数,还可以类  </p>
+
+<pre><code>(func1 if y == 1 else func2)(arg1, arg2)
+</code></pre>
+
+<p>如果y等于1,那么调用func1(arg1,arg2)否则调用func2(arg1,arg2)  </p>
+
+<pre><code>x = (class1 if y == 1 else class2)(arg1, arg2)
+</code></pre>
+
+<p>class1,class2是两个类  </p>
+
+<h2 id="toc_136">异常else语句块</h2>
+
+<pre><code>try:
+   try_this(whatever)
+except SomeException, exception:
+   #Handle exception
+else:
+    # do something
+finally:
+    #do something
+</code></pre>
+
+<p>else语句块会在没有异常的情况下执行,先于finally,它的好处就是你可以明确知道它会在没有异常的情况下执行,如果是把else语句块放在try语句块里面就达不到这种效果.  </p>
+
+<h2 id="toc_137">原始数据类型和操作符</h2>
+
+<ul>
+<li>布尔值也是基本的数据类型 <code>True</code> 和 <code>False</code></li>
+<li>用 <code>not</code> 来取非</li>
+<li>字符串通过 <code>+</code> 号拼接，字符串可以被视为字符的列表</li>
+<li><code>%</code> 可以用来格式化字符串： <code>&quot;%s can be %s&quot; % (&quot;strings&quot;, &quot;interpolated&quot;)</code></li>
+<li>也可以用 <code>format</code> 方法，这个更推荐：<code>&quot;{0} can be {1}&quot;.format(&quot;strings&quot;, &quot;formatted&quot;)</code>。也可以用变量名代替数字：<code>&quot;{name} wants to eat {food}&quot;.format(name=&quot;Bob&quot;, food=&quot;lasagna&quot;)</code></li>
+<li><code>None</code> 是对象，用 <code>is</code> 来比较：<code>&quot;etc&quot; is None</code></li>
+<li><code>is</code> 可以用来比较对象的相等性，在比较原始的数据时没多少用，但是比较对象时必不可少</li>
+</ul>
+
+<h2 id="toc_138">变量和集合</h2>
+
+<ul>
+<li>列表用来保存序列：<code>li = []</code>，也可以直接初始化 <code>other_li = [4, 5, 6]</code></li>
+<li>在列表末尾添加元素：<code>li.append(1)</code></li>
+<li>访问最后一个元素：<code>li[-1]</code></li>
+<li>拼接列表：<code>li.extend(other_li)</code></li>
+<li>用 <code>in</code> 来返回元素是否在列表中</li>
+<li>返回列表长度：<code>len(li)</code></li>
+</ul>
+
+<hr/>
+
+<ul>
+<li>元组类似于列表，但是不可改变：<code>tuple = (1, 2, 3)</code></li>
+<li>交换两个数字：<code>e, d = d, e</code></li>
+</ul>
+
+<hr/>
+
+<ul>
+<li>用字典来存储映射关系：<code>empty_dict = {}</code></li>
+<li>字典初始化：<code>filled_dict = {&quot;one&quot;: 1, &quot;two&quot;: 2, &quot;three&quot;: 3}</code></li>
+<li>用中括号访问元素 <code>filled_dict[&quot;one&quot;]</code></li>
+<li>把所有的 key 保存在列表中 <code>filled_dict.keys()</code> -&gt; <code>[&quot;three&quot;, &quot;two&quot;, &quot;one&quot;]</code></li>
+<li>把所有的 value 保存在列表中 <code>filled_dict.values()</code> 和 key 的顺序相同</li>
+<li>判断一个键是否存在 <code>&quot;one&quot; in filled_dict</code></li>
+<li>用 get 方法来避免访问不存在的 key 时的 KeyError：<code>filled_dict.get(&quot;one&quot;)</code>，如果 key 不存在，则会返回一个 None</li>
+</ul>
+
+<hr/>
+
+<ul>
+<li>集合存储无顺序的元素：<code>empty_set = set()</code></li>
+<li>Python 2.7 之后，大括号可以用来表示集合：<code>filled_set = {1, 2, 2, 3, 4}</code> -&gt; <code>{1 2 3 4}</code></li>
+<li>向集合添加元素：<code>filled_set.add(5)</code></li>
+<li>用 <code>&amp;</code> 来计算集合的交</li>
+<li><code>|</code> 并</li>
+<li><code>-</code> 差</li>
+<li><code>in</code> 判断元素是否在集合中</li>
+</ul>
+
+<h2 id="toc_139">控制流程</h2>
+
+<ul>
+<li><code>range(number)</code> 返回从 0 到 number 的列表</li>
+<li>while 循环比较方便加条件</li>
+</ul>
+
+<h2 id="toc_140">函数</h2>
+
+<ul>
+<li>用 def 来新建函数</li>
+<li>通过 return 来返回值</li>
+<li>匿名函数：<code>(lambda x: x &gt; 2)(3)</code></li>
+<li>内置高阶函数 <code>map(add_10, [1, 2, 3])</code></li>
+</ul>
+
+<h2 id="toc_141">类</h2>
+
+<ul>
+<li>继承：<code>class Human(object):</code> 继承了 object 类</li>
+<li>成员方法，参数要有 self：<code>def say(self, msg):</code></li>
+<li>类方法由所有类的对象共享，这类方法在调用时，会把类本身传给第一个参数</li>
+</ul>
+
+<p>例如</p>
+
+<pre><code>@classmethod
+def get_species(cls):
+    return cls.species
+</code></pre>
+
+<ul>
+<li>静态方法是不需要类和对象的引用就可以调用的方法</li>
+</ul>
+
+<p>例如</p>
+
+<pre><code>@staticmethod
+def grunt():
+    return &quot;*grunt*&quot;
+</code></pre>
+
+<h2 id="toc_142">模块</h2>
+
+<ul>
+<li>导入其他模块：<code>import math</code></li>
+<li>导入特定函数：<code>from math import ceil, floor</code></li>
+<li>从模块中导入所有函数，不推荐使用：<code>from math import *</code></li>
+<li>简写模块名：<code>import math as m</code></li>
+<li>查看属性：<code>dir(math)</code></li>
+</ul>
+
+<h1 id="toc_143">Python 函数式编程指南</h1>
+
+<p>这大概算是Python最难啃的一块骨头吧。在我Python生涯的这一年里，我遇到了一些Pythoner，他们毫无例外地完全不会使用函数式编程（有些人喜欢称为Pythonic），比如，从来不会传递函数，不知道lambda是什么意思，知道列表展开但从来不知道用在哪里，对Python不提供经典for循环感到无所适从，言谈之中表现出对函数式风格的一种抗拒甚至厌恶。</p>
+
+<p>我尝试剖析这个问题，最终总结了这么两个原因：1、不想改变，认为现有的知识可以完成任务；2、对小众语言的歧视，Python目前在国内市场份额仍然很小很小，熟悉Python风格用处不大。</p>
+
+<p>然而我认为，学习使用一种截然不同的风格可以颠覆整个编程的思想。我会慢慢总结一个系列共4篇文字，篇幅都不大，轻松就能看完，希望对喜欢Python的人们有所帮助，因为我个人确实从中受益匪浅。</p>
+
+<h2 id="toc_144">一 概述</h2>
+
+<h3 id="toc_145">什么是函数式编程？</h3>
+
+<p>函数式编程使用一系列的函数解决问题。函数仅接受输入并产生输出，不包含任何能影响产生输出的内部状态。任何情况下，使用相同的参数调用函数始终能产生同样的结果。</p>
+
+<p>在一个函数式的程序中，输入的数据<q>流过</q>一系列的函数，每一个函数根据它的输入产生输出。函数式风格避免编写有<q>边界效应</q>(side effects)的函数：修改内部状态，或者是其他无法反应在输出上的变化。完全没有边界效应的函数被称为<q>纯函数式的</q>(purely functional)。避免边界效应意味着不使用在程序运行时可变的数据结构，输出只依赖于输入。</p>
+
+<p>可以认为函数式编程刚好站在了面向对象编程的对立面。对象通常包含内部状态（字段），和许多能修改这些状态的函数，程序则由不断修改状态构成；函数式编程则极力避免状态改动，并通过在函数间传递数据流进行工作。但这并不是说无法同时使用函数式编程和面向对象编程，事实上，复杂的系统一般会采用面向对象技术建模，但混合使用函数式风格还能让你额外享受函数式风格的优点。</p>
+
+<h3 id="toc_146">为什么使用函数式编程？</h3>
+
+<p>函数式的风格通常被认为有如下优点：<br/>
+- 逻辑可证<br/>
+  - 这是一个学术上的优点：没有边界效应使得更容易从逻辑上证明程序是正确的（而不是通过测试）。</p>
+
+<ul>
+<li><p>模块化</p>
+
+<ul>
+<li>函数式编程推崇简单原则，一个函数只做一件事情，将大的功能拆分成尽可能小的模块。小的函数更易于阅读和检查错误。</li>
+</ul></li>
+<li><p>组件化</p>
+
+<ul>
+<li>小的函数更容易加以组合形成新的功能。</li>
+</ul></li>
+<li><p>易于调试</p>
+
+<ul>
+<li>细化的、定义清晰的函数使得调试更加简单。当程序不正常运行时，每一个函数都是检查数据是否正确的接口，能更快速地排除没有问题的代码，定位到出现问题的地方。</li>
+</ul></li>
+<li><p>易于测试</p>
+
+<ul>
+<li>不依赖于系统状态的函数无须在测试前构造测试桩，使得编写单元测试更加容易。</li>
+</ul></li>
+<li><p>更高的生产率</p>
+
+<ul>
+<li>函数式编程产生的代码比其他技术更少（往往是其他技术的一半左右），并且更容易阅读和维护。</li>
+</ul></li>
+</ul>
+
+<h3 id="toc_147">如何辨认函数式风格？</h3>
+
+<p>支持函数式编程的语言通常具有如下特征，大量使用这些特征的代码即可被认为是函数式的：</p>
+
+<p><strong>函数是一等公民</strong></p>
+
+<p>函数能作为参数传递，或者是作为返回值返回。这个特性使得模板方法模式非常易于编写，这也促使了这个模式被更频繁地使用。</p>
+
+<p>以一个简单的集合排序为例，假设lst是一个数集，并拥有一个排序方法sort需要将如何确定顺序作为参数。</p>
+
+<p>如果函数不能作为参数，那么lst的sort方法只能接受普通对象作为参数。这样一来我们需要首先定义一个接口，然后定义一个实现该接口的类，最后将该类的一个实例传给sort方法，由sort调用这个实例的compare方法，就像这样：</p>
+
+<pre><code class="language-python">#伪代码
+interface Comparator {
+    compare(o1, o2)
+}
+lst = list(range(5))
+lst.sort(Comparator() {
+    compare(o1, o2) {
+        return o2 - o1 //逆序
+})
+</code></pre>
+
+<p>可见，我们定义了一个新的接口、新的类型（这里是一个匿名类），并new了一个新的对象只为了调用一个方法。如果这个方法可以直接作为参数传递会怎样呢？看起来应该像这样：</p>
+
+<pre><code class="language-python">def compare(o1, o2):
+    return o2 - o1 #逆序
+lst = list(range(5))
+lst.sort(compare)
+</code></pre>
+
+<p>请注意，前一段代码已经使用了匿名类技巧从而省下了不少代码，但仍然不如直接传递函数简单、自然。</p>
+
+<p><strong>匿名函数(lambda)</strong></p>
+
+<p>lambda提供了快速编写简单函数的能力。对于偶尔为之的行为，lambda让你不再需要在编码时跳转到其他位置去编写函数。</p>
+
+<p>lambda表达式定义一个匿名的函数，如果这个函数仅在编码的位置使用到，你可以现场定义、直接使用：</p>
+
+<pre><code class="language-python">lst.sort(lambda o1, o2: o1.compareTo(o2))
+</code></pre>
+
+<p>相信从这个小小的例子你也能感受到强大的生产效率：）</p>
+
+<p><strong>封装控制结构的内置模板函数</strong></p>
+
+<p>为了避开边界效应，函数式风格尽量避免使用变量，而仅仅为了控制流程而定义的循环变量和流程中产生的临时变量无疑是最需要避免的。</p>
+
+<p>假如我们需要对刚才的数集进行过滤得到所有的正数，使用指令式风格的代码应该像是这样：</p>
+
+<pre><code class="language-python">lst2 = list()
+for i in range(len(lst)): #模拟经典for循环
+    if lst[i] &gt; 0:
+        lst2.append(lst[i])
+</code></pre>
+
+<p>这段代码把从创建新列表、循环、取出元素、判断、添加至新列表的整个流程完整的展示了出来，俨然把解释器当成了需要手把手指导的傻瓜。然而，<q>过滤</q>这个动作是很常见的，为什么解释器不能掌握过滤的流程，而我们只需要告诉它过滤规则呢？</p>
+
+<p>在Python里，过滤由一个名为filter的内置函数实现。有了这个函数，解释器就学会了如何<q>过滤</q>，而我们只需要把规则告诉它：</p>
+
+<pre><code class="language-python">lst2 = filter(lambda n: n &gt; 0, lst)
+</code></pre>
+
+<p>这个函数带来的好处不仅仅是少写了几行代码这么简单。</p>
+
+<p>封装控制结构后，代码中就只需要描述功能而不是做法，这样的代码更清晰，更可读。因为避开了控制结构的干扰，第二段代码显然能让你更容易了解它的意图。</p>
+
+<p>另外，因为避开了索引，使得代码中不太可能触发下标越界这种异常，除非你手动制造一个。</p>
+
+<p>函数式编程语言通常封装了数个类似<q>过滤</q>这样的常见动作作为模板函数。唯一的缺点是这些函数需要少量的学习成本，但这绝对不能掩盖使用它们带来的好处。</p>
+
+<p><strong>闭包(closure)</strong></p>
+
+<p>闭包是绑定了外部作用域的变量（但不是全局变量）的函数。大部分情况下外部作用域指的是外部函数。</p>
+
+<p>闭包包含了自身函数体和所需外部函数中的<q>变量名的引用</q>。引用变量名意味着绑定的是变量名，而不是变量实际指向的对象；如果给变量重新赋值，闭包中能访问到的将是新的值。</p>
+
+<p>闭包使函数更加灵活和强大。即使程序运行至离开外部函数，如果闭包仍然可见，则被绑定的变量仍然有效；每次运行至外部函数，都会重新创建闭包，绑定的变量是不同的，不需要担心在旧的闭包中绑定的变量会被新的值覆盖。</p>
+
+<p>回到刚才过滤数集的例子。假设过滤条件中的 0 这个边界值不再是固定的，而是由用户控制。如果没有闭包，那么代码必须修改为：</p>
+
+<pre><code class="language-python">class greater_than_helper:
+    def __init__(self, minval):
+        self.minval = minval
+    def is_greater_than(self, val):
+        return val &gt; self.minval
+
+def my_filter(lst, minval):
+    helper = greater_than_helper(minval)
+    return filter(helper.is_greater_than, lst)
+</code></pre>
+
+<p>请注意我们现在已经为过滤功能编写了一个函数my<u>filter。如你所见，我们需要在别的地方（此例中是类greater</u>than_helper）持有另一个操作数minval。</p>
+
+<p>如果支持闭包，因为闭包可以直接使用外部作用域的变量，我们就不再需要greater<u>than</u>helper了：</p>
+
+<pre><code class="language-python">def my_filter(lst, minval):
+    return filter(lambda n: n &gt; minval, lst)
+</code></pre>
+
+<p>可见，闭包在不影响可读性的同时也省下了不少代码量。</p>
+
+<p>函数式编程语言都提供了对闭包的不同程度的支持。在Python 2.x中，闭包无法修改绑定变量的值，所有修改绑定变量的行为都被看成新建了一个同名的局部变量并将绑定变量隐藏。Python 3.x中新加入了一个关键字 nonlocal 以支持修改绑定变量。但不管支持程度如何，你始终可以访问（读取）绑定变量。</p>
+
+<p><strong>内置的不可变数据结构</strong></p>
+
+<p>为了避开边界效应，不可变的数据结构是函数式编程中不可或缺的部分。不可变的数据结构保证数据的一致性，极大地降低了排查问题的难度。</p>
+
+<p>例如，Python中的元组(tuple)就是不可变的，所有对元组的操作都不能改变元组的内容，所有试图修改元组内容的操作都会产生一个异常。</p>
+
+<p>函数式编程语言一般会提供数据结构的两种版本（可变和不可变），并推荐使用不可变的版本。</p>
+
+<p><strong>递归</strong></p>
+
+<p>递归是另一种取代循环的方法。递归其实是函数式编程很常见的形式，经常可以在一些算法中见到。但之所以放到最后，是因为实际上我们一般很少用到递归。如果一个递归无法被编译器或解释器优化，很容易就会产生栈溢出；另一方面复杂的递归往往让人感觉迷惑，不如循环清晰，所以众多最佳实践均指出使用循环而非递归。</p>
+
+<p>这一系列短文中都不会关注递归的使用。</p>
+
+<h2 id="toc_148">二 函数</h2>
+
+<h3 id="toc_149">定义一个函数</h3>
+
+<p>如下定义了一个求和函数：</p>
+
+<pre><code class="language-python">def add(x, y):
+    return x + y
+</code></pre>
+
+<p>关于参数和返回值的语法细节可以参考其他文档，这里就略过了。</p>
+
+<p>使用lambda可以定义简单的单行匿名函数。lambda的语法是：</p>
+
+<pre><code>lambda args: expression
+</code></pre>
+
+<p>参数(args)的语法与普通函数一样，同时表达式(expression)的值就是匿名函数调用的返回值；而lambda表达式返回这个匿名函数。如果我们给匿名函数取个名字，就像这样：</p>
+
+<pre><code>lambda_add = lambda x, y: x + y
+</code></pre>
+
+<p>这与使用def定义的求和函数完全一样，可以使用lambda_add作为函数名进行调用。然而，提供lambda的目的是为了编写偶尔为之的、简单的、可预见不会被修改的匿名函数。这种风格虽然看起来很酷，但并不是一个好主意，特别是当某一天需要对它进行扩充，再也无法用一个表达式写完时。如果一开始就需要给函数命名，应该始终使用def关键字。</p>
+
+<h3 id="toc_150">使用函数赋值</h3>
+
+<p>事实上你已经见过了，上一节中我们将lambda表达式赋值给了add。同样，使用def定义的函数也可以赋值，相当于为函数取了一个别名，并且可以使用这个别名调用函数：</p>
+
+<pre><code class="language-python">add_a_number_to_another_one_by_using_plus_operator = add
+print add_a_number_to_another_one_by_using_plus_operator(1, 2)
+</code></pre>
+
+<p>既然函数可以被变量引用，那么将函数作为参数和返回值就是很寻常的做法了。</p>
+
+<h3 id="toc_151">闭包</h3>
+
+<p>闭包是一类特殊的函数。如果一个函数定义在另一个函数的作用域中，并且函数中引用了外部函数的局部变量，那么这个函数就是一个闭包。下面的代码定义了一个闭包：</p>
+
+<pre><code class="language-python">def f():
+    n = 1
+    def inner():
+        print n
+    inner()
+    n = &#39;x&#39;
+    inner()
+</code></pre>
+
+<p>函数inner定义在f的作用域中，并且在inner中使用了f中的局部变量n，这就构成了一个闭包。闭包绑定了外部的变量，所以调用函数f的结果是打印1和&#39;x&#39;。这类似于普通的模块函数和模块中定义的全局变量的关系：修改外部变量能影响内部作用域中的值，而在内部作用域中定义同名变量则将遮蔽（隐藏）外部变量。</p>
+
+<p>如果需要在函数中修改全局变量，可以使用关键字global修饰变量名。Python 2.x中没有关键字为在闭包中修改外部变量提供支持，在3.x中，关键字nonlocal可以做到这一点：</p>
+
+<pre><code class="language-python">#Python 3.x supports `nonlocal&#39;
+def f():
+    n = 1
+    def inner():
+        nonlocal n
+        n = &#39;x&#39;
+    print(n)
+    inner()
+    print(n)
+</code></pre>
+
+<p>调用这个函数的结果是打印1和&#39;x&#39;，如果你有一个Python 3.x的解释器，可以试着运行一下。</p>
+
+<p>由于使用了函数体外定义的变量，看起来闭包似乎违反了函数式风格的规则即不依赖外部状态。但是由于闭包绑定的是外部函数的局部变量，而一旦离开外部函数作用域，这些局部变量将无法再从外部访问；另外闭包还有一个重要的特性，每次执行至闭包定义处时都会构造一个新的闭包，这个特性使得旧的闭包绑定的变量不会随第二次调用外部函数而更改。所以闭包实际上不会被外部状态影响，完全符合函数式风格的要求。（这里有一个特例，Python 3.x中，如果同一个作用域中定义了两个闭包，由于可以修改外部变量，他们可以相互影响。）</p>
+
+<p>虽然闭包只有在作为参数和返回值时才能发挥它的真正威力，但闭包的支持仍然大大提升了生产率。</p>
+
+<h3 id="toc_152">作为参数</h3>
+
+<p>如果你对OOP的模板方法模式很熟悉，相信你能很快速地学会将函数当作参数传递。两者大体是一致的，只是在这里，我们传递的是函数本身而不再是实现了某个接口的对象。</p>
+
+<p>我们先来给前面定义的求和函数add热热身：</p>
+
+<pre><code class="language-python">print add(&#39;三角形的树&#39;, &#39;北极&#39;)
+</code></pre>
+
+<p>与加法运算符不同，你一定很惊讶于答案是&#39;三角函数&#39;。这是一个内置的彩蛋...bazinga!</p>
+
+<p>言归正传。我们的客户有一个从0到4的列表：</p>
+
+<pre><code class="language-python">lst = range(5) #[0, 1, 2, 3, 4]
+</code></pre>
+
+<p>虽然我们在上一小节里给了他一个加法器，但现在他仍然在为如何计算这个列表所有元素的和而苦恼。当然，对我们而言这个任务轻松极了：</p>
+
+<pre><code class="language-python">amount = 0
+for num in lst:
+    amount = add(amount, num)
+</code></pre>
+
+<p>这是一段典型的指令式风格的代码，一点问题都没有，肯定可以得到正确的结果。现在，让我们试着用函数式的风格重构一下。</p>
+
+<p>首先可以预见的是求和这个动作是非常常见的，如果我们把这个动作抽象成一个单独的函数，以后需要对另一个列表求和时，就不必再写一遍这个套路了：</p>
+
+<pre><code class="language-python">def sum_(lst):
+    amount = 0
+    for num in lst:
+        amount = add(amount, num)
+    return amount
+
+print sum_(lst)
+</code></pre>
+
+<p>还能继续。sum_函数定义了这样一种流程：<br/>
+1. 使用初始值与列表的第一个元素相加；<br/>
+2. 使用上一次相加的结果与列表的下一个元素相加；<br/>
+3. 重复第二步，直到列表中没有更多元素；<br/>
+4. 将最后一次相加的结果返回。</p>
+
+<p>如果现在需要求乘积，我们可以写出类似的流程----只需要把相加换成相乘就可以了：</p>
+
+<pre><code class="language-python">def multiply(lst):
+    product = 1
+    for num in lst:
+        product = product * num
+    return product
+</code></pre>
+
+<p>除了初始值换成了1以及函数add换成了乘法运算符，其他的代码全部都是冗余的。我们为什么不把这个流程抽象出来，而将加法、乘法或者其他的函数作为参数传入呢？</p>
+
+<pre><code class="language-python">def reduce_(function, lst, initial):
+    result = initial
+    for num in lst:
+        result = function(result, num)
+    return result
+
+print reduce_(add, lst, 0)
+</code></pre>
+
+<p>现在，想要算出乘积，可以这样做：</p>
+
+<pre><code class="language-python">print reduce_(lambda x, y: x * y, lst, 1)
+</code></pre>
+
+<p>那么，如果想要利用reduce_找出列表中的最大值，应该怎么做呢？请自行思考：）</p>
+
+<p>虽然有模板方法这样的设计模式，但那样的复杂度往往使人们更情愿到处编写循环。将函数作为参数完全避开了模板方法的复杂度。</p>
+
+<p>Python有一个内建函数reduce，完整实现并扩展了reduce_的功能。本文稍后的部分包含了有用的内建函数的介绍。请注意我们的目的是没有循环，使用函数替代循环是函数式风格区别于指令式风格的最显而易见的特征。</p>
+
+<p>*像Python这样构建于类C语言之上的函数式语言，由于语言本身提供了编写循环代码的能力，内置函数虽然提供函数式编程的接口，但一般在内部还是使用循环实现的。同样的，如果发现内建函数无法满足你的循环需求，不妨也封装它，并提供一个接口。</p>
+
+<h3 id="toc_153">作为返回值</h3>
+
+<p>将函数返回通常需要与闭包一起使用（即返回一个闭包）才能发挥威力。我们先看一个函数的定义：</p>
+
+<pre><code class="language-python">def map_(function, lst):
+    result = []
+    for item in lst:
+        result.append(function(item))
+    return result
+</code></pre>
+
+<p>函数<code>map_</code>封装了最常见的一种迭代：对列表中的每个元素调用一个函数。<code>map_</code>需要一个函数参数，并将每次调用的结果保存在一个列表中返回。这是指令式的做法，当你知道了列表解析(list comprehension)后，会有更好的实现。</p>
+
+<p>这里我们先略过<code>map_</code>的蹩脚实现而只关注它的功能。对于上一节中的lst，你可能发现最后求乘积结果始终是0，因为lst中包含了0。为了让结果看起来足够大，我们来使用map_为lst中的每个元素加1：</p>
+
+<pre><code class="language-python">lst = map_(lambda x: add(1, x), lst) 
+print reduce_(lambda x, y: x * y, lst, 1) 
+</code></pre>
+
+<p>答案是120，这还远远不够大。再来：</p>
+
+<pre><code class="language-python">lst = map_(lambda x: add(10, x), lst) 
+print reduce_(lambda x, y: x * y, lst, 1) 
+</code></pre>
+
+<p>囧，事实上我真的没有想到答案会是360360，我发誓没有收周鸿祎任何好处。</p>
+
+<p>现在回头看看我们写的两个lambda表达式：相似度超过90%，绝对可以使用抄袭来形容。而问题不在于抄袭，在于多写了很多字符有木有？如果有一个函数，根据你指定的左操作数，能生成一个加法函数，用起来就像这样：</p>
+
+<pre><code class="language-python">lst = map_(add_to(10), lst) 
+#add_to(10)返回一个函数，这个函数接受一个参数并加上10后返回 
+</code></pre>
+
+<p>写起来应该会舒服不少。下面是函数add_to的实现：</p>
+
+<pre><code class="language-python">def add_to(n):     
+    return lambda x: add(n, x) 
+</code></pre>
+
+<p>通过为已经存在的某个函数指定数个参数，生成一个新的函数，这个函数只需要传入剩余未指定的参数就能实现原函数的全部功能，这被称为偏函数。Python内置的functools模块提供了一个函数partial，可以为任意函数生成偏函数：</p>
+
+<pre><code>functools.partial(func[, _args][, *_keywords]) 
+</code></pre>
+
+<p>你需要指定要生成偏函数的函数、并且指定数个参数或者命名参数，然后partial将返回这个偏函数；不过严格的说partial返回的不是函数，而是一个像函数一样可直接调用的对象，当然，这不会影响它的功能。</p>
+
+<p>另外一个特殊的例子是装饰器，装饰器用于增强甚至干脆改变原函数的功能。</p>
+
+<p>*题外话，单就例子中的这个功能而言，在一些其他的函数式语言中（例如Scala）可以使用名为柯里化(Currying)的技术实现得更优雅。柯里化是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。如下的伪代码所示：</p>
+
+<pre><code class="language-scala">#不是真实的代码 
+def add(x)(y): #柯里化     
+    return x + y
+
+lst = map_(add(10), lst) 
+</code></pre>
+
+<p>通过将add函数柯里化，使得add接受第一个参数x，并返回一个接受第二个参数y的函数，调用该函数与前文中的<code>add_to</code>完全相同（返回x + y），且不再需要定义<code>add_to</code>。看上去是不是更加清爽呢？遗憾的是Python并不支持柯里化。</p>
+
+<h3 id="toc_154">部分内建函数介绍</h3>
+
+<pre><code>reduce(function, iterable[, initializer]) 
+</code></pre>
+
+<p>这个函数的主要功能与我们定义的reduce_相同。需要补充两点： </p>
+
+<ul>
+<li>它的第二个参数可以是任何可迭代的对象（实现了<strong>iter</strong>()方法的对象）； </li>
+<li>如果不指定第三个参数，则第一次调用function将使用iterable的前两个元素作为参数。 </li>
+</ul>
+
+<p>由reduce和一些常见的function组合成了下面列出来的内置函数：</p>
+
+<pre><code class="language-python">all(iterable) == reduce(lambda x, y: bool(x and y), iterable)
+any(iterable) == reduce(lambda x, y: bool(x or y), iterable)
+max(iterable[, args...][, key]) == reduce(lambda x, y: x if key(x) &gt; key(y) else y, iterable_and_args)
+min(iterable[, args...][, key]) == reduce(lambda x, y: x if key(x) &lt; key(y) else y, iterable_and_args)
+sum(iterable[, start]) == reduce(lambda x, y: x + y, iterable, start)
+</code></pre>
+
+<pre><code>map(function, iterable, ...) 
+</code></pre>
+
+<p>这个函数的主要功能与我们定义的<code>map_</code>相同。需要补充一点： </p>
+
+<p>map还可以接受多个iterable作为参数，在第n次调用function时，将使用iterable1[n], iterable2[n], ...作为参数。</p>
+
+<pre><code>filter(function, iterable) 
+</code></pre>
+
+<p>这个函数的功能是过滤出iterable中所有以元素自身作为参数调用function时返回True或bool(返回值)为True的元素并以列表返回，与系列第一篇中的<code>my_filter</code>函数相同。</p>
+
+<pre><code>zip(iterable1, iterable2, ...) 
+</code></pre>
+
+<p>这个函数返回一个列表，每个元素都是一个元组，包含<code>(iterable1[n], iterable2[n], ...)</code>。 </p>
+
+<p>例如：<code>zip([1, 2], [3, 4]) --&gt; [(1, 3), (2, 4)]</code></p>
+
+<p>如果参数的长度不一致，将在最短的序列结束时结束；如果不提供参数，将返回空列表。</p>
+
+<h2 id="toc_155">三 迭代器</h2>
+
+<h3 id="toc_156">迭代器(Iterator)概述</h3>
+
+<p>迭代器是访问集合内元素的一种方式。迭代器对象从集合的第一个元素开始访问，直到所有的元素都被访问一遍后结束。</p>
+
+<p>迭代器不能回退，只能往前进行迭代。这并不是什么很大的缺点，因为人们几乎不需要在迭代途中进行回退操作。</p>
+
+<p>迭代器也不是线程安全的，在多线程环境中对可变集合使用迭代器是一个危险的操作。但如果小心谨慎，或者干脆贯彻函数式思想坚持使用不可变的集合，那这也不是什么大问题。</p>
+
+<p>对于原生支持随机访问的数据结构（如tuple、list），迭代器和经典for循环的索引访问相比并无优势，反而丢失了索引值（可以使用内建函数enumerate()找回这个索引值，这是后话）。但对于无法随机访问的数据结构（比如set）而言，迭代器是唯一的访问元素的方式。</p>
+
+<p>迭代器的另一个优点就是它不要求你事先准备好整个迭代过程中所有的元素。迭代器仅仅在迭代至某个元素时才计算该元素，而在这之前或之后，元素可以不存在或者被销毁。这个特点使得它特别适合用于遍历一些巨大的或是无限的集合，比如几个G的文件，或是斐波那契数列等等。这个特点被称为延迟计算或惰性求值(Lazy evaluation)。</p>
+
+<p>迭代器更大的功劳是提供了一个统一的访问集合的接口。只要是实现了<strong>iter</strong>()方法的对象，就可以使用迭代器进行访问。</p>
+
+<h3 id="toc_157">使用迭代器</h3>
+
+<p>使用内建的工厂函数iter(iterable)可以获取迭代器对象：</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; lst = range(2)
+&gt;&gt;&gt; it = iter(lst)
+&gt;&gt;&gt; it
+&lt;listiterator object at 0x00BB62F0&gt;
+</code></pre>
+
+<p>使用迭代器的next()方法可以访问下一个元素：</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; it.next()
+0
+</code></pre>
+
+<p>如果是Python 2.6+，还有内建函数next(iterator)可以完成这一功能：</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; next(it) 
+1
+</code></pre>
+
+<p>如何判断迭代器还有更多的元素可以访问呢？Python里的迭代器并没有提供类似has_next()这样的方法。 </p>
+
+<p>那么在这个例子中，我们已经访问到了最后一个元素1，再使用next()方法会怎样呢？</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; it.next() 
+Traceback (most recent call last): 
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt; 
+StopIteration
+</code></pre>
+
+<p>Python遇到这样的情况时将会抛出StopIteration异常。事实上，Python正是根据是否检查到这个异常来决定是否停止迭代的。 </p>
+
+<p>这种做法与迭代前手动检查是否越界相比各有优点。但Python的做法总有一些利用异常进行流程控制的嫌疑。</p>
+
+<p>了解了这些情况以后，我们就能使用迭代器进行遍历了。</p>
+
+<pre><code class="language-python">it = iter(lst)
+try:
+    while True:
+        val = it.next()
+        print val
+except StopIteration:
+    pass
+</code></pre>
+
+<p>实际上，因为迭代操作如此普遍，Python专门将关键字for用作了迭代器的语法糖。在for循环中，Python将自动调用工厂函数iter()获得迭代器，自动调用next()获取元素，还完成了检查StopIteration异常的工作。上述代码可以写成如下的形式，你一定非常熟悉：</p>
+
+<pre><code class="language-python">for val in lst:
+    print val
+</code></pre>
+
+<p>首先Python将对关键字in后的对象调用iter函数获取迭代器，然后调用迭代器的next方法获取元素，直到抛出StopIteration异常。对迭代器调用iter函数时将返回迭代器自身，所以迭代器也可以用于for语句中，不需要特殊处理。</p>
+
+<p>常用的几个内建数据结构tuple、list、set、dict都支持迭代器，字符串也可以使用迭代操作。你也可以自己实现一个迭代器，如上所述，只需要在类的<strong>iter</strong>方法中返回一个对象，这个对象拥有一个next()方法，这个方法能在恰当的时候抛出StopIteration异常即可。但是需要自己实现迭代器的时候不多，即使需要，使用生成器会更轻松。下一篇我们将讨论生成器的部分。</p>
+
+<p>*异常并不是非抛出不可的，不抛出该异常的迭代器将进行无限迭代，某些情况下这样的迭代器很有用。这种情况下，你需要自己判断元素并中止，否则就死循环了！</p>
+
+<p>使用迭代器的循环可以避开索引，但有时候我们还是需要索引来进行一些操作的。这时候内建函数enumerate就派上用场咯，它能在iter函数的结果前加上索引，以元组返回，用起来就像这样：</p>
+
+<pre><code class="language-python">for idx, ele in enumerate(lst):
+    print idx, ele
+</code></pre>
+
+<h3 id="toc_158">生成器表达式(Generator expression)和列表解析(List Comprehension)</h3>
+
+<p>绝大多数情况下，遍历一个集合都是为了对元素应用某个动作或是进行筛选。如果看过本文的第二部分，你应该还记得有内建函数map和filter提供了这些功能，但Python仍然为这些操作提供了语言级的支持。</p>
+
+<pre><code class="language-python">(x+1 for x in lst) #生成器表达式，返回迭代器。外部的括号可在用于参数时省略。 
+[x+1 for x in lst] #列表解析，返回list
+</code></pre>
+
+<p>如你所见，生成器表达式和列表解析（注：这里的翻译有很多种，比如列表展开、列表推导等等，指的是同一个意思）的区别很小，所以人们提到这个特性时，简单起见往往只描述成列表解析。然而由于返回迭代器时，并不是在一开始就计算所有的元素，这样能得到更多的灵活性并且可以避开很多不必要的计算，所以除非你明确希望返回列表，否则应该始终使用生成器表达式。接下来的文字里我就不区分这两种形式了：）</p>
+
+<p>你也可以为列表解析提供if子句进行筛选：</p>
+
+<pre><code>(x+1 for x in lst if x!=0)
+</code></pre>
+
+<p>或者提供多条for子句进行嵌套循环，嵌套次序就是for子句的顺序：</p>
+
+<pre><code>((x, y) for x in range(3) for y in range(x))
+</code></pre>
+
+<p>列表解析就是鲜明的Pythonic。我常遇到两个使用列表解析的问题，本应归属于最佳实践，但这两个问题非常典型，所以不妨在这里提一下：</p>
+
+<p>第一个问题是，因为对元素应用的动作太复杂，不能用一个表达式写出来，所以不使用列表解析。这是典型的思想没有转变的例子，如果我们将动作封装成函数，那不就是一个表达式了么？</p>
+
+<p>第二个问题是，因为if子句里的条件需要计算，同时结果也需要进行同样的计算，不希望计算两遍，就像这样：</p>
+
+<pre><code>(x.doSomething() for x in lst if x.doSomething()&gt;0)
+</code></pre>
+
+<p>这样写确实很糟糕，但组合一下列表解析即可解决：</p>
+
+<pre><code>(x for x in (y.doSomething() for y in lst) if x&gt;0)
+</code></pre>
+
+<p>内部的列表解析变量其实也可以用x，但为清晰起见我们改成了y。或者更清楚的，可以写成两个表达式：</p>
+
+<pre><code>tmp = (x.doSomething() for x in lst)
+(x for x in tmp if x &gt; 0)
+</code></pre>
+
+<p>列表解析可以替代绝大多数需要用到map和filter的场合，可能正因为此，著名的静态检查工具pylint将map和filter的使用列为了警告。</p>
+
+<h3 id="toc_159">相关的库</h3>
+
+<p>Python内置了一个模块itertools，包含了很多函数用于creating iterators for efficient looping（创建更有效率的循环迭代器），这说明很是霸气，这一小节就来浏览一遍这些函数并留下印象吧，需要这些功能的时候隐约记得这里面有就好。这一小节的内容翻译自itertools模块官方文档。</p>
+
+<h4 id="toc_160">无限迭代</h4>
+
+<ul>
+<li>count(start, [step]) 
+
+<ul>
+<li>从start开始，以后每个元素都加上step。step默认值为1。 </li>
+</ul></li>
+<li>count(10) --&gt; 10 11 12 13 14 ...</li>
+<li>cycle(p) 
+
+<ul>
+<li>迭代至序列p的最后一个元素后，从p的第一个元素重新开始。 </li>
+</ul></li>
+<li>cycle(&#39;ABCD&#39;) --&gt; A B C D A B C D ...</li>
+<li>repeat(elem [,n]) 
+
+<ul>
+<li>将elem重复n次。如果不指定n，则无限重复。 </li>
+<li>repeat(10, 3) --&gt; 10 10 10</li>
+</ul></li>
+</ul>
+
+<h4 id="toc_161">在最短的序列参数终止时停止迭代</h4>
+
+<ul>
+<li>chain(p, q, ...) 
+
+<ul>
+<li>迭代至序列p的最后一个元素后，从q的第一个元素开始，直到所有序列终止。 </li>
+</ul></li>
+<li>chain(&#39;ABC&#39;, &#39;DEF&#39;) --&gt; A B C D E F</li>
+<li>compress(data, selectors) 
+
+<ul>
+<li>如果bool(selectors[n])为True，则next()返回data[n]，否则跳过data[n]。 </li>
+</ul></li>
+<li>compress(&#39;ABCDEF&#39;, [1,0,1,0,1,1]) --&gt; A C E F</li>
+<li>dropwhile(pred, seq) 
+
+<ul>
+<li>当pred对seq[n]的调用返回False时才开始迭代。 </li>
+</ul></li>
+<li>dropwhile(lambda x: x<5, [1,4,6,4,1]) --> 6 4 1</li>
+<li>takewhile(pred, seq) 
+
+<ul>
+<li>dropwhile的相反版本。 </li>
+<li>takewhile(lambda x: x<5, [1,4,6,4,1]) --> 1 4</li>
+</ul></li>
+<li>ifilter(pred, seq) 
+
+<ul>
+<li>内建函数filter的迭代器版本。 </li>
+<li>ifilter(lambda x: x%2, range(10)) --&gt; 1 3 5 7 9</li>
+</ul></li>
+<li>ifilterfalse(pred, seq) 
+
+<ul>
+<li>ifilter的相反版本。 </li>
+<li>ifilterfalse(lambda x: x%2, range(10)) --&gt; 0 2 4 6 8</li>
+</ul></li>
+<li>imap(func, p, q, ...) 
+
+<ul>
+<li>内建函数map的迭代器版本。 </li>
+<li>imap(pow, (2,3,10), (5,2,3)) --&gt; 32 9 1000</li>
+</ul></li>
+<li>starmap(func, seq) 
+
+<ul>
+<li>将seq的每个元素以变长参数(*args)的形式调用func。 </li>
+<li>starmap(pow, [(2,5), (3,2), (10,3)]) --&gt; 32 9 1000</li>
+</ul></li>
+<li>izip(p, q, ...) 
+
+<ul>
+<li>内建函数zip的迭代器版本。 </li>
+<li>izip(&#39;ABCD&#39;, &#39;xy&#39;) --&gt; Ax By</li>
+<li>izip_longest(p, q, ..., fillvalue=None) </li>
+<li>izip的取最长序列的版本，短序列将填入fillvalue。 </li>
+<li><code>izip_longest</code>(&#39;ABCD&#39;, &#39;xy&#39;, fillvalue=&#39;-&#39;) --&gt; Ax By C- D-</li>
+</ul></li>
+<li>tee(it, n) 
+
+<ul>
+<li>返回n个迭代器it的复制迭代器。</li>
+</ul></li>
+<li>groupby(iterable[, keyfunc]) 
+
+<ul>
+<li>这个函数功能类似于SQL的分组。使用groupby前，首先需要使用相同的keyfunc对iterable进行排序，比如调用内建的sorted函数。然后，groupby返回迭代器，每次迭代的元素是元组(key值, iterable中具有相同key值的元素的集合的子迭代器)。或许看看Python的排序指南对理解这个函数有帮助。 </li>
+<li>groupby([0, 0, 0, 1, 1, 1, 2, 2, 2]) --&gt; (0, (0 0 0)) (1, (1 1 1)) (2, (2 2 2))</li>
+</ul></li>
+</ul>
+
+<h4 id="toc_162">组合迭代器</h4>
+
+<ul>
+<li>product(p, q, ... [repeat=1]) 
+
+<ul>
+<li>笛卡尔积。 </li>
+<li>product(&#39;ABCD&#39;, repeat=2) --&gt; AA AB AC AD BA BB BC BD CA CB CC CD DA DB DC DD</li>
+</ul></li>
+<li>permutations(p[, r]) 
+
+<ul>
+<li>排列。 </li>
+<li>permutations(&#39;ABCD&#39;, 2) --&gt; AB AC AD BA BC BD CA CB CD DA DB DC</li>
+</ul></li>
+<li>combinations(p, r) 
+
+<ul>
+<li>组合。 </li>
+<li>combinations(&#39;ABCD&#39;, 2) --&gt; AB AC AD BC BD CD</li>
+</ul></li>
+<li><code>combinations_with_replacement()</code>
+
+<ul>
+<li>组合 有重复 </li>
+<li><code>combinations_with_replacement(&#39;ABCD&#39;, 2)</code> --&gt; AA AB AC AD BB BC BD CC CD DD</li>
+</ul></li>
+</ul>
+
+<h2 id="toc_163">四 生成器(generator)</h2>
+
+<h3 id="toc_164">生成器简介</h3>
+
+<p>首先请确信，生成器就是一种迭代器。生成器拥有next方法并且行为与迭代器完全相同，这意味着生成器也可以用于Python的for循环中。另外，对于生成器的特殊语法支持使得编写一个生成器比自定义一个常规的迭代器要简单不少，所以生成器也是最常用到的特性之一。</p>
+
+<p>从Python 2.5开始，的实现为生成器加入了更多的特性，这意味着生成器还可以完成更多的工作。这部分我们会在稍后的部分介绍。</p>
+
+<h3 id="toc_165">生成器函数</h3>
+
+<h4 id="toc_166">使用生成器函数定义生成器</h4>
+
+<p>如何获取一个生成器？首先来看一小段代码：</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; def get_0_1_2():
+...   yield 0
+...   yield 1
+...   yield 2
+...
+&gt;&gt;&gt; get_0_1_2
+&lt;function get_0_1_2 at 0x00B2CB70&gt;
+</code></pre>
+
+<p>我们定义了一个函数<code>get_0_1_2</code>，并且可以查看到这确实是函数类型。但与一般的函数不同的是，<code>get_0_1_2</code>的函数体内使用了关键字yield，这使得<code>get_0_1_2</code>成为了一个生成器函数。生成器函数的特性如下：</p>
+
+<p>调用生成器函数将返回一个生成器；</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; generator = get_0_1_2()
+&gt;&gt;&gt; generator
+&lt;generator object get_0_1_2 at 0x00B1C7D8&gt;
+</code></pre>
+
+<p>第一次调用生成器的next方法时，生成器才开始执行生成器函数（而不是构建生成器时），直到遇到yield时暂停执行（挂起），并且yield的参数将作为此次next方法的返回值；</p>
+
+<pre><code class="language-pyton">&gt;&gt;&gt; generator.next()
+0
+</code></pre>
+
+<p>之后每次调用生成器的next方法，生成器将从上次暂停执行的位置恢复执行生成器函数，直到再次遇到yield时暂停，并且同样的，yield的参数将作为next方法的返回值；</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; generator.next()
+1
+&gt;&gt;&gt; generator.next()
+2
+</code></pre>
+
+<p>如果当调用next方法时生成器函数结束（遇到空的return语句或是到达函数体末尾），则这次next方法的调用将抛出StopIteration异常（即for循环的终止条件）；</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; generator.next()
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 1, in &lt;module&gt;
+StopIteration
+</code></pre>
+
+<p>生成器函数在每次暂停执行时，函数体内的所有变量都将被封存(freeze)在生成器中，并将在恢复执行时还原，并且类似于闭包，即使是同一个生成器函数返回的生成器，封存的变量也是互相独立的。 </p>
+
+<p>我们的小例子中并没有用到变量，所以这里另外定义一个生成器来展示这个特点：</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; def fibonacci():
+...   a = b = 1
+...   yield a
+...   yield b
+...   while True:
+...     a, b = b, a+b
+...     yield b
+...
+&gt;&gt;&gt; for num in fibonacci():
+...   if num &gt; 100: break
+...   print num,
+...
+1 1 2 3 5 8 13 21 34 55 89
+</code></pre>
+
+<p>看到while True可别太吃惊，因为生成器可以挂起，所以是延迟计算的，无限循环并没有关系。这个例子中我们定义了一个生成器用于获取斐波那契数列。</p>
+
+<h3 id="toc_167">生成器函数的FAQ</h3>
+
+<p>接下来我们来讨论一些关于生成器的有意思的话题。</p>
+
+<p>你的例子里生成器函数都没有参数，那么生成器函数可以带参数吗？ <br/>
+当然可以啊亲，而且它支持函数的所有参数形式。要知道生成器函数也是函数的一种：）</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; def counter(start=0):
+...   while True:
+...     yield start
+...     start += 1
+...
+</code></pre>
+
+<p>这是一个从指定数开始的计数器。</p>
+
+<p>既然生成器函数也是函数，那么它可以使用return输出返回值吗？ </p>
+
+<p>不行的亲，是这样的，生成器函数已经有默认的返回值——生成器了，你不能再另外给一个返回值；对，即使是return None也不行。但是它可以使用空的return语句结束。如果你坚持要为它指定返回值，那么Python将在定义的位置赠送一个语法错误异常，就像这样：</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; def i_wanna_return():
+...   yield None
+...   return None
+...
+  File &quot;&lt;stdin&gt;&quot;, line 3
+SyntaxError: &#39;return&#39; with argument inside generator
+</code></pre>
+
+<p>好吧，那人家需要确保释放资源，需要在try...finally中yield，这会是神马情况？（我就是想玩你）我在finally中还yield了一次！ </p>
+
+<p>Python会在真正离开try...finally时再执行finally中的代码，而这里遗憾地告诉你，暂停不算哦！所以结局你也能猜到吧！</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; def play_u():
+...   try:
+...     yield 1
+...     yield 2
+...     yield 3
+...   finally:
+...     yield 0
+...
+&gt;&gt;&gt; for val in play_u(): print val,
+...
+1 2 3 0
+</code></pre>
+
+<p>这与return的情况不同。return是真正的离开代码块，所以会在return时立刻执行finally子句。 </p>
+
+<p>另外，“在带有finally子句的try块中yield”定义在PEP 342中，这意味着只有Python 2.5以上版本才支持这个语法，在Python 2.4以下版本中会得到语法错误异常。</p>
+
+<p>如果我需要在生成器的迭代过程中接入另一个生成器的迭代怎么办？写成下面这样好傻好天真。。</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; def sub_generator():
+...   yield 1
+...   yield 2
+...   for val in counter(10): yield val
+...
+</code></pre>
+
+<p>这种情况的语法改进已经被定义在[PEP 380：委托至子生成器的语法]中，据说会在Python 3.3中实现，届时也可能回馈到2.x中。实现后，就可以这么写了：</p>
+
+<pre><code class="language-pyrhon">&gt;&gt;&gt; def sub_generator():
+...   yield 1
+...   yield 2
+...   yield from counter(10)
+  File &quot;&lt;stdin&gt;&quot;, line 4
+    yield from counter(10)
+             ^
+SyntaxError: invalid syntax
+</code></pre>
+
+<p>看到语法错误木有？现在我们还是天真一点吧~</p>
+
+<h3 id="toc_168">协同程序(coroutine)</h3>
+
+<p>协同程序（协程）一般来说是指这样的函数：</p>
+
+<ul>
+<li>彼此间有不同的局部变量、指令指针，但仍共享全局变量；</li>
+<li>可以方便地挂起、恢复，并且有多个入口点和出口点；</li>
+<li>多个协同程序间表现为协作运行，如A的运行过程中需要B的结果才能继续执行。</li>
+</ul>
+
+<p>协程的特点决定了同一时刻只能有一个协同程序正在运行（忽略多线程的情况）。得益于此，协程间可以直接传递对象而不需要考虑资源锁、或是直接唤醒其他协程而不需要主动休眠，就像是内置了锁的线程。在符合协程特点的应用场景，使用协程无疑比使用线程要更方便。</p>
+
+<p>从另一方面说，协程无法并发其实也将它的应用场景限制在了一个很狭窄的范围，这个特点使得协程更多的被拿来与常规函数进行比较，而不是与线程。当然，线程比协程复杂许多，功能也更强大，所以我建议大家牢牢地掌握线程即可：Python线程指南</p>
+
+<p>这一节里我也就不列举关于协程的例子了，以下介绍的方法了解即可。</p>
+
+<p>Python 2.5对生成器的增强实现了协程的其他特点，在这个版本中，生成器加入了如下方法：</p>
+
+<pre><code>send(value): 
+</code></pre>
+
+<p>send是除next外另一个恢复生成器的方法。Python 2.5中，yield语句变成了yield表达式，这意味着yield现在可以有一个值，而这个值就是在生成器的send方法被调用从而恢复执行时，调用</p>
+
+<p>send方法的参数。 </p>
+
+<pre><code class="language-python">&gt;&gt;&gt; def repeater():
+...   n = 0
+...   while True:
+...     n = (yield n)
+...
+&gt;&gt;&gt; r = repeater()
+&gt;&gt;&gt; r.next()
+0
+&gt;&gt;&gt; r.send(10)
+10
+</code></pre>
+
+<ul>
+<li>调用send传入非None值前，生成器必须处于挂起状态，否则将抛出异常。不过，未启动的生成器仍可以使用None作为参数调用send。 </li>
+<li><p>如果使用next恢复生成器，yield表达式的值将是None。</p>
+
+<p>close(): </p></li>
+</ul>
+
+<p>这个方法用于关闭生成器。对关闭的生成器后再次调用next或send将抛出StopIteration异常。<br/>
+throw(type, value=None, traceback=None): </p>
+
+<p>这个方法用于在生成器内部（生成器的当前挂起处，或未启动时在定义处）抛出一个异常。</p>
+
+<ul>
+<li>别为没见到协程的例子遗憾，协程最常见的用处其实就是生成器。</li>
+</ul>
+
+<h3 id="toc_169">一个有趣的库：pipe</h3>
+
+<p>这一节里我要向诸位简要介绍pipe。pipe并不是Python内置的库，如果你安装了easy_install，直接可以安装它，否则你需要自己下载它：<a href="http://pypi.python.org/pypi/pipe">http://pypi.python.org/pypi/pipe</a></p>
+
+<p>之所以要介绍这个库，是因为它向我们展示了一种很有新意的使用迭代器和生成器的方式：流。pipe将可迭代的数据看成是流，类似于linux，pipe使用&#39;|&#39;传递数据流，并且定义了一系列的“流处理”函数用于接受并处理数据流，并最终再次输出数据流或者是将数据流归纳得到一个结果。我们来看一些例子。</p>
+
+<p>第一个，非常简单的，使用add求和：</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; from pipe import *
+&gt;&gt;&gt; range(5) | add
+10
+</code></pre>
+
+<p>求偶数和需要使用到where，作用类似于内建函数filter，过滤出符合条件的元素：</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; range(5) | where(lambda x: x % 2 == 0) | add
+6
+</code></pre>
+
+<p>还记得我们定义的斐波那契数列生成器吗？求出数列中所有小于10000的偶数和需要用到take_while，与itertools的同名函数有类似的功能，截取元素直到条件不成立：</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; fib = fibonacci
+&gt;&gt;&gt; fib() | where(lambda x: x % 2 == 0)\
+...       | take_while(lambda x: x &lt; 10000)\
+...       | add
+3382
+</code></pre>
+
+<p>需要对元素应用某个函数可以使用select，作用类似于内建函数map；需要得到一个列表，可以使用as_list：</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; fib() | select(lambda x: x ** 2) | take_while(lambda x: x &lt; 100) | as_list
+[1, 1, 4, 9, 25, 64]
+</code></pre>
+
+<p>pipe中还包括了更多的流处理函数。你甚至可以自己定义流处理函数，只需要定义一个生成器函数并加上修饰器Pipe。如下定义了一个获取元素直到索引不符合条件的流处理函数：</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; @Pipe
+... def take_while_idx(iterable, predicate):
+...   for idx, x in enumerate(iterable):
+...     if predicate(idx): yield x
+...     else: return
+...
+</code></pre>
+
+<p>使用这个流处理函数获取fib的前10个数字：</p>
+
+<pre><code class="language-python">&gt;&gt;&gt; fib() | take_while_idx(lambda x: x &lt; 10) | as_list
+[1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
+</code></pre>
+
+<p>更多的函数就不在这里介绍了，你可以查看pipe的源文件，总共600行不到的文件其中有300行是文档，文档中包含了大量的示例。</p>
+
+<p>pipe实现起来非常简单，使用Pipe装饰器，将普通的生成器函数（或者返回迭代器的函数）代理在一个实现了<code>__ror__</code>方法的普通类实例上即可，但是这种思路真的很有趣。</p>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="14520876353363.html"  title="Previous Post: 大教堂与集市">&laquo; 大教堂与集市</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14521089938127.html" 
+	        title="Next Post: Java 精要">Java 精要 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14521096832549.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>
