@@ -1,0 +1,875 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  Hidden Markov Model 指南 - 小土刀的笔记
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="小土刀的笔记" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">小土刀的笔记</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; 小土刀的笔记</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>清单</label></li>
+
+          
+            <li><a title="玩物列表" href="14520379720223.html">玩物列表</a></li>
+          
+            <li><a title="好问题收集" href="14520379720179.html">好问题收集</a></li>
+          
+            <li><a title="书单合集" href="14520379720136.html">书单合集</a></li>
+          
+            <li><a title="日志列表" href="14520379720098.html">日志列表</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>iOS</label></li>
+
+          
+            <li><a title="iOS 学习路径" href="14520467690026.html">iOS 学习路径</a></li>
+          
+            <li><a title="iOS 面试相关" href="14520467689968.html">iOS 面试相关</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Android</label></li>
+
+          
+            <li><a title="Google Map V2 使用指南" href="14520474070782.html">Google Map V2 使用指南</a></li>
+          
+            <li><a title="ActionBar 使用指南" href="14520474070736.html">ActionBar 使用指南</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Web</label></li>
+
+          
+            <li><a title="网络协议指南" href="14520476779491.html">网络协议指南</a></li>
+          
+            <li><a title="Node.js 命令行程序实例" href="14520476779456.html">Node.js 命令行程序实例</a></li>
+          
+            <li><a title="Flask Study Note" href="14520476779406.html">Flask Study Note</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Research</label></li>
+
+          
+            <li><a title="推荐系统沉思录" href="14520495721664.html">推荐系统沉思录</a></li>
+          
+            <li><a title="Hidden Markov Model 指南" href="14520495021796.html">Hidden Markov Model 指南</a></li>
+          
+            <li><a title="数据分析沉思录" href="14520494829635.html">数据分析沉思录</a></li>
+          
+            <li><a title="EM / GMM 指南" href="14520494287936.html">EM / GMM 指南</a></li>
+          
+            <li><a title="机器学习沉思录" href="14520493984651.html">机器学习沉思录</a></li>
+          
+            <li><a title="计算机视觉沉思录" href="14520483585854.html">计算机视觉沉思录</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>清单</span></li>
+                        
+                          <li><a title="玩物列表" href="14520379720223.html">玩物列表</a></li>
+                        
+                          <li><a title="好问题收集" href="14520379720179.html">好问题收集</a></li>
+                        
+                          <li><a title="书单合集" href="14520379720136.html">书单合集</a></li>
+                        
+                          <li><a title="日志列表" href="14520379720098.html">日志列表</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>iOS</span></li>
+                        
+                          <li><a title="iOS 学习路径" href="14520467690026.html">iOS 学习路径</a></li>
+                        
+                          <li><a title="iOS 面试相关" href="14520467689968.html">iOS 面试相关</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Android</span></li>
+                        
+                          <li><a title="Google Map V2 使用指南" href="14520474070782.html">Google Map V2 使用指南</a></li>
+                        
+                          <li><a title="ActionBar 使用指南" href="14520474070736.html">ActionBar 使用指南</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Web</span></li>
+                        
+                          <li><a title="网络协议指南" href="14520476779491.html">网络协议指南</a></li>
+                        
+                          <li><a title="Node.js 命令行程序实例" href="14520476779456.html">Node.js 命令行程序实例</a></li>
+                        
+                          <li><a title="Flask Study Note" href="14520476779406.html">Flask Study Note</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Research</span></li>
+                        
+                          <li><a title="推荐系统沉思录" href="14520495721664.html">推荐系统沉思录</a></li>
+                        
+                          <li><a title="Hidden Markov Model 指南" href="14520495021796.html">Hidden Markov Model 指南</a></li>
+                        
+                          <li><a title="数据分析沉思录" href="14520494829635.html">数据分析沉思录</a></li>
+                        
+                          <li><a title="EM / GMM 指南" href="14520494287936.html">EM / GMM 指南</a></li>
+                        
+                          <li><a title="机器学习沉思录" href="14520493984651.html">机器学习沉思录</a></li>
+                        
+                          <li><a title="计算机视觉沉思录" href="14520483585854.html">计算机视觉沉思录</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>Hidden Markov Model 指南</h1>
+
+<h2 id="toc_0">Markov Model</h2>
+
+<p>A1 -&gt; A2 -&gt; A3 ···&gt; Ai -&gt; Ai+1 ···&gt; An -&gt;</p>
+
+<p>M 个离散结点形成一条链</p>
+
+<ul>
+<li>若每个结点有 K 个状态，则需要 K-1 + (M-1)K(K-1) 个参数，O(M)</li>
+<li>如果是全连接，则需要 K<sup>M</sup> -1 个参数，O(K<sup>M</sup> )</li>
+</ul>
+
+<p>A1 会有 K 个变化，比方当 A1=1 时，需要给出 A2 = i 这么多个参数, i 为 (0,k)，所以是 K(K-1) 个参数</p>
+
+<p>链状模型可以极大减少我们需要学习的参数的数目</p>
+
+<p>若状态 Ai 确定，则 Ai+1 只与 Ai 有关，与 A1,...,Ai-1 无关，伪随机过程</p>
+
+<p>\[p(\theta^{t+1}\;|\;\theta^{(1)},\theta^{(2)},...,\theta^{(t)})=p(\theta^{t+1}\;|\;\theta^{(t)})\]</p>
+
+<p>例子：C 语言中的伪随机函数使用的是 Markov Model，实际上只要知道第 i 个随机数，就可以计算出第 i+1 个随机数</p>
+
+<p>满足 Markov 模型的样本点 s1,s2...sn 与 |『独立同分布』只弱一点：样本间只有相邻元素有相关关系，并且，有些以『独立同分布』为条件的定理，是可以放松到 Markov Process 的。例如：大数定理。</p>
+
+<h2 id="toc_1">Hidden Markov Model</h2>
+
+<p>HMM 是关于时序的概率模型，描述由一个隐藏的 Markov Chain 随机生成的不可观测的状态最忌序列，再有各个状态生成一个观测二产生观测随机序列的过程。</p>
+
+<p>HMM 随机生成的状态序列，称为状态序列；每个状态生成一个观测，由此产生的光测随机序列，称为观测序列。序列的每个位置可以看做是一个时刻</p>
+
+<p>\[<br/>
+z_1 \to z_2 \to \dots \to z_{n-1} \to z_n \to z_{n+1} \to \\<br/>
+\;\;\downarrow \; \; \quad \;\downarrow \qquad  \qquad \downarrow \qquad \; \downarrow \qquad \downarrow \qquad \\ <br/>
+x_1 \;\quad x_2 \;\quad \;\quad \;\quad x_{n-1} \;\quad x_n \;\quad x_{n+1} \quad<br/>
+\]</p>
+
+<p>在 z1, z2 不可观察的前提下</p>
+
+<ul>
+<li>x1 和 z2 独立吗？不独立</li>
+<li>x1 和 x2 独立吗？不独立</li>
+</ul>
+
+<h2 id="toc_2">HMM 的确定</h2>
+
+<p>由出事概率分布 \(\pi\)，状态转移分布 A 以及观测概率分布 B 确定。</p>
+
+<p>\[\lambda=(A,B,\pi)\]</p>
+
+<p>假设我们的 HMM 模型如下</p>
+
+<p>\[<br/>
+z_1 \to z_2 \to \dots \to z_{n-1} \to z_n \to z_{n+1} \to \\<br/>
+\;\;\downarrow \; \; \quad \;\downarrow \qquad  \qquad \downarrow \qquad \; \downarrow \qquad \downarrow \qquad \\ <br/>
+x_1 \;\quad x_2 \;\quad \;\quad \;\quad x_{n-1} \;\quad x_n \;\quad x_{n+1} \quad<br/>
+\]</p>
+
+<ul>
+<li>Q 是所有可能的状态的集合
+
+<ul>
+<li>N 是可能的状态数目</li>
+<li>\(Q=\{q_1,q_2,\dots,q_N\}\)</li>
+</ul></li>
+<li>V 是所有可能的观测的集合
+
+<ul>
+<li>M 是可能的观测数</li>
+<li>\(V=\{v_1,v_2,\dots,v_M\}\)</li>
+</ul></li>
+</ul>
+
+<p>I 是长度为 T 的状态序列，O 是对应的观测序列</p>
+
+<p>\[<br/>
+I = \{i_1,i_2,\dots,i_T \} \\<br/>
+O = \{o_1,o_2,\dots,o_T\}<br/>
+\]</p>
+
+<p><strong>A 是状态转移概率矩阵</strong></p>
+
+<p>\[<br/>
+A=[a_{ij}]_{N \times N} \\<br/>
+a_{ij}=P(i_{t+1}\;|\;i_t = q_i)<br/>
+\] </p>
+
+<p>\(a_{ij}\) 是在时刻 t 处于 状态 \(q_i\) 的条件下时刻 t+1 转移到概率 \(q_j\) 的概率</p>
+
+<p><strong>B 是观测概率矩阵</strong></p>
+
+<p>\[<br/>
+B=[b_{ik}]_{N\times M} \\<br/>
+b_{ik}=P(o_t = v_k \;|\; i_t = q_i)<br/>
+\]</p>
+
+<p>\(b_{ik}\) 是在时刻 t 处于状态 \(q_i\) 的条件下生成观测 \(v_k\) 的概率</p>
+
+<p><strong>\(\pi\) 是初始状态概率向量</strong></p>
+
+<p>\[<br/>
+\pi=(\pi_i) \\<br/>
+\pi_i = P(i_1 = q_i)<br/>
+\]</p>
+
+<p>\(\pi_i\) 是时刻 t=1 处于状态 \(q_i\) 的概率</p>
+
+<h2 id="toc_3">两个基本性质</h2>
+
+<p>\[<br/>
+z_1 \to z_2 \to \dots \to z_{n-1} \to z_n \to z_{n+1} \to \\<br/>
+\;\;\downarrow \; \; \quad \;\downarrow \qquad  \qquad \downarrow \qquad \; \downarrow \qquad \downarrow \qquad \\ <br/>
+x_1 \;\quad x_2 \;\quad \;\quad \;\quad x_{n-1} \;\quad x_n \;\quad x_{n+1} \quad<br/>
+\]</p>
+
+<p><strong>齐次假设</strong></p>
+
+<p>\[P(i_t\;|\;i_{t-1},o_{t-1},i_{t-2},o_{t-2},\dots,i_1,o_1)=P(i_t\;|\;i_{t-1})\]</p>
+
+<p>这里 \(i_t\) 对应 \(z_n\) 输入的概率，\(o_{t-1}\) 这些对应 \(x_{n-1}\) 的观测，也就是说，\(z_n\) 的状态实际上只由 \(z_{n-1}\) 决定</p>
+
+<p><strong>观测独立性假设</strong></p>
+
+<p>\[P(o_t\;|\;i_t,i_{t-1},o_{t-1},i_{t-2},o_{t-2},\dots,i_1,o_1)=P(o_t\;|\;i_t)\]</p>
+
+<p>也就是说在时刻 t，得到观测 \(o_t\) 的概率只跟 \(i_t\) 有关（通过查 B 矩阵即可）</p>
+
+<h2 id="toc_4">举例</h2>
+
+<p>假设有 3 个盒子，编号为 1 2 3，每个盒子都装有红白两种颜色的小球</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">盒子号</th>
+<th style="text-align: center">1</th>
+<th style="text-align: center">2</th>
+<th style="text-align: center">3</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center">红球</td>
+<td style="text-align: center">5</td>
+<td style="text-align: center">4</td>
+<td style="text-align: center">7</td>
+</tr>
+<tr>
+<td style="text-align: center">白球</td>
+<td style="text-align: center">5</td>
+<td style="text-align: center">6</td>
+<td style="text-align: center">3</td>
+</tr>
+</tbody>
+</table>
+
+<p>按照下面的方法抽取小球，得到球颜色的观测序列：</p>
+
+<ul>
+<li>按照 \(\pi=(0.2,0.4,0.4)\) 来选择一个盒子，抽取一个球后放回</li>
+<li>按某条件概率选择新的盒子，重复上述过程</li>
+<li>最终得到观测序列：红红白白红</li>
+</ul>
+
+<h3 id="toc_5">各个参数</h3>
+
+<ul>
+<li>状态集合：Q={盒子1，盒子2，盒子3}</li>
+<li>观测集合：V={红，白}</li>
+<li>状态序列和观测序列的长度 T=5</li>
+<li>初始概率分布 \(\pi=(0.2,0.4,0.4)\)</li>
+<li>状态转移概率分布 A</li>
+<li>观测概率分布 B (一行是一个分布)</li>
+</ul>
+
+<p>\(<br/>
+\pi=\left( \begin{array}{c}<br/>
+0.2 \\<br/>
+0.4 \\<br/>
+0.4<br/>
+\end{array}\right)<br/>
+\quad\) \(<br/>
+A=\left( \begin{matrix}<br/>
+0.5 &amp; 0.2 &amp; 0.3 \\<br/>
+0.3 &amp; 0.5 &amp; 0.2 \\<br/>
+0.2 &amp; 0.3 &amp; 0.5<br/>
+\end{matrix}\right)<br/>
+\quad\) \(<br/>
+B=\left( \begin{matrix}<br/>
+0.5 &amp; 0.5 \\<br/>
+0.4 &amp; 0.6 \\<br/>
+0.7 &amp; 0.3<br/>
+\end{matrix}\right)<br/>
+\)</p>
+
+<h2 id="toc_6">三个基本问题</h2>
+
+<p><strong>概率计算问题</strong></p>
+
+<p>给定模型 \(\lambda=(A,B,\pi)\) 和观测序列 \(O=\{o_1,o_2,\dots,o_T\}\)，计算模型 \(\lambda\) 下观测序列 O 出现的概率 \(P(O\;|\;\lambda)\)</p>
+
+<p><strong>学习问题</strong></p>
+
+<p>已知观测序列 \(O=\{o_1,o_2,\dots,o_T\}\)，估计模型 \(\lambda=(A,B,\pi)\) 的参数，使得在该模型下观测序列 \(P(O\;|\;\lambda)\) 最大</p>
+
+<p><strong>预测问题</strong></p>
+
+<p>即解码问题，已知模型 \(\lambda=(A,B,\pi)\) 和观测序列 \(O=\{o_1,o_2,\dots,o_T\}\)，求对给定观测序列条件概率 \(P(I\;|\;O)\) 最大的状态序列 \(I\)。</p>
+
+<h2 id="toc_7">概率计算问题</h2>
+
+<p><strong>直接计算法</strong></p>
+
+<p>按照概率公式，列举所有可能的长度为 T 的状态序列 \(I=\{i_1,i_2,\dots,i_T\}\)，求各个状态序列 \(I\) 与观测序列 \(O=\{o_1,o_2,\dots,o_T\}\) 的联合概率 \(P(O,I\;|\;\lambda)\)，然后对所有可能的状态求和，从而得到 \(P(O\;|\;\lambda)\)</p>
+
+<p>状态序列 \(I=\{i_1,i_2,\dots,i_T\}\) 的概率是：</p>
+
+<p>\[P(I\;|\;\lambda)=\pi_{i_1}a_{i_1i_2}a_{i_2i_3}\dots a_{i_{T-1}i_T}\]</p>
+
+<p>对固定的状态序列 \(I\)，观测序列 \(O\) 的概率是</p>
+
+<p>\[P(O\;|\;I,\lambda)=b_{i_1o_1}b_{i_2o_2}\dots b_{i_To_T}\]</p>
+
+<p>O 和 I 同时出现的联合概率</p>
+
+<p>\[<br/>
+P(O,I\;|\;\lambda)=P(O\;|\;I,\lambda)P(I\;|\;\lambda) \\<br/>
+=\pi_{i_1}b_{i_1o_1}a_{i_1i_2}b_{i_2o_2}a_{i_2i_3}\dots a_{i_{T-1}i_T}b_{i_To_T} <br/>
+\]</p>
+
+<p>对所有可能的状态序列 \(I\) 求和，得到观测序列 O 的概率 \(P(O\;|\;\lambda)\)</p>
+
+<p>\[<br/>
+P(O\;|\;\lambda)=\sum_{I}P(O,I\;|\;\lambda)=\sum_{I}P(O\;|\;I,\lambda)P(I\;|\;\lambda) \\<br/>
+=\sum_{i_1,i_2,\dots,i_T}\pi_{i_1}b_{i_1o_1}a_{i_1i_2}b_{i_2o_2}a_{i_2i_3}\dots a_{i_{T-1}i_T}b_{i_To_T} <br/>
+\]</p>
+
+<p>分析：加和符号中有 2T 个因子，I 的遍历个数为 \(N^T\)，时间复杂度为 O(T N<sup>T</sup> )，复杂度过高</p>
+
+<h3 id="toc_8">前向算法</h3>
+
+<p>定义：给定 \(\lambda\)，定义到时刻 t，部分观测序列为 \(o_1,o_2,\dots,o_t\) 且隐状态为 \(q_i\) 的概率为 <strong>前向概率</strong>，记作</p>
+
+<p>\[\alpha_t(i)=P(o_1,o_2,\dots,o_t,i_t=q_i\;|\;\lambda)\]</p>
+
+<p>可以递推计算前向概率 \(\alpha_t(i)\) 以及观测序列概率 \(P(O\;|\;\lambda)\)</p>
+
+<p>初值：\(\alpha_1(i)=\pi_ib_{io_1}\)</p>
+
+<p>递推，对于 \(t=1,2,\dots,T-1\)，这里的 \(a_{ji}\) 是矩阵 A 中从状态 j 转移到状态 i 的值</p>
+
+<p>\[\alpha_{t+1}(i)=\left(\sum_{j=1}^{N}\alpha_t(j)a_{ji}\right)b_{io_{t+1}} \]</p>
+
+<p>最终</p>
+
+<p>\[P(O\;|\;\lambda)=\sum_{i=1}^{N}\alpha_T(i)\]</p>
+
+<p>前向概率算法的时间复杂度是 O(TN<sup>2</sup> )</p>
+
+<h4 id="toc_9">例子</h4>
+
+<p>还是用刚才的小球的例子，计算观测向量 O=红白红 的出现概率，其中</p>
+
+<p>\(<br/>
+\pi=\left( \begin{array}{c}<br/>
+0.2 \\<br/>
+0.4 \\<br/>
+0.4<br/>
+\end{array}\right)<br/>
+\quad\) \(<br/>
+A=\left( \begin{matrix}<br/>
+0.5 &amp; 0.2 &amp; 0.3 \\<br/>
+0.3 &amp; 0.5 &amp; 0.2 \\<br/>
+0.2 &amp; 0.3 &amp; 0.5<br/>
+\end{matrix}\right)<br/>
+\quad\) \(<br/>
+B=\left( \begin{matrix}<br/>
+0.5 &amp; 0.5 \\<br/>
+0.4 &amp; 0.6 \\<br/>
+0.7 &amp; 0.3<br/>
+\end{matrix}\right)<br/>
+\)</p>
+
+<p>计算初值，\(o_1\)表示红色，\(o_2\)表示白色</p>
+
+<p>\[<br/>
+\alpha_1(盒子1)=\pi_1b_{1o_1}=0.2\times0.5=0.1 \\<br/>
+\alpha_1(盒子2)=\pi_2b_{2o_1}=0.4\times0.4=0.16 \\<br/>
+\alpha_1(盒子3)=\pi_3b_{2o_1}=0.4\times0.7=0.28<br/>
+\]</p>
+
+<p>递推</p>
+
+<p>\[<br/>
+\begin{align*} <br/>
+\alpha_2(i=1)&amp;=\left(\sum_{j=1}^{N}\alpha_1(j)a_{j1}\right)b_{1o_2} \\<br/>
+&amp;= (0.1\times0.5+0.16\times0.3+0.28\times0.2)\times0.5 \\ <br/>
+&amp;= 0.077<br/>
+\end{align*} <br/>
+\]</p>
+
+<p>\[<br/>
+\alpha_2(2)=0.1104 \\<br/>
+\alpha_2(3)=0.606<br/>
+\]</p>
+
+<p>\[<br/>
+\alpha_3(1)=0.04187 \\<br/>
+\alpha_3(2)=0.03551 \\<br/>
+\alpha_3(3)=0.05284<br/>
+\]</p>
+
+<p>最终</p>
+
+<p>\[<br/>
+\begin{align*} <br/>
+P(O\;|\;\lambda)&amp;=\sum_{i=1}^{3}\alpha_3(i) \\<br/>
+&amp;= 0.04187+0.03551+0.05284 \\ <br/>
+&amp;= 0.13022<br/>
+\end{align*} <br/>
+\]</p>
+
+<p>更通用的就是 </p>
+
+<p>\[<br/>
+P(O\;|\;\lambda)=\sum_{i=1}^{N}\alpha_T(i)<br/>
+\]</p>
+
+<h2 id="toc_10">后向算法</h2>
+
+<p>定义：给定 \(\lambda\)，定义到时刻 t 隐状态为 \(q_i\) 的前提下，从 t+1 到 T 的部分观测序列概率为 \(o_{t+1},o_{t+2},\dots,o_T\) 的概率为<strong>后向概率</strong>，记作</p>
+
+<p>\[\beta_t(i)=P(o_{t+1},o_{t+2},\dots,o_T\;|\;i_t=q_i,\lambda)\]</p>
+
+<p>可以递推计算前向概率 \(\beta_t(i)\) 以及观测序列概率 \(P(O\;|\;\lambda)\)</p>
+
+<p>初值：\(\beta_T(i)=1\)</p>
+
+<p>递推，对于 \(t=T-1,T-2,\dots,1\)，这里的 \(a_{ij}\) 是矩阵 A 中从状态 i 转移到状态 j 的值</p>
+
+<p>\[\beta_{t}(i)=\left(\sum_{j=1}^{N}a_{ij}b_{jo_{t+1}}\beta_{t+1}(j)\right) \]</p>
+
+<p>最终</p>
+
+<p>\[P(O\;|\;\lambda)=\sum_{i=1}^{N}\pi_ib_{io_1}\beta_1(i)\]</p>
+
+<p>为了计算在时刻 t 隐状态为 \(q_i\) 条件下，时刻 t+1 之后观测序列为 \(o_{t+1},o_{t+2},\dots,o_T\) 的后向概率 \(\beta_t(i)\)，只需要考虑在时刻 t+1 所有可能的 N 个状态 \(q_j\) 的转移概率(\(a_{ij}\)项)，以及在此状态下的观测 \(o_{t+!}\) 的观测概率(\(b_{jo_{t+1}}\)项)，然后考虑状态 \(q_j\) 之后的观测序列的后向概率 \(\beta_{t+1}(j)\)</p>
+
+<h2 id="toc_11">前向后向概率的关系</h2>
+
+<p>根据定义，可得</p>
+
+<p>\[<br/>
+P(i_t=q_i,O\;|\;\lambda)=\alpha_t(i)\beta_t(i) \\<br/>
+P(O\;|\;\lambda)=\sum_{i=1}^{N}\alpha_t(i)\beta_t(i)<br/>
+\]</p>
+
+<h2 id="toc_12">单个状态的概率</h2>
+
+<p>给定模型 \(\lambda\) 和观测 O，求在时刻 t 处于状态 \(q_i\) 的概率</p>
+
+<p>\[<br/>
+\gamma_t(i)=P(i_t=q_t\;|\;O,\lambda)<br/>
+\]</p>
+
+<p>根据前向后向概率的定义</p>
+
+<p>\[<br/>
+P(i_t=q_i,O\;|\;\lambda)=\alpha_t(i)\beta_t(i) \\<br/>
+\gamma_t(i)=P(i_t=q_t\;|\;O,\lambda)=\frac{P(i_t=q_i,O\;|\;\lambda)}{P(O\;|\;\lambda)} \\ <br/>
+\gamma_t(i)=\frac{\alpha_t(i)\beta_t(i)}{P(O\;|\;\lambda)}=\frac{\alpha_t(i)\beta_t(i)}{\sum_{i=1}^{N}\alpha_t(i)\beta_t(i)}<br/>
+\]</p>
+
+<h2 id="toc_13">两个状态的联合概率</h2>
+
+<p>给定模型 \(\lambda\) 和观测 O，求在时刻 t 处于状态 \(q_i\) 并且时刻 t+1 处于时刻 \(q_j\) 的概率</p>
+
+<p>\[<br/>
+\xi_t(i,j)=P(i_t=q_i,i_{t+1}=q_j\;|\;O,\lambda)<br/>
+\]</p>
+
+<p>根据前向后向概率的定义</p>
+
+<p>\[<br/>
+\begin{align*} <br/>
+\xi_t(i,j)&amp;=P(i_t=q_i,i_{t+1}=q_j\;|\;O,\lambda) \\<br/>
+&amp;=\frac{P(i_t=q_i,i_{t+1}=q_j,O\;|\;\lambda)}{P(O\;|\;\lambda)} \\<br/>
+&amp;=\frac{P(i_t=q_i,i_{t+1}=q_j,O\;|\;\lambda)}{\sum_{i=1}^{N}\sum_{j=1}^{N}P(i_t=q_i,i_{t+1}=q_j,O\;|\;\lambda)}<br/>
+\end{align*} <br/>
+\]</p>
+
+<p>\[<br/>
+P(i_t=q_i,i_{t+1}=q_j,O\;|\;\lambda)=\alpha_t(i)a_{ij}b_{jo_{t+1}}\beta_{t+1}(j)<br/>
+\]</p>
+
+<h2 id="toc_14">学习算法</h2>
+
+<ul>
+<li>若训练数据包括观测序列和状态序列，则 HMM 的学习是监督学习 -&gt; MLE</li>
+<li>若训练数据只有观测序列，则 HMM 的学习需要使用 EM 算法，是非监督学习</li>
+</ul>
+
+<h3 id="toc_15">监督学习方法</h3>
+
+<p>假设已给定训练数据包含 S 个长度相同的观测序列和对应的状态序列 \(\{(O_1,I_1),(O_2,I_2),\dots,(O_s,I_s)\}\)，那么，可以直接给出 HMM 的参数估计，直接用频率去估计概率</p>
+
+<p><strong>转移概率 \(a_{ij}\) 的估计</strong></p>
+
+<p>设样本中时刻 t 处于状态 i，时刻 t+1 转移到状态 j 的频数是 \(A_{ij}\)，则</p>
+
+<p>\[<br/>
+\hat{a}_{ij} = \frac{A_{ij}}{\sum_{j=1}^{N}A_{ij}}<br/>
+\]</p>
+
+<p><strong>观测概率 \(b_{ik}\) 的估计</strong></p>
+
+<p>设样本中状态 i 并且观测为 k 的频数为 \(B_{ik}\)，则</p>
+
+<p>\[<br/>
+\hat{b}_{ij} = \frac{B_{ik}}{\sum_{j=1}^{N}B_{ik}}<br/>
+\]</p>
+
+<p><strong>初始状态的估计</strong></p>
+
+<p>\(\pi_i\) 的估计为 S 个样本中初始状态为 \(q_i\) 的概率</p>
+
+<h2 id="toc_16">非监督学习 Baum-Wellch 算法</h2>
+
+<p>所有观测数据写成 \(O=(o_1,o_2,\dots,o_T)\)，所有隐数据写成 \(I=(i_1,i_2,\dots,i_T)\)，完全数据是 \((O,I)=(o_1,o_2,\dots,o_T,i_1,i_2,\dots,i_T)\)，完全数据的对数似然函数是 \(lnP(O,I\;|\;\lambda)\)</p>
+
+<p>假设 \(\bar{\lambda}\) 是 HMM 参数当前的估计值，\(\lambda\) 为待求的参数，\(P(O,I\;|\;\bar{\lambda}\) 可以看作是对数似然函数在当前条件下取值的概率，用来求期望</p>
+
+<p>\[<br/>
+Q(\bar{\lambda},\lambda)=\sum_{I}lnP(O,I\;|\;\lambda)P(O,I\;|\;\bar{\lambda})<br/>
+\]</p>
+
+<h3 id="toc_17">EM 过程</h3>
+
+<p>根据</p>
+
+<p>\[<br/>
+P(O,I\;|\;\lambda)=P(O\;|\;I,\lambda)P(I\;|\;\lambda) \\<br/>
+=\pi_{i_1}b_{i_1o_1}a_{i_1i_2}b_{i_2o_2}a_{i_2i_3}\dots a_{i_{T-1}i_T}b_{i_To_T} <br/>
+\]</p>
+
+<p>函数可写成（把\(\pi,a,b\)分开）</p>
+
+<p>\[<br/>
+Q(\bar{\lambda},\lambda)=\sum_{I}lnP(O,I\;|\;\lambda)P(O,I\;|\;\bar{\lambda}) \\<br/>
+= \sum_{I}ln\pi_{i_1}P(O,I\;|\;\bar{\lambda})+\sum_{I}\left(\sum_{t=1}^{T-1}lna_{i_ti_{t+1}}\right)P(O,I\;|\;\bar{\lambda})+\sum_{I}\left(\sum_{t=1}^{T}lnb_{i_to_{t}}\right)P(O,I\;|\;\bar{\lambda})<br/>
+\]</p>
+
+<p>极大化 Q，求得参数 \(A,B,\pi\)</p>
+
+<p>由于这三个参数分别位于三个项中，可分别极大化</p>
+
+<h3 id="toc_18">初始概率</h3>
+
+<p>\[<br/>
+\sum_{I}ln\pi_{i_1}P(O,I\;|\;\bar{\lambda})=\sum_{i=1}^{N}ln\pi_{i_1}P(O,i_1=i\;|\;\bar{\lambda})<br/>
+\]</p>
+
+<p>注意到 \(\pi_i\) 满足加和为 1，利用拉格朗日乘子法，得到</p>
+
+<p>\[<br/>
+ \sum_{i=1}^{N}ln\pi_{i_1}P(O,i_1=i\;|\;\bar{\lambda})+\gamma\left(\sum_{i=1}^{N}\pi_i-1\right)<br/>
+ \]</p>
+
+<p>对上式相对于 \(\pi_i\) 求偏导，得到</p>
+
+<p>\[<br/>
+P(O,i_1=i\;|\;\bar{\lambda})+\gamma\pi_i=0;<br/>
+\]</p>
+
+<p>对 i 求和，得到</p>
+
+<p>\[<br/>
+\gamma=-P(O\;|\;\bar{\lambda})<br/>
+\]</p>
+
+<p>从而得到初始状态概率</p>
+
+<p>\[<br/>
+\pi_i=\frac{P(O,i_1=i\;|\;\bar{\lambda})}{P(O\;|\;\bar{\lambda})}<br/>
+\]</p>
+
+<h3 id="toc_19">转移概率和观测概率</h3>
+
+<p>第二项可写成</p>
+
+<p>\[<br/>
+\sum_{I}\left(\sum_{t=1}^{T-1}lna_{i_ti_{t+1}}\right)P(O,I\;|\;\bar{\lambda})=\sum_{i=1}^{N}\sum_{j=1}^{N}\sum_{t=1}^{T-1}lna_{ij}P(O,i_t=i,i_{t+1}=j\;|\;\bar{\lambda})<br/>
+\]</p>
+
+<p>仍然使用拉格朗日乘子法，得到</p>
+
+<p>\[<br/>
+a_{ij}=\frac{\sum_{t=1}^{T-1}P(O,i_t=i,i_{t+1}=j\;|\;\bar{\lambda})}{\sum_{t=1}^{T-1}P(O,i_t=i\;|\;\bar{\lambda})}=\frac{\sum_{t=1}^{T-1}\xi_t(i,j)}{\sum_{t=1}^{T-1}\gamma_t(i)}<br/>
+\]</p>
+
+<p>同理，对于观测概率，得到</p>
+
+<p>\[<br/>
+b_{ik}=\frac{\sum_{t=1}^{T}P(O,i_t=i\;|\;\bar{\lambda})I(o_t=v_k)}{\sum_{t=1}^{T}P(O,i_t=i\;|\;\bar{\lambda})}=\frac{\sum_{t=1,o_t=v_k}^{T}\gamma_t(i)}{\sum_{t=1}^{T}\gamma_t(i)}<br/>
+\]</p>
+
+<h2 id="toc_20">预测算法</h2>
+
+<h3 id="toc_21">预测的近似算法</h3>
+
+<p>在每个时刻 t 选择在该时刻最有可能出现的状态 \(i_t^*\)，从而得到一个隐状态序列 \(I^*=\{i_1^*,i_2^*,\dots,i_T^*\}\)，将它作为预测的结果</p>
+
+<p>给定模型和观测序列，时刻 t 处于状态 \(q_i\) 的概率为</p>
+
+<p>\[<br/>
+\gamma_t(i)=\frac{\alpha_t(i)\beta_t(i)}{P(O\;|\;\lambda)}=\frac{\alpha_t(i)\beta_t(i)}{\sum_{i=1}^{N}\alpha_t(i)\beta_t(i)}<br/>
+\]</p>
+
+<p>选择概率最大的 i 作为最有可能的状态（会出现此状态在实际中可能不会发生的情况）</p>
+
+<h3 id="toc_22">Viterbi 算法</h3>
+
+<p>用动态规划解 HMM 预测问题，用 DP 求概率最大的路径，一条路径对应一个状态序列。</p>
+
+<p>定义变量 \(\delta_t(i)\)：在时刻 t 状态为 i 的所有路径中，概率的最大值</p>
+
+<p>定义</p>
+
+<p>\[<br/>
+\delta_t(i)=max_{i_1,i_2,\dots,i_{t-1}} P(i_t=i,i_{t-1},\dots,i_1,o_t,\dots,o_1\;|\;\lambda)<br/>
+\]</p>
+
+<p>递推</p>
+
+<p>\[<br/>
+\delta_1(i)=\pi_ib_{io_1} \\<br/>
+\delta_{t+1}(i)=max_{i_1,i_2,\dots,i_{t}} P(i_{t+1}=i,i_{t},\dots,i_1,o_{t+1},\dots,o_1\;|\;\lambda) \\<br/>
+= max_{1\le i\le N}\left(\delta_t(j)a_{ji}\right)b_{io_{t+1}}<br/>
+\]</p>
+
+<p>终止</p>
+
+<p>\[<br/>
+P^*=max_{1\le i\le N} \delta_T(i)<br/>
+\]</p>
+
+<h4 id="toc_23">例子</h4>
+
+<p>还是用刚才的小球的例子，观测向量 O=红白红，试求最优状态序列</p>
+
+<p>\(<br/>
+\pi=\left( \begin{array}{c}<br/>
+0.2 \\<br/>
+0.4 \\<br/>
+0.4<br/>
+\end{array}\right)<br/>
+\quad\) \(<br/>
+A=\left( \begin{matrix}<br/>
+0.5 &amp; 0.2 &amp; 0.3 \\<br/>
+0.3 &amp; 0.5 &amp; 0.2 \\<br/>
+0.2 &amp; 0.3 &amp; 0.5<br/>
+\end{matrix}\right)<br/>
+\quad\) \(<br/>
+B=\left( \begin{matrix}<br/>
+0.5 &amp; 0.5 \\<br/>
+0.4 &amp; 0.6 \\<br/>
+0.7 &amp; 0.3<br/>
+\end{matrix}\right)<br/>
+\)</p>
+
+<p>初始化，在 t=1 时，对于每一个状态 i，求状态为 i 观测到 \(o_1=red\) (矩阵 B 的第一列) 的概率，记为 \(\delta_1(i)\)</p>
+
+<p>\[<br/>
+\delta_1(i)=\pi_ib_{io_1}=\pi_ib_{i,red}<br/>
+\]</p>
+
+<p>求得</p>
+
+<p>\[<br/>
+\delta_1(1)=0.2\times0.5=0.1 \\<br/>
+\delta_1(2)=0.4\times0.4=0.16 \\<br/>
+\delta_1(3)=0.4\times0.8=0.28<br/>
+\]</p>
+
+<p>在 t=2 时，对每个状态 i，求在 t=1 时状态为 j 观测为红并且在 t=2 时状态为 i 观测为白的路径的最大概率，记为 \(\delta_2(i)\)，这里 \(o_2=white\) 则：</p>
+
+<p>\[<br/>
+\delta_{t+1}(i)=max_{1\le j\le 3} \left(\delta_1(j)a_{ji}\right)b_{io_{2}}=max_{1\le j\le 3} \left(\delta_1(j)a_{j1}\right)b_{i,white}<br/>
+\]</p>
+
+<p>求得</p>
+
+<p>\[<br/>
+\delta_{2}(1)=max_{1\le j\le 3} \left(\delta_1(j)a_{j1}\right)b_{i,white} \\<br/>
+= max\{0.10\times0.5,0.16\times0.3,0.28\times0.2\}\times0.5=0.028<br/>
+\]</p>
+
+<p>同理可得</p>
+
+<p>\[<br/>
+\delta_{2}(2)=0.0504 \\<br/>
+\delta_{2}(3)=0.042<br/>
+\]</p>
+
+<p>继续可以求得</p>
+
+<p>\[<br/>
+\delta_{3}(1)=0.00756 \\<br/>
+\delta_{3}(2)=0.01008 \\<br/>
+\delta_{3}(3)=0.0147<br/>
+\]</p>
+
+<p>所以最大是 \(\delta_{3}(3)=0.0147\)，根据每一步最大，得到的序列是(3,3,3)</p>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	        <a href="14520495721664.html"  title="Previous Post: 推荐系统沉思录">&laquo; 推荐系统沉思录</a>
+	    
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14520494829635.html" 
+	        title="Next Post: 数据分析沉思录">数据分析沉思录 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14520495021796.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>
