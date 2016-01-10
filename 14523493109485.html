@@ -1,0 +1,1152 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+    
+  编程算法面试指南 - 小土刀的笔记
+  
+  </title>
+ <meta name="description" content="">
+ <link href="atom.xml" rel="alternate" title="小土刀的笔记" type="application/atom+xml">
+    <link rel="stylesheet" href="asset/css/foundation.min.css" />
+    <link rel="stylesheet" href="asset/css/docs.css" />
+
+    <script src="asset/js/vendor/modernizr.js"></script>
+    <script src="asset/js/vendor/jquery.js"></script>
+    <script src="asset/highlightjs/highlight.pack.js"></script>
+    <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+  </head>
+  <body class="antialiased hide-extras">
+    
+    <div class="marketing off-canvas-wrap" data-offcanvas>
+      <div class="inner-wrap">
+
+
+<nav class="top-bar docs-bar hide-for-small" data-topbar>
+
+<div id="header">
+    <h1><a href="index.html">小土刀的笔记</a></h1>
+</div>
+
+</nav>
+        <nav class="tab-bar show-for-small">
+  <a href="javascript:void(0)" class="left-off-canvas-toggle menu-icon">
+    <span> &nbsp; 小土刀的笔记</span>
+  </a>
+</nav>
+
+<aside class="left-off-canvas-menu">
+      <ul class="off-canvas-list">
+      <li><a href="index.html">Home</a></li>
+      
+        <li class="divider"></li>
+        <li><label>清单</label></li>
+
+          
+            <li><a title="好问题收集" href="14520379720179.html">好问题收集</a></li>
+          
+            <li><a title="书单合集" href="14520379720136.html">书单合集</a></li>
+          
+            <li><a title="日志列表" href="14520379720098.html">日志列表</a></li>
+          
+            <li><a title="玩物列表" href="14520379720223.html">玩物列表</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Research</label></li>
+
+          
+            <li><a title="编程算法面试指南" href="14523493109485.html">编程算法面试指南</a></li>
+          
+            <li><a title="机器学习指南" href="14522640452315.html">机器学习指南</a></li>
+          
+            <li><a title="推荐系统沉思录" href="14520495721664.html">推荐系统沉思录</a></li>
+          
+            <li><a title="知识图谱沉思录" href="14520583101537.html">知识图谱沉思录</a></li>
+          
+            <li><a title="计算机视觉沉思录" href="14520483585854.html">计算机视觉沉思录</a></li>
+          
+            <li><a title="数据分析沉思录" href="14520494829635.html">数据分析沉思录</a></li>
+          
+            <li><a title="机器学习沉思录" href="14520493984651.html">机器学习沉思录</a></li>
+          
+            <li><a title="3D 打印沉思录" href="14520902603411.html">3D 打印沉思录</a></li>
+          
+            <li><a title="HMM 指南" href="14520495021796.html">HMM 指南</a></li>
+          
+            <li><a title="EM / GMM 指南" href="14520494287936.html">EM / GMM 指南</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>工具平台</label></li>
+
+          
+            <li><a title="Mac 指南" href="14520959875185.html">Mac 指南</a></li>
+          
+            <li><a title="Bash 指南" href="14520940884566.html">Bash 指南</a></li>
+          
+            <li><a title="Hexo 指南" href="14520953748408.html">Hexo 指南</a></li>
+          
+            <li><a title="VS Code 指南" href="14520964818956.html">VS Code 指南</a></li>
+          
+            <li><a title="Homebrew 指南" href="14520954251052.html">Homebrew 指南</a></li>
+          
+            <li><a title="Hadoop 指南" href="14521186972719.html">Hadoop 指南</a></li>
+          
+            <li><a title="Pandoc 指南" href="14520962259349.html">Pandoc 指南</a></li>
+          
+            <li><a title="聊聊 PPT" href="14521293989573.html">聊聊 PPT</a></li>
+          
+            <li><a title="Vim 指南" href="14520964365928.html">Vim 指南</a></li>
+          
+            <li><a title="Sublime 指南" href="14520965272426.html">Sublime 指南</a></li>
+          
+            <li><a title="GFW 原理指南" href="14521185605970.html">GFW 原理指南</a></li>
+          
+            <li><a title="Linux 的概念与体系" href="14521103801032.html">Linux 的概念与体系</a></li>
+          
+            <li><a title="Appstore 生存指南" href="14521185605800.html">Appstore 生存指南</a></li>
+          
+            <li><a title="Latex 指南" href="14520955052445.html">Latex 指南</a></li>
+          
+            <li><a title="Git 指南" href="14520951022304.html">Git 指南</a></li>
+          
+            <li><a title="SVN 指南" href="14521379903411.html">SVN 指南</a></li>
+          
+            <li><a title="Github 生活指南" href="14520951022388.html">Github 生活指南</a></li>
+          
+            <li><a title="iTerm2 指南" href="14520954757815.html">iTerm2 指南</a></li>
+          
+            <li><a title="Ubuntu 指南" href="14520961679182.html">Ubuntu 指南</a></li>
+          
+            <li><a title="谷歌搜索技巧" href="14520951022464.html">谷歌搜索技巧</a></li>
+          
+            <li><a title="Make 指南" href="14520961098604.html">Make 指南</a></li>
+          
+            <li><a title="GCC 简易指南" href="14520948089088.html">GCC 简易指南</a></li>
+          
+            <li><a title="Kinect 开发指南" href="14521185098750.html">Kinect 开发指南</a></li>
+          
+            <li><a title="fish shell 指南" href="14520943310829.html">fish shell 指南</a></li>
+          
+            <li><a title="Gradle 指南" href="14520951022555.html">Gradle 指南</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>计算机学科经典</label></li>
+
+          
+            <li><a title="大教堂与集市" href="14520876353363.html">大教堂与集市</a></li>
+          
+            <li><a title="深入理解计算机系统" href="14520855371865.html">深入理解计算机系统</a></li>
+          
+            <li><a title="Python Algorithm" href="14521091296885.html">Python Algorithm</a></li>
+          
+            <li><a title="程序员的思维修炼" href="14520875018555.html">程序员的思维修炼</a></li>
+          
+            <li><a title="程序员修炼之道" href="14520874386531.html">程序员修炼之道</a></li>
+          
+            <li><a title="高效程序员的45个习惯" href="14520878121031.html">高效程序员的45个习惯</a></li>
+          
+            <li><a title="代码大全" href="14520855371782.html">代码大全</a></li>
+          
+            <li><a title="编程珠玑" href="14521308341315.html">编程珠玑</a></li>
+          
+            <li><a title="编写可读代码的艺术" href="14520874726715.html">编写可读代码的艺术</a></li>
+          
+            <li><a title="移动应用UI设计模式" href="14520886280669.html">移动应用UI设计模式</a></li>
+          
+            <li><a title="启示录：打造用户喜爱的产品" href="14520907410466.html">启示录：打造用户喜爱的产品</a></li>
+          
+            <li><a title="亲爱的界面：让用户乐于使用、爱不释手" href="14520885573483.html">亲爱的界面：让用户乐于使用、爱不释手</a></li>
+          
+            <li><a title="简约之美：软件设计之道" href="14520879229686.html">简约之美：软件设计之道</a></li>
+          
+            <li><a title="简单之美：软件开发实践者的思考" href="14520878623936.html">简单之美：软件开发实践者的思考</a></li>
+          
+            <li><a title="构建之法：现代软件工程" href="14520880342127.html">构建之法：现代软件工程</a></li>
+          
+            <li><a title="软件项目成功之道" href="14520883368873.html">软件项目成功之道</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>iOS</label></li>
+
+          
+            <li><a title="iOS 学习路径" href="14520467690026.html">iOS 学习路径</a></li>
+          
+            <li><a title="iOS 面试相关" href="14520467689968.html">iOS 面试相关</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>游戏</label></li>
+
+          
+            <li><a title="深入游戏" href="14521282739436.html">深入游戏</a></li>
+          
+            <li><a title="游戏设计" href="14521282739338.html">游戏设计</a></li>
+          
+            <li><a title="英雄联盟游戏设计与运营技巧" href="14521282739242.html">英雄联盟游戏设计与运营技巧</a></li>
+          
+            <li><a title="游戏运营指南" href="14521282739132.html">游戏运营指南</a></li>
+          
+            <li><a title="游戏的架构与细节梳理" href="14521282739025.html">游戏的架构与细节梳理</a></li>
+          
+            <li><a title="Destiny 游戏分析" href="14521282738926.html">Destiny 游戏分析</a></li>
+          
+            <li><a title="辐射避难所" href="14521277966471.html">辐射避难所</a></li>
+          
+            <li><a title="英雄联盟攻略" href="14521196095413.html">英雄联盟攻略</a></li>
+          
+            <li><a title="游戏产业信息收集" href="14521195111050.html">游戏产业信息收集</a></li>
+          
+            <li><a title="游戏发展史" href="14521194839446.html">游戏发展史</a></li>
+          
+            <li><a title="辐射系列" href="14521194076173.html">辐射系列</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>生活品质</label></li>
+
+          
+            <li><a title="成为作家" href="14521287232350.html">成为作家</a></li>
+          
+            <li><a title="广州美食地图" href="14521207453879.html">广州美食地图</a></li>
+          
+            <li><a title="聊聊钢笔" href="14521202963339.html">聊聊钢笔</a></li>
+          
+            <li><a title="聊聊电影" href="14521201092159.html">聊聊电影</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>生活技巧</label></li>
+
+          
+            <li><a title="烤箱指南" href="14521207693233.html">烤箱指南</a></li>
+          
+            <li><a title="租房手册" href="14521200170697.html">租房手册</a></li>
+          
+            <li><a title="买车指南" href="14521200170757.html">买车指南</a></li>
+          
+            <li><a title="北美二手车购买指南" href="14521200391261.html">北美二手车购买指南</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>编程语言</label></li>
+
+          
+            <li><a title="如何选择编程语言" href="14521020035250.html">如何选择编程语言</a></li>
+          
+            <li><a title="Python 学习指南" href="14521095530236.html">Python 学习指南</a></li>
+          
+            <li><a title="Python 编程思想" href="14521096832549.html">Python 编程思想</a></li>
+          
+            <li><a title="Java 精要" href="14521089938127.html">Java 精要</a></li>
+          
+            <li><a title="Matlab 指南" href="14521020962952.html">Matlab 指南</a></li>
+          
+            <li><a title="OpenMP 入门指南" href="14521021178707.html">OpenMP 入门指南</a></li>
+          
+            <li><a title="Javascript 学习指南" href="14521020732534.html">Javascript 学习指南</a></li>
+          
+            <li><a title="C++ 学习笔记" href="14520969294593.html">C++ 学习笔记</a></li>
+          
+            <li><a title="SQL 入门指南" href="14521021831775.html">SQL 入门指南</a></li>
+          
+            <li><a title="CUDA架构" href="14521020248399.html">CUDA架构</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Android</label></li>
+
+          
+            <li><a title="Android Studio 指南" href="14520922857884.html">Android Studio 指南</a></li>
+          
+            <li><a title="Google Map V2 使用指南" href="14520474070782.html">Google Map V2 使用指南</a></li>
+          
+            <li><a title="ActionBar 使用指南" href="14520474070736.html">ActionBar 使用指南</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>Web</label></li>
+
+          
+            <li><a title="网络协议指南" href="14520476779491.html">网络协议指南</a></li>
+          
+            <li><a title="Node.js 命令行程序实例" href="14520476779456.html">Node.js 命令行程序实例</a></li>
+          
+            <li><a title="Flask Study Note" href="14520476779406.html">Flask Study Note</a></li>
+          
+
+      
+        <li class="divider"></li>
+        <li><label>关于</label></li>
+
+          
+            <li><a title="版权声明" href="14520576386063.html">版权声明</a></li>
+          
+
+      
+      </ul>
+    </aside>
+
+<a class="exit-off-canvas" href="#"></a>
+
+        <section id="main-content" role="main" class="scroll-container">
+
+          <div class="row">
+            <div class="large-3 medium-3 columns">
+              <div class="hide-for-small">
+                <div class="sidebar">
+                <nav>
+                  <ul id="side-nav" class="side-nav">
+
+                    
+                      <li class="side-title"><span>清单</span></li>
+                        
+                          <li><a title="好问题收集" href="14520379720179.html">好问题收集</a></li>
+                        
+                          <li><a title="书单合集" href="14520379720136.html">书单合集</a></li>
+                        
+                          <li><a title="日志列表" href="14520379720098.html">日志列表</a></li>
+                        
+                          <li><a title="玩物列表" href="14520379720223.html">玩物列表</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Research</span></li>
+                        
+                          <li><a title="编程算法面试指南" href="14523493109485.html">编程算法面试指南</a></li>
+                        
+                          <li><a title="机器学习指南" href="14522640452315.html">机器学习指南</a></li>
+                        
+                          <li><a title="推荐系统沉思录" href="14520495721664.html">推荐系统沉思录</a></li>
+                        
+                          <li><a title="知识图谱沉思录" href="14520583101537.html">知识图谱沉思录</a></li>
+                        
+                          <li><a title="计算机视觉沉思录" href="14520483585854.html">计算机视觉沉思录</a></li>
+                        
+                          <li><a title="数据分析沉思录" href="14520494829635.html">数据分析沉思录</a></li>
+                        
+                          <li><a title="机器学习沉思录" href="14520493984651.html">机器学习沉思录</a></li>
+                        
+                          <li><a title="3D 打印沉思录" href="14520902603411.html">3D 打印沉思录</a></li>
+                        
+                          <li><a title="HMM 指南" href="14520495021796.html">HMM 指南</a></li>
+                        
+                          <li><a title="EM / GMM 指南" href="14520494287936.html">EM / GMM 指南</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>工具平台</span></li>
+                        
+                          <li><a title="Mac 指南" href="14520959875185.html">Mac 指南</a></li>
+                        
+                          <li><a title="Bash 指南" href="14520940884566.html">Bash 指南</a></li>
+                        
+                          <li><a title="Hexo 指南" href="14520953748408.html">Hexo 指南</a></li>
+                        
+                          <li><a title="VS Code 指南" href="14520964818956.html">VS Code 指南</a></li>
+                        
+                          <li><a title="Homebrew 指南" href="14520954251052.html">Homebrew 指南</a></li>
+                        
+                          <li><a title="Hadoop 指南" href="14521186972719.html">Hadoop 指南</a></li>
+                        
+                          <li><a title="Pandoc 指南" href="14520962259349.html">Pandoc 指南</a></li>
+                        
+                          <li><a title="聊聊 PPT" href="14521293989573.html">聊聊 PPT</a></li>
+                        
+                          <li><a title="Vim 指南" href="14520964365928.html">Vim 指南</a></li>
+                        
+                          <li><a title="Sublime 指南" href="14520965272426.html">Sublime 指南</a></li>
+                        
+                          <li><a title="GFW 原理指南" href="14521185605970.html">GFW 原理指南</a></li>
+                        
+                          <li><a title="Linux 的概念与体系" href="14521103801032.html">Linux 的概念与体系</a></li>
+                        
+                          <li><a title="Appstore 生存指南" href="14521185605800.html">Appstore 生存指南</a></li>
+                        
+                          <li><a title="Latex 指南" href="14520955052445.html">Latex 指南</a></li>
+                        
+                          <li><a title="Git 指南" href="14520951022304.html">Git 指南</a></li>
+                        
+                          <li><a title="SVN 指南" href="14521379903411.html">SVN 指南</a></li>
+                        
+                          <li><a title="Github 生活指南" href="14520951022388.html">Github 生活指南</a></li>
+                        
+                          <li><a title="iTerm2 指南" href="14520954757815.html">iTerm2 指南</a></li>
+                        
+                          <li><a title="Ubuntu 指南" href="14520961679182.html">Ubuntu 指南</a></li>
+                        
+                          <li><a title="谷歌搜索技巧" href="14520951022464.html">谷歌搜索技巧</a></li>
+                        
+                          <li><a title="Make 指南" href="14520961098604.html">Make 指南</a></li>
+                        
+                          <li><a title="GCC 简易指南" href="14520948089088.html">GCC 简易指南</a></li>
+                        
+                          <li><a title="Kinect 开发指南" href="14521185098750.html">Kinect 开发指南</a></li>
+                        
+                          <li><a title="fish shell 指南" href="14520943310829.html">fish shell 指南</a></li>
+                        
+                          <li><a title="Gradle 指南" href="14520951022555.html">Gradle 指南</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>计算机学科经典</span></li>
+                        
+                          <li><a title="大教堂与集市" href="14520876353363.html">大教堂与集市</a></li>
+                        
+                          <li><a title="深入理解计算机系统" href="14520855371865.html">深入理解计算机系统</a></li>
+                        
+                          <li><a title="Python Algorithm" href="14521091296885.html">Python Algorithm</a></li>
+                        
+                          <li><a title="程序员的思维修炼" href="14520875018555.html">程序员的思维修炼</a></li>
+                        
+                          <li><a title="程序员修炼之道" href="14520874386531.html">程序员修炼之道</a></li>
+                        
+                          <li><a title="高效程序员的45个习惯" href="14520878121031.html">高效程序员的45个习惯</a></li>
+                        
+                          <li><a title="代码大全" href="14520855371782.html">代码大全</a></li>
+                        
+                          <li><a title="编程珠玑" href="14521308341315.html">编程珠玑</a></li>
+                        
+                          <li><a title="编写可读代码的艺术" href="14520874726715.html">编写可读代码的艺术</a></li>
+                        
+                          <li><a title="移动应用UI设计模式" href="14520886280669.html">移动应用UI设计模式</a></li>
+                        
+                          <li><a title="启示录：打造用户喜爱的产品" href="14520907410466.html">启示录：打造用户喜爱的产品</a></li>
+                        
+                          <li><a title="亲爱的界面：让用户乐于使用、爱不释手" href="14520885573483.html">亲爱的界面：让用户乐于使用、爱不释手</a></li>
+                        
+                          <li><a title="简约之美：软件设计之道" href="14520879229686.html">简约之美：软件设计之道</a></li>
+                        
+                          <li><a title="简单之美：软件开发实践者的思考" href="14520878623936.html">简单之美：软件开发实践者的思考</a></li>
+                        
+                          <li><a title="构建之法：现代软件工程" href="14520880342127.html">构建之法：现代软件工程</a></li>
+                        
+                          <li><a title="软件项目成功之道" href="14520883368873.html">软件项目成功之道</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>iOS</span></li>
+                        
+                          <li><a title="iOS 学习路径" href="14520467690026.html">iOS 学习路径</a></li>
+                        
+                          <li><a title="iOS 面试相关" href="14520467689968.html">iOS 面试相关</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>游戏</span></li>
+                        
+                          <li><a title="深入游戏" href="14521282739436.html">深入游戏</a></li>
+                        
+                          <li><a title="游戏设计" href="14521282739338.html">游戏设计</a></li>
+                        
+                          <li><a title="英雄联盟游戏设计与运营技巧" href="14521282739242.html">英雄联盟游戏设计与运营技巧</a></li>
+                        
+                          <li><a title="游戏运营指南" href="14521282739132.html">游戏运营指南</a></li>
+                        
+                          <li><a title="游戏的架构与细节梳理" href="14521282739025.html">游戏的架构与细节梳理</a></li>
+                        
+                          <li><a title="Destiny 游戏分析" href="14521282738926.html">Destiny 游戏分析</a></li>
+                        
+                          <li><a title="辐射避难所" href="14521277966471.html">辐射避难所</a></li>
+                        
+                          <li><a title="英雄联盟攻略" href="14521196095413.html">英雄联盟攻略</a></li>
+                        
+                          <li><a title="游戏产业信息收集" href="14521195111050.html">游戏产业信息收集</a></li>
+                        
+                          <li><a title="游戏发展史" href="14521194839446.html">游戏发展史</a></li>
+                        
+                          <li><a title="辐射系列" href="14521194076173.html">辐射系列</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>生活品质</span></li>
+                        
+                          <li><a title="成为作家" href="14521287232350.html">成为作家</a></li>
+                        
+                          <li><a title="广州美食地图" href="14521207453879.html">广州美食地图</a></li>
+                        
+                          <li><a title="聊聊钢笔" href="14521202963339.html">聊聊钢笔</a></li>
+                        
+                          <li><a title="聊聊电影" href="14521201092159.html">聊聊电影</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>生活技巧</span></li>
+                        
+                          <li><a title="烤箱指南" href="14521207693233.html">烤箱指南</a></li>
+                        
+                          <li><a title="租房手册" href="14521200170697.html">租房手册</a></li>
+                        
+                          <li><a title="买车指南" href="14521200170757.html">买车指南</a></li>
+                        
+                          <li><a title="北美二手车购买指南" href="14521200391261.html">北美二手车购买指南</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>编程语言</span></li>
+                        
+                          <li><a title="如何选择编程语言" href="14521020035250.html">如何选择编程语言</a></li>
+                        
+                          <li><a title="Python 学习指南" href="14521095530236.html">Python 学习指南</a></li>
+                        
+                          <li><a title="Python 编程思想" href="14521096832549.html">Python 编程思想</a></li>
+                        
+                          <li><a title="Java 精要" href="14521089938127.html">Java 精要</a></li>
+                        
+                          <li><a title="Matlab 指南" href="14521020962952.html">Matlab 指南</a></li>
+                        
+                          <li><a title="OpenMP 入门指南" href="14521021178707.html">OpenMP 入门指南</a></li>
+                        
+                          <li><a title="Javascript 学习指南" href="14521020732534.html">Javascript 学习指南</a></li>
+                        
+                          <li><a title="C++ 学习笔记" href="14520969294593.html">C++ 学习笔记</a></li>
+                        
+                          <li><a title="SQL 入门指南" href="14521021831775.html">SQL 入门指南</a></li>
+                        
+                          <li><a title="CUDA架构" href="14521020248399.html">CUDA架构</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Android</span></li>
+                        
+                          <li><a title="Android Studio 指南" href="14520922857884.html">Android Studio 指南</a></li>
+                        
+                          <li><a title="Google Map V2 使用指南" href="14520474070782.html">Google Map V2 使用指南</a></li>
+                        
+                          <li><a title="ActionBar 使用指南" href="14520474070736.html">ActionBar 使用指南</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>Web</span></li>
+                        
+                          <li><a title="网络协议指南" href="14520476779491.html">网络协议指南</a></li>
+                        
+                          <li><a title="Node.js 命令行程序实例" href="14520476779456.html">Node.js 命令行程序实例</a></li>
+                        
+                          <li><a title="Flask Study Note" href="14520476779406.html">Flask Study Note</a></li>
+                        
+
+                    
+                      <li class="side-title"><span>关于</span></li>
+                        
+                          <li><a title="版权声明" href="14520576386063.html">版权声明</a></li>
+                        
+
+                    
+                  </ul>
+                </nav>
+                </div>
+              </div>
+            </div>
+            <div class="large-9 medium-9 columns">
+
+ <div class="markdown-body">
+<h1>编程算法面试指南</h1>
+
+<p>简明扼要总结一些刷题的核心思想以及对应的解题思路，后面附有一些常见的面试题以及具体分析以供参考</p>
+
+<h2 id="toc_0">数组</h2>
+
+<p>基本解题策略</p>
+
+<ul>
+<li>判断元素是否出现：哈希表 或者 bitset</li>
+<li>统计元素出现次数：哈希表</li>
+</ul>
+
+<p>重要知识点</p>
+
+<ul>
+<li>越界问题</li>
+<li>支持随机访问，修改读取 O(1)</li>
+<li>插入删除 O(n)</li>
+<li>哈希表，插入 O(1)，查找 O(1)</li>
+<li>哈希表解决冲突的方式：链接法(chaining)和开放地址法(open addressing)</li>
+</ul>
+
+<p>常见容器</p>
+
+<ul>
+<li>Vector / ArrayList</li>
+<li>HashSet, HashTable</li>
+<li>Map / Dictionary</li>
+</ul>
+
+<h2 id="toc_1">堆栈和队列</h2>
+
+<p>基本解题策略</p>
+
+<ul>
+<li>如果需要追踪最大/最小值，可以考虑使用另一个栈</li>
+<li>遍历子树的过程是一个自上而下结构：从顶层出发，逐渐向下扩散。所以考虑递归或者栈</li>
+<li>有一类问题有这样的特性：当前节点的解依赖后驱节点。这类问题可以通过栈(或等同于栈的若干个临时变量)解决：先将当前节点入栈，然后看其后继节点的值，直到其依赖的所有节点都完备时，再从栈中弹出该节点求解。某些时候，甚至需要反复这个过程：将当前节点的计算结果再次入栈，直到其依赖的后继节点完备</li>
+<li>由于栈的LIFO特性，可以利用栈数据结构消除递归。递归通常用函数调用自身实现，在调用的时候系统会分配额外的空间，并且需要用栈指针记录函数返回的位置，故额外开销(overhead)比较大</li>
+</ul>
+
+<h2 id="toc_2">链表</h2>
+
+<p>基本解题策略</p>
+
+<ul>
+<li>当涉及对头节点的操作，我们不妨考虑创建哑节点</li>
+<li>题目涉及在链表中寻找特定位置，我们用两个指针变量以不同的速度遍历该链表</li>
+<li>循环遍历链表, 每次只处理当前指针的next 变量，由此实现链表的逆转</li>
+<li>凡是修改单向链表的操作，只需考虑：
+
+<ul>
+<li>哪个节点的next指针会受到影响，则需要修正该指针；</li>
+<li>如果待删除节点是动态开辟的内存空间，则需要释放这部分空间(C/C++)</li>
+</ul></li>
+</ul>
+
+<p>基本操作</p>
+
+<ul>
+<li>检验有效性
+
+<ul>
+<li>访问某个节点 <code>curt.next</code> 时，要检验 <code>curt</code> 是否为 <code>null</code></li>
+</ul></li>
+<li>反转链表
+
+<ul>
+<li>要把反转后的最后一个节点（即第一个节点）指向 <code>null</code></li>
+</ul></li>
+<li>删除某个节点
+
+<ul>
+<li>由于需要知道前继节点的信息，而前继节点可能会导致表头产生变化，所以需要一些技巧 Dummy Node</li>
+<li>全部操作结束后，判断是否有环；若有，则置其中一端为 null</li>
+</ul></li>
+</ul>
+
+<p>快慢指针</p>
+
+<ul>
+<li>快速找出未知长度单链表的中间节点
+
+<ul>
+<li>设置两个指针 <code>*fast</code> 和 <code>*slow</code> 都指向头节点</li>
+<li><code>*fast</code> 移动速度是 <code>*slow</code> 的两倍</li>
+<li><code>*fast</code> 指向末尾节点时，<code>*slow</code> 正好就在中间</li>
+</ul></li>
+<li>判断单链表是否有环
+
+<ul>
+<li>设置两个指针 <code>*fast</code> 和 <code>*slow</code> 都指向头节点</li>
+<li><code>*fast</code> 移动速度是 <code>*slow</code> 的两倍</li>
+<li>如果 <code>*fast == null</code> 说明该单链表不是循环链表</li>
+<li>如果 <code>*fast == *slow</code> 说明该链表是循环链表</li>
+</ul></li>
+<li>找倒数第 N 个节点
+
+<ul>
+<li>设置两个指针 *fast 和 *slow 都指向头节点</li>
+<li><code>*fast</code> 先移动 N 步，然后两个指针一起前进</li>
+<li><code>*fast</code> 到达末尾时，*slow 即为倒数第 N 个节点</li>
+</ul></li>
+</ul>
+
+<h2 id="toc_3">递归和动态规划</h2>
+
+<p>解题策略</p>
+
+<ul>
+<li>用动态编程(自底向上)解决收敛结构问题
+
+<ul>
+<li>解决这类问题的时候，可以把上述递推关系写在手边，这样做非常有利于理清算法实现的思路</li>
+<li>如果问题除了要计算动归终点的数值以外，还需要记录具体的到达路径，则可记录每个节点的前驱节点(<code>prev[n]</code>)或前驱路径(<code>vector&lt;vector&lt;int&gt;&gt; prev</code>)，然后用终点出发通过backtracking处理成path</li>
+</ul></li>
+<li>如果出现类似于“所有解”，“所有路径”等关键词，则用自上而下方法更为直接</li>
+<li>对于“最长子序列”问题(即有限空间内，满足一定条件的最长顺序子序列)，用DP Table来记录以当前节点为末节点的序列的解(至少固定问题的一端，因此不是以“当前节点或之前节点”为末节点)的解，并根据递推关系，由问题空间的起点到达问题空间的终点</li>
+<li>用Memorization (Top-Down)解决收敛结构问题
+
+<ul>
+<li>Memorization的核心在于，在原有递归框架下，存储子问题的计算结果，在重复计算子问题时返回已经计算的值</li>
+<li>值得注意的是，这里所谓的“重复计算子问题”，在自顶向下结构下必须与前驱节点无关，因为子问题并不知道原问题是如何到达当前节点的 </li>
+</ul></li>
+<li>用回溯法( 自上而下 )解决发散结构问题
+
+<ul>
+<li>对于发散性问题(例如“所有组合”，“全部解”)，可以选取其问题空间“收敛”的一端作为起点，沿着节点发散的方向(或者说，当前节点的多种选择)进行递归，直到
+
+<ul>
+<li>当前节点“不合法” 或</li>
+<li>当前节点发散方向搜索完毕，才会return</li>
+</ul></li>
+<li>如果需要记录决策的路径，可以用vector<int> &amp;path沿着搜索的方向记录，在满足胜利条件时记录当前path(通常是将path存入vector<vector<int>&gt; &amp;paths)。
+
+<ul>
+<li>注意，我们传入的path是引用形式，属于全局变量。Backtracking(回溯)本身隐含的含义是，在访问完这个节点返回时，需要恢复原本的状态(即回到该节点)，以访问其他路径。具体实现时，意味着需要:
+
+<ul>
+<li>在return前，删除path中的当前节点。</li>
+<li>如果搜索的方向有出现环路的可能，那么可以使用bool []或unordered_map来记录该节点是否已被使用，在访问时以及return前维护。</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>用Divide and Conquer 解决独立子问题</li>
+<li>自底向上与自顶向下
+
+<ul>
+<li>从子问题解决原问题, 无非是两种方法，自底向上(Bottom-Up)与自顶向下(Top-Down)，形式上前者对应iteration，利用循环将结果存在数组里，从数组起始位置向后计算；后者对应recursion，即利用函数调用自身实现，如果不存储上一个状态的解，则为递归，否则就是DP</li>
+</ul></li>
+<li>动态编程的核心在于，如果在一个问题的解决方案中，子问题被重复计算，那么就可以利用记录中间结果，达到用空间换取时间的目的。</li>
+</ul>
+
+<p>算法策略</p>
+
+<ul>
+<li>分而治之(Divide and Conquer)
+
+<ul>
+<li>这里只谈狭义的D&amp;C，即将问题分成几个部分，每一部分相互独立，互不重叠，假定每个部分都可以得到解决来进行递归调用，合并每一部分的结果。</li>
+<li>例如Merge Sort， Quick Sort (Merge Sort的divide容易，但Conquer/Merge复杂，Quick Sort的divide复杂，但Conquer/Merge容易)</li>
+</ul></li>
+<li>动态编程(Dynamic Programming)
+
+<ul>
+<li>尽可能不重复计算每个子问题，而是将计算结果存储下来，以确定后驱问题的解。</li>
+<li>与贪心算法的区别是，会记录下所有可能通向全局最优解的局部解，以便在计算后驱问题时综合考虑多个前驱问题的解。</li>
+</ul></li>
+<li>贪婪算法(Greedy Algorithm)
+
+<ul>
+<li>只做出当下最优的判断，并且以此为基础进行下一步计算。当前判断最优时，不考虑对全局/未来的影响，所以所以从全局来说并不能保证总是最优。</li>
+<li>贪心算法每次更新当前的最优解。如Dijkstra算法就是贪心算法的实例之一。</li>
+</ul></li>
+<li>回溯 (Backtracking)
+
+<ul>
+<li>一种暴力(穷举)的深度优先搜索法：搜索，直到节点空间的尽头，然后再返回到上次的节点，再往其他方向深度搜索。</li>
+<li>树或图的DFS是回溯的实例之一。</li>
+</ul></li>
+</ul>
+
+<h2 id="toc_4">树和图</h2>
+
+<p>解题策略</p>
+
+<ul>
+<li>对于树和图的性质，一般全局解依赖于局部解。通常可以用DFS来判断子问题的解，然后综合得到当前的全局结论</li>
+<li>当我们在传递节点指针的时候，其实其代表的不只是这个节点本身，而是指对整个子树、子图进行操作</li>
+<li>实现函数递归的步骤
+
+<ul>
+<li>首先，设置函数出口，就此类问题而言，递归出口往往是 <code>node == NULL</code></li>
+<li>其次，在构造递归的时候，不妨将递归调用自身的部分视为黑盒，并想象它能够完整解决子问题</li>
+</ul></li>
+<li>DFS 处理树的问题
+
+<ul>
+<li>有一类关于树的问题是， 要求找出一条满足特定条件的路径 。对于这类问题，通常都是传入一个vector记录当前走过的路径</li>
+<li>还需要传入另一个vector引用记录所有符合条件的path</li>
+</ul></li>
+<li>树和其他数据结构的相互转换
+
+<ul>
+<li>这类题目要求将树的结构转化成其他数据结构，例如链表、数组等，或者反之，从数组等结构构成一棵树</li>
+<li>前者通常是通过树的遍历，合并局部解来得到全局解，而后者则可以利用D&amp;C的策略，递归将数据结构的两部分分别转换成子树，再合并</li>
+</ul></li>
+<li>寻找特定节点
+
+<ul>
+<li>此类题目通常会传入一个当前节点，要求找到与此节点具有一定关系的特定节点：例如前驱、后继、左／右兄弟等</li>
+<li>首先可以了解一下常见特定节点的定义及性质。在存在指向父节点指针的情况下，通常可以由当前节点出发，向上倒推解决</li>
+<li>如果节点没有父节点指针，一般需要从根节点出发向下搜索，搜索的过程就是DFS</li>
+</ul></li>
+<li>图的访问
+
+<ul>
+<li>图的基本问题，例如图的遍历、最短路径、可达性等</li>
+<li>将问题转化成图，再通过图的遍历解决问题</li>
+</ul></li>
+<li>二叉树的遍历
+
+<ul>
+<li>前序遍历(Pre-order traversal)：访问根结点；按前序遍历左子树；按前序遍历右子树。</li>
+<li>中序遍历(In-order traversal)：按中序遍历左子树；访问根结点；按中序遍历右子树。特别地，对于二分查找树而言，中序遍历可以获得一个由小到大或者由大到小的有序序列。</li>
+<li>后续遍历(Post-order traversal)：按后序遍历左子树；按后序遍历右子树；访问根结点。 </li>
+<li>以上三种遍历方式都是深度优先搜索算法(depth-first search)。深度优先算法最自然的实现方式是通过递归实现，事实上，大部分树相关的面试问题都可以优先考虑递归</li>
+<li>层次遍历(Level traversal)：首先访问第0层，也就是根结点所在的层；当第i层的所有结点访问完之后，再从左至右依次访问第i+1层的各个结点。层次遍历属于广度优先搜索算法(breadth-first search)。广度优先算法往往通过队列数据结构实现。</li>
+</ul></li>
+<li>字典树(trie or prefix tree)是一个26叉树，用于在一个集合中检索一个字符串，或者字符串前缀。字典树的每个节点有一个指针数组代表其所有子树，其本质上是一个哈希表，因为子树所在的位置(index)本身，就代表了节点对应的字母</li>
+<li>通常所说的堆(Heap)是指二叉堆，从结构上说是完全二叉树，从实现上说一般用数组。
+
+<ul>
+<li>以数组的下标建立父子节点关系：对于下标为i的节点，其父节点为(int)i/2，其左子节点为2i，右子节点为2i+1。</li>
+<li>堆最重要的性质是，它满足部分有序(partial order)：最大(小)堆的父节点一定大于等于(小于等于)当前节点，且堆顶元素一定是当前所有元素的最大(小)值。</li>
+<li>下移是堆算法的核心。对于最大值堆而言，对于某个节点的下移操作相当于比较当前节点与其左右子节点的相对大小。如果当前节点小于其子节点，则将当前节点与其左右子节点中较大的子节点对换，直至操作无法进行(即当前节点大于其左右子节点)</li>
+<li>插入：将新元素插入堆的末尾，并且与父节点进行比较，如果新节点的值大于父节点，则与之交换，即上移(shift-up)，直至操作无法进行。</li>
+<li>弹出堆顶元素：弹出堆顶元素(假设记为A[1]，堆尾元素记为A[n])并维护堆性质相当于把堆尾的放到堆顶，然后下移堆顶到合适的位置</li>
+<li>堆的插入操作逐层上移，耗时O(log(n))，与二叉搜索树的插入相同。但建堆通过下移所有非叶子节点(下标n/2至1)实现，耗时O(n)，小于BST的O(nlog(n))。</li>
+</ul></li>
+<li>图(Graph)是节点集合的一个拓扑结构，节点之间通过边相连。图分为有向图和无向图</li>
+<li>图的数据表示方式也分为两种，即邻接表(adjacency list)和邻接矩阵(adjacency matrix)</li>
+</ul>
+
+<p><strong>广度优先</strong></p>
+
+<p>广度优先会先访问其所有邻近节点，再访问其他节点。即，对于任意节点，算法首先发现距离为d的节点，当所有距离为d的节点都被访问后，算法才会访问距离为d+1的节点。广度优先算法将每个节点着色为白，灰或黑，白色表示未被发现，灰色表示被发现，黑色表示已访问。算法利用先进先出队列来管理所有灰色节点。一句话总结，广度优先算法先访问当前节点，一旦发现未被访问的邻近节点，推入队列，以待访问</p>
+
+<p><strong>深度优先</strong></p>
+
+<p>深度优先算法尽可能“深”地搜索一个图。对于某个节点v，如果它有未搜索的边，则沿着这条边继续搜索下去，直到该路径无法发现新的节点，回溯回节点v，继续搜索它的下一条边。深度优先算法也通过着色标记节点，白色表示未被发现，灰色表示被发现，黑色表示已访问。算法通过递归实现先进后出。一句话总结，深度优先算法一旦发现没被访问过的邻近节点，则立刻递归访问它，直到所有邻近节点都被访问过了，最后访问自己</p>
+
+<p><strong>单源最短路径</strong></p>
+
+<p>对于每条边都有一个权值的图来说，单源最短路径问题是指从某个节点出发，到其他节点的最短距离。该问题的常见算法有Bellman-Ford和Dijkstra算法。前者适用于一般情况(包括存在负权值的情况，但不存在从源点可达的负权值回路)，后者仅适用于均为非负权值边的情况。Dijkstra的运行时间可以小于Bellman-Ford。</p>
+
+<p>特别地，如果每条边权值相同(无权图)，由于从源开始访问图遇到节点的最小深度 就等于到该节点的最短路径，因此 Priority Queue就退化成Queue，Dijkstra算法就退化成BFS。</p>
+
+<p>Dijkstra的核心在于，构造一个节点集合S，对于S中的每一个节点，源点到该节点的最短距离已经确定。进一步地，对于不在S中的节点，“我们总是选择其中到源点最近的节点，将它加入S，并且更新其邻近节点到源点的距离。算法实现时需要依赖优先队列。一句话总结，Dijkstra算法利用贪心的思想，在剩下的节点中选取离源点最近的那个加入集合，并且更新其邻近节点到源点的距离，直至所有节点都被加入集合。</p>
+
+<p><strong>任意两点之间的最短距离</strong></p>
+
+<p>另一个关于图常见的算法是，如何获得任意两点之间的最短距离(All-pairs shortest paths)。直观的想法是，可以对于每个节点运行Dijkstra算法，该方法可行，但更适合的算法是Floyd-Warshall算法。</p>
+
+<p>Floyd算法的核心是动态编程，利用二维矩阵存储i，j之间的最短距离，矩阵的初始值为i，j之间的权值，如果i，j不直接相连，则值为正无穷。动态编程的递归式为：d(k)ij = min(d(k-1)ij, d(k-1)ik+ d(k-1)kj) (1&lt;= k &lt;= n)。直观上理解，对于第k次更新，我们比较从i到j只经过节点编号小于k的中间节点(d(k-1)ij)，和从i到k，从k到j的距离之和(d(k-1)ik+ d(k-1)kj)。Floyd算法的复杂度是\(O(n^3)\)。</p>
+
+<h2 id="toc_5">排序和搜索</h2>
+
+<ul>
+<li>冒泡排序：它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来</li>
+<li>选择排序
+
+<ul>
+<li>在未排序序列中找到最小（大）元素，存放到排序序列的起始位置</li>
+<li>再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾</li>
+<li>以此类推，直到所有元素均排序完毕</li>
+</ul></li>
+<li>插入排序：对于每个未排序数据，在已排序序列中从后向前扫描，找到相应位置并插入（类似于冒泡排序反过来）</li>
+<li>希尔排序：将数组列在一个表中并对列分别进行插入排序，重复这过程，不过每次用更长的列（步长更长了，列数更少了）来进行。最后整个表就只有一列了。
+
+<ul>
+<li>非稳定排序</li>
+<li>步长的选择直接决定了希尔排序的复杂度</li>
+</ul></li>
+</ul>
+
+<p><strong>归并排序</strong></p>
+
+<p>先递归分解数组，再合并数组</p>
+
+<p>先考虑合并两个有序数组，基本思路是比较两个数组的最前面的数，谁小就先取谁，取了后相应的指针就往后移一位。然后再比较，直至一个数组为空，最后把另一个数组的剩余部分复制过来即可。</p>
+
+<p>再考虑递归分解，基本思路是将数组分解成left和right，如果这两个数组内部数据是有序的，那么就可以用上面合并数组的方法将这两个数组合并排序。如何让这两个数组内部是有序的？可以再二分，直至分解出的小组只含有一个元素时为止，此时认为该小组内部已有序。然后合并排序相邻二个小组即可。</p>
+
+<pre><code class="language-python">def merge_sort(ary):
+    if len(ary) &lt;= 1 : return ary
+    num = int(len(ary)/2)       #二分分解
+    left = merge_sort(ary[:num])
+    right = merge_sort(ary[num:])
+    return merge(left,right)    #合并数组
+
+def merge(left,right):
+    &#39;&#39;&#39;合并操作，
+    将两个有序数组left[]和right[]合并成一个大的有序数组&#39;&#39;&#39;
+    l,r = 0,0           #left与right数组的下标指针
+    result = []
+    while l &lt; len(left) and r &lt; len(right):
+        if left[l] &lt; right[r]:
+            result.append(left[l])
+            l += 1
+        else:
+            result.append(right[r])
+            r += 1
+    result += left[l:]
+    result += right[r:]
+    return result
+</code></pre>
+
+<p><strong>快速排序</strong></p>
+
+<p>快速排序通常明显比同为Ο(n log n)的其他算法更快，因此常被采用，而且快排采用了分治法的思想，所以在很多笔试面试中能经常看到快排的影子。可见掌握快排的重要性。</p>
+
+<p>步骤：</p>
+
+<ol>
+<li>从数列中挑出一个元素作为基准数。</li>
+<li>分区过程，将比基准数大的放到右边，小于或等于它的数都放到左边。</li>
+<li>再对左右区间递归执行第二步，直至各区间只有一个数。</li>
+</ol>
+
+<pre><code class="language-python">def quick_sort(ary):
+    return qsort(ary,0,len(ary)-1)
+
+def qsort(ary,left,right):
+    #快排函数，ary为待排序数组，left为待排序的左边界，right为右边界
+    if left &gt;= right : return ary
+    key = ary[left]     #取最左边的为基准数
+    lp = left           #左指针
+    rp = right          #右指针
+    while lp &lt; rp :
+        while ary[rp] &gt;= key and lp &lt; rp :
+            rp -= 1
+        while ary[lp] &lt;= key and lp &lt; rp :
+            lp += 1
+        ary[lp],ary[rp] = ary[rp],ary[lp]
+    ary[left],ary[lp] = ary[lp],ary[left]
+    qsort(ary,left,lp-1)
+    qsort(ary,rp+1,right)
+    return ary
+</code></pre>
+
+<p><strong>堆排序</strong></p>
+
+<p>堆排序在 top K 问题中使用比较频繁。堆排序是采用二叉堆的数据结构来实现的，虽然实质上还是一维数组。二叉堆是一个近似完全二叉树 。</p>
+
+<p>二叉堆具有以下性质：</p>
+
+<ol>
+<li>父节点的键值总是大于或等于（小于或等于）任何一个子节点的键值。</li>
+<li>每个节点的左右子树都是一个二叉堆（都是最大堆或最小堆）。</li>
+</ol>
+
+<p>步骤：</p>
+
+<ol>
+<li>构造最大堆（Build<u>Max</u>Heap）：若数组下标范围为0~n，考虑到单独一个元素是大根堆，则从下标n/2开始的元素均为大根堆。于是只要从n/2-1开始，向前依次构造大根堆，这样就能保证，构造到某个节点时，它的左右子树都已经是大根堆。</li>
+<li>堆排序（HeapSort）：由于堆是用数组模拟的。得到一个大根堆后，数组内部并不是有序的。因此需要将堆化数组有序化。思想是移除根节点，并做最大堆调整的递归运算。第一次将heap[0]与heap[n-1]交换，再对heap[0...n-2]做最大堆调整。第二次将heap[0]与heap[n-2]交换，再对heap[0...n-3]做最大堆调整。重复该操作直至heap[0]和heap[1]交换。由于每次都是将最大的数并入到后面的有序区间，故操作完后整个数组就是有序的了。</li>
+<li>最大堆调整（Max_Heapify）：该方法是提供给上述两个过程调用的。目的是将堆的末端子节点作调整，使得子节点永远小于父节点。</li>
+</ol>
+
+<pre><code class="language-python">def heap_sort(ary) :
+    n = len(ary)
+    first = int(n/2-1)       #最后一个非叶子节点
+    for start in range(first,-1,-1) :     #构造大根堆
+        max_heapify(ary,start,n-1)
+    for end in range(n-1,0,-1):           #堆排，将大根堆转换成有序数组
+        ary[end],ary[0] = ary[0],ary[end]
+        max_heapify(ary,0,end-1)
+    return ary
+
+#最大堆调整：将堆的末端子节点作调整，使得子节点永远小于父节点
+#start为当前需要调整最大堆的位置，end为调整边界
+def max_heapify(ary,start,end):
+    root = start
+    while True :
+        child = root*2 +1               #调整节点的子节点
+        if child &gt; end : break
+        if child+1 &lt;= end and ary[child] &lt; ary[child+1] :
+            child = child+1             #取较大的子节点
+        if ary[root] &lt; ary[child] :     #较大的子节点成为父节点
+            ary[root],ary[child] = ary[child],ary[root]     #交换
+            root = child
+        else :
+            break
+</code></pre>
+
+<p><strong>指标对比</strong></p>
+
+<p><img src="media/14523493109485/Screen%20Shot%202016-01-09%20at%207.06.34%20PM.jpg" alt="Screen Shot 2016-01-09 at 7.06.34 P"/></p>
+
+<p><strong>二分查找</strong></p>
+
+<pre><code class="language-java">int binarySearch(int[] a, int x){
+    int low = 0;
+    int high = a.length - 1;
+    int mid;
+
+    while (low &lt;= high){
+        mid = (low + high) / 2;
+        if (a[mid] &lt; x){
+            low = mid + 1;
+        }
+        else if (a[mid] &gt; x){
+            high = mid - 1;
+        }
+        else {
+            return mid;
+        }
+    }
+    return -1;
+}
+
+int binarySearchRecursive(int[] a, int x, int low, int high){
+    if (low &gt; high) return -1;
+
+    int mid = (low + high) / 2;
+    if (a[mid] &lt; x){
+        return binarySearchRecursive(a, x, mid + 1, high);
+    }
+    else if (a[mid] &gt; x){
+        return binarySearchRecursive(a, x, low, mid - 1);
+    }
+    else{
+        return mid;
+    }
+}
+</code></pre>
+
+<p><strong>快速选择算法</strong></p>
+
+<p>快速选择算法能够在平均O(n)时间内从一个无序数组中返回第k大的元素。算法实际上利用了快速排序的思想，将数组依照一个轴值分割成两个部分，左边元素都比轴值小，右边元素都比轴值大。由于轴值下标已知，则可以判断所求元素落在数组的哪一部分，并在那一部分继续进行上述操作，直至找到该元素。与快排不同，由于快速选择算法只在乎所求元素所在的那一部分，所以时间复杂度是O(n)。关于算法复杂度的理论分析请见“工具箱”给出的参考资料。我们给出算法实现如下</p>
+
+<pre><code class="language-python">int partition( int array[], int left, int right ) {
+    int pivot = array[right];
+    while( left != right ){
+        while( array[left] &lt; pivot &amp;&amp; left &lt; right)
+            left++;
+            left++;
+        if (left &lt; right) {
+            swap( array[left], array[right--]);
+        }
+        while( array[right] &gt; pivot &amp;&amp; left &lt; right)
+            right--;
+        if( left &lt; right )
+            swap( array[left++], array[right]);
+    }
+    return left;
+}
+
+int quick_select(int array[], int left, int right, int k)
+{
+    if ( left &gt;= right )
+        return array[left];
+    int index = partition(array, left, right);
+    int size = index - left + 1;
+    if ( size == k )
+        return array[left + k - 1]; // the pivot is the kth largest element
+    else if ( size &gt; k )        return quick_select(array, left, index - 1, k);
+    else
+        return quick_select(array, index + 1, right , k - size);
+}
+</code></pre>
+
+<h2 id="toc_6">编程题目</h2>
+
+<p>两个有序数组，寻找归并排序后数组的中位数/第 k 大数字（与二分有关）</p>
+
+<p>最长公共子串（动态规划有关）</p>
+
+<p>最长公共子序列</p>
+
+<p>最大子序列和，允许交换一次的最大子序列和；</p>
+
+<p>最大连续乘积子串。用动态规划求解</p>
+
+<p>单向网络，起点和终点唯一且连通，寻找那些一旦被删除将导致起点终点无法连通的点；</p>
+
+<p>两个字符串，判断一个字符串是否是另一个字符串的子串，并返回子串的起始位置</p>
+
+<p>判断一个二叉树是否是另一个二叉树的子树</p>
+
+<p>一个数据流中，如何采样得到100个数，保证采样得到的100个数是随机的？蓄水池抽样算法</p>
+
+<p>在一个字符串中，找出最长的无重复字符的字串</p>
+
+<p>最短编辑距离</p>
+
+<p>翻转二叉树</p>
+
+<h2 id="toc_7">机器学习</h2>
+
+<ul>
+<li>你用过哪些机器学习/数据挖掘工具或框架？
+
+<ul>
+<li>主流的分布式框架如 Hadoop，Spark，Graphlab，Parameter Server 等择一或多使用了解；</li>
+<li>通用算法包，如 mahout，scikit，weka 等；</li>
+<li>专用算法包，如 opencv，theano，torch7，ICTCLAS 等。</li>
+</ul></li>
+<li>SVM、LR、决策树的对比？</li>
+<li>GBDT 和 决策森林 的区别？</li>
+<li>写一个 Hadoop 版本的 wordcount。</li>
+<li>K-means 如何用hadoop实现k-means</li>
+<li>naive bayes和logistic regression的区别</li>
+<li>说一下随机森林的执行过程</li>
+<li>基尼指数和信息增益的区别</li>
+<li>GBDT和RF的优缺点</li>
+</ul>
+
+
+</div>
+
+<br /><br />
+<hr />
+
+<div class="row clearfix">
+  <div class="large-6 columns">
+	<div class="text-left" style="padding:15px 0px;">
+		
+	</div>
+  </div>
+  <div class="large-6 columns">
+	<div class="text-right" style="padding:15px 0px;">
+		
+	        <a href="14522640452315.html" 
+	        title="Next Post: 机器学习指南">机器学习指南 &raquo;</a>
+	    
+	</div>
+  </div>
+</div>
+
+<div class="row">
+<div style="padding:0px 0.93em;" class="share-comments">
+
+</div>
+</div>
+<script type="text/javascript">
+	$(function(){
+		var currentURL = '14523493109485.html';
+		$('#side-nav a').each(function(){
+			if($(this).attr('href') == currentURL){
+				$(this).parent().addClass('active');
+			}
+		});
+	});
+</script>  
+</div></div>
+
+
+<div class="page-bottom">
+  <div class="row">
+  <hr />
+  <div class="small-9 columns">
+  <p class="copyright">Copyright &copy; 2015
+Powered by <a target="_blank" href="http://www.mweb.im">MWeb</a>,&nbsp; 
+Theme used <a target="_blank" href="http://github.com">GitHub CSS</a>.</p>
+  </div>
+  <div class="small-3 columns">
+  <p class="copyright text-right"><a href="#header">TOP</a></p>
+  </div>
+   
+  </div>
+</div>
+
+        </section>
+      </div>
+    </div>
+    
+    
+    <script src="asset/js/foundation.min.js"></script>
+    <script src="asset/js/foundation/foundation.offcanvas.js"></script>
+    <script>
+      $(document).foundation();
+
+     
+    </script>
+    
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  </body>
+</html>
