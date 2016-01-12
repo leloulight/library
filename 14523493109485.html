@@ -63,6 +63,8 @@
           
             <li><a title="编程算法面试指南" href="14523493109485.html">编程算法面试指南</a></li>
           
+            <li><a title="机器学习知识点" href="14525635161294.html">机器学习知识点</a></li>
+          
             <li><a title="机器学习指南" href="14522640452315.html">机器学习指南</a></li>
           
             <li><a title="推荐系统沉思录" href="14520495721664.html">推荐系统沉思录</a></li>
@@ -331,6 +333,8 @@
                       <li class="side-title"><span>Research</span></li>
                         
                           <li><a title="编程算法面试指南" href="14523493109485.html">编程算法面试指南</a></li>
+                        
+                          <li><a title="机器学习知识点" href="14525635161294.html">机器学习知识点</a></li>
                         
                           <li><a title="机器学习指南" href="14522640452315.html">机器学习指南</a></li>
                         
@@ -1034,49 +1038,850 @@ int quick_select(int array[], int left, int right, int k)
 
 <h2 id="toc_6">编程题目</h2>
 
-<p>两个有序数组，寻找归并排序后数组的中位数/第 k 大数字（与二分有关）</p>
+<h3 id="toc_7">两个有序数组，寻找归并排序后数组的中位数/第 k 大数字</h3>
 
-<p>最长公共子串（动态规划有关）</p>
+<p>对于含有n个数的数组，若n为奇数，则中位数array[n/2+1]，若n为偶数，则中位数为 (array[n/2] + array[n/2+1]) / 2。所以我们当前的目标是设计一种算法能够返回第k大的元素。对于查找第k大的数，最先想到的应该是快速选择算法，但是该算法并没有利用数组已经有序的特性，故时间复杂度O(m+n)。与二分查找相似，快速选择算法的核心在于快速缩小搜索范围。</p>
 
-<p>最长公共子序列</p>
+<p>对于本例，我们应该如何缩小搜索范围呢？假设数组分别记为A，B。当前需要搜索第k大的数，于是我们可以考虑从数组A中取出前m个元素，从数组B中取出k-m个元素。由于数组A，B分别排序，则A[m]大于从数组A中取出的其他所有元素，B[k-m] 大于数组B中取出的其他所有元素。此时，尽管取出元素之间的相对大小关系不确定，但A[m]与B[k-m]的较大者一定是这k个元素中最大的。那么，较小的那个元素一定不是第k大的，它至多是第k-1大的：因为它小于其他未被取出的所有元素，并且小于取出的k个元素中最大的那个。为叙述方便，假设A[m]是较小的那个元素。那么，我们可以进一步说，A[1], A[2]…A[m-1]也一定不是第k大的元素，因为它们小于A[m]，而A[m]至多是第k-1大的。因此，我们可以把较小元素所在数组中选出的所有元素统统排除，并且相应地减少k值。这样，我们就完成了一次范围缩小。特别地，我们可以选取m=k/2。</p>
 
-<p>最大子序列和，允许交换一次的最大子序列和；</p>
+<pre><code class="language-java">double helper(int A[], int m, int B[], int n, int k){
+    // find the kth largest element
+    if(m &gt; n)
+        return helper(B, n, A, m, k);//make sure that the second one is the bigger array;
+    if(m == 0)
+        return B[k - 1];
+    if(k == 1){
+        return min(A[0], B[0]);
+    }
+    int pa = min(k / 2, m); // assign k / 2 to each of the array and cut the smaller one
+    int pb = k - pa;
+    if (A[pa-1] &lt;= B[pb-1])
+        return helper(A + pa, m - pa, B, n, k - pa);
+    return helper(A, m, B + pb, n - pb, k - pb);
+}
 
-<p>最大连续乘积子串。用动态规划求解</p>
+double findMedianSortedArrays(int A[], int m, int B[], int n) {
+    int total = m + n;
+    if(total % 2 == 0){
+        return (helper(A, m, B, n, total / 2) + helper(A, m, B, n, total / 2 + 1)) / 2;
+    }
+    return helper(A, m, B, n, total / 2 + 1);
+}
+</code></pre>
 
-<p>单向网络，起点和终点唯一且连通，寻找那些一旦被删除将导致起点终点无法连通的点；</p>
+<h3 id="toc_8">最长公共子串</h3>
 
-<p>两个字符串，判断一个字符串是否是另一个字符串的子串，并返回子串的起始位置</p>
+<p>求最长公共子串，注意「子串」和「子序列」的区别！简单考虑可以使用两根指针索引分别指向两个字符串的当前遍历位置，若遇到相等的字符时则同时向后移动一位</p>
 
-<p>判断一个二叉树是否是另一个二叉树的子树</p>
+<pre><code class="language-java">class Solution {
+public:
+    /**
+     * @param A, B: Two string.
+     * @return: the length of the longest common substring.
+     */
+    int longestCommonSubstring(string &amp;A, string &amp;B) {
+        // write your code here
+        if (A.empty() || B.empty()){
+            return 0;
+        }
 
-<p>一个数据流中，如何采样得到100个数，保证采样得到的100个数是随机的？蓄水池抽样算法</p>
+        int lcs = 0, tlcs = 0;
+        for (int i = 0; i &lt; A.size(); i++){
+            for (int j = 0; j &lt; B.size(); j++){
+                tlcs = 0;
+                while ((i + tlcs &lt; A.size()) &amp;&amp; (j + tlcs &lt; B.size()) &amp;&amp; (A[i + tlcs] == B[j + tlcs])){
+                    tlcs++;
+                }
+                if (tlcs &gt; lcs){
+                    lcs = tlcs;
+                }
+            }
+        }
+        return lcs;
+    }
+};
+</code></pre>
 
-<p>在一个字符串中，找出最长的无重复字符的字串</p>
+<h3 id="toc_9">最长公共子序列</h3>
 
-<p>最短编辑距离</p>
+<p>同时遍历两个序列，考虑以当前两个节点为末节点的序列的common subsequence长度。如果其对应的字符相等，那么可以使得LCS长度+1，即append当前字符；否则，保留较优的结果。递推关系如下：</p>
 
-<p>翻转二叉树</p>
+<p>Length(i,j) = (str1[i-1] == str2[j-1]) ? Length(i-1, j-1) + 1 ： Max { Length(i,j-1), Length(i-1,j) }</p>
 
-<h2 id="toc_7">机器学习</h2>
+<p>当char i != char j, D[i ][j - 1], D[i - 1][j] 里取一个大的（因为最后一个不相同，所以有可能s1的最后一个字符会出现在s2的前部分里，反之亦然。</p>
+
+<pre><code class="language-java">int lcs(String a, String b){
+    int lena = a.length();
+    int lenb = b.length();
+    
+    if (lena == 0 || lenb == 0){
+        return 0;
+    }
+    
+    int[][] dp = new int[lena+1][lenb+1];
+    for (int i = 0; i &lt;= lena; i++){
+        for (int j = 0; j &lt;= lenb; j++{
+            if (i == 0 || j == 0){
+                dp[i][j] = 0;
+            } else if (a.charAt(i-1) == b.charAt(j-1){
+                dp[i][j] = dp[i-1][j-1] + 1;
+            } else {
+                dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+            }
+        }
+    }
+    return dp[lena][lenb];
+}
+</code></pre>
+
+<h3 id="toc_10">最大子序列和</h3>
+
+<p>dp 表示以当前下标为结尾的最大子序列和</p>
+
+<pre><code class="language-java">public int maxSubArray_2(int[] A) {
+   if (A.length == 0) return 0;
+   int dp = A[0], res = A[0];
+   for (int i = 1; i &lt; A.length; ++i) {
+       dp = Math.max(A[i], dp + A[i]);
+       res = Math.max(res, dp);
+   }
+   return res;
+}
+</code></pre>
+
+<h3 id="toc_11">最大连续乘积子串</h3>
+
+<p>用两个变量分别记录乘积的最大值和乘积的最小值.用一个变量记录当前值是否为负数.然后遍历array中的每个数,并累乘起来,更新乘积的最大值和乘积的最小值.</p>
+
+<ul>
+<li>取累乘的数值和当前的数值中大的,存为乘积的最大值</li>
+<li>取累乘的数值和当前的数值中小的,存为乘积的最小值</li>
+</ul>
+
+<p>因为:如果当前的数值较大,则前面的都可以抛弃不要,从当前的地方开始继续累乘可能会出现最大值; 如果累乘值较大,则后面可能会继续增大.同理,如果当前值最小,则如果出现一个负数,可能反而会出现最大值.</p>
+
+<p>所以要同时记录最大和最小值!</p>
+
+<pre><code class="language-java">public class Solution {
+    /**
+     * @param nums: an array of integers
+     * @return: an integer
+     */
+    public int maxProduct(int[] nums) {
+        int[] max = new int[nums.length];
+        int[] min = new int[nums.length];
+
+        min[0] = max[0] = nums[0];
+        int result = nums[0];
+        for (int i = 1; i &lt; nums.length; i++) {
+            min[i] = max[i] = nums[i];
+            if (nums[i] &gt; 0) {
+                max[i] = Math.max(max[i], max[i - 1] * nums[i]);
+                min[i] = Math.min(min[i], min[i - 1] * nums[i]);
+            } else if (nums[i] &lt; 0) {
+                max[i] = Math.max(max[i], min[i - 1] * nums[i]);
+                min[i] = Math.min(min[i], max[i - 1] * nums[i]);
+            }
+
+            result = Math.max(result, max[i]);
+        }
+
+        return result;
+    }
+}
+</code></pre>
+
+<h3 id="toc_12">两个字符串，判断一个字符串是否是另一个字符串的子串，并返回子串的起始位置</h3>
+
+<p>暴力</p>
+
+<pre><code class="language-java">public class Solution {
+    public int strStr(String haystack, String needle) {
+        for (int i = 0; ; i++) {
+            for (int j = 0; ; j++) {
+                if (j == needle.length()) return i;
+                if (i + j == haystack.length()) return -1;
+                if (needle.charAt(j) != haystack.charAt(i + j)) break;
+                
+            } 
+        }
+    }
+}
+</code></pre>
+
+<p>BM 算法</p>
+
+<pre><code class="language-java">public class Solution {
+    public int strStr(String haystack, String needle) {
+        int hlen = haystack.length();
+        int nlen = needle.length();
+        int[] jump = new int[256];  // hashmap char-&gt; index, assume ASCII
+        for(int i=0; i&lt;jump.length; i++) {
+            jump[i]=-1;
+        }
+        for(int i=0; i&lt;nlen; i++) {
+            jump[needle.charAt(i)] = i; // index of last occurrence
+        }
+        int skip=0;
+        for(int i=0; i&lt;hlen-nlen+1; i+=skip) { // !!! not i&lt;hlen 
+            skip=0;
+            for(int j=nlen-1; j&gt;=0; j--) {
+                if(haystack.charAt(i+j)!=needle.charAt(j)) {
+                    skip =Math.max( 1, j-jump[haystack.charAt(i+j)] );    
+                    // max is j+1, min is 1 (do not allow &lt;0);
+                    break;
+                }
+            }
+            if(skip==0) return i;
+        }
+        return -1;
+    }
+}
+</code></pre>
+
+<h3 id="toc_13">判断一个二叉树是否是另一个二叉树的子树</h3>
+
+<p>根据题意，比较容易想到的是我们需要实现一个matchTree辅助函数，用以判断根节点为root1和root2的两棵树是否完全相等。判断两棵树相等的定义符合采用D&amp;C的条件：原问题的答案取决于左子树右子树都相等这两个子问题 。对于递归的实现，出口为root1 == NULL &amp;&amp; root2 == NULL，递归函数需要判断当前节点是否相等，左子树是否相等和右子树是否相等。</p>
+
+<p>其次，考虑在什么情况下我们需要调用matchTree：当Tree1的当前节点与Tree2的根节点相等时，我们有兴趣调用matchTree判断以Tree1当前节点为根的子树是否与Tree2相等。那么如果不相等怎么办？我们同样可以利用递归的思想，“将当前节点的左子树或右子树是否包含Tree2作为子问题，通过递归调用自身获得结果。</p>
+
+<pre><code class="language-java">boolean isSubtree(Node tree1, Node tree2){
+    if (tree2 == null){
+        return true;
+    }
+    if (tree1 == null){
+        return false;
+    }
+    
+    if (tree1.value == tree2.value){
+        if (matchTree(tree1, tree2){
+            return true;
+        }
+    }
+    
+    return (isSubtree(tree1.left, tree2) || isSubtree(tree1.right, tree2));
+}
+
+boolean matchTree(Node tree1, Node tree2){
+    if (tree1 == null &amp;&amp; tree2 == null){
+        return true;
+    }
+    if (tree1 == null || tree2 == null){
+        return false;
+    }
+    if (tree1.value != tree2.value){
+        return false;
+    }
+    return matchTree(tree1.left, tree2.left) &amp;&amp; matchTree(tree1.right, tree2.right);
+}
+</code></pre>
+
+<p>matchTree 部分就是判断是不是 same tree</p>
+
+<h3 id="toc_14">一个数据流中，如何采样得到100个数，保证采样得到的100个数是随机的？</h3>
+
+<p>蓄水池抽样算法</p>
+
+<h3 id="toc_15">在一个字符串中，找出最长的无重复字符的字串</h3>
+
+<pre><code class="language-java">public class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        if (s == null || s.length() &lt; 1) return 0;
+        int len = s.length();
+        int maxCount = 0;
+        int curStart = -1;
+        HashMap&lt;Character, Integer&gt; map = new HashMap&lt;Character, Integer&gt;();
+        for (int i = 0; i &lt; len ;i++){
+            if (map.containsKey(s.charAt(i))){
+                curStart = Math.max(curStart,map.get(s.charAt(i)));
+            }
+            map.put(s.charAt(i),i);
+            maxCount = Math.max(maxCount, i-curStart);
+        }
+        
+        return maxCount;
+    }
+}
+</code></pre>
+
+<p><strong>找出 K 个</strong></p>
+
+<p>解法是维护一个sliding window，以及一个hash map， key是char，value是这个char在当前window中得出现次数。</p>
+
+<p>start和end是当前字符串的起始和终止index。</p>
+
+<p>当当前window 字符数超过k的时候，从start开始remove，只要遇到一个char的个数降为0的时候，可以跳出，因为说明当前window的char个数已经为k-1,满足条件。</p>
+
+<p>如果字符集比较小的话可以维护一个int[]来对char计数。</p>
+
+<pre><code class="language-java">public class Solution {
+    /**
+     * @param s : A string
+     * @return : The length of the longest substring
+     *           that contains at most k distinct characters.
+     */
+    public int lengthOfLongestSubstringKDistinct(String s, int k) {
+        if (s == null || s.length() == 0 || k &lt;= 0) {
+            return 0;
+        }
+        int start = 0;
+        int res = 1;
+        Map&lt;Character, Integer&gt; map = new HashMap&lt;Character, Integer&gt;();
+        map.put(s.charAt(0), 1);
+        for (int end = 1; end &lt; s.length(); end++) {
+            char ch = s.charAt(end);
+            if (map.containsKey(ch)) {
+                map.put(ch, map.get(ch)+1);
+            } else {
+                if (map.size() == k) {
+                    res = Math.max(res, end - start);
+                    //full map, need to remove the first character in ths substring
+                    for (int index = start; index &lt; end; index++) {
+                        map.put(s.charAt(index), map.get(s.charAt(index))-1);
+                        start++;
+                        if (map.get(s.charAt(index)) == 0) {
+                            //have removed all occurance of a char
+                            map.remove(s.charAt(index));
+                            break;
+                        }
+                    }
+                }
+                map.put(ch, 1);
+            }
+        }
+        res = Math.max(res, s.length() - start);
+        return res;
+    }
+}
+</code></pre>
+
+<h3 id="toc_16">最短编辑距离</h3>
+
+<pre><code class="language-java">public int minDistance_1(String word1, String word2) {
+   if(word1==word2) return 0;
+   int len1 = word1.length();
+   int len2 = word2.length();
+   int[][] dp = new int[len1+1][len2+1];
+   
+   for(int i=0;i&lt;=len1;i++)
+       dp[i][0] = i;
+   for(int i=0;i&lt;=len2;i++)
+       dp[0][i] = i;
+   
+   for(int i=1;i&lt;=len1;i++){
+       for(int j=1;j&lt;=len2;j++){
+           if(word1.charAt(i-1)==word2.charAt(j-1)) dp[i][j] = dp[i-1][j-1];
+           else{
+               dp[i][j] = Math.min(dp[i-1][j],Math.min(dp[i][j-1],dp[i-1][j-1]))+1;
+           }
+       }
+   }
+   return dp[len1][len2];
+}
+    
+public int minDistance(String word1, String word2) {
+   if(word1==word2) return 0;
+   int len1 = word1.length();
+   int len2 = word2.length();
+   int[] dp = new int[len2+1];
+   
+   for(int i=0;i&lt;=len2;i++)
+       dp[i] = i;
+   
+   for(int i=1;i&lt;=len1;i++){
+       int upperLeftBak = dp[0];
+       dp[0] = i;
+       for(int j=1;j&lt;=len2;j++){
+           int upperLeft = upperLeftBak;
+           upperLeftBak = dp[j];
+           if(word1.charAt(i-1)==word2.charAt(j-1)) dp[j] = upperLeft;
+           else{
+               dp[j] = Math.min(dp[j],Math.min(dp[j-1],upperLeft))+1;
+           }
+       }
+   }
+   return dp[len2];
+}
+</code></pre>
+
+<h3 id="toc_17">翻转二叉树</h3>
+
+<pre><code class="language-java">public class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        if(root!=null){
+            helper(root);
+        }
+     
+        return root;    
+    }
+     
+    public void helper(TreeNode p){
+     
+        TreeNode temp = p.left;
+        p.left = p.right;
+        p.right = temp;
+     
+        if(p.left!=null)
+            helper(p.left);
+     
+        if(p.right!=null)
+            helper(p.right);
+    }
+    
+    public TreeNode invertTree_2(TreeNode root) {
+        LinkedList&lt;TreeNode&gt; queue = new LinkedList&lt;TreeNode&gt;();
+     
+        if(root!=null){
+            queue.add(root);
+        }
+     
+        while(!queue.isEmpty()){
+            TreeNode p = queue.poll();
+            if(p.left!=null)
+                queue.add(p.left);
+            if(p.right!=null)
+                queue.add(p.right);
+     
+            TreeNode temp = p.left;
+            p.left = p.right;
+            p.right = temp;
+        }
+     
+        return root;    
+    }
+}
+</code></pre>
+
+<h2 id="toc_18">机器学习</h2>
 
 <ul>
 <li>你用过哪些机器学习/数据挖掘工具或框架？
 
 <ul>
-<li>主流的分布式框架如 Hadoop，Spark，Graphlab，Parameter Server 等择一或多使用了解；</li>
-<li>通用算法包，如 mahout，scikit，weka 等；</li>
-<li>专用算法包，如 opencv，theano，torch7，ICTCLAS 等。</li>
+<li>主流的分布式框架如 Hadoop，Spark</li>
+<li>通用算法包，scikit</li>
+<li>专用算法包，opencv</li>
 </ul></li>
-<li>SVM、LR、决策树的对比？</li>
-<li>GBDT 和 决策森林 的区别？</li>
-<li>写一个 Hadoop 版本的 wordcount。</li>
-<li>K-means 如何用hadoop实现k-means</li>
-<li>naive bayes和logistic regression的区别</li>
-<li>说一下随机森林的执行过程</li>
-<li>基尼指数和信息增益的区别</li>
-<li>GBDT和RF的优缺点</li>
 </ul>
+
+<h3 id="toc_19">SVM、LR、决策树的对比？</h3>
+
+<p>SVM vs LR：相同点</p>
+
+<ul>
+<li>第一，LR和SVM都是分类算法
+
+<ul>
+<li>判断一个算法是分类还是回归算法的唯一标准就是样本label的类型，如果label是离散的，就是分类算法，如果label是连续的，就是回归算法。很明显，LR的训练数据的label是“0或者1”，当然是分类算法。</li>
+</ul></li>
+<li>第二，如果不考虑核函数，LR和SVM都是线性分类算法，也就是说他们的分类决策面都是线性的。</li>
+<li>第三，LR和SVM都是监督学习算法。</li>
+<li>第四，LR和SVM都是判别模型。
+
+<ul>
+<li>判别模型会生成一个表示P(Y|X)的判别函数（或预测模型），而生成模型先计算联合概率p(Y,X)然后通过贝叶斯公式转化为条件概率。</li>
+<li>简单来说，在计算判别模型时，不会计算联合概率，而在计算生成模型时，必须先计算联合概率。或者这样理解：生成算法尝试去找到底这个数据是怎么生成的（产生的），然后再对一个信号进行分类。基于你的生成假设，那么那个类别最有可能产生这个信号，这个信号就属于那个类别。</li>
+<li>判别模型不关心数据是怎么生成的，它只关心信号之间的差别，然后用差别来简单对给定的一个信号进行分类。</li>
+<li>常见的判别模型有：KNN、SVM、LR</li>
+<li>常见的生成模型有：朴素贝叶斯，隐马尔可夫模型</li>
+</ul></li>
+<li>第五，LR和SVM在学术界和工业界都广为人知并且应用广泛。</li>
+</ul>
+
+<p>SVM vs LR：不同</p>
+
+<ul>
+<li>第一，本质上是其loss function不同。</li>
+</ul>
+
+<p>逻辑回归的损失函数：</p>
+
+<p><img src="media/14523493109485/14525519573219.jpg" alt=""/></p>
+
+<p>支持向量机的目标函数：</p>
+
+<p><img src="media/14523493109485/14525519820172.jpg" alt=""/></p>
+
+<p>不同的loss function代表了不同的假设前提，也就代表了不同的分类原理，也就代表了一切！！！简单来说，​逻辑回归方法基于概率理论，假设样本为1的概率可以用sigmoid函数来表示，然后通过极大似然估计的方法估计出参数的值。</p>
+
+<p>支持向量机​基于几何间隔最大化原理，认为存在最大几何间隔的分类面为最优分类面</p>
+
+<ul>
+<li>第二，支持向量机只考虑局部的边界线附近的点，而逻辑回归考虑全局（远离的点对边界线的确定也起作用）。</li>
+</ul>
+
+<p>线性SVM不直接依赖于数据分布，分类平面不受一类点影响；LR则受所有数据点的影响，如果数据不同类别strongly unbalance，一般需要先对数据做balancing</p>
+
+<ul>
+<li>第三，在解决非线性问题时，支持向量机采用核函数的机制，而LR通常不采用核函数的方法。</li>
+</ul>
+
+<p>在计算决策面时，SVM算法里只有少数几个代表支持向量的样本参与了计算，也就是只有少数几个样本需要参与核计算（即kernal machine解的系数是稀疏的）。然而，LR算法里，每个样本点都必须参与决策面的计算过程，也就是说，假设我们在LR里也运用核函数的原理，那么每个样本点都必须参与核计算，这带来的计算复杂度是相当高的。所以，在具体应用时，LR很少运用核函数机制。</p>
+
+<ul>
+<li>第四，​线性SVM依赖数据表达的距离测度，所以需要对数据先做normalization，LR不受其影响</li>
+</ul>
+
+<p>一个基于概率，一个基于距离！​</p>
+
+<ul>
+<li>第五，SVM的损失函数就自带正则！（损失函数中的1/2||w||<sup>2项），这就是为什么SVM是结构风险最小化算法的原因！而LR必须另外在损失函数上添加正则项！</sup></li>
+</ul>
+
+<p>所谓结构风险最小化，意思就是在训练误差和模型复杂度之间寻求平衡，防止过拟合，从而达到真实误差的最小化。未达到结构风险最小化的目的，最常用的方法就是添加正则项</p>
+
+<p>SVM目标函数自带就是L2正则项吗？</p>
+
+<hr/>
+
+<p>LR,DT,SVM都有自身的特性，首先来看一下LR，工业界最受青睐的机器学习算法，训练、预测的高效性能以及算法容易实现使其能轻松适应工业界的需求。LR还有个非常方便实用的额外功能就是它并不会给出离散的分类结果，而是给出该样本属于各个类别的概率（多分类的LR就是softmax）,可以尝试不同的截断方式来在评测指标上进行同一模型的性能评估，从而得到最好的截断分数。LR不管是实现还是训练或者预测都非常高效，很轻松的handle大规模数据的问题(同时LR也很适合online learning)。此外，LR对于样本噪声是robust的，对于“mild”的多重共线性问题也不会受到太大影响，在特征的多重共线性很强的情况下，LR也可以通过L2正则化来应对该问题，虽然在有些情况下（想要稀疏特征）L2正则化并不太适用。</p>
+
+<p>但是，当我们有大量的特征以及部分丢失数据时，LR就开始费劲了。太多的分类变量（变量值是定性的，表现为互不相容的类别或属性，例如性别，年龄段(1,2,3,4,5)等）也会导致LR的性能较差（这个时候可以考虑做离散化，其实肯定是要做离散化的）。还有一种论调是LR使用所有的样本数据用于训练，这引发了一个争论：明显是正例或者负例的样本(这种样本离分类边界较远，不大会影响分类的curve)不太应该被考虑太多，模型理想情况是由分类边界的样本决定的（类似SVM的思想），如下图。还有一个情况就是当特征是非线性时，需要做特征变换，这可能会导致特征维度急剧上升。下面是我认为的LR的一些利弊：</p>
+
+<p>LR的优势：</p>
+
+<ol>
+<li>对观测样本的概率值输出</li>
+<li>实现简单高效</li>
+<li>多重共线性的问题可以通过L2正则化来应对</li>
+<li>大量的工业界解决方案</li>
+<li>支持online learning（个人补充）</li>
+</ol>
+
+<p>LR的劣势</p>
+
+<ol>
+<li>特征空间太大时表现不太好</li>
+<li>对于大量的分类变量无能为力</li>
+<li>对于非线性特征需要做特征变换</li>
+<li>依赖所有的样本数据（作者认为这其实不是啥问题。。）</li>
+</ol>
+
+<p>决策树对于单调的特征变换是”indifferent”的，也就是说特征的单调变换对于决策树来说不会产生任何影响（我本人最早使用决策树时没有理解内部的机制，当时还做了特征归一化等工作，发现效果没有任何变化），因为决策树是通过简单的使用矩形切分特征空间的，单调的特征变换只是做了特征空间的缩放而已。由于决策树是的分支生成是使用离散的区间或类别值的，所以对于不管多少分类变量都能够轻松适应，而且通过决策树生成出来的模型很直观而且容易解释（随着决策树的分支解释即可），而且决策树也可以通过计算落到该叶子类目的标签平均值获得最终类别的概率输出。但是这就引发了决策树的最大问题：非常容易过拟合，我们很容易就会生成一个完美拟合训练集的模型，但是该模型在测试集合上的表现却很poor，所以这个时候就需要剪枝以及交叉验证来保证模型不要过拟合了。</p>
+
+<p>过拟合的问题还可以通过使用随机森林的方式来解决，随机森林是对决策树的一个很smart的扩展，即使用不同的特征集合和样本集合生成多棵决策树，让它们来vote预测样本的标签值。但是随机森林并没有像单纯决策树一样的解释能力。</p>
+
+<p>DT的优势：</p>
+
+<ol>
+<li>直观的决策过程</li>
+<li>能够处理非线性特征</li>
+<li>考虑了特征相关性</li>
+</ol>
+
+<p>DT的劣势</p>
+
+<ol>
+<li>极易过拟合（使用RF可以一定程度防止过拟合，但是只要是模型就会过拟合！）</li>
+<li>无法输出score，只能给出直接的分类结果</li>
+</ol>
+
+<p>SVM最大的好处就是它只依赖于处于分类边界的样本来构建分类面，可以处理非线性的特征，同时，只依赖于决策边界的样本还可以让他们能够应对”obvious”样本缺失的问题。由于SVM能够轻松搞定大规模的特征空间所以在文本分析等特征维度较高的领域是比较好的选择。SVM的可解释性并不像决策树一样直观，如果使用非线性核函数，SVM的计算代价会高很多。</p>
+
+<p>SVM的优势：</p>
+
+<ol>
+<li>可以处理高维特征</li>
+<li>使用核函数轻松应对非线的性特征空间</li>
+<li>分类面不依赖于所有数据</li>
+</ol>
+
+<p>SVM的劣势：</p>
+
+<ol>
+<li>对于大量的观测样本，效率会很低</li>
+<li>找到一个“合适”的核函数还是很tricky的</li>
+</ol>
+
+<p>我总结出了一个工作流程来让大家参考如何决定使用哪个模型： </p>
+
+<ol>
+<li>使用LR试一把总归不会错的，至少是个baseline </li>
+<li>看看决策树相关模型例如随机森林，GBDT有没有带来显著的效果提升，即使最终没有用这个模型，也可以用随机森林的结果来去除噪声特征 </li>
+<li>如果你的特征空间和观测样本都很大，有足够的计算资源和时间，试试SVM吧，</li>
+</ol>
+
+<p>最后是这位老司机的一点人生经验：好的数据远比模型本身重要，记住一定要使用你在对应领域的知识来进行完备的特征工程的工作；然后还有一个有效途径就是多使用ensembles，就是多个模型混合，给出结果。</p>
+
+<h3 id="toc_20">GBDT 和 决策森林 的区别？</h3>
+
+<p>Random Forest</p>
+
+<ul>
+<li>​采用bagging思想，即利用bootstrap抽样，得到若干个数据集，每个数据集都训练一颗树。</li>
+<li>构建决策树时，每次分类节点时，并不是考虑全部特征，而是从特征候选集中选取若干个特征用于计算。弱特征共有p个，一般选取m=sqrt(p)个特征。当可选特征数目很大时，选取一个较小的m值，有助于决策树的构建。</li>
+<li>​当树的数量足够多时，RF不会产生过拟合，提高树的数量能够使得错误率降低。</li>
+</ul>
+
+<p>GBDT</p>
+
+<ul>
+<li>采用Boosting思想（注意是Boosting，不是Boostrap）​</li>
+<li>不采用Boostrap抽样的方法（RF采用了），每次迭代过程都会使用全部数据集（会有一些变化，即采用的是上一轮训练后得到的预测结果与真实结果之间的残差（残差是由损失函数计算得到的））。</li>
+<li>GBDT的每棵树是按顺序生成的，每棵树生成时都需要利用之前一棵树留下的信息（RF的树是并行生成的）。</li>
+<li>GBDT中树的数目过多会引起过拟合（RF不会）。</li>
+<li>构架树时，深度为1时通常效果很好（深度为1的决策树称为决策桩decision stumps）。</li>
+</ul>
+
+<p>对比：</p>
+
+<ol>
+<li>组成随机森林的树可以是分类树，也可以是回归树；而GBDT只由回归树组成</li>
+<li>组成随机森林的树可以并行生成；而GBDT只能是串行生成</li>
+<li>对于最终的输出结果而言，随机森林采用多数投票等；而GBDT则是将所有结果累加起来，或者加权累加起来</li>
+<li>随机森林对异常值不敏感，GBDT对异常值非常敏感；</li>
+<li>随机森林对训练数据一视同仁，GBDT是基于权值的弱分类器的集成</li>
+<li>随机森林是通过减少模型方差提高性能，GBDT是通过减少模型偏差提高性能</li>
+</ol>
+
+<h3 id="toc_21">写一个 Hadoop 版本的 wordcount。</h3>
+
+<p><strong>基本的Word Count</strong></p>
+
+<p>Hadoop基本思想是分而治之。对于一个非常大的文档做word count，单机处理起来会比较慢。所以我们部署多个机器，每个机器上开启若干个线程来处理。</p>
+
+<p>首先，将这个大文档拆分（比如按行拆分），然后将这若干个部分分发给各个机器上的若干个mapper线程。每个mapper接收一段文档（比如一行），然后对这段文档进行tokenizing，即拆成若干个word。每看见一个word，就输出一个key-value对（word，1），代表这个word出现了1次。</p>
+
+<p>当所有的mapper处理完之后，Hadoop的Master Node启动一系列reducer线程。每个Reducer接收一个key（这里就是一个word）的所有key-value对。然后通过以这个word为key的所有key-value对，来统计这个word的出现次数，然后输出（word，count）。表示这个word在文档中出现了几次。</p>
+
+<p><strong>加入combiner</strong></p>
+
+<p>不过，上述方法中，mapper会产生大量的key-value对，会极大占用网络传输资源。所以，我们可以在mapper后面加一个combiner。其执行跟reducer相同的操作，也是接收关于一个key的所有key-value对，然后将word count进行sum。</p>
+
+<p>这样，将combiner的输出传递给reducer就会极大地减少传输的key-value对的数量。</p>
+
+<p>combiner跟reducer的不同之处在于：</p>
+
+<ul>
+<li>combiner是在mapper工作时就被调用的。即如果有10个mapper，它可能在3个mapper工作完毕后就被调用一次，用以合并者3个mapper的结果。然后又有5个mapper完工后再被调用一次。</li>
+<li>Hadoop不保证combiner一定被调用，也不保证combiner会被调用几次。</li>
+<li>combiner在一部分mapper运行完后即可被调用</li>
+<li>所以，combiner可以看做是一个mini reducer</li>
+</ul>
+
+<pre><code class="language-java">import java.io.IOException;
+import java.util.StringTokenizer;
+
+import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Job;
+import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Reducer;
+import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.apache.hadoop.util.GenericOptionsParser;
+
+public class WordCount {
+
+  // Mapper&lt;输入key, 输入value, 输出key, 输出value&gt;
+  // Hadoop默认使用TextInputFormat（本例也是）
+  // TextInputFormat按行对文件进行分割，并传给Mapper
+  // 输入key表示当前行的第一个byte是整个文件的第几个byte，实际是LongWritable类型
+  // 这里用Object是为了通用性考虑，完全可以换成LongWritable
+  public static class TokenizerMapper 
+       extends Mapper&lt;Object, Text, Text, IntWritable&gt;{
+
+    private final static IntWritable one = new IntWritable(1);
+    private Text word = new Text();
+
+    public void map(Object key, Text value, Context context
+                    ) throws IOException, InterruptedException {
+      // 对文本分词（tokenizing）
+      StringTokenizer itr = new StringTokenizer(value.toString());
+      while (itr.hasMoreTokens()) {
+        word.set(itr.nextToken());
+        // context可以简单看作是mapper运行环境的封装（存储输出等）
+        context.write(word, one);
+      }
+    }
+  }
+
+  // Reducer&lt;输入key, 输入value, 输出key, 输出value&gt;
+  public static class IntSumReducer 
+       extends Reducer&lt;Text,IntWritable,Text,IntWritable&gt; {
+    private IntWritable result = new IntWritable();
+
+    public void reduce(Text key, Iterable&lt;IntWritable&gt; values, 
+                       Context context
+                       ) throws IOException, InterruptedException {
+      int sum = 0;
+      for (IntWritable val : values) {
+        sum += val.get();
+      }
+      result.set(sum);
+      context.write(key, result);
+    }
+  }
+
+  public static void main(String[] args) throws Exception {
+    // 用来生成一些MapReduce的默认参数
+    Configuration conf = new Configuration();
+    // GenericOptionsParser用来parse输入参数中的Hadoop参数，并作相应处理，比如设置namenode等
+    // 后面的getRemainingArgs返回Hadoop参数以外的部分，留给具体的应用处理
+    String[] otherArgs = new GenericOptionsParser(conf, args).getRemainingArgs();
+    if (otherArgs.length &lt; 2) {
+      System.err.println(&quot;Usage: wordcount &lt;in&gt; [&lt;in&gt;...] &lt;out&gt;&quot;);
+      System.exit(2);
+    }
+    // 第二个参数是job name，直接用Job构造函数初始化在2.7.1中是deprecated
+    Job job = Job.getInstance(conf, &quot;word count&quot;);
+    // 找到包含WordCount这个class的jar包
+    // 从而告诉各个node要在哪找这个job需要的mapper跟reducer函数
+    job.setJarByClass(WordCount.class);
+    job.setMapperClass(TokenizerMapper.class);
+    // combiner的作用上文有讲
+    job.setCombinerClass(IntSumReducer.class);
+    job.setReducerClass(IntSumReducer.class);
+    // 设置输出key-value对的类别
+    job.setOutputKeyClass(Text.class);
+    // IntWritable的含义是，Hadoop实现了更加符合Hadoop机制的对int序列化的方法
+    job.setOutputValueClass(IntWritable.class);
+    for (int i = 0; i &lt; otherArgs.length - 1; ++i) {
+      // InputFormat包含对input的描述和处理方法
+      // FileInputFormat是所有基于文件的InputFormat的基类
+      // InputFormat的类一般会提供一些对job的input进行操作的函数
+      // 这里用FileInputFormat是为了保证通用性
+      FileInputFormat.addInputPath(job, new Path(otherArgs[i]));
+    }
+    FileOutputFormat.setOutputPath(job,
+      new Path(otherArgs[otherArgs.length - 1]));
+    // job.waitForCompletion提交任务，输入参数指定是否等待任务完成
+    // 如果等待任务完成，当正常完成时返回true，反之false
+    System.exit(job.waitForCompletion(true) ? 0 : 1);
+  }
+}
+</code></pre>
+
+<h3 id="toc_22">K-means 如何用hadoop实现k-means</h3>
+
+<p>对于每一次迭代</p>
+
+<p><strong>Map</strong></p>
+
+<p>Map Task的输入数据以SequenceFile的形式存储在HDFS中，这种文件以这种键值对的形式存储每个样本。key是这个样本的存储位置在该数据文件中的偏移量（这个key没什么作用），value是字符串，是这个样本的内容。SequenceFile类型的文件是可拆分的，这意味着这些样本可以拆开并映射到多个Map Task中。每个个Map Task获取当前的簇心，计算每个样本最近的簇心。Map Task的输出中，值是一个样本，键是该样本对应的簇心的标号。</p>
+
+<pre><code>**Input:** Global variable centers, the offset key, the sample value
+**Output:** &lt;key’, value’&gt; pair, where the key’ is the index of the closest  center point and value’ is a string comprise of sample information
+
+1. Construct the sample instance from value;  
+2. minDis = Double.MAX VALUE ;  
+3. index = -1;  
+4. For i=0 to centers.length do  
+    dis= ComputeDist(instance, centers[i]);
+    If dis &lt; minDis {
+        minDis = dis;
+        index = i;
+    }
+5. End For  
+6. Take index as key’;  
+7. Construct value’ as a string comprise of the values of different dimensions;  
+8. output &lt; key , value &gt; pair;  
+9. End  
+</code></pre>
+
+<p><strong>Combine</strong></p>
+
+<p>Combine Task是一个小型的Reduce Task，其输入是Map Task的输出。Combine Task的输出中，键还是簇心的标号，值由两部分组成，一个是同属于该簇心的所有样本的和，另外一个是这些样本的个数。</p>
+
+<pre><code>**Input:** key is the index of the cluster, V is the list of the samples assigned to the same cluster
+**Output:** &lt; key , value &gt; pair, where the key’ is the index of the cluster, value’ is a string comprised of sum of the samples in the same cluster and the sample number
+
+1. Initialize one array to record the sum of value of each dimensions of the samples contained in the same cluster, i.e. the samples in the list V ;  
+2. Initialize a counter num as 0 to record the sum of sample number in the same cluster;  
+3. while(V.hasNext()){  
+        Construct the sample instance from V.next();
+        Add the values of different dimensions of instance to the array
+        num++;
+4. }  
+5. Take key as key’;  
+6. Construct value’ as a string comprised of the sum values of different dimensions and num;  
+7. output &lt; key , value &gt; pair;  
+8. End  
+</code></pre>
+
+<p><strong>Reduce</strong></p>
+
+<pre><code>**Input: **key is the index of the cluster, V is the list of the partial sums from different host
+**Output:** &lt; key , value &gt; pair, where the key’ is the index of the cluster, value’ is a string repre-
+senting the new center  
+1. Initialize one array record the sum of value of each dimensions of the samples contained in the  
+same cluster, e.g. the samples in the list V ;  
+2. Initialize a counter NUM as 0 to record the sum of sample number in the same cluster;  
+3. while(V.hasNext()){  
+          Construct the sample instance from V.next();
+          Add the values of different dimensions of instance to the array
+          NUM += num;
+4. }  
+5. Divide the entries of the array by NUM to get the new center’s coordinates; // 求簇心  
+6. Take key as key’;  
+7. Construct value’ as a string comprise of the center ’s coordinates;  
+8. output &lt; key , value &gt; pair;  
+9. End  
+</code></pre>
+
+<p>梳理一下，具体的步骤如下</p>
+
+<ol>
+<li>main函数读取质心文件</li>
+<li>将质心的字符串放到configuration中</li>
+<li>在mapper类重写setup方法，获取到configuration的质心内容，解析成二维数组的形式，代表质心</li>
+<li>mapper类中的map方法读取样本文件，跟所有的质心比较，得出每个样本跟哪个质心最近，然后输出&lt;质心，样本&gt;</li>
+<li>reducer类中重新计算质心，如果重新计算出来的质心跟进来时的质心一致，那么自定义的counter加1</li>
+<li>main中获取counter的值，看是否等于质心，如果不相等，那么继续迭代，否在退出</li>
+</ol>
+
+<h3 id="toc_23">naive bayes和logistic regression的区别</h3>
+
+<p>总结起来，有以下几点不同：</p>
+
+<ol>
+<li>生成模型 vs 判别模型
+
+<ul>
+<li>Naive Bayes是一个生成模型，在计算P(y|x)之前，先要从训练数据中计算P(x|y)和P(y)的概率，从而利用贝叶斯公式计算P(y|x)。</li>
+<li>Logistic Regression是一个判别模型，它通过在训练数据集上最大化判别函数P(y|x)学习得到，不需要知道P(x|y)和P(y)。</li>
+</ul></li>
+<li>条件假设
+
+<ul>
+<li>Naive Bayes是建立在条件独立假设基础之上的，设特征X含有n个特征属性（X1，X2，...Xn），那么在给定Y的情况下，X1，X2，...Xn是条件独立的。</li>
+<li>Logistic Regression的限制则要宽松很多，如果数据满徐条件独立假设，Logistic Regression能够取得非常好的效果；当数据不满度条件独立假设时，Logistic Regression仍然能够通过调整参数让模型最大化的符合数据的分布，从而训练得到在现有数据集下的一个最优模型。</li>
+</ul></li>
+<li>数据量
+
+<ul>
+<li>当数据集比较小的时候，应该选用Naive Bayes，为了能够取得很好的效果，数据的需求量为O(log n)</li>
+<li>当数据集比较大的时候，应该选用Logistic Regression，为了能够取得很好的效果，数据的需求量为O( n)</li>
+</ul></li>
+</ol>
+
+<h3 id="toc_24">基尼指数和信息增益的区别</h3>
+
+<p>信息增益基于香浓的信息论，它找出的属性R具有这样的特点：以属性R分裂前后的信息增益比其他属性最大。这里信息的定义如下：</p>
+
+<p><img src="media/14523493109485/14525633340396.jpg" alt=""/></p>
+
+<p>上面的信息Info实际上就是信息论中的熵Entropy，熵表示的是不确定度的度量，如果某个数据集的类别的不确定程度越高，则其熵就越大。</p>
+
+<p>有了上面关于熵的简单理解，我们接着讲信息增益。假设我们选择属性R作为分裂属性，数据集D中，R有k个不同的取值{V1,V2,...,Vk}，于是可将D根据R的值分成k组{D1,D2,...,Dk}，按R进行分裂后，将数据集D不同的类分开还需要的信息量为：</p>
+
+<p><img src="media/14523493109485/14525633667362.jpg" alt=""/></p>
+
+<p>信息增益的定义为分裂前后，两个信息量只差：</p>
+
+<p><img src="media/14523493109485/14525633751774.jpg" alt=""/></p>
+
+<p>信息增益Gain(R)表示属性R给分类带来的信息量，我们寻找Gain最大的属性，就能使分类尽可能的纯，即最可能的把不同的类分开。</p>
+
+<hr/>
+
+<p>基尼指数是另外一种数据的不纯度的度量方法，其定义如下：</p>
+
+<p><img src="media/14523493109485/14525634491855.jpg" alt=""/></p>
+
+<p>其中的m仍然表示数据集D中类别C的个数，Pi表示D中任意一个记录属于Ci的概率，计算时Pi=(D中属于Ci类的集合的记录个数/|D|)。如果所有的记录都属于同一个类中，则P1=1，Gini(D)=0，此时不纯度最低。</p>
 
 
 </div>
@@ -1093,8 +1898,8 @@ int quick_select(int array[], int left, int right, int k)
   <div class="large-6 columns">
 	<div class="text-right" style="padding:15px 0px;">
 		
-	        <a href="14522640452315.html" 
-	        title="Next Post: 机器学习指南">机器学习指南 &raquo;</a>
+	        <a href="14525635161294.html" 
+	        title="Next Post: 机器学习知识点">机器学习知识点 &raquo;</a>
 	    
 	</div>
   </div>
